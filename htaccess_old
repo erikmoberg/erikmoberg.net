@@ -1,0 +1,5 @@
+AddType application/x-httpd-php5 .php .php4 .php3 .php5
+
+RewriteEngine On
+RewriteCond %{HTTP_HOST} !^www\.erikmoberg\.net$
+RewriteRule ^(.*)$ http://www.erikmoberg.net/$1 [L,R=301]
