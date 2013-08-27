@@ -1,0 +1,172 @@
+* {
+
+}
+
+body {
+	background: #337FC6 url("bg_line.gif") top center;
+	font: normal 8pt/13pt Courier New,Trebuchet MS,Verdana;
+	color: #888888;
+	margin: 0;
+	padding: 0;
+}
+
+a, a:visited {
+	text-decoration: underline;
+	color: #777777;
+	
+}
+
+a:hover {
+	color: black;
+}
+
+#contentheader
+{
+	padding-top: 5px;
+	margin-bottom: 15px;
+	padding-bottom: 7px;
+	font-size: 18pt;
+	color: #404040;	
+	font-weight: bold;
+	background: url(h2bg.gif) bottom left repeat-x;
+}
+
+#header {
+	width: 662px;
+	height: 60px;
+	padding-top: 30px;
+	padding-left: 10px;
+	font-size: 18pt;
+}
+
+#header h2{
+	padding-top: 5px;
+	font-size: 18pt;
+	color: #777777;	
+	font-weight: bold;
+}
+
+#container {
+	width: 700px;
+	background: url("bgsquare.gif") top center repeat-y;
+	margin: 0px auto;
+	text-align: left;
+	padding-left: 50px;
+}
+
+#horizontal{
+	margin-left: 10px;
+	padding: 0;
+	list-style: none;
+	width: 700px;
+	height: 30px;
+	font-weight: bold;
+	font-size: 11pt;
+}
+#horizontal li
+{
+	float: left;
+	margin-right: 15px;
+}
+#horizontal li.active
+{
+	display: block;
+	height: 40px;
+	line-height: 40px;
+	text-decoration: none;
+	color: black;
+}
+#horizontal a, #horizontal a:visited {
+	float: left;
+	display: block;
+	height: 40px;
+	line-height: 40px;
+	text-decoration: none;
+}
+
+#horizontal a:hover {
+	color: black;
+	text-decoration: none;
+}
+
+#right-column {
+	color: #777777;
+	width: 134px;
+	float: left;
+	padding: 5px 0 0 10px;
+}
+
+#content {
+	width: 500px;
+	margin: 15px 0 0 160px;
+}
+
+#content h2{
+	font-size: 14pt;
+	font-weight: bold;
+	color: #777777;
+	margin-bottom: 5px;
+	padding-left: 5px;
+	padding-bottom: 9px;
+	clear: none;
+}
+
+.black {
+	color: #000;
+}
+
+p {
+margin-bottom: 20px;
+padding-left: 14px;
+}
+
+input.text {
+	width: 70px;	
+	border: 1px solid #ccc;
+}
+
+input.button {
+	color: #808080;
+	padding-left: 0px;
+	font-size: 8pt;	
+	border: none;
+	background: none;
+	}
+
+#footer {
+	color: #ccc;
+/*	background: Black;*/
+	clear: both;
+	width: 562px;
+	margin-left: 4px;
+	height: 20px;
+	padding: 4px;
+/*	border: 1px solid #E4E4E4;*/
+/*	margin-bottom: 20px;*/
+}
+#footer a, #footer a:visited{
+	color: #ccc;
+}
+
+#footer a:hover {
+	color: #808080;
+}
+
+#bottom
+{
+  height: 40px;
+  background: url(background_bottom.gif) no-repeat;
+  width: 750px;
+	margin: 0px auto;
+	text-align: left;
+	padding-left: 0px;
+}
+.thumb_small
+{
+	
+}
+
+.thumb_small a
+{
+	padding: 5px;
+}

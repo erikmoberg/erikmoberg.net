@@ -1,0 +1,1294 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<galleries>
+<gallery id="24">
+	<name>Greece 2009 trip</name>
+	<description>A trip to the island of Corfu in October.</description>
+	<datetime>2009-10-05</datetime>
+	<basedir>greece2009</basedir>
+	<frontpic>frontpic.jpg</frontpic>
+		<images>
+			<image id="1">
+				<description></description>
+				<basefilename>01</basefilename>
+			</image>
+			<image id="2">
+				<description></description>
+				<basefilename>02</basefilename>
+			</image>
+			<image id="3">
+				<description></description>
+				<basefilename>03</basefilename>
+			</image>
+			<image id="4">
+				<description></description>
+				<basefilename>04</basefilename>
+			</image>
+			<image id="5">
+				<description></description>
+				<basefilename>05</basefilename>
+			</image>
+			<image id="6">
+				<description></description>
+				<basefilename>06</basefilename>
+			</image>
+			<image id="7">
+				<description></description>
+				<basefilename>07</basefilename>
+			</image>
+			<image id="8">
+				<description></description>
+				<basefilename>08</basefilename>
+			</image>
+			<image id="9">
+				<description></description>
+				<basefilename>09</basefilename>
+			</image>
+			<image id="10">
+				<description></description>
+				<basefilename>10</basefilename>
+			</image>
+			<image id="11">
+				<description></description>
+				<basefilename>11</basefilename>
+			</image>
+			<image id="12">
+				<description></description>
+				<basefilename>12</basefilename>
+			</image>
+		</images>
+</gallery>
+<gallery id="23">
+	<name>Canon EOS 1000D sample pictures</name>
+	<description>Some pictures shot with the new Canon 1000D.</description>
+	<datetime>2009-09-09</datetime>
+	<basedir>canon1000d</basedir>
+	<frontpic>frontpic.jpg</frontpic>
+		<images>
+			<image id="1">
+				<description></description>
+				<basefilename>01</basefilename>
+			</image>
+			<image id="2">
+				<description></description>
+				<basefilename>02</basefilename>
+			</image>
+			<image id="3">
+				<description></description>
+				<basefilename>03</basefilename>
+			</image>
+			<image id="4">
+				<description></description>
+				<basefilename>04</basefilename>
+			</image>
+			<image id="5">
+				<description></description>
+				<basefilename>05</basefilename>
+			</image>
+			<image id="6">
+				<description></description>
+				<basefilename>06</basefilename>
+			</image>
+			<image id="7">
+				<description></description>
+				<basefilename>07</basefilename>
+			</image>
+		</images>
+</gallery>
+<gallery id="22">
+	<name>Hong Kong, Beijing and Shanghai</name>
+	<description>Tour to China, this time to Hong Kong, Beijing and Shanghai. Big cities. They really make Frankfurt feel like my small hometown in Sweden in comparison to them.</description>
+	<datetime>2009-03-29</datetime>
+	<basedir>china2009</basedir>
+	<frontpic>frontpic.jpg</frontpic>
+		<images>
+			<image id="1">
+				<description>Yes, those are scorpions. And those to the left, seahorses.</description>
+				<basefilename>01</basefilename>
+			</image>
+			<image id="2">
+				<description>Tight security, as always.</description>
+				<basefilename>02</basefilename>
+			</image>
+			<image id="3">
+				<description>Me on the Square.</description>
+				<basefilename>03</basefilename>
+			</image>
+			<image id="4">
+				<description>The great wall.</description>
+				<basefilename>04</basefilename>
+			</image>
+			<image id="5">
+				<description>Climbing the great wall was actually more difficult than I thought.</description>
+				<basefilename>05</basefilename>
+			</image>
+			<image id="6">
+				<description>The famous Bird's nest.</description>
+				<basefilename>06</basefilename>
+			</image>
+			<image id="7">
+				<description>Pandas "fighting". (ISO at 1600.)</description>
+				<basefilename>07</basefilename>
+			</image>
+			<image id="8">
+				<description>Hong Kong at night.</description>
+				<basefilename>08</basefilename>
+			</image>
+			<image id="9">
+				<description>You can actually buy fish directly from the boats.</description>
+				<basefilename>09</basefilename>
+			</image>
+			<image id="10">
+				<description>Famous and typical view of Shanghai.</description>
+				<basefilename>10</basefilename>
+			</image>
+			<image id="11">
+				<description>The light show in Hong Kong.</description>
+				<basefilename>11</basefilename>
+			</image>
+		</images>
+</gallery>
+<gallery id="21">
+	<name>Winter in Baden-Baden</name>
+	<description>Went to Baden-Baden and took the cable railway up to the Merkur summit.</description>
+	<datetime>2008-12-14</datetime>
+	<basedir>winter2008</basedir>
+	<frontpic>frontpic.jpg</frontpic>
+		<images>
+			<image id="1">
+				<description></description>
+				<basefilename>01</basefilename>
+			</image>
+			<image id="2">
+				<description></description>
+				<basefilename>02</basefilename>
+			</image>
+			<image id="3">
+				<description></description>
+				<basefilename>03</basefilename>
+			</image>
+			<image id="4">
+				<description></description>
+				<basefilename>04</basefilename>
+			</image>
+			<image id="5">
+				<description></description>
+				<basefilename>05</basefilename>
+			</image>
+			<image id="6">
+				<description></description>
+				<basefilename>06</basefilename>
+			</image>
+			<image id="7">
+				<description></description>
+				<basefilename>07</basefilename>
+			</image>
+			<image id="8">
+				<description></description>
+				<basefilename>08</basefilename>
+			</image>
+			<image id="9">
+				<description></description>
+				<basefilename>09</basefilename>
+			</image>
+			<image id="10">
+				<description></description>
+				<basefilename>10</basefilename>
+			</image>
+		</images>
+</gallery>
+<gallery id="20">
+	<name>A week in Croatia</name>
+	<description>City of Bol, on the island of Brac. Season over, but still warm and beautiful.</description>
+	<datetime>2008-10-18</datetime>
+	<basedir>croatia2008</basedir>
+	<frontpic>frontpic.jpg</frontpic>
+		<images>
+			<image id="1">
+				<description>A flock of seagulls.</description>
+				<basefilename>01</basefilename>
+			</image>
+			<image id="2">
+				<description>Crystal clear water.</description>
+				<basefilename>02</basefilename>
+			</image>
+			<image id="3">
+				<description></description>
+				<basefilename>03</basefilename>
+			</image>
+			<image id="4">
+				<description>The famous Zlatni Rat.</description>
+				<basefilename>04</basefilename>
+			</image>
+			<image id="5">
+				<description></description>
+				<basefilename>05</basefilename>
+			</image>
+			<image id="6">
+				<description></description>
+				<basefilename>06</basefilename>
+			</image>
+			<image id="7">
+				<description></description>
+				<basefilename>07</basefilename>
+			</image>
+			<image id="8">
+				<description></description>
+				<basefilename>08</basefilename>
+			</image>
+			<image id="9">
+				<description></description>
+				<basefilename>09</basefilename>
+			</image>
+			<image id="10">
+				<description></description>
+				<basefilename>10</basefilename>
+			</image>
+			<image id="11">
+				<description></description>
+				<basefilename>11</basefilename>
+			</image>
+			<image id="12">
+				<description></description>
+				<basefilename>12</basefilename>
+			</image>
+			<image id="13">
+				<description></description>
+				<basefilename>13</basefilename>
+			</image>
+			<image id="14">
+				<description></description>
+				<basefilename>14</basefilename>
+			</image>
+			<image id="15">
+				<description></description>
+				<basefilename>15</basefilename>
+			</image>
+			<image id="16">
+				<description>View from our balcony.</description>
+				<basefilename>16</basefilename>
+			</image>
+		</images>
+</gallery>
+<gallery id="19">
+	<name>Hamburg in October</name>
+	<description>Went on a trip to Hamburg. Also visited Schwerin, Wismar and L&amp;uuml;beck.</description>
+	<datetime>2008-10-04</datetime>
+	<basedir>hamburg2008</basedir>
+	<frontpic>frontpic.jpg</frontpic>
+		<images>
+			<image id="1">
+				<description></description>
+				<basefilename>01</basefilename>
+			</image>
+			<image id="2">
+				<description></description>
+				<basefilename>02</basefilename>
+			</image>
+			<image id="3">
+				<description>The famous Speicherstadt.</description>
+				<basefilename>03</basefilename>
+			</image>
+			<image id="4">
+				<description>Miniatur Wunderland.</description>
+				<basefilename>04</basefilename>
+			</image>
+			<image id="5">
+				<description>Miniatur Wunderland.</description>
+				<basefilename>05</basefilename>
+			</image>
+			<image id="6">
+				<description>Miniatur Wunderland.</description>
+				<basefilename>06</basefilename>
+			</image>
+			<image id="7">
+				<description>Miniatur Wunderland.</description>
+				<basefilename>07</basefilename>
+			</image>
+			<image id="8">
+				<description></description>
+				<basefilename>08</basefilename>
+			</image>
+			<image id="9">
+				<description></description>
+				<basefilename>09</basefilename>
+			</image>
+			<image id="10">
+				<description></description>
+				<basefilename>10</basefilename>
+			</image>
+			<image id="11">
+				<description>Restaurant in Wismar; the city used to belong to Sweden.</description>
+				<basefilename>11</basefilename>
+			</image>
+			<image id="12">
+				<description></description>
+				<basefilename>12</basefilename>
+			</image>
+			<image id="13">
+				<description></description>
+				<basefilename>13</basefilename>
+			</image>
+		</images>
+</gallery>
+<gallery id="18">
+	<name>Limburg in May</name>
+	<description>My brother and his girlfriend came to visit us in Frankfurt. Made a trip to Limburg.</description>
+	<datetime>2008-05-08</datetime>
+	<basedir>limburg2008</basedir>
+	<frontpic>frontpic.jpg</frontpic>
+		<images>
+			<image id="1">
+				<description></description>
+				<basefilename>01</basefilename>
+			</image>
+			<image id="2">
+				<description></description>
+				<basefilename>02</basefilename>
+			</image>
+			<image id="3">
+				<description></description>
+				<basefilename>03</basefilename>
+			</image>
+			<image id="4">
+				<description></description>
+				<basefilename>04</basefilename>
+			</image>
+			<image id="5">
+				<description></description>
+				<basefilename>05</basefilename>
+			</image>
+			<image id="6">
+				<description></description>
+				<basefilename>06</basefilename>
+			</image>
+			<image id="7">
+				<description></description>
+				<basefilename>07</basefilename>
+			</image>
+			<image id="8">
+				<description></description>
+				<basefilename>08</basefilename>
+			</image>
+			<image id="9">
+				<description></description>
+				<basefilename>09</basefilename>
+			</image>
+			<image id="10">
+				<description></description>
+				<basefilename>10</basefilename>
+			</image>
+		</images>
+</gallery>
+<gallery id="17">
+	<name>Andermatt ski trip</name>
+	<description>Went on a ski trip to Andermatt, Switzerland over the weekend.</description>
+	<datetime>2008-04-05</datetime>
+	<basedir>andermatt2008</basedir>
+	<frontpic>frontpic.jpg</frontpic>
+		<images>
+			<image id="1">
+				<description>This is the place, Andermatt.</description>
+				<basefilename>01</basefilename>
+			</image>
+			<image id="2">
+				<description>Nice weather all the way up to 3000 meters.</description>
+				<basefilename>02</basefilename>
+			</image>
+			<image id="3">
+				<description>Me. Sorry about the jeans.</description>
+				<basefilename>03</basefilename>
+			</image>
+			<image id="4">
+				<description>Not sure...</description>
+				<basefilename>04</basefilename>
+			</image>
+			<image id="5">
+				<description>Perfect powder.</description>
+				<basefilename>05</basefilename>
+			</image>
+			<image id="6">
+				<description>This guy actually managed to land just fine.</description>
+				<basefilename>06</basefilename>
+			</image>
+			<image id="7">
+				<description>Taking a break.</description>
+				<basefilename>07</basefilename>
+			</image>
+			<image id="8">
+				<description>Sunlight.</description>
+				<basefilename>08</basefilename>
+			</image>
+			<image id="9">
+				<description>The town was extremely picturesque.</description>
+				<basefilename>09</basefilename>
+			</image>
+			<image id="10">
+				<description>Marlene and Karin in the snow.</description>
+				<basefilename>10</basefilename>
+			</image>
+			<image id="11">
+				<description>Heavy snowfall on sunday.</description>
+				<basefilename>11</basefilename>
+			</image>
+			<image id="12">
+				<description>When you fall, at least it is soft.</description>
+				<basefilename>12</basefilename>
+			</image>
+			<image id="13">
+				<description>Full stop.</description>
+				<basefilename>13</basefilename>
+			</image>
+			<image id="14">
+				<description>The sun came out only partially on sunday.</description>
+				<basefilename>14</basefilename>
+			</image>
+		</images>
+</gallery>
+<gallery id="16">
+	<name>Ricoh Caplio R7 sample pics</name>
+	<description>These are some of the first pictures I shot with the R7. All are 3MP and not the full 8MP the camera is capable of.</description>
+	<datetime>2008-02-24</datetime>
+	<basedir>ricohtest</basedir>
+	<frontpic>frontpic.jpg</frontpic>
+		<images>
+			<image id="1">
+				<description></description>
+				<basefilename>01</basefilename>
+			</image>
+			<image id="2">
+				<description></description>
+				<basefilename>02</basefilename>
+			</image>
+			<image id="3">
+				<description></description>
+				<basefilename>03</basefilename>
+			</image>
+			<image id="4">
+				<description></description>
+				<basefilename>04</basefilename>
+			</image>
+			<image id="5">
+				<description></description>
+				<basefilename>05</basefilename>
+			</image>
+			<image id="6">
+				<description></description>
+				<basefilename>06</basefilename>
+			</image>
+			<image id="7">
+				<description></description>
+				<basefilename>07</basefilename>
+			</image>
+			<image id="8">
+				<description></description>
+				<basefilename>08</basefilename>
+			</image>
+			<image id="9">
+				<description></description>
+				<basefilename>09</basefilename>
+			</image>
+			<image id="10">
+				<description></description>
+				<basefilename>10</basefilename>
+			</image>
+			<image id="11">
+				<description></description>
+				<basefilename>11</basefilename>
+			</image>
+			<image id="12">
+				<description></description>
+				<basefilename>12</basefilename>
+			</image>
+			<image id="13">
+				<description></description>
+				<basefilename>13</basefilename>
+			</image>
+		</images>
+</gallery>
+<gallery id="15">
+	<name>Ivy's birthday, karaoke party</name>
+	<description>Ivy's birthday. What would fit better than karaoke?</description>
+	<datetime>2008-02-02</datetime>
+	<basedir>karaoke2008</basedir>
+	<frontpic>frontpic.jpg</frontpic>
+		<images>
+			<image id="1">
+				<description></description>
+				<basefilename>01</basefilename>
+			</image>
+			<image id="2">
+				<description></description>
+				<basefilename>02</basefilename>
+			</image>
+			<image id="3">
+				<description></description>
+				<basefilename>03</basefilename>
+			</image>
+			<image id="4">
+				<description></description>
+				<basefilename>04</basefilename>
+			</image>
+			<image id="5">
+				<description></description>
+				<basefilename>05</basefilename>
+			</image>
+			<!--
+			<image id="6">
+				<description></description>
+				<basefilename>06</basefilename>
+			</image>
+			-->
+			<image id="7">
+				<description></description>
+				<basefilename>07</basefilename>
+			</image>
+			<image id="8">
+				<description></description>
+				<basefilename>08</basefilename>
+			</image>
+			<image id="9">
+				<description></description>
+				<basefilename>09</basefilename>
+			</image>
+			<image id="10">
+				<description></description>
+				<basefilename>10</basefilename>
+			</image>
+			<image id="11">
+				<description></description>
+				<basefilename>11</basefilename>
+			</image>
+		</images>
+</gallery>
+<gallery id="14">
+	<name>Paris trip</name>
+	<description>Me and Ivy went to Paris over the weekend.</description>
+	<datetime>2008-01-30</datetime>
+	<basedir>paris2008</basedir>
+	<frontpic>frontpic.jpg</frontpic>
+		<images>
+			<image id="1">
+				<description></description>
+				<basefilename>01</basefilename>
+			</image>
+			<image id="2">
+				<description></description>
+				<basefilename>02</basefilename>
+			</image>
+			<image id="3">
+				<description></description>
+				<basefilename>03</basefilename>
+			</image>
+			<image id="4">
+				<description></description>
+				<basefilename>04</basefilename>
+			</image>
+			<image id="5">
+				<description></description>
+				<basefilename>05</basefilename>
+			</image>
+			<image id="6">
+				<description></description>
+				<basefilename>06</basefilename>
+			</image>
+			<image id="7">
+				<description></description>
+				<basefilename>07</basefilename>
+			</image>
+			<image id="8">
+				<description></description>
+				<basefilename>08</basefilename>
+			</image>
+			<image id="9">
+				<description></description>
+				<basefilename>09</basefilename>
+			</image>
+			<image id="10">
+				<description></description>
+				<basefilename>10</basefilename>
+			</image>
+			<image id="11">
+				<description></description>
+				<basefilename>11</basefilename>
+			</image>
+			<image id="12">
+				<description></description>
+				<basefilename>12</basefilename>
+			</image>
+		</images>
+</gallery>
+<gallery id="13">
+	<name>Turkey trip</name>
+	<description>Me and Ivy went to Turkey for a week.</description>
+	<datetime>2007-10-01</datetime>
+	<basedir>turkey2007</basedir>
+	<frontpic>frontpic.jpg</frontpic>
+		<images>
+			<image id="1">
+				<description></description>
+				<basefilename>01</basefilename>
+			</image>
+			<image id="2">
+				<description></description>
+				<basefilename>02</basefilename>
+			</image>
+			<image id="3">
+				<description></description>
+				<basefilename>03</basefilename>
+			</image>
+			<image id="4">
+				<description></description>
+				<basefilename>04</basefilename>
+			</image>
+			<image id="5">
+				<description></description>
+				<basefilename>05</basefilename>
+			</image>
+			<image id="6">
+				<description></description>
+				<basefilename>06</basefilename>
+			</image>
+			<image id="7">
+				<description></description>
+				<basefilename>07</basefilename>
+			</image>
+			<image id="8">
+				<description></description>
+				<basefilename>08</basefilename>
+			</image>
+			<image id="9">
+				<description></description>
+				<basefilename>09</basefilename>
+			</image>
+			<image id="10">
+				<description></description>
+				<basefilename>10</basefilename>
+			</image>
+			<image id="11">
+				<description></description>
+				<basefilename>11</basefilename>
+			</image>
+			<image id="12">
+				<description></description>
+				<basefilename>12</basefilename>
+			</image>
+			<image id="13">
+				<description></description>
+				<basefilename>13</basefilename>
+			</image>
+			<image id="14">
+				<description></description>
+				<basefilename>14</basefilename>
+			</image>
+			<image id="15">
+				<description></description>
+				<basefilename>15</basefilename>
+			</image>
+			<image id="16">
+				<description></description>
+				<basefilename>16</basefilename>
+			</image>
+			<image id="17">
+				<description></description>
+				<basefilename>17</basefilename>
+			</image>
+			<image id="18">
+				<description></description>
+				<basefilename>18</basefilename>
+			</image>
+		</images>
+</gallery>
+<gallery id="12">
+	<name>Still summer</name>
+	<description>September, street party.</description>
+	<datetime>2007-09-15</datetime>
+	<basedir>septembersommar2007</basedir>
+	<frontpic>frontpic.jpg</frontpic>
+		<images>
+			<image id="1">
+				<description></description>
+				<basefilename>01</basefilename>
+			</image>
+			<image id="2">
+				<description></description>
+				<basefilename>02</basefilename>
+			</image>
+			<image id="3">
+				<description></description>
+				<basefilename>03</basefilename>
+			</image>
+			<image id="4">
+				<description></description>
+				<basefilename>04</basefilename>
+			</image>
+			<image id="5">
+				<description></description>
+				<basefilename>05</basefilename>
+			</image>
+			<image id="6">
+				<description></description>
+				<basefilename>06</basefilename>
+			</image>
+			<image id="7">
+				<description></description>
+				<basefilename>07</basefilename>
+			</image>
+			<image id="8">
+				<description></description>
+				<basefilename>08</basefilename>
+			</image>
+		</images>
+</gallery>
+<gallery id="11">
+	<name>Parents visit - August</name>
+	<description>We went to R&amp;uuml;desheim. Nice weather - at least the first few days.</description>
+	<datetime>2007-08-11</datetime>
+	<basedir>m_o_p_frankfurt_aug2007</basedir>
+	<frontpic>frontpic.jpg</frontpic>
+		<images>
+			<image id="1">
+				<description></description>
+				<basefilename>01</basefilename>
+			</image>
+			<image id="2">
+				<description></description>
+				<basefilename>02</basefilename>
+			</image>
+			<image id="3">
+				<description></description>
+				<basefilename>03</basefilename>
+			</image>
+			<image id="4">
+				<description></description>
+				<basefilename>04</basefilename>
+			</image>
+			<image id="5">
+				<description></description>
+				<basefilename>05</basefilename>
+			</image>
+			<image id="6">
+				<description></description>
+				<basefilename>06</basefilename>
+			</image>
+			<image id="7">
+				<description></description>
+				<basefilename>07</basefilename>
+			</image>
+			<image id="8">
+				<description></description>
+				<basefilename>08</basefilename>
+			</image>
+			<image id="9">
+				<description></description>
+				<basefilename>09</basefilename>
+			</image>
+			<image id="10">
+				<description></description>
+				<basefilename>10</basefilename>
+			</image>
+			<image id="11">
+				<description></description>
+				<basefilename>11</basefilename>
+			</image>
+			<image id="12">
+				<description></description>
+				<basefilename>12</basefilename>
+			</image>
+			<image id="13">
+				<description></description>
+				<basefilename>13</basefilename>
+			</image>
+			<image id="14">
+				<description></description>
+				<basefilename>14</basefilename>
+			</image>
+			<image id="15">
+				<description></description>
+				<basefilename>15</basefilename>
+			</image>
+		</images>
+</gallery>
+<gallery id="10">
+	<name>My birthday</name>
+	<description>I got the best birthday present ever!</description>
+	<datetime>2007-07-30</datetime>
+	<basedir>jag24</basedir>
+	<frontpic>frontpic.jpg</frontpic>
+		<images>
+			<image id="1">
+				<description></description>
+				<basefilename>01</basefilename>
+			</image>
+			<image id="2">
+				<description></description>
+				<basefilename>02</basefilename>
+			</image>
+			<image id="3">
+				<description></description>
+				<basefilename>03</basefilename>
+			</image>
+			<image id="4">
+				<description></description>
+				<basefilename>04</basefilename>
+			</image>
+			<image id="5">
+				<description></description>
+				<basefilename>05</basefilename>
+			</image>
+			<image id="6">
+				<description></description>
+				<basefilename>06</basefilename>
+			</image>
+			<image id="7">
+				<description></description>
+				<basefilename>07</basefilename>
+			</image>
+			<image id="8">
+				<description></description>
+				<basefilename>08</basefilename>
+			</image>
+			<image id="9">
+				<description></description>
+				<basefilename>09</basefilename>
+			</image>
+			<image id="10">
+				<description></description>
+				<basefilename>10</basefilename>
+			</image>
+			<image id="11">
+				<description></description>
+				<basefilename>11</basefilename>
+			</image>
+		</images>
+</gallery>
+<gallery id="9">
+	<name>Johan's farewell party</name>
+	<description>Lots of people, lots to drink, little space.</description>
+	<datetime>2007-07-21</datetime>
+	<basedir>johanparty2007</basedir>
+	<frontpic>frontpic.jpg</frontpic>
+		<images>
+			<image id="1">
+				<description>Is this some traditional german ritual?</description>
+				<basefilename>01</basefilename>
+			</image>
+			<image id="2">
+				<description>The gift was a flight back to germany.</description>
+				<basefilename>02</basefilename>
+			</image>
+			<image id="3">
+				<description>Can you see the swedish flag?</description>
+				<basefilename>03</basefilename>
+			</image>
+			<image id="4">
+				<description>Me and Ivy.</description>
+				<basefilename>04</basefilename>
+			</image>
+			<image id="5">
+				<description>For more information, please google "stampa med leroy".</description>
+				<basefilename>05</basefilename>
+			</image>
+			<image id="6">
+				<description></description>
+				<basefilename>06</basefilename>
+			</image>
+			<image id="7">
+				<description>Obstwasser: Bad for your eyesight.</description>
+				<basefilename>07</basefilename>
+			</image>
+			<image id="8">
+				<description></description>
+				<basefilename>08</basefilename>
+			</image>
+			<image id="9">
+				<description>Colleagues.</description>
+				<basefilename>09</basefilename>
+			</image>
+		</images>
+</gallery>
+<gallery id="8">
+	<name>Erica's party</name>
+	<description>We had a lot of fun. We'll miss you!</description>
+	<datetime>2007-07-08</datetime>
+	<basedir>ericaparty</basedir>
+	<frontpic>frontpic.jpg</frontpic>
+		<images>
+			<image id="1">
+				<description>This is us.</description>
+				<basefilename>01</basefilename>
+			</image>
+			<image id="2">
+				<description>Hej</description>
+				<basefilename>02</basefilename>
+			</image>
+			<image id="3">
+				<description>Also entertainment.</description>
+				<basefilename>03</basefilename>
+			</image>
+			<image id="4">
+				<description>Most swedish girls look like this. Roughly.</description>
+				<basefilename>04</basefilename>
+			</image>
+			<image id="5">
+				<description>It gets dark quickly.</description>
+				<basefilename>05</basefilename>
+			</image>
+			<image id="6">
+				<description>Fun with balloons.</description>
+				<basefilename>06</basefilename>
+			</image>
+			<image id="7">
+				<description>Nudeleis. This is really noodles mixed with ice cream.</description>
+				<basefilename>07</basefilename>
+			</image>
+			<image id="9">
+				<description>Persian restaurant.</description>
+				<basefilename>09</basefilename>
+			</image>
+			<image id="10">
+				<description>Persian restaurant again.</description>
+				<basefilename>10</basefilename>
+			</image>
+			<image id="11">
+				<description>We went to some nice bar.</description>
+				<basefilename>11</basefilename>
+			</image>
+		</images>
+</gallery>
+<gallery id="7">
+	<name>Midsommar 2007</name>
+	<description>Important day for us swedish people. It was raining as usual.</description>
+	<datetime>2007-06-22</datetime>
+	<basedir>midsommar2007</basedir>
+	<frontpic>frontpic.jpg</frontpic>
+		<images>
+			<image id="1">
+				<description>We eat this food only three times a year.</description>
+				<basefilename>01</basefilename>
+			</image>
+			<image id="2">
+				<description>Potatoes and stuff</description>
+				<basefilename>02</basefilename>
+			</image>
+			<image id="3">
+				<description>We pretended to have a picnic and sat on the floor.</description>
+				<basefilename>03</basefilename>
+			</image>
+			<image id="4">
+				<description>Also kn&amp;auml;ckebr&amp;ouml;d.</description>
+				<basefilename>04</basefilename>
+			</image>
+			<image id="5">
+				<description>My friends.</description>
+				<basefilename>05</basefilename>
+			</image>
+			<image id="6">
+				<description>I celebrated midsommar and got this happy.</description>
+				<basefilename>06</basefilename>
+			</image>
+			<image id="7">
+				<description>My friends again.</description>
+				<basefilename>07</basefilename>
+			</image>
+			<image id="8">
+				<description>...</description>
+				<basefilename>08</basefilename>
+			</image>
+			<image id="9">
+				<description>Synchronized drinking.</description>
+				<basefilename>09</basefilename>
+			</image>
+		</images>
+</gallery>
+<gallery id="6">
+	<name>Austria trip, april 2006.</name>
+	<description>We go to Austria. Great weather, great beer.</description>
+	<datetime>2006-04-01</datetime>
+	<basedir>osterrike2006</basedir>
+	<frontpic>frontpic.jpg</frontpic>
+		<images>
+			<image id="1">
+				<description>My friends.</description>
+				<basefilename>01</basefilename>
+			</image>
+			<image id="2">
+				<description>Mountains, you know.</description>
+				<basefilename>02</basefilename>
+			</image>
+			<image id="3">
+				<description>This girl was rejected from the group after using foul words.</description>
+				<basefilename>03</basefilename>
+			</image>
+			<image id="4">
+				<description>We rented our equipment from some danish-speaking guy. What was his name again? Something macho, like "storm" or something. Anyway...</description>
+				<basefilename>04</basefilename>
+			</image>
+			<image id="5">
+				<description>Mountains again.</description>
+				<basefilename>05</basefilename>
+			</image>
+			<image id="6">
+				<description>Hey, this is not even a good picture...</description>
+				<basefilename>06</basefilename>
+			</image>
+			<image id="7">
+				<description>Sky with some shiny object in front of it.</description>
+				<basefilename>07</basefilename>
+			</image>
+			<image id="8">
+				<description>This is how you ski in Karstadt.</description>
+				<basefilename>08</basefilename>
+			</image>
+			<image id="9">
+				<description>It seems like I have zero interesting pictures with people from this trip.</description>
+				<basefilename>09</basefilename>
+			</image>
+		</images>
+  </gallery>
+<gallery id="5">
+	<name>Sweden-Paraguay.</name>
+	<description>FIFA 2006. Sweden wins, 1-0.</description>
+	<datetime>2006-06-14</datetime>
+	<basedir>sverige_paraguay</basedir>
+	<frontpic>frontpic.jpg</frontpic>
+		<images>
+			<image id="1">
+				<description>Big screen.</description>
+				<basefilename>01</basefilename>
+			</image>
+			<image id="2">
+				<description>Looks a bit like my tv.</description>
+				<basefilename>02</basefilename>
+			</image>
+			<image id="3">
+				<description>The crowd.</description>
+				<basefilename>03</basefilename>
+			</image>
+			<image id="4">
+				<description>Yes, swedish happy people.</description>
+				<basefilename>04</basefilename>
+			</image>
+			<image id="5">
+				<description>[Insert funny comment here]</description>
+				<basefilename>05</basefilename>
+			</image>
+			<image id="6">
+				<description>Sweden wins!</description>
+				<basefilename>06</basefilename>
+			</image>
+			<image id="7">
+				<description>This is how we usually sing the national anthem.</description>
+				<basefilename>07</basefilename>
+			</image>
+			<image id="8">
+				<description>In case you wonder, this is the latest book cover with Fabio.</description>
+				<basefilename>08</basefilename>
+			</image>
+		</images>
+  </gallery>
+<gallery id="4">
+	<name>Sweden and Denmark trip.</name>
+	<description>I like Sweden.</description>
+	<datetime>2007-06-09</datetime>
+	<basedir>sweden2007</basedir>
+	<frontpic>frontpic.jpg</frontpic>
+		<images>
+			<image id="2">
+				<description>We found some piglets and tried to make close-up shots.</description>
+				<basefilename>02</basefilename>
+			</image>
+			<image id="1">
+				<description>Helsingborg!</description>
+				<basefilename>01</basefilename>
+			</image>
+			<image id="3">
+				<description>Ivy; close to Nyhavn.</description>
+				<basefilename>03</basefilename>
+			</image>
+			<image id="4">
+				<description>Ivy again. This is somewhere south of the famous mermaid.</description>
+				<basefilename>04</basefilename>
+			</image>
+			<image id="5">
+				<description>How impressive is this anyway? More famous than impressive, I would say.</description>
+				<basefilename>05</basefilename>
+			</image>
+			<image id="6">
+				<description>Christiania. It's still 1970 around here. On the wall: "When I hear the word culture, I release the safety of my gun."</description>
+				<basefilename>06</basefilename>
+			</image>
+			<image id="7">
+				<description>Hjo, next to V&amp;auml;ttern.</description>
+				<basefilename>07</basefilename>
+			</image>
+			<image id="8">
+				<description>V&amp;auml;ttern again, right next to my parents' cottage.</description>
+				<basefilename>08</basefilename>
+			</image>
+			<image id="9">
+				<description>Me.</description>
+				<basefilename>09</basefilename>
+			</image>
+			<image id="10">
+				<description>Ivy and Matilda.</description>
+				<basefilename>10</basefilename>
+			</image>
+			<image id="11">
+				<description>Last day in Sweden.</description>
+				<basefilename>11</basefilename>
+			</image>
+			<image id="12">
+				<description>My old school (0-9).</description>
+				<basefilename>12</basefilename>
+			</image>
+		</images>
+  </gallery>
+  <gallery id="3">
+	<name>Second cardboard computer.</name>
+	<description>Got some new hardware and needed to upgrade.</description>
+	<datetime>2007-06-14</datetime>
+	<basedir>cardboard2</basedir>
+	<frontpic>frontpic.jpg</frontpic>
+		<images>
+			<image id="1">
+				<description>Without the box. Looks messy, but it starts!</description>
+				<basefilename>01</basefilename>
+			</image>
+			<image id="2">
+				<description>The box. Apparently used for A3-letters.</description>
+				<basefilename>02</basefilename>
+			</image>
+			<image id="3">
+				<description>Cut some holes and put everything in. Fits perfectly.</description>
+				<basefilename>03</basefilename>
+			</image>
+			<image id="4">
+				<description>Trying out Ubuntu.</description>
+				<basefilename>04</basefilename>
+			</image>
+			<image id="5">
+				<description>With cover on, the computer has a simple and clean look to it. And easy to maintain; just take the cover off again.</description>
+				<basefilename>05</basefilename>
+			</image>
+			<image id="6">
+				<description>Maybe not the best place for an optical unit...</description>
+				<basefilename>06</basefilename>
+			</image>
+		</images>
+  </gallery>
+<gallery id="2">
+	<name>Hongkong trip.</name>
+	<description>Me and my girlfriend went to Hongkong and China. A very special trip.</description>
+	<datetime>2007-03-15</datetime>
+	<basedir>hongkong</basedir>
+	<frontpic>frontpic.jpg</frontpic>
+		<images>
+			<image id="0">
+				<basefilename>01</basefilename>
+				<description>Pineapple buns! I went crazy over these.</description>
+			</image>
+			<image id="1">
+				<description>Me. Also note Hongkong in the background.</description>
+				<basefilename>02</basefilename>
+			</image>
+			<image id="2">
+				<description>The harbor. Apparently the world biggest.</description>
+				<basefilename>03</basefilename>
+			</image>
+			<image id="3">
+				<description>The Buddha statue is somewhere on the other side.</description>
+				<basefilename>04</basefilename>
+			</image>
+			<image id="4">
+				<description>He is not so big after all.</description>
+				<basefilename>05</basefilename>
+			</image>
+			<image id="5">
+				<description>Dense.</description>
+				<basefilename>06</basefilename>
+			</image>
+			<image id="6">
+				<description>Become a farmer! (Cow sold separately.)</description>
+				<basefilename>07</basefilename>
+			</image>
+			<image id="7">
+				<description>I want to reclaim my tax. It is here, right?</description>
+				<basefilename>08</basefilename>
+			</image>
+			<image id="8">
+				<description>Calm day at the beach.</description>
+				<basefilename>09</basefilename>
+			</image>
+			<image id="9">
+				<description>A living city.</description>
+				<basefilename>10</basefilename>
+			</image>
+			<image id="10">
+				<description>Victoria Peak. Tripod, anyone?</description>
+				<basefilename>11</basefilename>
+			</image>
+		</images>
+  </gallery>
+  <gallery id="1">
+	<name>The cardboard computer.</name>
+	<description>100% recycled parts!</description>
+	<datetime>2007-02-22</datetime>
+	<basedir>cardboard</basedir>
+	<frontpic>frontpic.jpg</frontpic>
+		<images>
+			<image id="5">
+				<description>The box.</description>
+				<basefilename>06</basefilename>
+			</image>
+			<image id="4">
+				<description>Putting the motherboard in place.</description>
+				<basefilename>05</basefilename>
+			</image>
+			<image id="3">
+				<description>It actually starts! Running Puppy Linux.</description>
+				<basefilename>04</basefilename>
+			</image>
+			<image id="2">
+				<description>The inside. Still lots of space.</description>
+				<basefilename>03</basefilename>
+			</image>
+			<image id="0">
+				<basefilename>01</basefilename>
+				<description>This is the soft-power switch.</description>
+			</image>
+			<image id="1">
+				<description>The easy-to-access ports.</description>
+				<basefilename>02</basefilename>
+			</image>
+		</images>
+  </gallery>
+  <gallery id="0">
+	<name>Some nice pictures.</name>
+	<description>Taken with a simple digital camera at random places.</description>
+	<datetime></datetime>
+	<basedir>nice</basedir>
+	<frontpic>frontpic.jpg</frontpic>
+		<images>
+			<image id="1">
+				<description>A white flower. Shot close to my office.</description>
+				<basefilename>01</basefilename>
+			</image>
+			<image id="2">
+				<description>Some grass.</description>
+				<basefilename>02</basefilename>
+			</image>
+			<image id="3">
+				<description>A nice-looking sky.</description>
+				<basefilename>03</basefilename>
+			</image>
+			<image id="4">
+				<description>Sunset.</description>
+				<basefilename>04</basefilename>
+			</image>
+			<image id="5">
+				<basefilename>05</basefilename>
+				<description>Nice plant.</description>
+			</image>
+		</images>
+  </gallery>
+</galleries>

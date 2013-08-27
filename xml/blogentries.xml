@@ -1,0 +1,66 @@
+<?xml version="1.0"?>
+<blog>
+	<entries>
+	<entry><datetime>2008-01-24 20:45</datetime><header>Site created</header><body>Not much content yet. When I have time (and content) I will take care of that. At least there are some pictures under &amp;quot;Image gallery&amp;quot;.</body></entry><entry><datetime>2008-01-24 20:45</datetime><header>Guestbook</header><body>2007-06-14: Just finished implementing a guestbook using XML and PHP. The feature is still new and may be somewhat immature - but &amp;lt;a href=&amp;quot;guestbook.php&amp;quot;&amp;gt;try it out&amp;lt;/a&amp;gt; anyway.</body></entry><entry><datetime>2008-01-24 20:46</datetime><header>New Images</header><body>2007-06-12: Took some pictures when I was in Sweden and Denmark recently, make sure to check out the &amp;lt;a href=&amp;quot;images.php&amp;quot;&amp;gt;Image gallery&amp;lt;/a&amp;gt;.</body></entry><entry><datetime>2008-01-24 20:46</datetime><header>Poetry</header><body>Expressing deep feelings should be done with some care. And with style. &#xD;
+I have therefore written a haiku which I believe will make you understand me better.&#xD;
+&amp;lt;/p&amp;gt;&#xD;
+&#xD;
+&amp;lt;p&amp;gt;&#xD;
+&amp;lt;i&amp;gt;&#xD;
+Danger this way comes&amp;lt;br /&amp;gt;&#xD;
+Internet Explorer 6&amp;lt;br /&amp;gt;&#xD;
+Webstandards tremble&amp;lt;br /&amp;gt;&#xD;
+&amp;lt;/i&amp;gt;&#xD;
+&amp;lt;/p&amp;gt;&#xD;
+&#xD;
+&amp;lt;p&amp;gt;Phew. Have to run, I think I'm late for Klingon class. ;)</body></entry><entry><datetime>2008-01-24 20:47</datetime><header>By request (embedding?)</header><body>Gah, why doesn't this embedding thing work? Anyway, when I have googled some more I'll change this, but in the meantime, just grab&#xD;
+funny video where we sing for Johan from this &amp;lt;a href=&amp;quot;videos/johan30.avi&amp;quot;&amp;gt;simple link.&amp;lt;/a&amp;gt; (17MB)&#xD;
+&amp;lt;br /&amp;gt;&#xD;
+&amp;lt;b&amp;gt;Edit:&amp;lt;/b&amp;gt; Hey, it was simple. Please ignore the above. :)&#xD;
+&amp;lt;/p&amp;gt;&amp;lt;p&amp;gt;&#xD;
+&amp;lt;b&amp;gt;Edit again:&amp;lt;/b&amp;gt; Gaaahhh!!! Stupid. Trying to make a compliant page just to see it break because of some predefined embedded flash stuff. Well, it looks okay anyway.&#xD;
+&amp;lt;/p&amp;gt;&#xD;
+&amp;lt;p&amp;gt;&#xD;
+&amp;lt;b&amp;gt;Edit a third time:&amp;lt;/b&amp;gt; Removed the video because it was annoying. Use the link instead.</body></entry><entry><datetime>2008-01-24 20:47</datetime><header>New style sheet added</header><body>2007-08-11: To make the site feel more updated, I added a new template, &amp;quot;PickyMedia&amp;quot;. This is also set as the default template. &#xD;
+Note that it uses liquid layout, making the contents fill out the whole page.&#xD;
+&amp;lt;/p&amp;gt;&#xD;
+&#xD;
+&amp;lt;p&amp;gt;&#xD;
+Also, my parent came to visit me. Took some pictures and added to the &amp;lt;a href=&amp;quot;images.php?galleryid=11&amp;quot;&amp;gt;image gallery&amp;lt;/a&amp;gt;.</body></entry><entry><datetime>2008-01-24 20:55</datetime><header>Security hole?</header><body>As we all know by now, each time someone comes up with something fun (like online banking) someone else always comes up with something even more fun (like phishing). In this case, I just added an admin-interface to this page, effectively turning it into something like a blog. I guess that's a lot of fun until someone hacks the page and inject malicious code into it. Lol.&#xD;
+&amp;lt;/p&amp;gt;&#xD;
+&amp;lt;p&amp;gt;&#xD;
+Aah, just forget it. Here you go, &amp;lt;a href=&amp;quot;http://www.youtube.com/watch?v=Wz-mJed_bP0&amp;quot;&amp;gt;a  funny video!&amp;lt;/a&amp;gt; ^_^</body></entry><entry><datetime>2008-01-31 23:33</datetime><header>Paris trip</header><body>&amp;lt;/p&amp;gt;&#xD;
+&amp;lt;a href=&amp;quot;images.php?galleryid=14&amp;quot;&amp;gt;&amp;lt;img alt=&amp;quot;paris&amp;quot; src=&amp;quot;images/misc/parisgrej.jpg&amp;quot; style=&amp;quot;float: left;&amp;quot; class=&amp;quot;image&amp;quot; /&amp;gt;&amp;lt;/a&amp;gt;&amp;lt;p&amp;gt;&#xD;
+Went on a trip to Paris. Never been there before. I was surprised to find the city so... interesting, even if it all felt somewhat clich&amp;eacute;. I mean, how fun could that Eiffel tower really be? Turned out to be a lot of fun actually. Especially the lady next to it with the jumping dog (should include some picture of that maybe.)&amp;lt;/p&amp;gt;&#xD;
+&amp;lt;p&amp;gt;&#xD;
+&amp;lt;a href=&amp;quot;images.php?galleryid=14&amp;quot;&amp;gt;Check out the images anyway&amp;lt;/a&amp;gt;.</body></entry><entry><datetime>2008-02-07 23:15</datetime><header>Karaoke party!</header><body>Uploaded some picures from the &amp;lt;a href=&amp;quot;images.php?galleryid=15&amp;quot;&amp;gt;karaoke party&amp;lt;/a&amp;gt;. I got so inspired that I'm seriously thinking about getting some karaoke software and a pair of wireless microphones. Ivy seems to like the idea anyway. ;)</body></entry><entry><datetime>2008-02-10 02:16</datetime><header>New style added - again</header><body>Yes! Boredom breeds creativity. Except I have not really created anything, just copied some design idea that looked cool and merged with something that already existed on this page. But on the other hand, since when is that not considered creative? Check out the &amp;lt;a href=&amp;quot;index.php?style=urban&amp;quot;&amp;gt;new style&amp;lt;/a&amp;gt; yourself.</body></entry><entry><datetime>2008-02-24 18:18</datetime><header>Ricoh Caplio R7 mini-review</header><body>Bought a new camera about a week ago since I got tired of the old one (Casio Z60). Instead of playing it safe and just go with any Canon IXUS (basically, all IXUS cameras provide great bang for the buck) I decided to go for a Ricoh Caplio R7. Featuring 8MP and a 7.1x optical zoom in a very small format, it seemed like a steal for 217 EUR. And so far, I'm very satisfied with it. Here is what I have concluded so far:&#xD;
+&amp;lt;/p&amp;gt;&#xD;
+&amp;lt;p&amp;gt;&amp;lt;b&amp;gt;The good:&amp;lt;/b&amp;gt;&amp;lt;/p&amp;gt;&#xD;
+&amp;lt;ul&amp;gt;&#xD;
+&amp;lt;li&amp;gt;Good color reproduction&amp;lt;/li&amp;gt;&#xD;
+&amp;lt;li&amp;gt;7.1x zoom (can't be bad)&amp;lt;/li&amp;gt;&#xD;
+&amp;lt;li&amp;gt;Good macro (1cm, or 25cm at full zoom)&amp;lt;/li&amp;gt;&#xD;
+&amp;lt;li&amp;gt;Standard mini-usb cable, standard (hc)sd-card&amp;lt;/li&amp;gt;&#xD;
+&amp;lt;li&amp;gt;Lots of settings to play around with (including manual focus), easily accessible using the dedicated &amp;quot;adj&amp;quot;-joystick&amp;lt;/li&amp;gt;&#xD;
+&amp;lt;/ul&amp;gt;&#xD;
+&amp;lt;p&amp;gt;&amp;lt;b&amp;gt;The bad:&amp;lt;/b&amp;gt;&amp;lt;/p&amp;gt;&#xD;
+&amp;lt;ul&amp;gt;&#xD;
+&amp;lt;li&amp;gt;Somewhat loud (startup, focusing, zooming)&amp;lt;/li&amp;gt;&#xD;
+&amp;lt;li&amp;gt;Diagonal lines on display look jagged&amp;lt;/li&amp;gt;&#xD;
+&amp;lt;li&amp;gt;Slow focus, unable to focus at times&amp;lt;/li&amp;gt;&#xD;
+&amp;lt;li&amp;gt;Struggles somewhat under low-light conditions&amp;lt;/li&amp;gt;&#xD;
+&amp;lt;/ul&amp;gt;&#xD;
+&amp;lt;p&amp;gt;&#xD;
+Check out some &amp;lt;a href=&amp;quot;images.php?galleryid=16&amp;quot;&amp;gt;sample pictures&amp;lt;/a&amp;gt; from the gallery. Note that all pictures are shot at 3MP (lame, I know).</body></entry><entry><datetime>2008-03-07 22:19</datetime><header>Tin-foil hat</header><body>Whoa. This is just the kind of thing the internet was invented for. Seems like the great conspiracy exists after all. Guess I will have to check youtube for some guide on tin foil origami.&#xD;
+&amp;lt;/p&amp;gt;&#xD;
+&amp;lt;p&amp;gt;&#xD;
+&amp;lt;object width=&amp;quot;425&amp;quot; height=&amp;quot;355&amp;quot;&amp;gt;&amp;lt;param name=&amp;quot;movie&amp;quot; value=&amp;quot;http://www.youtube.com/v/NpFu_bYkomc&amp;quot;&amp;gt;&amp;lt;/param&amp;gt;&amp;lt;param name=&amp;quot;wmode&amp;quot; value=&amp;quot;transparent&amp;quot;&amp;gt;&amp;lt;/param&amp;gt;&amp;lt;embed src=&amp;quot;http://www.youtube.com/v/NpFu_bYkomc&amp;quot; type=&amp;quot;application/x-shockwave-flash&amp;quot; wmode=&amp;quot;transparent&amp;quot; width=&amp;quot;425&amp;quot; height=&amp;quot;355&amp;quot;&amp;gt;&amp;lt;/embed&amp;gt;&amp;lt;/object&amp;gt;</body></entry><entry><datetime>2008-04-08 19:39</datetime><header>Andermatt ski trip</header><body>Just came back from Switzerland, had a short trip over the weekend with some friends. Had a great time! As usual, make sure to check the &amp;lt;a href=&amp;quot;images.php?galleryid=17&amp;quot;&amp;gt;image gallery&amp;lt;/a&amp;gt;.</body></entry><entry><datetime>2008-05-08 22:02</datetime><header>Limburg trip</header><body>Summer seems to be back already, at least judging from the rising ice-cream consumption. And of course &amp;lt;a href=&amp;quot;http://erikmoberg.net/images.php?galleryid=18&amp;quot;&amp;gt;these nice pics&amp;lt;/a&amp;gt; I shot last week.</body></entry><entry><datetime>2008-05-25 17:22</datetime><header>New style added</header><body>As my drawing skills are worthless, I asked a friend for some help in creating a comic-like design. Note that the art used is created by her and she should get all credits. :) Try out the new &amp;lt;a href=&amp;quot;/?style=karin&amp;quot;&amp;gt;style&amp;lt;/a&amp;gt; or/and visit her &amp;lt;a href=&amp;quot;http://www.karinkall.se/&amp;quot;&amp;gt;homepage&amp;lt;/a&amp;gt;.</body></entry><entry><datetime>2008-08-12 23:49</datetime><header>New thumbnail gallery</header><body>Finding the image gallery a bit cumbersome to use, but on the other hand being too lazy to create a new one from scratch, I decided to use &amp;lt;a href=&amp;quot;http://vikjavev.no/highslide/&amp;quot;&amp;gt;Highslide JS&amp;lt;/a&amp;gt;. This nice piece of JavaScript software really adds a new dimension to the gallery, making it easier to use and looking great at the same time. It also makes the page feel more - no matter how much I hate the term - Web 2.0.&amp;lt;/p&amp;gt;&#xD;
+&amp;lt;p&amp;gt;&#xD;
+Make sure to &amp;lt;a href=&amp;quot;images.php&amp;quot;&amp;gt;check it out&amp;lt;/a&amp;gt;.</body></entry><entry><datetime>2008-09-11 23:47</datetime><header>No pictures?</header><body>Haven't added too many pictures to the image gallery lately. Partly because I'm lazy, but mainly because my Ricoh R7 broke. The flimsy lens cover would not open completely and I sent it back. This was the end of June. About a month later, Ricoh sent me a new one back. Funnily, it had almost exactly the same lens cover related problem (in other words, it was DOA) and got sent back as well. So I finally got the camera in the end of August. And it seems to work, too. Nice, had to take all my vacation pictures with my old, half-way broken Casio.&#xD;
+&amp;lt;/p&amp;gt;&#xD;
+&amp;lt;p&amp;gt;&#xD;
+Hint of the day: Before considering Ricoh, consider every other brand first.</body></entry><entry><datetime>2008-12-15 22:04</datetime><header>Winter again</header><body>&amp;lt;img src=&amp;quot;http://www.erikmoberg.net/images/winter2008/10_thumb.jpg&amp;quot; alt=&amp;quot;winter&amp;quot; style=&amp;quot;float: left;&amp;quot; class=&amp;quot;image&amp;quot; /&amp;gt;Just came back from a weekend trip to Baden-Baden. We found - surprisingly - a lot of snow there. Makes me miss Sweden a little bit. Since the Ricoh was working again (...), I took a few shots (check the image gallery as usual).&amp;lt;/p&amp;gt;&amp;lt;p&amp;gt;And by the way... merry christmas everyone. :)</body></entry><entry><datetime>2009-03-29 14:32</datetime><header>China trip</header><body>Just came back from a three-week trip in China, this time visiting Beijing, Shanghai and Hong Kong. I had a really good time and took a lot of pictures. Be sure to &amp;lt;a href=&amp;quot;images.php?galleryid=22&amp;quot;&amp;gt;check them out&amp;lt;/a&amp;gt;.&#xD;
+&amp;lt;/p&amp;gt;&#xD;
+&amp;lt;p&amp;gt;&#xD;
+I was also happy to see that this page is perfectly reachable from China without using any proxy. So if any mainland chinese are reading this: Get out while you can, it's a trap! ;)</body></entry><entry><datetime>2009-08-02 23:34</datetime><header>New camera - Canon 1000D</header><body>Just got myself a new camera. This time a Canon 1000D - my first DSRL. So far, I am very pleased with the camera even though I am still learning and experimenting a lot. I will post a short review when I have more sample pictures.</body></entry></entries>
+</blog>

@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfHiresImageEntry xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <HiresImageEntry>
+    <Title>Water Drop - 1</Title>
+    <Comment />
+    <BaseFileName>water_drop_-_1</BaseFileName>
+    <Id>60703f75-c150-41c1-847e-4819e7372004</Id>
+    <DateTime>2011-04-25</DateTime>
+  </HiresImageEntry>
+  <HiresImageEntry>
+    <Title>Water Drop - 2</Title>
+    <Comment />
+    <BaseFileName>water_drop_-_2</BaseFileName>
+    <Id>c708c393-4653-4410-8ac6-5841844d1888</Id>
+    <DateTime>2011-04-25</DateTime>
+  </HiresImageEntry>
+  <HiresImageEntry>
+    <Title>Water Drop - 3</Title>
+    <Comment />
+    <BaseFileName>water_drop_-_3</BaseFileName>
+    <Id>5ec04227-816c-4df3-a330-e5b9f57ba388</Id>
+    <DateTime>2011-04-25</DateTime>
+  </HiresImageEntry>
+  <HiresImageEntry>
+    <Title>Hong Kong Tram</Title>
+    <Comment />
+    <BaseFileName>hong_kong_tram</BaseFileName>
+    <Id>b4268cd8-6206-473c-9420-d6a41e862f38</Id>
+    <DateTime>2011-04-25</DateTime>
+  </HiresImageEntry>
+  <HiresImageEntry>
+    <Title>Creek</Title>
+    <Comment />
+    <BaseFileName>creek</BaseFileName>
+    <Id>f533454e-ad2f-479f-b33e-e56f800ab00a</Id>
+    <DateTime>2011-04-25</DateTime>
+  </HiresImageEntry>
+  <HiresImageEntry>
+    <Title>Dew on Grass</Title>
+    <Comment>1</Comment>
+    <BaseFileName>dew_on_grass</BaseFileName>
+    <Id>b6f12fe2-4fff-4f9a-9d68-1663033f36c7</Id>
+    <DateTime>2011-04-25</DateTime>
+  </HiresImageEntry>
+  <HiresImageEntry>
+    <Title>Orange</Title>
+    <Comment />
+    <BaseFileName>orange</BaseFileName>
+    <Id>cdc45a11-9fe6-4d1f-bdaf-1b5245afdf79</Id>
+    <DateTime>2011-04-25</DateTime>
+  </HiresImageEntry>
+</ArrayOfHiresImageEntry>

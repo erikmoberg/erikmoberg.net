@@ -1,0 +1,283 @@
+<?xml version="1.0"?>
+<guestbook>
+  <entries>
+    <entry>
+      <username>Erik</username>
+      <datetime>2007-06-14 12:45</datetime>
+      <email>test@example.com</email>
+      <message>Welcome to the guestbook! Feel free to post messages, but please do not spam.</message>
+    </entry>
+    <entry>
+      <username>Erik</username>
+      <datetime>2007-06-16 15:46</datetime>
+      <email>none</email>
+      <message>Just testing.&#xD;
+&#xD;
+Hejd&amp;aring;!</message>
+    </entry>
+    <entry>
+      <username>Henrik H&amp;auml;stkista</username>
+      <datetime>2007-06-17 00:18</datetime>
+      <email>none</email>
+      <message>Schyst jobb med sidan h&amp;ouml;rru, keep up the good work!</message>
+    </entry>
+    <entry>
+      <username>Johan</username>
+      <datetime>2007-06-17 12:34</datetime>
+      <email>none</email>
+      <message>Trevligt, den ser mycket b&amp;auml;ttre ut den f&amp;ouml;rsta versionen du visade.</message>
+    </entry>
+    <entry>
+      <username>Johan</username>
+      <datetime>2007-06-17 12:35</datetime>
+      <email>none</email>
+      <message>men ta bort de j-a fotona av den f&amp;ouml;rbannade papp datorn</message>
+    </entry>
+    <entry>
+      <username>Sara</username>
+      <datetime>2007-06-17 16:23</datetime>
+      <email>none</email>
+      <message>Hej, det funkar fint &amp;auml;ven i sverige. :) Vi ses kankse n&amp;auml;sta vecka!</message>
+    </entry>
+    <entry>
+      <username>Karin </username>
+      <datetime>2007-06-17 17:22</datetime>
+      <email>none</email>
+      <message>Fina foton men inga p&amp;aring; dina k&amp;auml;ra svenska kompisar i Frankfurt, En liten besvikelse m&amp;aring;ste jag s&amp;auml;ga! Jag hoppas att detta &amp;auml;r &amp;quot;&amp;aring;tg&amp;auml;rdat&amp;quot; tills n&amp;auml;sta g&amp;aring;ng jag g&amp;aring;r in p&amp;aring; sidan. H&amp;aring;ller med Johan om att de d&amp;auml;r fotona p&amp;aring; pappdatorn inte &amp;auml;r s&amp;aring; intressanta. Mer kort p&amp;aring; m&amp;auml;nniskor (oss) tack!!</message>
+    </entry>
+    <entry>
+      <username>Karin</username>
+      <datetime>2007-06-20 22:58</datetime>
+      <email>none</email>
+      <message>Det ser ju finfint ut nu med lite fler bilder, hm ska kanske skriva det h&amp;auml;r p&amp;aring; engelska s&amp;aring; att alla f&amp;ouml;rst&amp;aring;r: It looks &amp;quot;finefine&amp;quot; with the new pictures (with us on)&#xD;
+</message>
+    </entry>
+    <entry>
+      <username>Robert</username>
+      <datetime>2007-06-26 22:39</datetime>
+      <email>none</email>
+      <message>Nicht schlecht geworden Deine Seite! Endlich ein Programmierer mit Geschmack. Na dann, wir sehen uns morgen zur Ghost Tour! &#xD;
+&#xD;
+Gr&amp;uuml;&amp;szlig;e, Robert</message>
+    </entry>
+    <entry>
+      <username>Memius</username>
+      <datetime>2007-06-28 14:35</datetime>
+      <email>none</email>
+      <message>Hej!! Mycket fin hemsa! ha det bra :)</message>
+    </entry>
+    <entry>
+      <username>Karin</username>
+      <datetime>2007-07-22 22:56</datetime>
+      <email>none</email>
+      <message>Just for your info (and for your confidence) I have added your homepage as one of my favourites. I am looking forward to the photos from the party yesterday.  </message>
+    </entry>
+    <entry>
+      <username>Erik</username>
+      <datetime>2007-07-23 19:54</datetime>
+      <email>none</email>
+      <message>Karin: Image gallery updated. :)</message>
+    </entry>
+    <entry>
+      <username>Pappan</username>
+      <datetime>2007-08-08 21:53</datetime>
+      <email>none</email>
+      <message>Hej och tack!&#xD;
+Lessen att jag inte kunde fixa kylsk&amp;aring;pet!&#xD;
+Annars har det vart bra hos dig.&#xD;
+Far</message>
+    </entry>
+    <entry>
+      <username>Karin</username>
+      <datetime>2007-08-18 12:20</datetime>
+      <email>none</email>
+      <message>Erik you are such a professional photograph(er), really nice photos (especially from R&amp;uuml;desheim). It seems as if you really liked your birthday present from us:-) </message>
+    </entry>
+    <entry>
+      <username>Karin</username>
+      <datetime>2007-09-10 23:19</datetime>
+      <email>none</email>
+      <message>Now I have tried all your different &amp;quot;styles&amp;quot; and I liked the &amp;quot;Black &amp;amp; red&amp;quot; most. This is for your info only:) &#xD;
+Can we arrange a time for our computer evening soon? </message>
+    </entry>
+    <entry>
+      <username>Erik</username>
+      <datetime>2007-09-13 18:57</datetime>
+      <email>none</email>
+      <message>Sure thing. Make sure to book me one day in advance. ;)&#xD;
+&#xD;
+Funny that you like the Black and Red theme btw; I always find it a bit offensive. Was also considering the name Mafia or so.</message>
+    </entry>
+    <entry>
+      <username>Visitor282</username>
+      <datetime>2007-10-08 07:05</datetime>
+      <email>none</email>
+      <message>I have visited your site 741-times</message>
+    </entry>
+    <entry>
+      <username>Erik</username>
+      <datetime>2007-10-08 23:19</datetime>
+      <email>none</email>
+      <message>Damn. I should seriously consider adding a more effective spam bot filter.</message>
+    </entry>
+    <entry>
+      <username>Karin</username>
+      <datetime>2007-10-13 10:00</datetime>
+      <email>none</email>
+      <message>I know you dont think it is &amp;quot;fashion&amp;quot; to wear shorts (at least not in cities) but hey Erik we are talking about Turkey, it looks a litle bit warm with jeans! Nice Photos as usuall. Jag &amp;auml;r verkligen &amp;quot;stammis&amp;quot; i den h&amp;auml;r g&amp;auml;stboken :)</message>
+    </entry>
+    <entry>
+      <username>Marlene</username>
+      <datetime>2007-10-20 13:44</datetime>
+      <email>none</email>
+      <message>Hi Erik, I agree with Karin, the photos are brilliant. &#xD;
+&#xD;
+Cheers&#xD;
+Marlene&#xD;
+</message>
+    </entry>
+    <entry>
+      <username>Gobagg</username>
+      <datetime>2007-10-25 21:22</datetime>
+      <email>none</email>
+      <message>&amp;Ouml;&amp;ouml;&amp;ouml;! Du f&amp;aring;r ju ta och sl&amp;auml;nga upp Pc Fj&amp;ouml;s-l&amp;aring;tarna h&amp;auml;r. Jag har slarvat bort dem. Vore dessutom kul med en l&amp;auml;nk som man kan skicka till sina v&amp;auml;nner (eller v&amp;auml;rsta fiender kanske).</message>
+    </entry>
+    <entry>
+      <username>Erik</username>
+      <datetime>2007-10-26 14:44</datetime>
+      <email>none</email>
+      <message>Thanks for the feedback. :) Gobaggen: Ska kolla efter Pc Fj&amp;ouml;s (s&amp;auml;rskrivning?) och l&amp;auml;gga upp dem om jag hittar dem. Ska se om jag kanske kan sl&amp;auml;nga upp Superpalindromet med (aka Parisrappalindromet).</message>
+    </entry>
+    <entry>
+      <username>Soppan Lii</username>
+      <datetime>2008-02-15 16:46</datetime>
+      <email>none</email>
+      <message>Hejsan! Den nya designen ser riktigt snygg ut! Identifierar det som Frankfurt skyline :) skyskrapor e najs, mer s&amp;aring;nt i Sverige :)</message>
+    </entry>
+    <entry>
+      <username>Cl&amp;eacute;mence</username>
+      <datetime>2008-02-24 21:33</datetime>
+      <email>none</email>
+      <message>Hallo Erik,&#xD;
+Ich habe gerade deine Webseite entdeckt. Du machst ja sch&amp;ouml;ne Bilder!&#xD;
+Bis zum n&amp;auml;chsten Mal!</message>
+    </entry>
+    <entry>
+      <username>Karin </username>
+      <datetime>2008-04-08 23:18</datetime>
+      <email>none</email>
+      <message>Nice Photos from Andermatt (but no wounder with such a nice nature and such a nice &amp;quot;objects&amp;quot;) </message>
+    </entry>
+    <entry>
+      <username>Karin</username>
+      <datetime>2008-09-07 20:36</datetime>
+      <email>emalj</email>
+      <message>Kommer det n&amp;aring;gra bilder fr&amp;aring;n f&amp;ouml;rra helgen snart? I f&amp;ouml;rrg&amp;aring;r fick jag &amp;auml;ntligen &amp;auml;ta kr&amp;auml;ftor och i morgon blir det kr&amp;auml;ftfest igen. D&amp;aring; ska jag l&amp;auml;ra mina k&amp;auml;ra tyska l&amp;auml;genhetskompisar hur det g&amp;aring;r till:-)</message>
+    </entry>
+    <entry>
+      <username>Erik</username>
+      <datetime>2008-09-11 23:49</datetime>
+      <email>emalj</email>
+      <message>Uhm, jag har legat lite l&amp;aring;gt med bilder p&amp;aring; sistone men n&amp;aring;t ska man v&amp;auml;l kunna ordna till. Kanske bilderna p&amp;aring; Erika n&amp;auml;r hon fuldansar med den knasiga tysken som kom f&amp;ouml;rbi?</message>
+    </entry>
+    <entry>
+      <username>Karin</username>
+      <datetime>2008-10-13 23:56</datetime>
+      <email>emalj</email>
+      <message>Fortfarande inga bilder? Was ist denn los? Saknar du f&amp;ouml;rresten en TV4 handduk? Den &amp;auml;r h&amp;auml;r</message>
+    </entry>
+    <entry>
+      <username>Erik</username>
+      <datetime>2008-11-03 20:42</datetime>
+      <email>emalj</email>
+      <message>Ojsan, min TV4-handduk! Hum, du kan ju ta med den hit n&amp;aring;gon g&amp;aring;ng. En s&amp;aring;n raritet f&amp;aring;r ju inte g&amp;aring; f&amp;ouml;rlorad (den &amp;auml;r s&amp;auml;kert typ 10 &amp;aring;r, finns nog inte m&amp;aring;nga exemplar i bruk l&amp;auml;ngre).&#xD;
+&#xD;
+Nu finns det lite bilder att besk&amp;aring;da i alla fall. :)</message>
+    </entry>
+    <entry>
+      <username>Pappan</username>
+      <datetime>2009-03-30 20:36</datetime>
+      <email>emalj</email>
+      <message>Som vanligt utm&amp;auml;rkta bilder.&#xD;
+Det tackar vi f&amp;ouml;r!</message>
+    </entry>
+    <entry>
+      <username>Pappan</username>
+      <datetime>2009-08-09 19:29</datetime>
+      <email>emalj</email>
+      <message>K&amp;ouml;ptkamera -jaha&#xD;
+men har du k&amp;ouml;pt hj&amp;auml;lm &amp;auml;n?</message>
+    </entry>
+    <entry>
+      <username>Pappan</username>
+      <datetime>2009-09-22 20:46</datetime>
+      <email>emalj</email>
+      <message>Snygga bilder!</message>
+    </entry>
+    <entry>
+      <username>Mamma</username>
+      <datetime>2009-10-17 15:18</datetime>
+      <email>emalj</email>
+      <message>Det var fina bilder, men v&amp;auml;ldigt tomt p&amp;aring; folk eller var du uppe klockan fem ?? </message>
+    </entry>
+    <entry>
+      <username>Erik</username>
+      <datetime>2009-10-18 10:37</datetime>
+      <email>emalj</email>
+      <message>Konstigt va? Det var lite tomt p&amp;aring; folk eftersom det var sent p&amp;aring; s&amp;auml;songen. Jag har bilder med folk ocks&amp;aring; men det r&amp;aring;kade bara bli s&amp;aring; att de utan s&amp;aring;g b&amp;auml;ttre ut.</message>
+    </entry>
+    <entry>
+      <username>Robert</username>
+      <datetime>2010-04-05 22:58</datetime>
+      <email>emalj</email>
+      <message>Looking good your new website style! And yes, 8 designs were confusing indeed ;-) </message>
+    </entry>
+    <entry>
+      <username>&#xC5;ke</username>
+      <website/>
+      <datetime>2010-10-14 00:03</datetime>
+      <email>emalj</email>
+      <message>Din hemsida ser bra ut h&#xF6;rru. Saknar bilder p&#xE5; mitt favoritobjekt, dvs mig sj&#xE4;lv, men det kommer v&#xE4;l.
+</message>
+    </entry>
+    <entry>
+      <username>&#xC5;ke</username>
+      <website/>
+      <datetime>2010-10-14 00:05</datetime>
+      <email>emalj</email>
+      <message>ja just det, ser lite tokigt ut n&#xE4;r man skriver med svensk bokstav, dvs &#xE5; &#xE4; &#xF6;, men det kan du ju greja</message>
+    </entry>
+    <entry>
+      <username>Erik</username>
+      <website/>
+      <datetime>2010-10-24 17:47</datetime>
+      <email>emalj</email>
+      <message>Hej &#xC5;ke! Tack f&#xF6;r feedbacken. Bilder p&#xE5; dig sj&#xE4;lv f&#xE5;r jag ordna, i alla fall s&#xE5; &#xE4;r problemet med &#xE5;&#xE4;&#xF6; fixat.</message>
+    </entry>
+    <entry>
+      <username>Andreas</username>
+      <website/>
+      <datetime>2011-03-05 09:14</datetime>
+      <email>emalj</email>
+      <message>Hej! Snygg bild p&#xE5; d&#xE4;mparen i Taipei 101, den m&#xE5;ste vara tokstor! &#xC5;kte ni MagLev?</message>
+    </entry>
+    <entry>
+      <username>Erik</username>
+      <website/>
+      <datetime>2011-03-12 22:53</datetime>
+      <email>emalj</email>
+      <message>Ja, det var en stor boll. Och klart att vi &#xE5;kte MagLev! Shinkansen med f&#xF6;r den delen. De har m&#xE5;nga fr&#xE4;cka t&#xE5;g d&#xE4;r i fj&#xE4;rran &#xF6;stern.</message>
+    </entry>
+    <entry>
+      <username>Erik</username>
+      <website/>
+      <datetime>2011-04-09 01:27</datetime>
+      <email>emalj</email>
+      <message>mark:&#xD;
+&#xD;
+Thanks for your comment. I moved it to the SmartPad article and provided an answer:&#xD;
+&#xD;
+http://www.erikmoberg.net/article.php?name=ask_731sp_3g_smartpad_review#comments</message>
+    </entry>
+  </entries>
+</guestbook>

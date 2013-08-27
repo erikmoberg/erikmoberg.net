@@ -1,0 +1,176 @@
+* {	
+}
+
+body {
+	background: #337FC6 url("bg.gif") top center;
+	font: normal 8pt/13pt Trebuchet MS,Verdana;
+	color: #0e4548;
+	
+	margin: 0;
+	padding: 0;
+}
+
+a, a:visited {
+	text-decoration: underline;
+	color: #236967;
+	
+}
+
+a:hover {
+	color: black;
+}
+
+#contentheader
+{
+	font-size: 16pt;
+	font-weight: bold;
+	color: black;
+	margin-bottom: 5px;
+	padding-left: 40px;
+	padding-top: 10px;
+	line-height: 30px;
+	background: url(arrow.gif) bottom left no-repeat;
+	margin-left: 15px;
+	height: 32px;
+}
+
+#header {
+	background: url("headerbg.gif") top right no-repeat;
+	height: 280px;
+	padding: 30px 0 0 150px;
+	margin: 0 10px 0 0;
+	font-size: 18pt;
+	color: #606060;
+}
+
+#header h2{
+	padding: 0px 0 0 0;
+	font-size: 18pt;
+	color: #236967;	
+	font-weight: bold;
+}
+
+#container {
+	background: white url("background_container.gif") top center repeat-y;
+	width: 700px;
+	margin: 0px auto;
+	text-align: left;
+	padding-left: 50px;
+}
+
+#horizontal{
+	float: left;
+	margin-left: 0px;
+	padding: 0;
+	list-style: none;
+	margin-top: -310px;
+	padding-top: 70px;
+	width: 120px;
+	height: 60%;
+	font-weight: bold;
+	font-size: 11pt;
+	/*background: red;*//*url("menuback.jpg") top center repeat-y;*/
+}
+#horizontal li
+{
+	margin-right: 10px;
+}
+#horizontal li.active {
+display: block;
+height: 40px;
+line-height: 40px;
+text-decoration: none;
+color: black;
+}
+#horizontal a, #horizontal a:visited {
+display: block;
+height: 40px;
+line-height: 40px;
+text-decoration: none;
+}
+
+#horizontal a:hover {
+	color: black;
+	text-decoration: none;
+}
+
+#right-column {
+	color: #236967;
+	width: 134px;
+	/*float: left;
+	clear: left;*/
+	position: absolute;
+	margin-left: 150px;
+	margin-top: -305px;
+}
+
+#content {
+	width: 400px;
+	margin: 80px 0 0 145px;
+}
+
+#content h2{
+	font-size: 14pt;
+	font-weight: bold;
+	color: #236967;
+	margin-bottom: 5px;
+	padding-top: 10px;
+	line-height: 30px;
+}
+
+.black {
+	color: #000;
+}
+
+p {
+margin-bottom: 20px;
+}
+
+input.text {
+	width: 70px;	
+	border: 1px solid #ccc;
+}
+
+input.button {
+	color: #808080;
+	padding-left: 0px;
+	font-size: 8pt;	
+	border: none;
+	background: none;
+	}
+
+#footer {
+	text-align: center;
+	color: #236967;
+	clear: both;
+	width: 562px;
+	margin-left: 4px;
+	height: 20px;
+	padding: 4px;
+}
+#footer a, #footer a:visited{
+	color: #ccc;
+}
+
+#footer a:hover {
+	color: #808080;
+}
+
+#bottom
+{
+  height: 40px;
+  background: url(background_bottom.gif) no-repeat;
+  width: 750px;
+	margin: 0px auto;
+	text-align: left;
+	padding-left: 0px;
+}
+.thumb_small
+{
+	
+}
+
+.thumb_small a
+{
+	padding: 5px;
+}

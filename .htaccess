@@ -1,0 +1,29 @@
+#######################################################################
+#     Diese .htaccess wurde vom STRATO-Webservermanager erstellt      #
+#######################################################################
+
+Options -Indexes
+AddType application/x-httpd-php5 .php .php4 .php3 .php5
+
+RewriteEngine On
+RewriteCond %{HTTP_HOST} !^www\.erikmoberg\.net$
+RewriteRule ^(.*)$ http://www.erikmoberg.net/$1 [L,R=301]
+RewriteRule ^article/([^/]*)$ /article.php?name=$1 [L,NC]
+RewriteRule ^contact[/]*$ /contact.php [L,NC]
+RewriteRule ^guestbook[/]*$ /guestbook.php [L,NC]
+RewriteRule ^archivedimages[/]*$ /archivedimages.php [L,NC]
+RewriteRule ^images[/]*$ /images.php [L,NC]
+RewriteRule ^images/([^/]*)$ /images.php?galleryid=$1 [L,NC]
+RewriteRule ^iconmaker[/]*$ /iconmaker.php [L,NC]
+RewriteRule ^about[/]*$ /about.php [L,NC]
+RewriteRule ^index[/]*$ /index.php [L,NC]
+RewriteRule ^download[/]*$ /download.php [L,NC]
+RewriteRule ^jpegrotator[/]*$ /jpegrotator.php [L,NC]
+RewriteRule ^index/([^/]*)$ /index.php?page=$1 [L,NC]
+RewriteRule ^contact/posted$ /contact.php?message=posted [L,NC]
+RewriteRule ^article/([^/]*)/posted([^/]*)$ /article.php?name=$1&message=posted$2 [L,NC]
+RewriteRule ^rss.xml[/]*$ /rss.php [L,NC]
+RewriteRule ^rss[/]*$ /rss.php [L,NC]
+RewriteRule ^rss/([^/]*)[/]*$ /rss.php?article=$1 [L]
+
+AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css
