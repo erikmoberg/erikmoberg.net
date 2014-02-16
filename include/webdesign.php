@@ -45,7 +45,9 @@ print <<<END
 				<img src="/styles/single/headerback.png" alt="header" />
 			</a>
 		</div>
-		<div id='cse-search-form'></div>
+		<div id='cse-search-form'>
+			<span>Loading search...</span>
+		</div>
 	</div>	
 	<div id="menucontainer">
 		<div id="activeItemMarkerContainer">

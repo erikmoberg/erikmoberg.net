@@ -89,20 +89,15 @@ function DisplaySingleGallery($galleryid)
 	$thumbNo = 1;
 	foreach($gallerynode->images->image as $image)
 	{
-		$imagedescription = $image->description;
+		$imagedescription = trim($image->description);
 		$basefilename = $imagebasedir . '/' . $image->basefilename;
 		$imagethumb = $basefilename . '_thumb.jpg';
 		$imagethumb_small = $basefilename . '_thumb_small.jpg';
 		$imagefile = $basefilename . '.jpg';
 		
-		//echo '<div class="thumb_small_gallery">';
-		echo "<a id=\"thumb$thumbNo\" href=\"$imagefile\" class=\"highslide\" onclick=\"return hs.expand(this)\">";
-		echo "<img src=\"$imagethumb\" alt=\"Highslide JS\" title=\"Click to enlarge\" />";
+		echo "<a href=\"$imagefile\" class=\"gallery-thumbnail\">";
+		echo "<img src=\"$imagethumb\" alt=\"" . htmlentities($imagedescription) . "\" title=\"" . htmlentities($imagedescription) . " (Click to enlarge)\" />";
 		echo "</a>";
-		echo '<div class="highslide-caption">';
-		echo $imagedescription;
-		echo '</div>';
-		//echo '</div>';
 		$thumbNo++;
 	}
 	

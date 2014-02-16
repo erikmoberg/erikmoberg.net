@@ -4,18 +4,6 @@ $(function() {
 		jscolor.dir = '/include/jscolor/';
 	}
 	// ---- end jscolor settings
-	/*
-	$('body').on("swipeleft", '.highslide-image', function(ev) {
-		ev.gesture.preventDefault();
-		$(this).hide("slide", { direction: "left" });
-        hs.next();
-    });
-	
-	$('body').hammer().on("swiperight", '.highslide-image', function(ev) {
-		ev.gesture.preventDefault();
-		$(this).hide("slide", { direction: "right" });
-		hs.previous();
-    });*/
 });
 
 $('.close-search-results').on('click', function() {
@@ -51,12 +39,16 @@ $.getJSON('http://ajax.googleapis.com/ajax/services/feed/load?v=1.0&num=20&callb
 	$('#bottom').html('<div id="quotecontainer"><p>' + entry.content + '</p><p>' + entry.title + '</p></div><div class="clearfix"></div>');
 });
 
-$(document).on('mouseover', '#flickr-recent img, .maingalleryitem, .highslide img', function() {
+$(document).on('mouseover', '#flickr-recent img, .maingalleryitem, .gallery-thumbnail img', function() {
 	$(this).stop().fadeTo('fast', 0.6);
 });
-$(document).on('mouseout', '#flickr-recent img, .maingalleryitem, .highslide img', function() {
+$(document).on('mouseout', '#flickr-recent img, .maingalleryitem, .gallery-thumbnail img', function() {
 	$(this).stop().fadeTo('fast', 1);
 });
+
+if ($('.gallery-thumbnail').length) {
+	new RespGallery();
+}
 
 function getOffsetForMenuItem(item) {
 	return $(item).offset().left - $('#activeItemMarkerContainer').offset().left + $(item).width()/2 - $('#activeItemMarker').width()/2;
@@ -148,40 +140,3 @@ function checkMaxLength(textBox, e, maxLength) {
 		return false;
     }
 }
-
-// ---- highslide settings
-hs.graphicsDir = '/include/styles/single/graphics/';
-hs.showCredits = false;
-hs.outlineType = null;
-hs.align = 'center';
-hs.transitions = ['expand', 'crossfade'];
-hs.fadeInOut = true;
-hs.dimmingOpacity = 0.75;
-hs.captionOverlay.position = 'below';
-hs.marginBottom = 130;
-hs.expandCursor = null;
-hs.restoreCursor = null;
-
-// Add the controlbar
-if (hs.addSlideshow) hs.addSlideshow({
-	//slideshowGroup: 'group1',
-	interval: 5000,
-	repeat: false,
-	useControls: true,
-	fixedControls: 'fit',
-	overlayOptions: {
-		className: 'large-dark',
-		opacity: 0.75,
-		position: 'bottom center',
-		offsetX: 0,
-		offsetY: -15,
-		hideOnMouseOut: true
-	},
-	thumbstrip: {
-		mode: 'horizontal',
-		position: 'bottom center',
-		relativeTo: 'viewport'
-	}
-});
-
-// ---- end highslide settings

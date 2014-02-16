@@ -72,23 +72,17 @@ $markup = '';
 
 $desc2 = "Mind-blowing outdoor levels";
 $markup .= '<div class="thumb_small" style="float: none; text-align: center;">';
-$markup .= "<a id=\"thumb2\" href=\"/projectc2.jpg\" class=\"highslide\" onclick=\"return hs.expand(this)\">";
-$markup .= "<img src=\"/projectc2_thumb.jpg\" alt=\"" . $desc2 . "\" title=\"Click to enlarge\" />";
+$markup .= "<a href=\"/projectc2.jpg\" class=\"gallery-thumbnail\">";
+$markup .= "<img src=\"/projectc2_thumb.jpg\" alt=\"" . $desc2 . "\" title=\"" . $desc2 . "\" />";
 $markup .= "</a>";
-$markup .= '<div class="highslide-caption">';
-$markup .= $desc2;
-$markup .= '</div>';
 $markup .= '<div class="imagedescription">' . $desc2 . '</div>';
 $markup .= '</div>';
 
 $desc1 = "Cooperative multiplayer action";
 $markup .= '<div class="thumb_small" style="float: none; text-align: center;">';
-$markup .= "<a id=\"thumb1\" href=\"/projectc1.jpg\" class=\"highslide\" onclick=\"return hs.expand(this)\">";
-$markup .= "<img src=\"/projectc1_thumb.jpg\" alt=\"" . $desc1 . "\" title=\"Click to enlarge\" />";
+$markup .= "<a href=\"/projectc1.jpg\" class=\"gallery-thumbnail\">";
+$markup .= "<img src=\"/projectc1_thumb.jpg\" alt=\"" . $desc1 . "\" title=\"" . $desc1 . "\" />";
 $markup .= "</a>";
-$markup .= '<div class="highslide-caption">';
-$markup .= $desc1;
-$markup .= '</div>';
 $markup .= '<div class="imagedescription">' . $desc1 . '</div>';
 $markup .= '</div>';
 

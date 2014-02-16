@@ -9,6 +9,6 @@ $expire = 'expires: ' . gmdate ('D, d M Y H:i:s', time() + $offset) . ' GMT';
 header ($expire);
 
 readfile('style.css');
-readfile('../../include/highslide/highslide.css');
+//readfile('../../include/highslide/highslide.css');
 readfile('../../include/spectrum/spectrum.css');
 ?>

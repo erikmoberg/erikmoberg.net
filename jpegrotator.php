@@ -18,12 +18,9 @@ The problem is, the rotation is made using so called EXIF metadata - instead of 
 </p>
 
 <div class="thumb_small" style="float: none; text-align: center;">
-<a id="thumb2" href="content/wrongorientation.jpg" class="highslide" onclick="return hs.expand(this)">
-<img src="content/wrongorientation_thumb.jpg" alt="This ever happened to you?" title="Click to enlarge" />
+<a href="content/wrongorientation.jpg" class="gallery-thumbnail">
+<img src="content/wrongorientation_thumb.jpg" alt="Wrong JPEG orientation - this ever happened to you?" title="Wrong JPEG orientation - this ever happened to you?" />
 </a>
-<div class="highslide-caption">
-This ever happened to you?
-</div>
 <div class="imagedescription">This ever happened to you?</div>
 </div>
 

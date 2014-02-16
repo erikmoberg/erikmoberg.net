@@ -26,8 +26,9 @@ if ($iconmaker) {
 }
 else {
 	readfile('json2.min.js');
-	readfile('highslide/highslide-with-gallery.packed.js');
+	//readfile('highslide/highslide-with-gallery.packed.js');
 	readfile('scripts.js');
+	readfile('respgallery.js');
 	//readfile('jquery.hammer.min.js');
 }
 ?>
