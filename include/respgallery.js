@@ -273,6 +273,10 @@ function RespGallery(options) {
 	}
 
 	self.hideGallery = function() {
+		if (!$('body').hasClass('gallery')) {
+			return;
+		}
+		
 		$('body').removeClass('gallery');
 		self.imagesContainer.fadeOut(200, function() {
 			$('#' + self.imagesId).css(self.transformProperty, '');

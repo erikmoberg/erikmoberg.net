@@ -25,7 +25,7 @@ print <<<END
 	<title>Erik Moberg's personal homepage - photography, gadgets, DIY, and more - $pageTitle</title>
 	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300|Raleway:200' rel='stylesheet' type='text/css'>
-	<link rel="stylesheet" type="text/css" href="/styles/single/style.css.php?_=24" />
+	<link rel="stylesheet" type="text/css" href="/styles/single/style.css.php?_=25" />
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js" type="text/javascript"></script>
 	<link rel="shortcut icon" href="/favicon.ico" type="image/vnd.microsoft.icon" />
     <link rel="icon" href="/favicon.ico" type="image/vnd.microsoft.icon" />
@@ -104,8 +104,7 @@ echo '<h2>Recent Articles</h2>';
 PrintRecentBlogHeadings(40);
 print <<<END
 				<h2>Blogroll</h2>
-				<p><a href="http://www.cinemassacre.com" target="_blank">Cinemassacre</a> - also known as The Angry Video Game Nerd. If you like old school consoles and Godzilla, this is the place.</p>
-				<p><a href="http://henrikpettersson.blogg.se/" target="_blank">Henrik Petterson's blog (Swedish)</a> - a friend of mine, blogging about photography.</p>
+				<p><a href="http://itochpedagog.wordpress.com/" target="_blank">IT och Pedagog (Swedish)</a> - podcast about using modern technology in education.</p>
 				<p><a href="http://www.snapp.de/" target="_blank">Robert's blog (German)</a> - also a friend of mine, mostly blogging about travelling and online marketing.</p>
 			</div>
 		</div>

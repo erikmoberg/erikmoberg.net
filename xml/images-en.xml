@@ -1,4 +1,100 @@
 <galleries>
+  <gallery id="38">
+    <name>Trip to Northern Sweden</name>
+    <description>Went with some friends to the very north of Sweden to hopefully shoot some northern lights.</description>
+    <datetime>2014-11-09</datetime>
+    <basedir>northenlights2014</basedir>
+    <frontpic>frontpic.jpg</frontpic>
+    <archived>false</archived>
+    <images>
+      <image>
+        <description>Reindeer are frequently seen on the roads.</description>
+        <basefilename>img_0537</basefilename>
+      </image>
+      <image>
+        <description>When trying to spot northen lights, clouds are your worst enemy.</description>
+        <basefilename>img_0485</basefilename>
+      </image>
+      <image>
+        <description>The Lappish Gate at daytime.</description>
+        <basefilename>img_0499</basefilename>
+      </image>
+      <image>
+        <description>The Lappish Gate at sunrise.</description>
+        <basefilename>img_0709</basefilename>
+      </image>
+      <image>
+        <description>The ski lift at Riksgränsen, the very north of Sweden.</description>
+        <basefilename>img_0760</basefilename>
+      </image>
+      <image>
+        <description>Moonrise over Torne Träsk.</description>
+        <basefilename>img_0830</basefilename>
+      </image>
+      <image>
+        <description>Aurora Borealis over Björkliden.</description>
+        <basefilename>img_2817</basefilename>
+      </image>
+      <image>
+        <description>At times, the northern lights can barely be seen with the naked eye.</description>
+        <basefilename>img_0663</basefilename>
+      </image>
+      <image>
+        <description>Aurora Borealis, Björkliden,</description>
+        <basefilename>img_0581</basefilename>
+      </image>
+      <image>
+        <description>Aurora Borealis, Kiruna.</description>
+        <basefilename>img_3105</basefilename>
+      </image>
+      <image>
+        <description>Aurora Borealis, Björkliden.</description>
+        <basefilename>img_2810</basefilename>
+      </image>
+    </images>
+  </gallery>
+  <gallery id="37">
+    <name>A trip to Crete, Greece 2013</name>
+    <description>We spent a week on the Greek island of Crete, home of beautiful beaches and ancient history.</description>
+    <datetime>2014-02-20</datetime>
+    <basedir>greece2013</basedir>
+    <frontpic>frontpic.jpg</frontpic>
+    <archived>false</archived>
+    <images>
+      <image>
+        <description>The city of Platatias with the island Thodorou in the background, wagely resembling a turtle about to bite.</description>
+        <basefilename>img_0929</basefilename>
+      </image>
+      <image>
+        <description>Lighttower in the port of Chania.</description>
+        <basefilename>img_0964</basefilename>
+      </image>
+      <image>
+        <description>We went on a tour to see as much of the island as possible - too bad the weather wasn't quite playing along. A very exciting ride on narrow roads and high hills.</description>
+        <basefilename>img_1036</basefilename>
+      </image>
+      <image>
+        <description>After the rain.</description>
+        <basefilename>img_1096</basefilename>
+      </image>
+      <image>
+        <description>The beach at Elafonisi. The sand forms an interesting underwater landscape, making it possible to move between the islands if you choose the right path.</description>
+        <basefilename>pa048928</basefilename>
+      </image>
+      <image>
+        <description>Also footsteps.</description>
+        <basefilename>img_1138</basefilename>
+      </image>
+      <image>
+        <description>Moussaka - in case you haven't tried - do.</description>
+        <basefilename>img_0799</basefilename>
+      </image>
+      <image>
+        <description>We went to the ancient city of Knossos - or what was left of it. Strangely, today it consist mostly of more or less accurately "reconstituted" buildings.</description>
+        <basefilename>img_1004</basefilename>
+      </image>
+    </images>
+  </gallery>
   <gallery id="36">
     <name>Canon EF 40mm Sample Shots</name>
     <description>Some sample shots taken with the Canon EF 40mm 2.8 pancake and the Canon 600D.</description>
@@ -522,10 +618,6 @@
     <frontpic>frontpic.jpg</frontpic>
     <archived>false</archived>
     <images>
-      <image>
-        <description>Some kid playing on the beach.</description>
-        <basefilename>img_4370</basefilename>
-      </image>
       <image>
         <description>Got up early to catch the sunrise.</description>
         <basefilename>img_4486</basefilename>
@@ -1855,7 +1947,7 @@
         <basefilename>03</basefilename>
       </image>
       <image>
-        <description>Also kn&amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;auml;ckebr&amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;ouml;d.</description>
+        <description>Also kn&amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;auml;ckebr&amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;ouml;d.</description>
         <basefilename>04</basefilename>
       </image>
       <image>

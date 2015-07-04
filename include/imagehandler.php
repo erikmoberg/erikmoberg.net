@@ -96,7 +96,7 @@ function DisplaySingleGallery($galleryid)
 		$imagefile = $basefilename . '.jpg';
 		
 		echo "<a href=\"$imagefile\" class=\"gallery-thumbnail\">";
-		echo "<img src=\"$imagethumb\" alt=\"" . htmlentities($imagedescription) . "\" title=\"" . htmlentities($imagedescription) . " (Click to enlarge)\" />";
+		echo "<img src=\"$imagethumb\" alt=\"" . htmlentities(htmlentities($imagedescription, ENT_QUOTES, "UTF-8"), ENT_QUOTES, "UTF-8") . "\" title=\"" . htmlentities(htmlentities($imagedescription, ENT_QUOTES, "UTF-8"), ENT_QUOTES, "UTF-8") . " (Click to enlarge)\" />";
 		echo "</a>";
 		$thumbNo++;
 	}

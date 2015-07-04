@@ -4214,7 +4214,14 @@ On focal lengths and shutter speeds: The shots were taken with a Canon 600D, whi
 50mm works very well on a full frame camera, simply because it is a normal lens and it feels natural to shoot at that focal length. However, full frame cameras are rather expensive. So would you really shell out over a thousand dollars on a camera body, and then less than a hundred on a lens? I hope not. A hundred dollar lens would probably go together much better with the popular and cheaper APS-C (crop sensor) cameras. Hovever, such a camera would need a 30mm (or so) focal length, and no such cheap lenses exist. 40mm works better than 50mm though in my opinion, without getting too expensive. So we are slowly getting there - 10mm at a time. ;)
 &lt;/p&gt;
 
-[image lenses]</content>
+[image lenses]
+
+&lt;p&gt;Update: I just compared the sharpness of the above lenses, make sure to check it out: &lt;a href="http://www.erikmoberg.net/article/quick-sharpness-comparison"&gt;Quick Sharpness Comparison&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2&gt;Shameless affy links&lt;/h2&gt;
+
+&lt;br /&gt;
+&lt;SCRIPT charset="utf-8" type="text/javascript" src="http://ws-na.amazon-adsystem.com/widgets/q?rt=tf_mfw&amp;ServiceVersion=20070822&amp;MarketPlace=US&amp;ID=V20070822%2FUS%2Ferikmobersper-20%2F8001%2F2b455532-b3aa-49a5-b63d-fa23afc01a72"&gt; &lt;/SCRIPT&gt; &lt;NOSCRIPT&gt;&lt;A HREF="http://ws-na.amazon-adsystem.com/widgets/q?rt=tf_mfw&amp;ServiceVersion=20070822&amp;MarketPlace=US&amp;ID=V20070822%2FUS%2Ferikmobersper-20%2F8001%2F2b455532-b3aa-49a5-b63d-fa23afc01a72&amp;Operation=NoScript"&gt;Amazon.com Widgets&lt;/A&gt;&lt;/NOSCRIPT&gt;</content>
     <images>
       <image>
         <description>The 50mm next to the 40mm mounted on the Canon 600D.</description>
@@ -4267,7 +4274,7 @@ On focal lengths and shutter speeds: The shots were taken with a Canon 600D, whi
         <extension>.jpg</extension>
       </image>
       <image>
-        <description>At f/2.8, the 50mm produces hexagon-shaped bokeh.</description>
+        <description>At f/2.8, the 50mm produces pentagon-shaped bokeh.</description>
         <name>50mm_leaves</name>
         <extension>.jpg</extension>
       </image>
@@ -4316,5 +4323,1154 @@ On focal lengths and shutter speeds: The shots were taken with a Canon 600D, whi
         <extension>.jpg</extension>
       </image>
     </images>
+  </entry>
+  <entry>
+    <guid>3f867dd6-a4ff-4a1b-93fe-faa22a4cdc92</guid>
+    <date>2013-06-14</date>
+    <shorturl>
+    </shorturl>
+    <header>Back in Sweden</header>
+    <readableid>back-in-sweden</readableid>
+    <subheader>A breath of fresh air</subheader>
+    <intro>[image lake] Been a bit busy lately to post much here, reason being me relocating to Sweden. Moving from one country to another is quite a project, but luckily things went (mostly) as planned. The summer in Sweden is beautiful, but also short. Expect to see articles on my experiences with polar bear photography soon. ;)</intro>
+    <content>
+    </content>
+    <images>
+      <image>
+        <description>A Swedish lake.</description>
+        <name>lake</name>
+        <extension>.jpg</extension>
+      </image>
+    </images>
+  </entry>
+  <entry>
+    <guid>d8eeded6-71fd-4dc7-a381-07461f79b2c0</guid>
+    <date>2013-07-19</date>
+    <shorturl>
+    </shorturl>
+    <header>Short review: Logitech K400r vs Plexgear Mediatrack Ergo</header>
+    <readableid>short-review-logitech-k400r-vs-plexgear-mediatrack-ergo</readableid>
+    <subheader>Keyboards for the couch potato</subheader>
+    <intro>[image touchpad] I have just recently hooked up a dedicated PC to my TV to use it as a media center. This obviously calls for a suitable device to operate it with. I am not ready to ditch the keyboard for a "real" remote just yet, so in order to comfortably control the PC from the couch, I looked at two options: The Logitech K400r and the Plexgear Mediatrack Ergo (AKA MCSaite W9710RF AKA Generic Wireless Trackball Keyboard). Read on for a short review and comparison.</intro>
+    <content>&lt;h2&gt;Two keyboards - one concept&lt;/h2&gt;
+
+&lt;p&gt;
+The two devices build on the same concept - provide a nice keyboard for the couch, with mouse functionality. They also cost about the same - around some 45 EUR.
+&lt;/p&gt;
+
+&lt;p&gt;What I like about both keyboards is that they offer different options how to move the mouse depending on whether you are holding the device or have put it on a flat surface. Logitech allows clicking on the left side, Plexgear takes it a step further by also adding a right mouse button, and a clickable scrollwheel.&lt;/p&gt;
+
+&lt;h2&gt;The Plexgear&lt;/h2&gt;
+
+&lt;p&gt;
+The first thing that struck me when I held the Plexgear keyboard was that it felt like a huge gaming controller. You hold it comfortably on each side and can operate the trackball with your right thumb, clicking with the right index finger and scrolling with the left. This quite comfortable, especially when you use the keyboard without a flat surface - like standing up, or having it on your lap. There are mouse buttons on the left as well.
+&lt;/p&gt;
+
+[image plexgear]
+
+[image leftmouse]
+
+[image mousewheel]
+
+[image trackball]
+
+&lt;p&gt;
+The layout of the mouse buttons and trackball opens up some interesting possibilities - while it may not beat a real mouse and keyboard, it worked surprisingly well to play casual FPS:es with this thing. With the Logitech, this was a rather awkward experience.
+&lt;/p&gt;
+
+&lt;h2&gt;The Logitech&lt;/h2&gt;
+
+&lt;p&gt;Instead of a trackball, Logitech went with a multi-touch touchpad. Like the Plexgear, you can move the mouse with your right thumb and click with your left - they actually added a click button to the top left. If on a flat surface, a better way to operate it might be to left-click with the button under the touchpad, or by using the touchpad itself. Right-clicking is done by a two-finger tap, scrolling by moving two fingers. This may take a while to get used to.&lt;/p&gt;
+
+[image logitech]
+
+&lt;h2&gt;Typing&lt;/h2&gt;
+
+&lt;p&gt;
+Both keyboards feel a bit light and cheap, and none provide a numeric keyboard, so I don't recommend using any of these if you type a lot. That said, the Logitech is the clear winner here. The keys are large and the layout pretty much what you'd expect. It is also quiet to type on.
+&lt;/p&gt;
+
+[image logitech_layout]
+
+&lt;p&gt;
+The Plexgear is more difficult to type on, and feels and sounds very plasticky - as opposed to the Logitech's rather rubbery feel. The layout is a but unusual, and I often found myself pressing the context menu button to the bottom right, thinking it was where the right arrow should be. And the left Alt key is not immediately next to the space key, which I am used to.
+&lt;/p&gt;
+
+[image plexgear_layout]
+
+&lt;p&gt;
+No big deal it may seem, but I never felt at home typing on the Plexgear. The Logitech could do with some more dedicated media buttons instead of combining them with the function keys, but it still wins hands down. (Note on the media keys: For a combination like Alt-F4, it is not necessary to press the FN key. Good thinking there.)
+&lt;/p&gt;
+
+&lt;h2&gt;Reception and the receivers&lt;/h2&gt;
+
+&lt;p&gt;
+Basically - reception is about the same. I thought I would be able to connect the receiver to the back of the PC and have good reception from my couch some 3 meters away, but the signal was sporadic at best - with both keyboards. I used a cable to bring the receiver to the front and that did the trick. I was expecting a bit more but that's just life I guess.
+&lt;/p&gt;
+
+[image plexgear_receiver]
+
+[image logitech_receiver]
+
+&lt;h2&gt;Conclusion&lt;/h2&gt;
+
+&lt;h3&gt;Plexgear: Pros&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Feels and plays like a gaming controller&lt;/li&gt;
+&lt;li&gt;Dedicated scroll wheel&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3&gt;Plexgear: Cons&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Plasticky&lt;/li&gt;
+&lt;li&gt;Difficult to type on&lt;/li&gt;
+&lt;li&gt;Patchy build quality (had to return two because buttons not working etc.)&lt;/li&gt;
+&lt;li&gt;Plexgear is not even a brand, this is actually a generic chinese product with a logo slapped on&lt;/li&gt;
+&lt;/ul&gt;
+ 
+&lt;h3&gt;Logitech: Pros&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Small receiver&lt;/li&gt;
+&lt;li&gt;Typing experience basically like regular keyboard&lt;/li&gt;
+&lt;/ul&gt;
+ 
+&lt;h3&gt;Logitech: Cons&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Two-finger scrolling with the touchpad a bit awkward (dedicated scrolling wheel on the left side of the keyboard would have been cool)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;
+In conclusion, I would say Logitech is the winner. I liked just holding the Plexgear, but typing is much better on the Logitech. And I cannot quite recommend the Plexgear because they seem to have some quality control issues - although you might be luckier than me.
+&lt;/p&gt;
+
+[image touchpad]</content>
+    <images>
+      <image>
+        <description>The touchpad of the Logitech K400r.</description>
+        <name>touchpad</name>
+        <extension>.jpg</extension>
+      </image>
+      <image>
+        <description>The plexgear, with its ergonomic grips and all.</description>
+        <name>plexgear</name>
+        <extension>.jpg</extension>
+      </image>
+      <image>
+        <description>... and on the opposite side, the scroll wheel.</description>
+        <name>mousewheel</name>
+        <extension>.jpg</extension>
+      </image>
+      <image>
+        <description>The shoulder-button style left mouse button...</description>
+        <name>leftmouse</name>
+        <extension>.jpg</extension>
+      </image>
+      <image>
+        <description>The Logitech K400r.</description>
+        <name>logitech</name>
+        <extension>.jpg</extension>
+      </image>
+      <image>
+        <description>Some buttons feel out of place, especially on the bottom row.</description>
+        <name>plexgear_layout</name>
+        <extension>.jpg</extension>
+      </image>
+      <image>
+        <description>Layout here is quite straightforward.</description>
+        <name>logitech_layout</name>
+        <extension>.jpg</extension>
+      </image>
+      <image>
+        <description>The Plexgear receiver is a bit bulky. A red LED inside blinks when data is being received. I have no idea why.</description>
+        <name>plexgear_receiver</name>
+        <extension>.jpg</extension>
+      </image>
+      <image>
+        <description>The Logitech receiver (bottom) is so small they even provided an adapter (top) just to make it larger. Not bad.</description>
+        <name>logitech_receiver</name>
+        <extension>.jpg</extension>
+      </image>
+      <image>
+        <description>The trackball.</description>
+        <name>trackball</name>
+        <extension>.jpg</extension>
+      </image>
+    </images>
+  </entry>
+  <entry>
+    <guid>8ba39204-2080-4e3f-9c6d-b60b7dabb28d</guid>
+    <date>2013-08-13</date>
+    <shorturl>http://bit.ly/17sPqDv</shorturl>
+    <header>DSLR vs cell phone camera vs digicam</header>
+    <readableid>dslr-vs-cell-phone-camera-vs-digicam</readableid>
+    <subheader>Next up: Apples vs Oranges</subheader>
+    <intro>[image teaser] I recently picked up the Nexus 4, and it's the first time I find myself really using a cell phone as a camera. Obviously, a DSLR has better image quality, but just how much better? I compared the Nexus 4 to the Canon 600D (AKA T3i) to find out - and also threw in the the compact point and shoot Olympus TG-310 for good fun.</intro>
+    <content>&lt;h2&gt;The contestants&lt;/h2&gt;
+
+&lt;h3&gt;Canon 600D/T3i&lt;/h3&gt;
+
+&lt;p&gt;Good all-round entry level DSLR, which retails for around 500 USD. I will be using the 18-55mm (f/3.5-5.6) kit lens in all tests. Just like a cell phone, the kit lens is light and flexible, and it's what many people use.&lt;/p&gt;
+
+[image canon]
+
+&lt;h3&gt;The LG Google Nexus 4&lt;/h3&gt;
+
+&lt;p&gt;Equipped with an 8 megapixel sensor for taking pictures, and a large, bright screen for viewing them. Can be picked up for around 350 USD.&lt;/p&gt;
+
+[image nexus]
+
+&lt;h3&gt;Olympus TG-310&lt;/h3&gt;
+
+&lt;p&gt;Waterproof and shockproof, but how is the image quality? We'll see how this holds up against the others. It's a bit older and off the market by now, but its (very similar) successor, the TG-320 can be had for around 150 USD, making it the cheapest of the bunch.&lt;/p&gt;
+
+[image olympus]
+
+So its Canon 600D/T3i vs LG Google Nexus 4 vs Olympus TG-310 - which one will win? Let's find out.
+
+&lt;h2&gt;Round 1: Subject Isolation&lt;/h2&gt;
+
+&lt;p&gt;Isolating the subject using a shallow depth of field can be super-useful, especially for portrait shots and when the background is messy. A large sensor and wide aperture is usually needed for the effect.&lt;/p&gt;
+
+&lt;h3&gt;Person-sized object&lt;/h3&gt;
+
+&lt;p&gt;Because no one would sign a model release. ;)&lt;/p&gt;
+
+[image 09_canon]
+
+[image 09_nexus]
+
+[image 09_olympus]
+
+&lt;h3&gt;Close up&lt;/h3&gt;
+
+&lt;p&gt;Getting closer usually creates a more shallow depth of field.&lt;/p&gt;
+
+[image 03_canon]
+
+[image 03_nexus]
+
+[image 03_olympus]
+
+&lt;p&gt;&lt;b&gt;Subject isolation:&lt;/b&gt; The Canon is clearly the Bokeh Master - but it needs something better than the kit lens to shine.&lt;/p&gt;
+
+[note]
+While it works well for portraits, a shallow DOF could be a problem sometimes - what if you want everything in focus? And what if there is only little light available? The DSLR then needs to stop down, maybe to f/11 which would increase the exposure time significantly. Cell phones and compacts (mostly) do not suffer from this problem.
+[/note]
+
+&lt;h2&gt;Round 2: Dynamic Range&lt;/h2&gt;
+
+&lt;p&gt;A good camera can capture both dark and bright areas in a scene, without over- or underexposing.&lt;/p&gt;
+
+[image 01_canon]
+
+[image 01_nexus]
+
+[image 01_olympus]
+
+[image 08_canon]
+
+[image 08_nexus]
+
+[image 08_nexus_hdr]
+
+[image 08_olympus]
+
+&lt;p&gt;&lt;b&gt;Dynamic range:&lt;/b&gt; Interestingly, the Canon did not outperform the other cameras as much as I thought it would. But its exposure generally looks more correct so it still wins in my book.&lt;/p&gt;
+
+&lt;h2&gt;Round 3: Zooming&lt;/h2&gt;
+
+&lt;p&gt;Some say approaching the subject is the best way of shooting. However, a zoom is useful in many situations. At the zoo for example, unless you want to get social with the bears.&lt;/p&gt;
+
+[image 04_canon]
+
+[image 04_nexus]
+
+[image 04_olympus]
+
+&lt;p&gt;&lt;b&gt;Zooming:&lt;/b&gt; Having one is better than not having one. No clear winner, but the cell phone loses this round.&lt;/p&gt;
+
+&lt;h2&gt;Round 4: Macro&lt;/h2&gt;
+
+&lt;p&gt;Just how close can you get?&lt;/p&gt;
+
+[image 05_canon]
+
+[image 05_nexus]
+
+[image 05_olympus]
+
+&lt;p&gt;&lt;b&gt;Macro:&lt;/b&gt; The Olympus takes this one. The Canon would probably win if it could use a macro lens, but that would be cheating.&lt;/p&gt;
+
+[note]
+Über-Pro Tip of the Day: The DSLR has a trick up its sleeve when it comes to macro. By unscrewing the lens and holding it backwards in front of the camera, you can use it as a macro lens and get extremely close. But without special equipment (like duct tape) you cannot mount the lens this way and it's a rather awkward way of shooting - plus you might get dust in the camera.
+[/note]
+
+&lt;h2&gt;Round 5: Low-light&lt;/h2&gt;
+
+[image 06_canon]
+
+[image 06_nexus]
+
+[image 06_olympus]
+
+[image 07_canon]
+
+[image 07_nexus]
+
+[image 07_olympus]
+
+&lt;p&gt;&lt;b&gt;Low-light:&lt;/b&gt; DSLRs reign supreme here, with good noise performance and high ISO speeds. But the cell phones are picking up.&lt;/p&gt;
+
+&lt;h2&gt;Conclusion&lt;/h2&gt;
+
+&lt;p&gt;To sum it up:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;b&gt;The DSLR&lt;/b&gt; has the best noise performance, dynamic range, highest resolution, and it can create the shallowest depth of field. It also offers a lot of manual control. If it's only about image quality, this is the best choice.&lt;/li&gt;
+&lt;li&gt;&lt;b&gt;The compact&lt;/b&gt; has an optical zoom which should not be understated. It is also quite cheap and small. As an added bonus, this particular model is 10ft waterproof. However, its mediocre image quality and lackluster low-light performance makes it a poor choice in many situations.&lt;/li&gt;
+&lt;li&gt;&lt;b&gt;The cell phone&lt;/b&gt; has an image quality comparable to a compact, but it lacks many manual controls, like shutter speed. On the other hand, it's very quick and easy to use. Possibly, its main strength lies in always being with you, and other stuff like image editing apps and sharing.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;So while the DSLR still has the best image quality, the cell phones are closer than one might think. Still, using a DSLR is also about being in control, and being able to use the camera with additional equipment like flash guns, tripods, remote triggers - and of course, lenses. But if that's not your thing, a cell phone should be enough in the vast majority of situations.&lt;/p&gt;
+
+[image end]</content>
+    <images>
+      <image>
+        <description>Canon: The DSLR should shine here, but leaves a rather underwhelming result. The sky was clear blue on that day, but looks almost completely washed out.</description>
+        <name>01_canon</name>
+        <extension>.jpg</extension>
+      </image>
+      <image>
+        <description>Nexus: Washed out sky, and dark areas too dark (look at the graffiti). Also the rock looks more brown than gray.</description>
+        <name>01_nexus</name>
+        <extension>.jpg</extension>
+      </image>
+      <image>
+        <description>Olympus: We see some sky, but for some reason, the cliff looks washed out and lacks detail. Also the trees look unnatural.</description>
+        <name>01_olympus</name>
+        <extension>.jpg</extension>
+      </image>
+      <image>
+        <description>
+        </description>
+        <name>08_canon</name>
+        <extension>.jpg</extension>
+      </image>
+      <image>
+        <description>
+        </description>
+        <name>08_nexus</name>
+        <extension>.jpg</extension>
+      </image>
+      <image>
+        <description>
+        </description>
+        <name>08_nexus_hdr</name>
+        <extension>.jpg</extension>
+      </image>
+      <image>
+        <description>
+        </description>
+        <name>08_olympus</name>
+        <extension>.jpg</extension>
+      </image>
+      <image>
+        <description>Canon: At 55mm, the kit lens has a f/5.6 aperture, which is not quite enough for a shallow DOF. There is some bokeh patterns in the background, but there is little of it and it looks rather ugly. A better lens would help here.</description>
+        <name>09_canon</name>
+        <extension>.jpg</extension>
+      </image>
+      <image>
+        <description>Nexus: Small sensor, wide angle - sharp background. Not the desired effect, nothing to see here. Also looks a bit underexposed.</description>
+        <name>09_nexus</name>
+        <extension>.jpg</extension>
+      </image>
+      <image>
+        <description>Olympus: Using the zoom, we can throw the background out of focus just a bit, but it is barely noticeable.</description>
+        <name>09_olympus</name>
+        <extension>.jpg</extension>
+      </image>
+      <image>
+        <description>Canon: Creamy, buttery, sweet - this is why people get DSLRs. Subject is well isolated and the background is just a blur.</description>
+        <name>03_canon</name>
+        <extension>.jpg</extension>
+      </image>
+      <image>
+        <description>Nexus: The effect is noticeable, but cannot compete with the DSLR. And the wide angle makes our ninja look fat.</description>
+        <name>03_nexus</name>
+        <extension>.jpg</extension>
+      </image>
+      <image>
+        <description>Olympus: Slightly better than the Nexus, but not by much.</description>
+        <name>03_olympus</name>
+        <extension>.jpg</extension>
+      </image>
+      <image>
+        <description>Canon: OK.</description>
+        <name>04_canon</name>
+        <extension>.jpg</extension>
+      </image>
+      <image>
+        <description>Nexus: The digital zoom pixelates the image and noise is everywhere. Avoid.</description>
+        <name>04_nexus</name>
+        <extension>.jpg</extension>
+      </image>
+      <image>
+        <description>Olympus: OK.</description>
+        <name>04_olympus</name>
+        <extension>.jpg</extension>
+      </image>
+      <image>
+        <description>Canon: Gets fairly close at 55mm.</description>
+        <name>05_canon</name>
+        <extension>.jpg</extension>
+      </image>
+      <image>
+        <description>Nexus: Wide angle, and could not get it to focus closer than about 3-4 inches. Not really macro.</description>
+        <name>05_nexus</name>
+        <extension>.jpg</extension>
+      </image>
+      <image>
+        <description>Olympus: Some compacts are great at taking macro pictures, and the olympus does quite well here.</description>
+        <name>05_olympus</name>
+        <extension>.jpg</extension>
+      </image>
+      <image>
+        <description>Canon: Not too bad. ISO 3200, 1/20 sec. Luckily, the lens has an optical stabilizer.</description>
+        <name>06_canon</name>
+        <extension>.jpg</extension>
+      </image>
+      <image>
+        <description>Nexus: The white balance seems off, and at ISO 1700, there is quite a bit of noise. I prefer it over camera shake though. 1/14 sec, f/2.6.</description>
+        <name>06_nexus</name>
+        <extension>.jpg</extension>
+      </image>
+      <image>
+        <description>Olympus: With its lackluster ISO performance, the camera stays at ISO 200. To avoid camera shake, the exposure is limited to 1/4 sec, which gives us this underexposed image.</description>
+        <name>06_olympus</name>
+        <extension>.jpg</extension>
+      </image>
+      <image>
+        <description>Canon: Subject looks underexposed, and the sky is very bright for some reason. We are down to 1/13 sec, the kit lens feels too slow for situations like these.</description>
+        <name>07_canon</name>
+        <extension>.jpg</extension>
+      </image>
+      <image>
+        <description>Nexus: Noisy. But no camera shake.</description>
+        <name>07_nexus</name>
+        <extension>.jpg</extension>
+      </image>
+      <image>
+        <description>Olympus: Shaky and blue.</description>
+        <name>07_olympus</name>
+        <extension>.jpg</extension>
+      </image>
+      <image>
+        <description>Canon: Flowers are well exposed, but the background - the houses - is blown out. Could be because I forgot to stop down - but the sky seems overexposed as well.</description>
+        <name>08_canon</name>
+        <extension>.jpg</extension>
+      </image>
+      <image>
+        <description>Nexus: Underexposed subject and overexposed background.</description>
+        <name>08_nexus</name>
+        <extension>.jpg</extension>
+      </image>
+      <image>
+        <description>Nexus HDR: The Nexus has an HDR function, and with it activated there is a better balance. The houses in the background are well exposed, the flowers look better and the sky is blue. Useful in many situations, but it does not look natural to me.</description>
+        <name>08_nexus_hdr</name>
+        <extension>.jpg</extension>
+      </image>
+      <image>
+        <description>Olympus: The Olympus decides to expose for the background instead of for the subject. </description>
+        <name>08_olympus</name>
+        <extension>.jpg</extension>
+      </image>
+      <image>
+        <description>The Canon 600D - stealth mode with taped over logo and strap removed.</description>
+        <name>canon</name>
+        <extension>.jpg</extension>
+      </image>
+      <image>
+        <description>
+        </description>
+        <name>end</name>
+        <extension>.jpg</extension>
+      </image>
+      <image>
+        <description>The Nexus 4. </description>
+        <name>nexus</name>
+        <extension>.jpg</extension>
+      </image>
+      <image>
+        <description>The Olympus TG-310.</description>
+        <name>olympus</name>
+        <extension>.jpg</extension>
+      </image>
+      <image>
+        <description>Canon 600D, Nexus 4, Olympus TG-310.</description>
+        <name>teaser</name>
+        <extension>.jpg</extension>
+      </image>
+    </images>
+  </entry>
+  <entry>
+    <guid>8b8a18fd-b04e-4801-8451-1444b9d034e2</guid>
+    <date>2013-09-20</date>
+    <shorturl>
+    </shorturl>
+    <header>Quick Sharpness Comparison</header>
+    <readableid>quick-sharpness-comparison</readableid>
+    <subheader>Sharpest tool in the shed</subheader>
+    <intro>[image 40mm-2.8] I was recently asked by a reader if I could do a comparison between the Canon kit lens (EF-S 18-55mm f/3.5-5.6 IS II), the Canon 50mm "Plastic Fantastic" (EF 50mm 1:1.8 II) and the Canon 40mm pancake (EF 40mm f/2.8) with respect of sharpness. I was a bit curious myself, so I went out and took a few shots. I also included the Tamron 18-270 DI II. Read on for more.</intro>
+    <content>&lt;h2&gt;The contestants&lt;/h2&gt;
+
+[image lenses]
+
+&lt;h2&gt;Fully open&lt;/h2&gt;
+
+&lt;p&gt;The first shot is with the aperture fully open, which means different things for the different lenses - from f/1.8 of the 50mm all the way to f/5 on the kit lens. The focal lengths also differ slightly, from 40mm to 50mm, with the zoom lenses set to around 42mm.&lt;/p&gt;
+
+&lt;h3&gt;Whole picture, resized&lt;/h3&gt;
+
+[image kit-5]
+
+[image 50mm-1.8]
+
+[image 40mm-2.8]
+
+[image tamron-4]
+
+
+&lt;h3&gt;Crop, middle&lt;/h3&gt;
+
+[image kit-5-crop-middle]
+
+[image 50mm-1.8-crop-middle]
+
+[image 40mm-2.8-crop-middle]
+
+[image tamron-4-crop-middle]
+
+&lt;h3&gt;Crop, closer to edge&lt;/h3&gt;
+
+[image kit-5-crop-edge]
+
+[image 50mm-1.8-crop-edge]
+
+[image 40mm-2.8-crop-edge]
+
+[image tamron-4-crop-edge]
+
+&lt;h2&gt;A bit of cheating&lt;/h2&gt;
+
+&lt;p&gt;As you might have noticed above, the 50mm has a very "interesting" look fully open, so here are a few shots at f/2.8 aperture.&lt;/p&gt;
+
+[image 50mm-2.8]
+
+[image 50mm-2.8-crop-edge]
+
+[image 50mm-2.8-crop-middle]
+
+
+&lt;h2&gt;At f/5.6&lt;/h2&gt;
+
+&lt;p&gt;Stopped down to f/5.6, all lenses should be sharper. It also comes closer to comparing apples to apples since all lenses use the same aperture.&lt;/p&gt;
+
+&lt;h3&gt;Whole picture, resized&lt;/h3&gt;
+
+[image kit-5.6]
+
+[image 50mm-5.6]
+
+[image 40mm-5.6]
+
+[image tamron-5.6]
+
+&lt;h3&gt;Crop, middle&lt;/h3&gt;
+
+[image 50mm-5.6-crop-middle]
+
+[image 40mm-5.6-crop-middle]
+
+[image kit-5.6-crop-middle]
+
+[image tamron-5.6-crop-middle]
+
+&lt;h3&gt;Crop, closer to edge&lt;/h3&gt;
+
+[image 50mm-5.6-crop-edge]
+
+[image 40mm-5.6-crop-edge]
+
+[image kit-5.6-crop-edge]
+
+[image tamron-5.6-crop-edge]
+
+&lt;h2&gt;Conclusion&lt;/h2&gt;
+
+&lt;p&gt;To sum it up, the prime lenses here have shown to be noticeable sharper (and also faster) than the zoom lenses. Which was exactly what you might have expected. :) Anyway, here are my personal, more specific conclusions:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;The 40mm is razor sharp. Period.&lt;/li&gt;
+&lt;li&gt;The 50mm has a very strange glow to it fully open. It almost looks like a Photoshop filter. At f/2.8 the glow is gone and the lens is really sharp. Strangely, at f/5.6, the lens is less sharp - I would assume it did just not focus properly in this case.&lt;/li&gt;
+&lt;li&gt;The Canon kit lens is slow and is also the least sharp of the bunch.&lt;/li&gt;
+&lt;li&gt;Stopped down to f/5.6, the Tamron is actually reasonably sharp. With it's massive zoom range and optical image stabilization, it might not be the worst lens after all.&lt;/li&gt;
+&lt;/ul&gt;</content>
+    <images>
+      <image>
+        <description>Canon EF 40mm f/2.8 @f/2.8</description>
+        <name>40mm-2.8</name>
+        <extension>.jpg</extension>
+      </image>
+      <image>
+        <description>Canon EF 40mm f/2.8 @f/2.8</description>
+        <name>40mm-2.8-crop-edge</name>
+        <extension>.jpg</extension>
+      </image>
+      <image>
+        <description>Canon EF 40mm f/2.8 @f/2.8</description>
+        <name>40mm-2.8-crop-middle</name>
+        <extension>.jpg</extension>
+      </image>
+      <image>
+        <description>Canon EF 40mm f/2.8 @f/5.6</description>
+        <name>40mm-5.6</name>
+        <extension>.jpg</extension>
+      </image>
+      <image>
+        <description>Canon EF 40mm f/2.8 @f/5.6</description>
+        <name>40mm-5.6-crop-edge</name>
+        <extension>.jpg</extension>
+      </image>
+      <image>
+        <description>Canon EF 40mm f/2.8 @f/5.6</description>
+        <name>40mm-5.6-crop-middle</name>
+        <extension>.jpg</extension>
+      </image>
+      <image>
+        <description>Canon EF 50mm 1:1.8 II @f/1.8</description>
+        <name>50mm-1.8</name>
+        <extension>.jpg</extension>
+      </image>
+      <image>
+        <description>Canon EF 50mm 1:1.8 II @f/1.8</description>
+        <name>50mm-1.8-crop-edge</name>
+        <extension>.jpg</extension>
+      </image>
+      <image>
+        <description>Canon EF 50mm 1:1.8 II @f/1.8</description>
+        <name>50mm-1.8-crop-middle</name>
+        <extension>.jpg</extension>
+      </image>
+      <image>
+        <description>Canon EF 50mm 1:1.8 II @f/2.8</description>
+        <name>50mm-2.8</name>
+        <extension>.jpg</extension>
+      </image>
+      <image>
+        <description>Canon EF 50mm 1:1.8 II @f/2.8</description>
+        <name>50mm-2.8-crop-edge</name>
+        <extension>.jpg</extension>
+      </image>
+      <image>
+        <description>Canon EF 50mm 1:1.8 II @f/2.8</description>
+        <name>50mm-2.8-crop-middle</name>
+        <extension>.jpg</extension>
+      </image>
+      <image>
+        <description>Canon EF 50mm 1:1.8 II @f/5.6</description>
+        <name>50mm-5.6</name>
+        <extension>.jpg</extension>
+      </image>
+      <image>
+        <description>Canon EF 50mm 1:1.8 II @f/5.6</description>
+        <name>50mm-5.6-crop-edge</name>
+        <extension>.jpg</extension>
+      </image>
+      <image>
+        <description>Canon EF 50mm 1:1.8 II @f/5.6</description>
+        <name>50mm-5.6-crop-middle</name>
+        <extension>.jpg</extension>
+      </image>
+      <image>
+        <description>Canon EF-S 18-55mm f/3.5-5.6 IS II @f/5.6</description>
+        <name>kit-5.6</name>
+        <extension>.jpg</extension>
+      </image>
+      <image>
+        <description>Canon EF-S 18-55mm f/3.5-5.6 IS II @f/5.6</description>
+        <name>kit-5.6-crop-edge</name>
+        <extension>.jpg</extension>
+      </image>
+      <image>
+        <description>Canon EF-S 18-55mm f/3.5-5.6 IS II @f/5.6</description>
+        <name>kit-5.6-crop-middle</name>
+        <extension>.jpg</extension>
+      </image>
+      <image>
+        <description>Canon EF-S 18-55mm f/3.5-5.6 IS II @f/5</description>
+        <name>kit-5</name>
+        <extension>.jpg</extension>
+      </image>
+      <image>
+        <description>Canon EF-S 18-55mm f/3.5-5.6 IS II @f/5</description>
+        <name>kit-5-crop-edge</name>
+        <extension>.jpg</extension>
+      </image>
+      <image>
+        <description>Canon EF-S 18-55mm f/3.5-5.6 IS II @f/5</description>
+        <name>kit-5-crop-middle</name>
+        <extension>.jpg</extension>
+      </image>
+      <image>
+        <description>Tamron 18-270 3.5-6.3 DI II VC @f/4</description>
+        <name>tamron-4</name>
+        <extension>.jpg</extension>
+      </image>
+      <image>
+        <description>Tamron 18-270 3.5-6.3 DI II VC @f/4</description>
+        <name>tamron-4-crop-edge</name>
+        <extension>.jpg</extension>
+      </image>
+      <image>
+        <description>Tamron 18-270 3.5-6.3 DI II VC @f/4</description>
+        <name>tamron-4-crop-middle</name>
+        <extension>.jpg</extension>
+      </image>
+      <image>
+        <description>Tamron 18-270 3.5-6.3 DI II VC @f/5.6</description>
+        <name>tamron-5.6</name>
+        <extension>.jpg</extension>
+      </image>
+      <image>
+        <description>Tamron 18-270 3.5-6.3 DI II VC @f/5.6</description>
+        <name>tamron-5.6-crop-edge</name>
+        <extension>.jpg</extension>
+      </image>
+      <image>
+        <description>Tamron 18-270 3.5-6.3 DI II VC @f/5.6</description>
+        <name>tamron-5.6-crop-middle</name>
+        <extension>.jpg</extension>
+      </image>
+      <image>
+        <description>From the left: Tamron 18-270 3.5-6.3 DI II VC, 
+Canon EF-S 18-55mm f/3.5-5.6 IS II (kit lens), Canon EF 50mm 1:1.8 II and the Canon EF 40mm f/2.8. The Tamron and the kit lens are both zoom lenses, while the 40mm and the 50mm are primes.</description>
+        <name>lenses</name>
+        <extension>.jpg</extension>
+      </image>
+    </images>
+  </entry>
+  <entry>
+    <guid>952cc3b5-f7b0-4c17-b0fa-a47bc54fba92</guid>
+    <date>2013-11-28</date>
+    <shorturl>
+    </shorturl>
+    <header>Easy fix for Google Nexus 4 sliding off surfaces and muffled speaker</header>
+    <readableid>easy-fix-for-google-nexus-4-sliding-off-surfaces-and-muffled-speaker</readableid>
+    <subheader>World's smallest IKEA hack</subheader>
+    <intro>[image pad] The Nexus 4 may have been superseded, but anyone still using it probably still struggles with its (great looking) slippery flat back, which makes it slide off most slightly slanted surfaces and also muffling the speaker when placed on its back. Easy fix for that: get a rubber bumper pad - eg. from IKEA - and stick it to the back next to the speaker. The rubber stops it from sliding, and since it's lifted up slightly, it lets more sound from the speaker out (demuffling!). I carry my phone in my pocket and the pad has stayed on for several weeks so it's fairly durable too. Good luck!</intro>
+    <content>
+    </content>
+    <images>
+      <image>
+        <description>
+        </description>
+        <name>pad</name>
+        <extension>.jpg</extension>
+      </image>
+    </images>
+  </entry>
+  <entry>
+    <guid>a4537311-8f2d-41ef-b4e6-0b3dd63c638f</guid>
+    <date>2014-01-22</date>
+    <shorturl>
+    </shorturl>
+    <header>Hands on: Cheap Interchangeable Cell Phone Lenses</header>
+    <readableid>hands-on-cheap-interchangeable-cell-phone-lenses</readableid>
+    <subheader>That L glass is too heavy anyway</subheader>
+    <intro>[image lenses] Shooting with a smart phone is fun! As one tends too keep it close at all times, capturing that special moment has gotten so much easier. But what if you are tired of that limiting, fixed focal length lens - is there a way to change it? Turns out, there are quite a few options. Mostly for fun, I ordered a set of three lenses - one which also doubles as a macro lens - and took them for a spin. For less than 10 USD, what can go wrong? Read on for more.</intro>
+    <content>&lt;h2&gt;What's in the package?&lt;/h2&gt;
+
+&lt;p&gt;The packaging is pretty minimalistic, but you get exactly what you need. As a bonus, apart from the lenses there is also an incomprehensible manual included, which has some fine examples of Engrish. Like this one:&lt;/p&gt;
+
+&lt;p&gt;&lt;i&gt;It shoule be grateful to use the phone if the camera lens at the center, on direct absorption in the Ring to use.&lt;/i&gt;&lt;/p&gt;
+
+&lt;p&gt;So, I guess you need to be grateful when mounting it? Or something. Beats me.&lt;/p&gt;
+
+[image package]
+
+[image caps]
+
+&lt;p&gt;The lenses have rubber lens caps. The back is magnetic and the supplied metal covers can be put on when not in use. The string could be attached to a keychain I guess, but by doing so, you will probably loose the lens - magnets are only so strong!&lt;/p&gt;
+
+[image stickyrings]
+
+[image macro_wide]
+
+&lt;h2&gt;How to use&lt;/h2&gt;
+
+&lt;p&gt;Pay close attention now.&lt;/p&gt;
+
+[image on_phone]
+
+[image with_lens]
+
+&lt;h2&gt;Samples&lt;/h2&gt;
+
+[image original]
+
+[image tele]
+
+[image wide]
+
+[image fisheye]
+
+[image normal_macro]
+
+[image macro]
+
+&lt;h2&gt;Conclusion&lt;/h2&gt;
+
+&lt;p&gt;So is this something you need for your cell phone? Well... as always, it depends. While the lenses look pretty, they don't deliver much in terms of quality if that's what you are looking for. Also, the handling is poor - the ring keeps sticking to the lens when I change lenses, so I have to keep reattaching it to the phone. But still, for the price, they are fun toys that keeps you busy for a while.&lt;/p&gt;
+
+&lt;p&gt;Alternate use: You could probably also attach them to a webcam, or something like a D-Link DCS IP camera for a full 180 degree view of the room. Possibly more suitable for this than a cell phone since quality is not really a concern.&lt;/p&gt;
+
+[image lenses]</content>
+    <images>
+      <image>
+        <description>
+        </description>
+        <name>lenses</name>
+        <extension>.jpg</extension>
+      </image>
+      <image>
+        <description>The packaging is simple, and there is no branding on it.</description>
+        <name>package</name>
+        <extension>.jpg</extension>
+      </image>
+      <image>
+        <description>From the left: 2x tele, fish eye, and 0.67x wide angle/macro.</description>
+        <name>caps</name>
+        <extension>.jpg</extension>
+      </image>
+      <image>
+        <description>The wide angle lens can be taken apart and be turned into a macro lens. Nifty.</description>
+        <name>macro_wide</name>
+        <extension>.jpg</extension>
+      </image>
+      <image>
+        <description>These metal rings have a sticky back for attaching to the cell phone (non-permanent). They are shaped a bit differently - the one with the notch could be used if the flash is close to the lens, so that it will not cover it.</description>
+        <name>stickyrings</name>
+        <extension>.jpg</extension>
+      </image>
+      <image>
+        <description>Sticky side down, put a ring on the phone...</description>
+        <name>on_phone</name>
+        <extension>.jpg</extension>
+      </image>
+      <image>
+        <description>... and put a lens on it!</description>
+        <name>with_lens</name>
+        <extension>.jpg</extension>
+      </image>
+      <image>
+        <description>The fish eye lens. Looks pretty cool, but hardly very sharp.</description>
+        <name>fisheye</name>
+        <extension>.jpg</extension>
+      </image>
+      <image>
+        <description>And this is super macro! Using the macro lens, we can get pretty close. But the image quality is quite terrible.</description>
+        <name>macro</name>
+        <extension>.jpg</extension>
+      </image>
+      <image>
+        <description>This is a macro shot with the phone without any extra lens.</description>
+        <name>normal_macro</name>
+        <extension>.jpg</extension>
+      </image>
+      <image>
+        <description>Original shot using the Nexus 4.</description>
+        <name>original</name>
+        <extension>.jpg</extension>
+      </image>
+      <image>
+        <description>With the 2x tele attached. Middle looks pretty OK, but edges are unsharp and there is some serious vignette. And also... only 2x? The Nexus 4 reportedly has a focal length equivalent to 33mm, which makes this 66mm. You pay a lot in terms of quality for some very mild tele.</description>
+        <name>tele</name>
+        <extension>.jpg</extension>
+      </image>
+      <image>
+        <description>0.67x wide. Not much to see here, skip forward to the fish eye!</description>
+        <name>wide</name>
+        <extension>.jpg</extension>
+      </image>
+    </images>
+  </entry>
+  <entry>
+    <guid>b7163a57-ac82-4408-91a7-7a2d3943e5bc</guid>
+    <date>2014-02-20</date>
+    <shorturl>
+    </shorturl>
+    <header>New: Responsive image gallery</header>
+    <readableid>responsive-image-gallery</readableid>
+    <subheader>Form the Anything is Better-dept.</subheader>
+    <intro>[image responsive] I have been using &lt;a href="http://highslide.com/" target="_blank"&gt;HighSlide&lt;/a&gt; for quite some time for the image gallery now, and felt it was time for an update, especially since it never worked well on smartphones. A quick google didn't immediately yield what I was looking for, so I implemented a simple image slideshow thingy using JavaScript and CSS. It is still a bit rough around the edges - works well on Nexus 4 and most modern browsers though -  but should scale better on mobile devices and also look great on a PC. &lt;a href="http://www.erikmoberg.net/images/37"&gt;Try it out if you like.&lt;/a&gt;</intro>
+    <content>
+    </content>
+    <images>
+      <image>
+        <description>Actually, I haven't tested this on the iPhone yet... please get back to me if you try it and it doesn't work - and feel free provide a bugfix too. ;)</description>
+        <name>responsive</name>
+        <extension>.jpg</extension>
+      </image>
+    </images>
+  </entry>
+  <entry>
+    <guid>f85a3a20-b072-47e1-8ebc-18d76e73df08</guid>
+    <date>2014-03-12</date>
+    <shorturl>
+    </shorturl>
+    <header>Quick tip: Select MP3 file from file system as alarm on Android</header>
+    <readableid>quick-tip-select-mp3-file-from-file-system-as-alarm-on-android</readableid>
+    <subheader>This was easier in the 90s</subheader>
+    <intro>[image android] Had a stupid problem today. I just wanted to set a certain MP3 file as an alarm on my Nexus 4, but the default song selection box did not include a way to browse the file system. Also, putting the file in the Notifications or Alarms folders did not show the file, not even after a reboot. Then I simply went to Settings → Apps → All → Media Storage and tapped "Clear defaults" under "Launch by default". Now, when I tap to select an alarm sound, I get the option to use the ES File Explorer I happened to have installed. Just browse to the file, done. Any side effects? Possibly. But the only one I have noticed so far is that I can use the file explorer for the ring tones selection as well, which is pretty neat.</intro>
+    <content>
+    </content>
+    <images>
+      <image>
+        <description>The Nexus 4 runs Android KitKat 4.4.2.</description>
+        <name>android</name>
+        <extension>.jpg</extension>
+      </image>
+    </images>
+  </entry>
+  <entry>
+    <guid>0ec19f18-3dec-4544-a7d2-7cf876dfc0ed</guid>
+    <date>2014-04-07</date>
+    <shorturl>
+    </shorturl>
+    <header>Met Lok C from DigitalRev!</header>
+    <readableid>met-lok-c-from-digitalrev</readableid>
+    <subheader>Interwebs celebrity IRL</subheader>
+    <intro>[image lok] During my recent trip to Hong Kong, I was fortunate enough to accidentally run into Lok C, editor and presenter at the the DigitalRev TV YouTube channel! If you are not familiar with DigitalRev, it's the most subscribed photo related channel right now. So go &lt;a href="https://www.youtube.com/user/DigitalRevCom" target="_blank"&gt;check it out&lt;/a&gt;, they make good reviews and also Lok is a really nice guy. :)</intro>
+    <content>
+    </content>
+    <images>
+      <image>
+        <description>Lok C from DigitalRev TV.</description>
+        <name>lok</name>
+        <extension>.jpg</extension>
+      </image>
+    </images>
+  </entry>
+  <entry>
+    <guid>6bc57450-6221-469b-a40b-ad97549cec07</guid>
+    <date>2014-06-18</date>
+    <shorturl>
+    </shorturl>
+    <header>Using Old Tablet as Charger</header>
+    <readableid>using-old-tablet-as-charger</readableid>
+    <subheader>Recycling is weird sometimes</subheader>
+    <intro>[image charge] Just a little idea I got when I was on vacation: My phone, which I use a lot, kept running out of battery and I didn't have a battery pack. However, I had my trusty ol' Android tablet with me. Tablets often have quite large batteries, this one had 4000 mAh which is about the same as a (slightly below average) battery pack. Using the host USB port, I could charge the phone when I was out. It's quite a lot bigger and heavier than a battery pack to lug around, but at least I didn't have to break my back... erm, I mean, the bank.</intro>
+    <content>
+    </content>
+    <images>
+      <image>
+        <description>The Nexus 4 happily sucking the juice out of the old ASK 731SP Smartpad.</description>
+        <name>charge</name>
+        <extension>.jpg</extension>
+      </image>
+    </images>
+  </entry>
+  <entry>
+    <guid>84004059-b9ed-4681-b80b-a06b4590d943</guid>
+    <date>2014-09-15</date>
+    <shorturl>
+    </shorturl>
+    <header>Found bee, won bike</header>
+    <readableid>found-bee-won-bike</readableid>
+    <subheader>No model release needed</subheader>
+    <intro>[image bee] There was a local photo contest going on this summer, where you could win a bike. Since I could use a new bike, I thought I could just as well participate. There was no particular theme, any good shot taken in the general area was a candidate. I hunted this bee down with my Tamron at 270mm and apparently, that was good enough. :)</intro>
+    <content>
+    </content>
+    <images>
+      <image>
+        <description>A bee.</description>
+        <name>bee</name>
+        <extension>.jpg</extension>
+      </image>
+    </images>
+  </entry>
+  <entry>
+    <guid>4b830aaf-fb9c-4949-8aab-bcadcfe63a9b</guid>
+    <date>2014-09-23</date>
+    <shorturl>
+    </shorturl>
+    <header>Solved - Picasa Cannot See or Import MP4 Video Files</header>
+    <readableid>solved---picasa-cannot-see-or-import-mp4-video-files</readableid>
+    <subheader>Installing codecs like it's '99</subheader>
+    <intro>Had this problem the other day. I was trying to import images and videos from a phone, but the videos did not show up on the import tab. After some googling, it seems that if the proper video codec is missing, Picasa may have problems playing back video files. Windows Media Player was able to play the files, so thought everything was OK - but after identifying (using &lt;a target="_blank" href="http://www.headbands.com/gspot/"&gt;this&lt;/a&gt;) and installing the codec manually, the files showed up in Picasa and everything was fine and dandy. :)</intro>
+    <content>
+    </content>
+    <images />
+  </entry>
+  <entry>
+    <guid>8ccbef13-6ba3-4db0-a922-2d994e6d16f3</guid>
+    <date>2014-11-09</date>
+    <shorturl>
+    </shorturl>
+    <header>Aurora Borealis Hunt</header>
+    <readableid>aurora-borealis-hunt</readableid>
+    <subheader>Far from the madding crowd</subheader>
+    <intro>[image aurora-borealis] Went with some friends to the very north of Sweden to hopefully shoot some northern lights. It was a very long drive and the cold was getting to us - but luckily, we did get to see some of that magical green light. Feel free to check the &lt;a href="/images/38"&gt;Image Gallery.&lt;/a&gt;</intro>
+    <content>
+    </content>
+    <images>
+      <image>
+        <description>Green magic.</description>
+        <name>aurora-borealis</name>
+        <extension>.jpg</extension>
+      </image>
+    </images>
+  </entry>
+  <entry>
+    <guid>7bb77b39-8213-48bd-987e-6c52439496e9</guid>
+    <date>2015-01-04</date>
+    <shorturl>
+    </shorturl>
+    <header>Experiment: Shooting art with cheap lenses</header>
+    <readableid>experiment-shooting-art-with-cheap-lenses</readableid>
+    <subheader>Analog to digital conversion</subheader>
+    <intro>[image org] A dear reader asked if the Canon 40mm 2.8 pancake is any good for shooting paintings. While I figured that it would be, I decided to compare the 40mm to the 50mm 1.8 and the 18-55mm kit lens to see which one would be more suitable. Please read on for the 3 test shots - 1 will shock you and blow your mind! Not. ;)</intro>
+    <content>&lt;h2&gt;What are we looking for?&lt;/h2&gt;
+
+&lt;p&gt;In order to shoot a painting - or a framed picture in this case - the lens should have very little distortion or the paiting will look awkwardly bent. Also, we want good sharpness all the way out to the edges.&lt;/p&gt;
+
+&lt;p&gt;While not the primary focus of this article, lighting is a quite big issue. You will want even lighting and also avoid reflections. Two or more soft boxes would be useful, or two or more strobes. However, I have only one strobe and that will create some unwanted shadows as we will see. :(&lt;/p&gt;
+
+&lt;h2&gt;Setup&lt;/h2&gt;
+
+&lt;p&gt;A framed poster will serve as subject. It measures 72x52 cm and hangs on a wall. To make sure the picture looks flat, the camera should be at the exact same height as the center of the picture - a tripod is great here. We will use a flash and bounce agains the ceiling to get controllable, even lighting.&lt;/p&gt;
+
+&lt;p&gt;The camera is a Canon 600D (crop sensor camera). Aperture is set to f/11 for all lenses for good sharpness, shutter speed is 1/200th and ISO set to 100. The small aperture, fast shutter speed and low ISO will make sure to keep unwanted ambient lighting and reflections to a minimum.&lt;/p&gt;
+
+[image org]
+
+&lt;h2&gt;The results&lt;/h2&gt;
+
+&lt;h3&gt;Canon 18-55mm kit lens @55mm&lt;/h3&gt;
+
+&lt;p&gt;Shot around 2.5 meters from the subject.&lt;/p&gt;
+
+[image 55-mm]
+
+[image 55-mm-corner]
+
+&lt;h3&gt;Canon 50 mm 1.8&lt;/h3&gt;
+
+&lt;p&gt;Shot around 2.5 meters from the subject.&lt;/p&gt;
+
+[image 50-mm]
+
+[image 50-mm-corner]
+
+&lt;h3&gt;Canon 40 mm 2.8&lt;/h3&gt;
+
+&lt;p&gt;Shot around 2 meters from the subject.&lt;/p&gt;
+
+[image 40-mm]
+
+[image 40-mm-corner]
+
+&lt;h3&gt;All three at once&lt;/h3&gt;
+
+&lt;p&gt;Don't we all love animated gifs? Anyway, it should help some in comparing the distortion.&lt;/p&gt;
+
+&lt;div class="articleimage"&gt;
+&lt;image src="/content/distortion-40-50-55.gif" alt="Distortion comparison" /&gt;
+&lt;/div&gt;
+
+&lt;h2&gt;Conclusion&lt;/h2&gt;
+
+&lt;p&gt;Both the 40mm and 50mm seem to be up for the job sharpness-wise, with the 50mm having slightly less distortion and the 40mm providing slighty more vibrant colors (in my case). So basically a toss-up. Also, Photoshop has filters for reducing distortion, which you might want to look into.&lt;/p&gt;
+
+&lt;p&gt;However, even lighting is critical, and I felt the lighting in my setup was not quite good enough. Another flash or a couple of soft boxes should help here.&lt;/p&gt;</content>
+    <images>
+      <image>
+        <description>Colors look good, but distortion is a bit more noticeable though.</description>
+        <name>40-mm</name>
+        <extension>.jpg</extension>
+      </image>
+      <image>
+        <description>Corners look sharp and good.</description>
+        <name>40-mm-corner</name>
+        <extension>.jpg</extension>
+      </image>
+      <image>
+        <description>Better colors than the kit lens, with only slightly more distortion.</description>
+        <name>50-mm</name>
+        <extension>.jpg</extension>
+      </image>
+      <image>
+        <description>Corner looks good.</description>
+        <name>50-mm-corner</name>
+        <extension>.jpg</extension>
+      </image>
+      <image>
+        <description>Distortion looks just fine at 55mm, but don't the colors look a bit dull?</description>
+        <name>55-mm</name>
+        <extension>.jpg</extension>
+      </image>
+      <image>
+        <description>The edges look a tad blurry and we have a bit of greenish fringing,</description>
+        <name>55-mm-corner</name>
+        <extension>.jpg</extension>
+      </image>
+      <image>
+        <description>The poster without frame.</description>
+        <name>org</name>
+        <extension>.jpg</extension>
+      </image>
+    </images>
+  </entry>
+  <entry>
+    <guid>bb2e4c8e-bf68-4b6c-928b-b9c23990f134</guid>
+    <date>2015-05-31</date>
+    <shorturl>
+    </shorturl>
+    <header>Fix: Google Cardboard Magnet not working with Nexus 4</header>
+    <readableid>fix-google-cardboard-magnet-not-working-with-nexus-4</readableid>
+    <subheader>It might be ugly, but hey - it's just cardboard</subheader>
+    <intro>[image google-cardboard] I have difficulties getting the magnet slider to work with the Nexus 4. The phone sometimes reacts if slid out far to the left, but that does not feel like a solution. So I thought: The magnet simply causes a tap. Why not just tap the screen directly? So with a finger sized carved out hole on the side of the headset signed yours truly, tapping the phone's screen is just as simple as sliding the magnet. Not pretty, but it works. :)</intro>
+    <content>
+    </content>
+    <images>
+      <image>
+        <description>Note the hole under the magnet slider ring.</description>
+        <name>google-cardboard</name>
+        <extension>.jpg</extension>
+      </image>
+    </images>
+  </entry>
+  <entry>
+    <guid>6371d1a9-a64d-42db-80f0-ace29db880c9</guid>
+    <date>2015-06-06</date>
+    <shorturl>
+    </shorturl>
+    <header>Chrome cannot downloads files from microsoft.com</header>
+    <readableid>chrome-cannot-downloads-files-from-microsoft.com</readableid>
+    <subheader>From the Mixed Security dept.</subheader>
+    <intro>Had this strange problem the other day. I was trying to download Windows Management Framework from microsoft.com, but no download would start, no matter how many times I tried or how long I waited. But I finally found a way to make it work:
+
+&lt;ol&gt;
+&lt;li&gt;Bring up the developer tools (F12)&lt;/li&gt;
+&lt;li&gt;Click the console tab&lt;/li&gt;
+&lt;li&gt;Note the blocked HTTP-request(s). Clicking on each will start the download.&lt;/li&gt;
+&lt;/ol&gt;
+
+Turns out the page is served over HTTPS, but the download over HTTP for whatever reason. Trying to change HTTPS to HTTP only led to a redirect back to HTTPS in this case so it seems liberate but not quite thought through.
+&lt;/p&gt;
+&lt;p&gt;
+Now, have fun downloading frameworks and tools for your windows PC!</intro>
+    <content>
+    </content>
+    <images />
   </entry>
 </entries>
