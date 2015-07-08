@@ -1,6 +1,8 @@
 <?php
 error_reporting(E_ALL);
 ini_set('display_errors', '1');
+require_once("bloghandler.php");
+require_once("commenthandler.php");
 
 function GetQueryString()
 {
@@ -24,8 +26,9 @@ print <<<END
 <head>
 	<title>Erik Moberg's personal homepage - photography, gadgets, DIY, and more - $pageTitle</title>
 	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
-	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300|Raleway:200' rel='stylesheet' type='text/css'>
-	<link rel="stylesheet" type="text/css" href="/styles/single/style.css.php?_=25" />
+	<link href='http://fonts.googleapis.com/css?family=Roboto+Condensed|Roboto' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" type="text/css" href="/content/styles/style.css.php?_=25" />
+	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js" type="text/javascript"></script>
 	<link rel="shortcut icon" href="/favicon.ico" type="image/vnd.microsoft.icon" />
     <link rel="icon" href="/favicon.ico" type="image/vnd.microsoft.icon" />
@@ -36,27 +39,49 @@ print <<<END
 	<meta name="keywords" content="Erik Moberg, photography, cameras, travel, web design, web development, programming, personal blog, php, css" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
-
-<body>
+END;
+if($highlightitem == 0) {
+	echo '<body class="frontpage">';
+} else {
+	echo '<body>';
+}
+print <<<END
 	<div id="headerContainer">
-		<div id="header">
-			<h1>A blog mostly about photography and related stuff: DIY, techniques, and product reviews. Make sure to check out the image gallery.</h1>
-			<a href="/">
-				<img src="/styles/single/headerback.png" alt="header" />
-			</a>
+		<div id='search-results' class="page-section">
+			<span class="btn close-search-results">Close search results</span>
+			<div id="cse"></div>
+			<span class="btn close-search-results">Close search results</span>
 		</div>
-		<div id='cse-search-form'>
-			<span>Loading search...</span>
+		<div id="header">
+		
+END;
+if(true || $highlightitem == 0) {
+print <<<END
+		<div class="header-image" alt="header">
+			<div id="header-text-container">
+				<div id="header-back"></div>
+				<h1>Hi! I'm Erik.</h1>
+				<h2>I blog mostly about photography, technology and related topics: DIY, techniques, and product reviews.</h2>
+			</div>
+		</div>
+END;
+}
+print <<<END
 		</div>
 	</div>	
 	<div id="menucontainer">
-		<div id="activeItemMarkerContainer">
-			<div id="activeItemMarker"></div>
+		<a href="/" id="logo">
+			<!-- <img src="/content/images/logo.png" /> -->
+		</a>
+		<a id="menu-toggle" href="javascript:void(0);" title="Toggle menu"><i class="fa fa-bars"></i></a>
+		<div id="open-search"><a href="javascript:void(0);"><i class="fa fa-search"></i></a></div>
+		<div id='cse-search-form'>
+			<span>Loading search...</span>
 		</div>
 		<ul id="horizontal">
 END;
-$namesArr = array('Home','Images','Downloads','Icon&nbsp;Maker','About','Contact');
-$urlArr = array('','images','download','iconmaker','about','contact');
+$namesArr = array('Home','Images','Downloads','Icon&nbsp;Maker','Contact');
+$urlArr = array('','images','download','iconmaker','contact');
 for($i=0;$i<count($namesArr);$i++)
 {
 	echo "<li" . ($highlightitem == $i ? " class=\"active\"" : "") . "><a href=\"/$urlArr[$i]\">$namesArr[$i]</a></li> ";				
@@ -67,60 +92,63 @@ print <<<END
 	<div id="containercontainer">
 	<div id="container">	
 		<div id="innercontainer">
-			<div id='search-results'>
-				<span class="btn close-search-results">Close search results</span>
-			
-				<div id="cse"></div>
-				
-				<span class="btn close-search-results">Close search results</span>
-			</div>
-END;
-if($highlightitem == 0) 
-{
-print <<<END
-<a target="_blank" class="rss-link mobile" href="/rss.xml"></a>
-<a id="sideinfo-toggle" href="javascript:void(0);" title="Toggle info"></a>
-	<aside>
-		<div id="sideInfo">
-			<div id="main-sideinfo">
-				<h2 class="firstHeader">About me</h2>
-				<img src="/content/me.jpg" id="self-image" alt="Erik Moberg" />
-				<p>As a programmer with just enough time on my hands, I occasionally blog about my hobbies - mostly photography and various gadgets.</p>
-				<div id="social-container">
-				</div>
-				<h2 id="flickr-header">flickr uploads</h2>
-				<div id="flickr-recent">
-					<p>Loading images...</p>
-				</div>
-			</div>
-			<div id="additional-sideinfo">
 END;
 
-echo '<h2>Recent Comments</h2>';
-PrintRecentComments(10);
-echo '<h2>Most Commented Articles</h2>';
-PrintMostCommentedArticlesList();
-echo '<h2>Recent Articles</h2>';
-PrintRecentBlogHeadings(40);
-print <<<END
-				<h2>Blogroll</h2>
-				<p><a href="http://itochpedagog.wordpress.com/" target="_blank">IT och Pedagog (Swedish)</a> - podcast about using modern technology in education.</p>
-				<p><a href="http://www.snapp.de/" target="_blank">Robert's blog (German)</a> - also a friend of mine, mostly blogging about travelling and online marketing.</p>
-			</div>
-		</div>
-	</aside>
-<div id="content" class="frontpage">
-END;
-}
-else
 	echo '<div id="content">';
 }
 
-function PrintEndHtml()
+function PrintEndHtml($isFrontPage = false)
 {
 print <<<END
 </div>
-<div class="clearfix"></div>
+END;
+if(true || $isFrontPage) {
+print <<<END
+	<aside>
+		<div id="sideInfo">
+			<div id="main-sideinfo">
+				<div class="page-section">
+					<h2 class="firstHeader">About me</h2>
+					<img src="/content/images/me.jpg" id="self-image" alt="Erik Moberg" />
+					<p>As a programmer with just enough time on my hands, I occasionally blog about my hobbies - mostly photography and various gadgets.</p>
+				</div>
+				
+				<div id="social-container">
+				</div>
+				
+			</div>
+			<div id="additional-sideinfo">
+			<div class="page-section">
+					<h2 id="flickr-header">flickr uploads</h2>
+					<div id="flickr-recent">
+						<p>Loading images...</p>
+					</div>
+				</div>
+END;
+	echo '<div class="page-section">';
+	echo '<h2>Recent Comments</h2>';
+	PrintRecentComments(5);
+	echo '</div>';
+
+	echo '<div class="page-section">';
+	echo '<h2>Most Commented Articles</h2>';
+	PrintMostCommentedArticlesList();
+	echo '</div>';
+
+	print <<<END
+				<div class="page-section">
+					<h2>Blogroll</h2>
+					<p><a href="http://itochpedagog.wordpress.com/" target="_blank">IT och Pedagog (Swedish)</a> - podcast about using modern technology in education.</p>
+					<p><a href="http://www.snapp.de/" target="_blank">Robert's blog (German)</a> - also a friend of mine, mostly blogging about travelling and online marketing.</p>
+				</div>
+			</div>
+			<div class="clearfix"></div>
+		</div>
+	</aside>
+END;
+}
+
+print <<<END
 		<div id="footer">
 		</div>
 	</div>
@@ -129,13 +157,13 @@ print <<<END
 <div id="bottom">
 </div>
 <div id="last">
-Copyleft <a href="/about" rel="author">Erik Moberg</a>&nbsp;
+<a href="/about" rel="author">Erik Moberg</a>&nbsp;
 END;
 echo date("Y");
 print <<<END
 </div>
 <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js" type="text/javascript"></script>
-<script src="/include/scripts.js.php?_=1" type="text/javascript"></script>
+<script src="/include/scripts.js.php?_=2" type="text/javascript"></script>
 
 <script src='//www.google.com/jsapi' type='text/javascript'></script>
 <script type='text/javascript'>
@@ -150,9 +178,7 @@ google.setOnLoadCallback(function() {
   customSearchControl.setResultSetSize(google.search.Search.FILTERED_CSE_RESULTSET);
   customSearchControl.setLinkTarget(google.search.Search.LINK_TARGET_SELF);
   customSearchControl.setSearchCompleteCallback(null,function() {
-	if ($('#search-results:visible').length == 0) {
-		$('#search-results').fadeIn({queue:false}).show("slide", { direction: "up" });
-	}
+	emnet.search.showResults();
   });
   var options = new google.search.DrawOptions();
   options.setSearchFormRoot('cse-search-form');

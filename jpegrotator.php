@@ -5,6 +5,8 @@ PrintStartHtml('Download - JPEG Rotator',3,'Download - JPEG Rotator');
 
 ?>
 
+<div class="page-section">
+
 <h2>JPEG Rotator</h2>
 
 <h3>The Background</h3>
@@ -18,8 +20,8 @@ The problem is, the rotation is made using so called EXIF metadata - instead of 
 </p>
 
 <div class="thumb_small" style="float: none; text-align: center;">
-<a href="content/wrongorientation.jpg" class="gallery-thumbnail">
-<img src="content/wrongorientation_thumb.jpg" alt="Wrong JPEG orientation - this ever happened to you?" title="Wrong JPEG orientation - this ever happened to you?" />
+<a href="content/images/wrongorientation.jpg" class="gallery-thumbnail">
+<img src="content/images/wrongorientation_thumb.jpg" alt="Wrong JPEG orientation - this ever happened to you?" title="Wrong JPEG orientation - this ever happened to you?" />
 </a>
 <div class="imagedescription">This ever happened to you?</div>
 </div>
@@ -31,7 +33,7 @@ I needed a small application to batch-rotate the images, so I rolled my own. Jus
 
 <div style="text-align: center;">
 <a href="download/jpegrotator.zip" style="background: none;">
-<img src="content/jpegrotator.jpg" alt="JPEG Rotator" />
+<img src="content/images/jpegrotator.jpg" alt="JPEG Rotator" />
 </a>
 </div>
 
@@ -72,6 +74,8 @@ I needed a small application to batch-rotate the images, so I rolled my own. Jus
 <li>requires .NET Framework 3.5 Client Profile or newer. If you are running Windows 7 you got that covered already - otherwise get a small installer <a target="_blank" href="http://www.hanselman.com/smallestdotnet/">here.</a></li>
 <li>rotates JPEG (*.jpg) images only, using a lossless rotation algorithm (at least it should be, according to the docs). A lossless rotation, however, is only possible if the image dimensions are exact multiples of the Minimum Coded Unit - typically 8x8 or 16x16 pixels. Otherwise, a lossy transform is performed. Luckily, virtually all digital cameras use a resolution that plays nice with the MCU.</li>
 </ul>
+
+</div>
 
 <?php
 PrintEndHtml();

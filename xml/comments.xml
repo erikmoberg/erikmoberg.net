@@ -3816,4 +3816,36 @@ it's no secret! In the source code of this page, find and open the JS file "scri
 With -15&#xB0;C/5&#xB0;F it was basically like summer. ;)</message>
     </comment>
   </comments>
+  <comments articlename="chrome-cannot-downloads-files-from-microsoft.com">
+    <comment>
+      <name>Erik</name>
+      <datetime>2015-07-05 10:56</datetime>
+      <website/>
+      <message>Test!</message>
+    </comment>
+    <comment>
+      <name>Erik</name>
+      <datetime>2015-07-05 10:56</datetime>
+      <website/>
+      <message>Test2</message>
+    </comment>
+    <comment>
+      <name>Erik</name>
+      <datetime>2015-07-05 10:57</datetime>
+      <website/>
+      <message>test3</message>
+    </comment>
+    <comment>
+      <name>Erik</name>
+      <datetime>2015-07-05 10:58</datetime>
+      <website/>
+      <message>test4</message>
+    </comment>
+    <comment>
+      <name>Erik</name>
+      <datetime>2015-07-05 10:59</datetime>
+      <website/>
+      <message>test5</message>
+    </comment>
+  </comments>
 </articlecomments>

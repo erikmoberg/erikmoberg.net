@@ -1,7 +1,6 @@
 <?php
-//ini_set('display_errors', '1');
-include_once("include/webdesign.php");
-include_once("include/imagehandler.php");
+ini_set('display_errors', '1');
+require_once("include/webdesign.php");
 PrintStartHtml('Images',1,'Image Gallery');
 ?>
 

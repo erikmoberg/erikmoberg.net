@@ -111,12 +111,12 @@ function AddLinksToMessage($message)
 function GetSingleCommentMarkup($name, $datetime, $website, $message, $number)
 {
 	$markup = '';
-	$markup .= '<div class="commententry" id="comment-' . $number . '">';
+	$markup .= '<div class="commententry page-section" id="comment-' . $number . '">';
 	$markup .= '<div class="commentheader">';
 	$markup .= '<div class="commenttime">';
 	$markup .= $datetime;
 	$markup .= '</div>';
-	$markup .= '<div class="commentname">';
+	$markup .= '<div class="commentname"><i class="fa fa-comment"></i> ';
 	if($website != null && $website != '') {
 		$markup .= '<a href="' . $website . '" target="_blank">' . $name . '</a>';
 	}
@@ -258,7 +258,7 @@ function GetCommentsAsRss($article, $readableid)
   <link>http://www.erikmoberg.net/article/' . $readableid . '</link>
   <description>Comments for the article ' . $article['header'] . ' from erikmoberg.net</description>
   <image>
-   <url>http://www.erikmoberg.net/content/rss-logo.png</url>
+   <url>http://www.erikmoberg.net/content/images/rss-logo.png</url>
    <title>erikmoberg.net comments for the article ' . $article['header'] . '</title>
    <link>http://www.erikmoberg.net/article/' . $readableid . '</link>
   </image>

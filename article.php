@@ -31,17 +31,21 @@ PrintArticle($readableid);
 
 PrintSocialNetworkingLinks($readableid);
 
+echo '<div class="comments">';
 echo '<a name="comments"></a>';
 
 $numberOfComments = GetNoOfCommentsForArticle($readableid);
-echo "<h2><span id='comment-counter'>$numberOfComments</span> <span id='comment-text'>Comment" . ($numberOfComments != 1 ? 's' : '') . "</span></h2>";
-echo '<div id="comment-entries">';
 
-echo '<a target="_blank" class="rss-link" href="/rss/' . $readableid . '.xml">Subscribe to new comments by RSS</a>';
+echo '<div class="page-section">';
+echo "<h2><span id='comment-counter'>$numberOfComments</span> <span id='comment-text'>Comment" . ($numberOfComments != 1 ? 's' : '') . "</span></h2>";
+echo '<a target="_blank" class="rss-link" href="/rss/' . $readableid . '.xml"><i class="fa fa-rss"></i> Subscribe to new comments by RSS</a>';
+echo '</div>';
+echo '<div id="comment-entries">';
 
 PrintComments($readableid);	
 echo '</div>';
 echo '<div style="clear: both;"></div>';
+echo '</div>';
 ?>
 
 <div id="frmComments">
@@ -88,7 +92,9 @@ echo '<div style="clear: both;"></div>';
 </div>
 
 <?php
-echo '<a target="_blank" class="rss-link" href="/rss/' . $readableid . '.xml">Subscribe to new comments by RSS</a>';
+echo '<div class="page-section">';
+echo '<a target="_blank" class="rss-link" href="/rss/' . $readableid . '.xml"><i class="fa fa-rss"></i> Subscribe to new comments by RSS</a>';
+echo '</div>';
 ?>
 
 <script type="text/javascript">
@@ -124,13 +130,13 @@ $(function() {
 					alert(result.reason);
 				}
 				else {
-					$('#frmComments').html('');
+					$('#frmComments').remove();
 					$('#comment-entries').append(result.markup);
 					$('#comment-counter').html(parseInt($('#comment-counter').html())+1);
 					$('#comment-text').html($('#comment-counter').html() == '1' ? 'Comment' : 'Comments');
 					$('html, body').animate({ scrollTop: $('#' + result.id).offset().top }, 500, function() {
 						setTimeout(function() {
-							$('#' + result.id).css({backgroundColor: '#FFA500'})
+							$('#' + result.id).css({backgroundColor: '#da4526'})
 								.animate({backgroundColor: '#ffe9c3'}, 1500);
 						}, 50);
 					});

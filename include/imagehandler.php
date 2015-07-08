@@ -25,9 +25,12 @@ function GalleryExists($galleryid)
 function DisplayMainGallery()
 {
 	$xml = LoadImageXml();
+	echo '<div class="page-section">';
 	echo "<h2>Image gallery</h2>";
 	echo '<p>Some pictures, mostly from my trips.</p>';
 	echo '<p>Looking for high resolution images for printing? You can find some on the <a href="download.php">download page</a>.</p>';
+	echo '</div>';
+	echo '<div class="page-section">';
 	foreach ($xml->gallery as $gallery)
 	{
 		if($gallery->archived != 'true')
@@ -41,14 +44,20 @@ function DisplayMainGallery()
 	}
 	
 	echo '<div style="clear: both"></div>';
+	echo '</div>';
+	echo '<div class="page-section">';
 	echo '<p>Missing something? More pictures can be found in the <a href="/archivedimages">archive</a>.</p>';
+	echo '</div>';
 }
 
 function DisplayArchivedGallery()
 {
 	$xml = LoadImageXml();
+	echo '<div class="page-section">';
 	echo "<h2>Archived galleries</h2>";
-	echo '<p>Some older pictures I have decided to archive here.</p>';
+	echo '<p>Some older pictures I have decided to archive here!</p>';
+	echo '</div>';
+	echo '<div class="page-section">';
 	foreach ($xml->gallery as $gallery)
 	{
 		if($gallery->archived == 'true')
@@ -60,6 +69,9 @@ function DisplayArchivedGallery()
 			PrintMainGalleryImage($galleryname, $gallerydatetime, $galleryfrontpic, $galleryid);
 		}
 	}
+	
+	echo '<div style="clear: both"></div>';
+	echo '</div>';
 }
 
 function PrintMainGalleryImage($galleryname, $gallerydatetime, $galleryfrontpic, $galleryid)
@@ -80,10 +92,13 @@ function DisplaySingleGallery($galleryid)
 	}
 	$galleryname = $gallerynode->name;
 	$gallerdescription = $gallerynode->description;
+	echo '<div class="page-section">';
 	echo "<h2>Gallery: $galleryname</h2>";
 	echo "<p>$gallerdescription</p>";
-	$backlink = '<p><a href="/images" class="backToImageGallery">Back to overview</a></p>';
+	$backlink = '<p><a href="/images"><i class="fa fa-chevron-circle-left"></i> Back to overview</a></p>';
 	echo $backlink;
+	echo '</div>';
+	echo '<div class="page-section">';
 
 	$imagebasedir = '/images/' . $gallerynode->basedir;
 	$thumbNo = 1;
@@ -102,7 +117,10 @@ function DisplaySingleGallery($galleryid)
 	}
 	
 	echo '<div style="clear:both;"></div>';
+	echo '</div>';
+	echo '<div class="page-section">';
 	echo $backlink;
+	echo '</div>';
 }
 function PrintSingleGalleryImage($imagedatetime, $imagedescription, $imagethumb, $imagefile)
 {

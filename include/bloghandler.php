@@ -7,11 +7,12 @@ $blogXml = null;
 function PrintSocialNetworkingLinks($readableid)
 {
 	echo '<div style="clear: both;"></div>';
-	echo '<div style="margin-top: 30px;">';
+	echo '<div class="social-links">';
 	//PrintDeliciousLink($readableid);
-	echo '<div style="float: left;"><g:plusone></g:plusone></div>';
+	echo '<div class="social-link"><g:plusone></g:plusone></div>';
 	PrintTwitterLink($readableid);
 	PrintFacebookLink($readableid);
+	echo '<div style="clear: both;"></div>';
 	echo '</div>';
 	echo '<div style="clear: both;"></div>';
 }
@@ -20,14 +21,14 @@ function PrintFacebookLink($readableid)
 {
 	$url = 'http://www.erikmoberg.net/article/' . $readableid;
 	
-	echo '<div style="float: left;"><fb:like href="' . $url . '" layout="button_count" show_faces="false" width="100" font=""></fb:like></div>';
+	echo '<div class="social-link"><fb:like href="' . $url . '" layout="button_count" show_faces="false" width="100" font=""></fb:like></div>';
 }
 
 function PrintTwitterLink($readableid)
 {	
 	$shortAddress = GetArticleShortUrl($readableid);
 	$text = GetArticleSubHeader($readableid) . ' - ' . GetArticleHeader($readableid);
-	echo '<div style="float: left;"><a style="margin-left: 10px;" href="http://twitter.com/share" class="twitter-share-button" data-text="' . $text . '" data-count="horizontal" data-via="erikmoberg_swe">Tweet</a></div>';
+	echo '<div class="social-link"><a style="margin-left: 10px;" href="http://twitter.com/share" class="twitter-share-button" data-text="' . $text . '" data-count="horizontal" data-via="erikmoberg_swe">Tweet</a></div>';
 }
 
 function PrintDeliciousLink($readableid)
@@ -153,26 +154,19 @@ function PrintNextAndPreviousArticleLinks($readableid, $end)
 		}
 	}
 	
-	if($end)
-	{
-		echo '<div style="margin-top: 15px;">';
-	}
-	else
-	{
-		echo '<div>';
-	}
+	echo '<div class="article-navigation">';
 	
 	if($nextentry != null) 
 	{
 		echo '<div class="nextArticle">';
-		echo '<a href="/article/' . html_entity_decode($nextentry->readableid) . '">Next: ' . html_entity_decode($nextentry->header) . '</a>';
+		echo '<a href="/article/' . html_entity_decode($nextentry->readableid) . '">Next: ' . html_entity_decode($nextentry->header) . ' <i class="fa fa-chevron-circle-right"></i></a>';
 		echo '</div>';
 	}
 	
 	if($lastentry != null) 
 	{
 		echo '<div class="previousArticle">';
-		echo '<a href="/article/' . html_entity_decode($lastentry->readableid) . '">Previous: ' . html_entity_decode($lastentry->header) . '</a>';
+		echo '<a href="/article/' . html_entity_decode($lastentry->readableid) . '"><i class="fa fa-chevron-circle-left"></i> Previous: ' . html_entity_decode($lastentry->header) . '</a>';
 		echo '</div>';
 	}
 	
@@ -232,8 +226,6 @@ function PrintBlogEntries($currentPage)
 	$noOfPages = $noOfEntries/$maxEntriesPerPage;
 	$lastPage = $currentPage >= $noOfPages;
 	return $lastPage;
-	
-	//PrintPageList($currentPage); //, $maxEntriesPerPage, $noOfEntries);
 }
 
 function PrintMostCommentedArticlesList() 
@@ -259,7 +251,7 @@ function PrintMostCommentedArticlesList()
 	usort($entries, 'cmp');
 	
 	$startAt = $noOfEntries-1;
-	$stopAt = $startAt-$count;
+	$stopAt = $startAt-$count+1;
 	for($i=$startAt;$i>=$stopAt;$i--)
 	{
 		$entry = $entries[$i]['entry'];
@@ -298,24 +290,7 @@ function PrintPageList($currentPage) // , $maxEntriesPerPage, $noOfEntries
 echo '<a id="load-more-entries" class="btn" href="/index/' . ($currentPage+1) . '" data-pagenumber="' . ($currentPage+1) . '">Load more entries</a>';
 
 return;
-/*
-	echo '<div class="blogpagelist">';
-	$noOfPages = $noOfEntries/$maxEntriesPerPage;
-	if($noOfPages > 1)
-	{
-		echo '<h3>Pages</h3>';
-		echo '<div id="pagesContainer">';
-		for($i=0;$i<$noOfPages;$i++)
-		{
-			if(($i+1) == $currentPage)
-				echo '<span class="pageNumber currentPage">' . ($i+1) . '</span>';
-			else
-				echo '<a class="pageNumber" href="/index/' . ($i+1) . '">' . ($i+1) . '</a>';
-		}
-		
-		echo '</div>';
-	}
-	echo '</div>';*/
+
 }
 
 function PrintIntroEntry($readableid, $datetime, $header, $subheader, $intro, $images, $content, $introno, $isListview)
@@ -344,12 +319,12 @@ function PrintIntroEntry($readableid, $datetime, $header, $subheader, $intro, $i
 	echo '<div style="clear: both;">';
 	
 	echo '<div class="articlecommentlink">';
-	echo '<a href="/article/' . $readableid . '#comments">' . $commentstring . '</a>';
+	echo '<a href="/article/' . $readableid . '#comments"><i class="fa fa-comment"></i> ' . $commentstring . '</a>';
 	echo '</div>';
 	
 	if($isLongArticle) {
 		echo '<div class="fullarticlelink">';
-		echo '<a href="/article/' . $readableid . '">Read the full article</a>' . "\n";
+		echo '<a href="/article/' . $readableid . '"><i class="fa fa-chevron-circle-right"></i> Read the full article</a>' . "\n";
 		echo '</div>';
 	}
 		
@@ -367,6 +342,7 @@ function PrintCompleteEntry($readableid, $datetime, $header, $subheader, $intro,
 	if($isLongArticle) {
 		$content = AddSpecialTags($content, $readableid, $images, true, true, 1, false, false, false);
 	}
+	echo '<div class="full-article">';
 	echo '<div class="articleintro full">';
 	echo '<h2>' . $header . "</h2>\n";
 	echo '<h3>' . $subheader . "</h3>\n";
@@ -375,13 +351,14 @@ function PrintCompleteEntry($readableid, $datetime, $header, $subheader, $intro,
 	echo $intro . "\n";
 	echo '</div>';
 	echo $content . "\n";
+	echo '</div>';
 }
 
 function AddSpecialTags($text, $readableid, $images, $clearImage, $includeImageDescription, $introno, $addImagesLast, $removeImages, $printTeasers)
 {
 	$thumbNo = 0;
 	
-	$text = str_replace('[note]','<div class="note"><div class="noteicon"></div><div class="notecontent">',$text);
+	$text = str_replace('[note]','<div class="note"><div class="noteicon"><i class="fa fa-hand-o-right"></i></div><div class="notecontent">',$text);
 	$text = str_replace('[/note]','</div></div>',$text);
 	
 	while(strrpos($text,'[image') !== false)

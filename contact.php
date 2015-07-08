@@ -1,6 +1,6 @@
 <?php
 include_once("include/webdesign.php");
-PrintStartHtml('Contact',5,'Use the contact form to send me a message.');
+PrintStartHtml('Contact',4,'Use the contact form to send me a message.');
 ?>
 
 <?php
@@ -9,7 +9,9 @@ if(isset($_GET['message']))
 {
 	if($_GET['message'] == "posted")
 	{
+		echo '<div class="page-section">';
 		echo '<h2>Thank you! </h2><h3>Message was sent.</h3>';
+		echo '</div>';
 		$displayform = false;
 	}
 }
@@ -19,6 +21,24 @@ if(isset($_GET['message']))
 if($displayform)
 {
 ?>
+<div class="page-section">
+	<h2>About</h2>
+	<p>
+	Although great website building tools exist, being a web developer but not having a hand-crafted web site felt just plain wrong.
+	I have been working as a software developer since 2005, specializing in web development using ASP.NET (MVC) with C# and some client side magic with JavaScript, jQuery and Knockout JS.
+	So as a side project, I set up this web site to make use of my skills and learn a few new ones.
+	</p>
+	<p>
+	The site uses PHP, and is programmed with Notepad++. For image manipulation, GIMP and Inkscape are used. 
+	The image gallery and the first page use XML for storing data, handled by a simple CMS-like application.
+	</p>
+	<p>
+	I also like photography and travelling. You can find some of my pictures in the <a href="/images">image gallery</a>.
+	</p>
+	<div class="clearfix"></div>
+</div>
+<div class="page-section">
+
 	<h2>Contact me</h2>
 	<p>Use the form below to send me a message.</p>
 <?php
@@ -72,10 +92,8 @@ if($displayform)
 <input type="submit" id="btnSend" name="btnSend" class="btn" onclick="javascript:document.getElementById('txtTesttext').value = 'emalj';return postContact('txtName', 'txtEmail', 'txtTesttext', 'txtMessage');" value="Send message" />
 </p>
 </form>
-<script type="text/javascript">
-document.getElementById('txtName').focus();
-</script>
 <?php
 }
+echo '</div>';
 PrintEndHtml();
 ?>

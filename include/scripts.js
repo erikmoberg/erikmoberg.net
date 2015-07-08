@@ -1,35 +1,95 @@
+var emnet = {}
+
+emnet.search = {
+
+	init: function() {
+		$('.close-search-results').on('click', function() {
+			emnet.search.closeResults();
+		});
+
+		$('#open-search').on('click', function() {
+			if (!$('#cse-search-form.display-search').length) {
+				emnet.search.open();
+			} else {
+				emnet.search.close();
+				emnet.search.closeResults();
+			}
+		});
+	},
+
+	open: function() {
+	
+		$('#cse-search-form').addClass('display-search');
+		$('#menucontainer').addClass('display-search');
+		$('.gsc-input input')[0].focus();
+	},
+	
+	close: function() {
+		$('#cse-search-form').removeClass('display-search');
+		$('#menucontainer').removeClass('display-search');
+		
+		if ($('#search-results:visible').length > 0) {
+			$('#search-results').fadeOut({queue:false}).hide("slide", { direction: "up" }, function() {
+				$('#header').fadeIn('fast');
+			});
+		}
+	},
+	
+	showResults: function() {
+		if ($('#search-results:visible').length == 0) {
+			$('.gsc-input input').blur();
+			$('#header').fadeOut('fast', function() {
+				$('#search-results').fadeIn({queue:false}).show("slide", { direction: "up" });
+			});
+		}
+	},
+	
+	closeResults: function() {
+		emnet.search.close();
+	}
+}
+
 $(function() {
 	// ---- jscolor settings
 	if (jscolor) {
 		jscolor.dir = '/include/jscolor/';
 	}
 	// ---- end jscolor settings
+	
+	$('#menu-toggle').on('click', function() {
+		$(this).toggleClass('open');
+		$('#menucontainer').toggleClass('display-menu');
+		$('#search-results').toggleClass('display-menu');
+	});
+	
+	$.get('/flickr.php?type=recent', function(data) {
+		var photos = JSON.parse(data);
+		var html = '';
+		$.each(photos, function(i, photo) {
+			html += '<a href="' + photo.url + '" target="_blank"><img onload="javascript:$(this).fadeIn(\'slow\');" src="' + photo.image + '" alt="recent" /></a>';
+		});
+		html += '<div class="clearfix"></div>';
+		$('#flickr-recent').html(html);
+	});
+	
+	$('#social-container').html(
+			'<div class="page-section">' +
+			'<h2>Share</h2>' +
+			'<fb:like href="http://www.erikmoberg.net" layout="button_count" show_faces="false" width="100" font=""></fb:like>' +
+			'<div style="margin-top: 8px;"></div>' +
+			'<a style="margin-left: 10px;" href="http://twitter.com/share" class="twitter-share-button" data-text="Erik Moberg\'s personal web page" data-count="horizontal" data-via="erikmoberg_swe">Tweet</a>' +
+			'<div style="margin-top: 5px;"></div>' +
+			'<g:plusone></g:plusone><br />' +
+			'</div>' +
+			'<div class="page-section">' +
+			'<h2>Follow</h2>' +
+			'<a target="_blank" class="rss-link" href="/rss.xml" title="Subscribe by RSS"><i class="fa fa-rss"></i> RSS</a>' +
+			'<a target="_blank" class="twitter-link" href="https://twitter.com/erikmoberg_swe" title="Follow me on Twitter"><i class="fa fa-twitter"></i> Twitter</a>' +
+			'</div>'
+		);
 });
 
-$('.close-search-results').on('click', function() {
-	$('#search-results').fadeOut({queue:false}).hide("slide", { direction: "up" });
-});
-
-// animate menu marker
-var setMarkerToActiveItem = function (){
-	var activeItem = $('#horizontal li.active a');
-	if(activeItem.length == 0) {
-		$('#activeItemMarker').hide();
-	}
-	else {
-		$('#activeItemMarker').stop().animate({'margin-left': getOffsetForMenuItem(activeItem.get(0)) + 'px'}, 200);
-	}
-}
-
-$('#horizontal li a').hover(function() {
-	$('#activeItemMarker').stop().show().animate({'margin-left': getOffsetForMenuItem(this) + 'px'}, 200);
-	$(this).addClass('hover',10);
-}, function(){
-	setMarkerToActiveItem();
-	$(this).removeClass('hover',500);
-})
-
-setMarkerToActiveItem();
+emnet.search.init();
 
 // load quote
 var rssurl = 'http://quotes4all.net/rss/560210110/quotes.xml';

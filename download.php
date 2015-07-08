@@ -1,11 +1,12 @@
 ﻿<?php
 ini_set('display_errors', '1');
 include_once("include/webdesign.php");
-include_once("include/imagehandler.php");
 include_once("include/hireshandler.php");
 PrintStartHtml('Download',2,'Fix image orientation with the JPEG Rotator! Download high resolution images for printing! Play Project Cataclysm for some good old shoot em up action!');
 
 ?>
+
+<div class="page-section">
 
 <h2>Downloads</h2>
 
@@ -24,7 +25,8 @@ If you like anything you find here, please find it in your heart to use the butt
 <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1" />
 </form>
 
-<br />
+</div>
+<div class="page-section">
 
 <h3 id="jpegrotator">JPEG Rotator</h3>
 
@@ -33,12 +35,15 @@ When shooting vertically, some cameras rotate images using EXIF metadata, but th
 </p>
 <div style="text-align: center;">
 <a href="/jpegrotator" style="background: none;">
-<img src="/content/jpegrotator.jpg" alt="JPEG Rotator" />
+<img src="/content/images/jpegrotator.jpg" alt="JPEG Rotator" />
 </a>
 </div>
 <p>
 <b><a href="/jpegrotator">Read more</a> or <a href="/download/jpegrotator.zip">Get it now!</a></b>
 </p>
+
+</div>
+<div class="page-section">
 
 <h3 id="hires">High Resolution Images</h3>
 
@@ -51,6 +56,9 @@ DisplayHiresImages();
 ?>
 
 <div class="clearfix"></div>
+
+</div>
+<div class="page-section">
 
 <h3 id="projectc">Project Cataclysm</h3>
 
@@ -72,22 +80,25 @@ $markup = '';
 
 $desc2 = "Mind-blowing outdoor levels";
 $markup .= '<div class="thumb_small" style="float: none; text-align: center;">';
-$markup .= "<a href=\"/projectc2.jpg\" class=\"gallery-thumbnail\">";
-$markup .= "<img src=\"/projectc2_thumb.jpg\" alt=\"" . $desc2 . "\" title=\"" . $desc2 . "\" />";
+$markup .= "<a href=\"/content/images/projectc2.jpg\" class=\"gallery-thumbnail\">";
+$markup .= "<img src=\"/content/images/projectc2_thumb.jpg\" alt=\"" . $desc2 . "\" title=\"" . $desc2 . "\" />";
 $markup .= "</a>";
 $markup .= '<div class="imagedescription">' . $desc2 . '</div>';
 $markup .= '</div>';
 
 $desc1 = "Cooperative multiplayer action";
 $markup .= '<div class="thumb_small" style="float: none; text-align: center;">';
-$markup .= "<a href=\"/projectc1.jpg\" class=\"gallery-thumbnail\">";
-$markup .= "<img src=\"/projectc1_thumb.jpg\" alt=\"" . $desc1 . "\" title=\"" . $desc1 . "\" />";
+$markup .= "<a href=\"/content/images/projectc1.jpg\" class=\"gallery-thumbnail\">";
+$markup .= "<img src=\"/content/images/projectc1_thumb.jpg\" alt=\"" . $desc1 . "\" title=\"" . $desc1 . "\" />";
 $markup .= "</a>";
 $markup .= '<div class="imagedescription">' . $desc1 . '</div>';
 $markup .= '</div>';
 
 echo $markup;
 ?>
+
+</div>
+</div>
 
 <?php
 PrintEndHtml();

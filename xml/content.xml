@@ -5384,7 +5384,7 @@ Canon EF-S 18-55mm f/3.5-5.6 IS II (kit lens), Canon EF 50mm 1:1.8 II and the Ca
 &lt;p&gt;Don't we all love animated gifs? Anyway, it should help some in comparing the distortion.&lt;/p&gt;
 
 &lt;div class="articleimage"&gt;
-&lt;image src="/content/distortion-40-50-55.gif" alt="Distortion comparison" /&gt;
+&lt;image src="/content/images/distortion-40-50-55.gif" alt="Distortion comparison" /&gt;
 &lt;/div&gt;
 
 &lt;h2&gt;Conclusion&lt;/h2&gt;
@@ -5454,8 +5454,8 @@ Canon EF-S 18-55mm f/3.5-5.6 IS II (kit lens), Canon EF 50mm 1:1.8 II and the Ca
     <date>2015-06-06</date>
     <shorturl>
     </shorturl>
-    <header>Chrome cannot downloads files from microsoft.com</header>
-    <readableid>chrome-cannot-downloads-files-from-microsoft.com</readableid>
+    <header>Chrome cannot download files from microsoft.com</header>
+    <readableid>chrome-cannot-download-files-from-microsoft.com</readableid>
     <subheader>From the Mixed Security dept.</subheader>
     <intro>Had this strange problem the other day. I was trying to download Windows Management Framework from microsoft.com, but no download would start, no matter how many times I tried or how long I waited. But I finally found a way to make it work:
 
