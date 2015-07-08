@@ -134,7 +134,7 @@ $(function() {
 					$('#comment-entries').append(result.markup);
 					$('#comment-counter').html(parseInt($('#comment-counter').html())+1);
 					$('#comment-text').html($('#comment-counter').html() == '1' ? 'Comment' : 'Comments');
-					$('html, body').animate({ scrollTop: $('#' + result.id).offset().top }, 500, function() {
+					$('html, body').animate({ scrollTop: $('#' + result.id).offset().top - $('#menucontainer').height() - 10 }, 500, function() {
 						setTimeout(function() {
 							$('#' + result.id).css({backgroundColor: '#da4526'})
 								.animate({backgroundColor: '#ffe9c3'}, 1500);

@@ -3848,4 +3848,24 @@ With -15&#xB0;C/5&#xB0;F it was basically like summer. ;)</message>
       <message>test5</message>
     </comment>
   </comments>
+  <comments articlename="chrome-cannot-download-files-from-microsoft.com">
+    <comment>
+      <name>test</name>
+      <datetime>2015-07-08 19:33</datetime>
+      <website/>
+      <message>test</message>
+    </comment>
+    <comment>
+      <name>test</name>
+      <datetime>2015-07-08 19:33</datetime>
+      <website/>
+      <message>test</message>
+    </comment>
+    <comment>
+      <name>test</name>
+      <datetime>2015-07-08 19:34</datetime>
+      <website/>
+      <message>test</message>
+    </comment>
+  </comments>
 </articlecomments>
