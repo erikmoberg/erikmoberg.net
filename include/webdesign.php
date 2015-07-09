@@ -20,14 +20,14 @@ date_default_timezone_set('Europe/Berlin');
 $pageFileName = '';
 $metadescription = "Erik Moberg's personal homepage - " . ($metadescription == null ? "photography, travelling, web design and more" : $metadescription);
 
-print <<<END
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>Erik Moberg's personal homepage - photography, gadgets, DIY, and more - $pageTitle</title>
+	<title>Erik Moberg's personal homepage - photography, gadgets, DIY, and more - <?php echo $pageTitle; ?></title>
 	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 	<link href='http://fonts.googleapis.com/css?family=Roboto+Condensed|Roboto' rel='stylesheet' type='text/css'>
-	<link rel="stylesheet" type="text/css" href="/content/styles/style.css.php?_=25" />
+	<link rel="stylesheet" type="text/css" href="/content/styles/style.css.php?_=1" />
 	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js" type="text/javascript"></script>
 	<link rel="shortcut icon" href="/favicon.ico" type="image/vnd.microsoft.icon" />
@@ -39,13 +39,13 @@ print <<<END
 	<meta name="keywords" content="Erik Moberg, photography, cameras, travel, web design, web development, programming, personal blog, php, css" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
-END;
+<?php
 if($highlightitem == 0) {
 	echo '<body class="frontpage">';
 } else {
 	echo '<body>';
 }
-print <<<END
+?>
 	<div id="headerContainer">
 		<div id='search-results' class="page-section">
 			<span class="btn close-search-results">Close search results</span>
@@ -54,56 +54,54 @@ print <<<END
 		</div>
 		<div id="header">
 		
-END;
+<?php
 if(true || $highlightitem == 0) {
-print <<<END
-		<div class="header-image" alt="header">
+?>
+		<div class="header-image">
 			<div id="header-text-container">
 				<div id="header-back"></div>
 				<h1>Hi! I'm Erik.</h1>
 				<h2>I blog mostly about photography, technology and related topics: DIY, techniques, and product reviews.</h2>
 			</div>
 		</div>
-END;
+<?php
 }
-print <<<END
+?>
 		</div>
 	</div>	
 	<div id="menucontainer">
-		<a href="/" id="logo">
-			<!-- <img src="/content/images/logo.png" /> -->
-		</a>
+		<a href="/" id="logo"></a>
 		<a id="menu-toggle" href="javascript:void(0);" title="Toggle menu"><i class="fa fa-bars"></i></a>
 		<div id="open-search"><a href="javascript:void(0);"><i class="fa fa-search"></i></a></div>
 		<div id='cse-search-form'>
 			<span>Loading search...</span>
 		</div>
 		<ul id="horizontal">
-END;
+<?php
 $namesArr = array('Home','Images','Downloads','Icon&nbsp;Maker','Contact');
 $urlArr = array('','images','download','iconmaker','contact');
 for($i=0;$i<count($namesArr);$i++)
 {
 	echo "<li" . ($highlightitem == $i ? " class=\"active\"" : "") . "><a href=\"/$urlArr[$i]\">$namesArr[$i]</a></li> ";				
 }
-print <<<END
+?>
 		</ul>
 	</div>
 	<div id="containercontainer">
-	<div id="container">	
-		<div id="innercontainer">
-END;
-
-	echo '<div id="content">';
+	<div id="container">
+	<div id="content">	
+<?php
 }
 
-function PrintEndHtml($isFrontPage = false)
+function PrintEndHtml($isFrontPage = false, $myShareTitle = null, $myShareUrl = null)
 {
-print <<<END
+?>
 </div>
-END;
-if(true || $isFrontPage) {
-print <<<END
+<?php
+if(!$isFrontPage) {
+	echo '</div>';
+}
+?>
 	<aside>
 		<div id="sideInfo">
 			<div id="main-sideinfo">
@@ -113,29 +111,43 @@ print <<<END
 					<p>As a programmer with just enough time on my hands, I occasionally blog about my hobbies - mostly photography and various gadgets.</p>
 				</div>
 				
-				<div id="social-container">
+				<div class="social-container page-section">
+					<h2>Share</h2>
+					<?php 
+						$shareTitle = "erikmoberg.net";
+						if($myShareTitle != null) {
+							$shareTitle = $myShareTitle;
+						}
+						
+						PrintSocialNetworkingLinks($shareTitle, $myShareUrl);
+					?>
+					
+				</div>
+				
+				<div class="page-section">
+					<h2>Follow</h2>
+					<a target="_blank" class="rss-link" href="/rss.xml" title="Subscribe by RSS"><i class="fa fa-rss"></i> RSS</a>
+					<a target="_blank" class="twitter-link" href="https://twitter.com/erikmoberg_swe" title="Follow me on Twitter"><i class="fa fa-twitter"></i> Twitter</a>
 				</div>
 				
 			</div>
 			<div id="additional-sideinfo">
-			<div class="page-section">
+				<div class="page-section">
 					<h2 id="flickr-header">flickr uploads</h2>
 					<div id="flickr-recent">
 						<p>Loading images...</p>
 					</div>
 				</div>
-END;
-	echo '<div class="page-section">';
-	echo '<h2>Recent Comments</h2>';
-	PrintRecentComments(5);
-	echo '</div>';
 
-	echo '<div class="page-section">';
-	echo '<h2>Most Commented Articles</h2>';
-	PrintMostCommentedArticlesList();
-	echo '</div>';
-
-	print <<<END
+	<div class="page-section">
+	<h2>Recent Comments</h2>
+	<?php PrintRecentComments(5); ?>
+	
+	</div>
+	<div class="page-section">
+	<h2>Most Commented Articles</h2>
+	<?php PrintMostCommentedArticlesList(); ?>
+	</div>
 				<div class="page-section">
 					<h2>Blogroll</h2>
 					<p><a href="http://itochpedagog.wordpress.com/" target="_blank">IT och Pedagog (Swedish)</a> - podcast about using modern technology in education.</p>
@@ -145,22 +157,22 @@ END;
 			<div class="clearfix"></div>
 		</div>
 	</aside>
-END;
+<?php
+if($isFrontPage) {
+	echo '</div>';
 }
 
-print <<<END
-		<div id="footer">
-		</div>
+?>
+<div class="clearfix"></div>
 	</div>
-	</div>
-	</div>
+	
 <div id="bottom">
 </div>
 <div id="last">
 <a href="/about" rel="author">Erik Moberg</a>&nbsp;
-END;
+<?php
 echo date("Y");
-print <<<END
+?>
 </div>
 <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js" type="text/javascript"></script>
 <script src="/include/scripts.js.php?_=2" type="text/javascript"></script>
@@ -187,17 +199,6 @@ google.setOnLoadCallback(function() {
 }, true);
 </script>
 
-<script type="text/javascript" src="http://apis.google.com/js/plusone.js"></script>
-<div id="fb-root"></div>
-<script>(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) return;
-  js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
-
-<script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
 <script type="text/javascript">
 var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
  document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
@@ -212,7 +213,7 @@ var pageTracker = _gat._getTracker("UA-1716455-2");
 <script src="/include/scripts.js.php?iconmaker=1&amp;_=8" type="text/javascript"></script>
 </body>
 </html>
-END;
+<?php
 }
 
 ?>

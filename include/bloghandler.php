@@ -4,8 +4,23 @@ include_once("commenthandler.php");
 
 $blogXml = null;
 
-function PrintSocialNetworkingLinks($readableid)
+function PrintSocialNetworkingLinks($shareTitle, $url = null)
 {
+	$shareContent = "";
+	$currentUrl = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+	if($url != null) {
+		$currentUrl = $url;
+	}
+?>
+	<a title="Share on Facebook" target="_blank" class="facebook" href="http://www.facebook.com/sharer.php?u=<?php echo $currentUrl; ?>&t=<?php echo $shareTitle; ?>"><i class="fa fa-facebook"></i></a>
+	<a title="Share on Twitter" target="_blank" class="twitter" href="https://twitter.com/intent/tweet?text=<?php echo $shareTitle; ?>&url=<?php echo $currentUrl; ?>"><i class="fa fa-twitter"></i></a>
+	<a title="Share on Reddit" target="_blank" class="reddit" href="http://reddit.com/submit?url=<?php echo $currentUrl; ?>&title=<?php echo $shareTitle; ?>"><i class="fa fa-reddit"></i></a>
+	<a title="Share on Google+" target="_blank" class="google-plus" href="https://plus.google.com/share?url=<?php echo $currentUrl; ?>"><i class="fa fa-google-plus"></i></a>	
+<?php
+/*
+
+<a title="Share on tumblr" target="_blank" class="tumblr" href="http://www.tumblr.com/share/link?url=<?php echo $currentUrl; ?>&name=<?php echo $shareTitle; ?>&description=<?php echo $shareContent; ?>"><i class="fa fa-tumblr"></i></a>
+
 	echo '<div style="clear: both;"></div>';
 	echo '<div class="social-links">';
 	//PrintDeliciousLink($readableid);
@@ -15,6 +30,7 @@ function PrintSocialNetworkingLinks($readableid)
 	echo '<div style="clear: both;"></div>';
 	echo '</div>';
 	echo '<div style="clear: both;"></div>';
+	*/
 }
 
 function PrintFacebookLink($readableid)

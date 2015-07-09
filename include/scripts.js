@@ -71,7 +71,7 @@ $(function() {
 		html += '<div class="clearfix"></div>';
 		$('#flickr-recent').html(html);
 	});
-	
+	/*
 	$('#social-container').html(
 			'<div class="page-section">' +
 			'<h2>Share</h2>' +
@@ -86,7 +86,7 @@ $(function() {
 			'<a target="_blank" class="rss-link" href="/rss.xml" title="Subscribe by RSS"><i class="fa fa-rss"></i> RSS</a>' +
 			'<a target="_blank" class="twitter-link" href="https://twitter.com/erikmoberg_swe" title="Follow me on Twitter"><i class="fa fa-twitter"></i> Twitter</a>' +
 			'</div>'
-		);
+		);*/
 });
 
 emnet.search.init();

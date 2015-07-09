@@ -29,11 +29,16 @@ PrintNextAndPreviousArticleLinks($readableid, false);
 
 PrintArticle($readableid);
 
+?>
+<div class="social-container page-section">
+<?php
 PrintSocialNetworkingLinks($readableid);
+?>
+</div>
+<div class="comments">
+<a name="comments"></a>
 
-echo '<div class="comments">';
-echo '<a name="comments"></a>';
-
+<?php
 $numberOfComments = GetNoOfCommentsForArticle($readableid);
 
 echo '<div class="page-section">';
@@ -152,5 +157,8 @@ $(function() {
 
 PrintNextAndPreviousArticleLinks($readableid, true);
 
-PrintEndHtml();
+$shortAddress = GetArticleShortUrl($readableid);
+$text = GetArticleSubHeader($readableid) . ' - ' . GetArticleHeader($readableid);
+
+PrintEndHtml(false, $text, $shortAddress);
 ?>

@@ -1,5 +1,5 @@
 <?php
-//ini_set('display_errors', '1');
+ini_set('display_errors', '1');
 include_once("include/webdesign.php");
 include_once("include/bloghandler.php");
 include_once("include/commenthandler.php");
