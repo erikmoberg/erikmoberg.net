@@ -37,6 +37,7 @@ emnet.search = {
 	
 	showResults: function() {
 		if ($('#search-results:visible').length == 0) {
+			$("html, body").animate({ scrollTop: 0 }, "fast");
 			$('.gsc-input input').blur();
 			$('#header').fadeOut('fast', function() {
 				$('#search-results').fadeIn({queue:false}).show("slide", { direction: "up" });
@@ -71,22 +72,17 @@ $(function() {
 		html += '<div class="clearfix"></div>';
 		$('#flickr-recent').html(html);
 	});
-	/*
-	$('#social-container').html(
-			'<div class="page-section">' +
-			'<h2>Share</h2>' +
-			'<fb:like href="http://www.erikmoberg.net" layout="button_count" show_faces="false" width="100" font=""></fb:like>' +
-			'<div style="margin-top: 8px;"></div>' +
-			'<a style="margin-left: 10px;" href="http://twitter.com/share" class="twitter-share-button" data-text="Erik Moberg\'s personal web page" data-count="horizontal" data-via="erikmoberg_swe">Tweet</a>' +
-			'<div style="margin-top: 5px;"></div>' +
-			'<g:plusone></g:plusone><br />' +
-			'</div>' +
-			'<div class="page-section">' +
-			'<h2>Follow</h2>' +
-			'<a target="_blank" class="rss-link" href="/rss.xml" title="Subscribe by RSS"><i class="fa fa-rss"></i> RSS</a>' +
-			'<a target="_blank" class="twitter-link" href="https://twitter.com/erikmoberg_swe" title="Follow me on Twitter"><i class="fa fa-twitter"></i> Twitter</a>' +
-			'</div>'
-		);*/
+	
+	var lastPos = $(document).scrollTop();
+	var minScroll = 250;
+	var tolerance = 50;
+	$(document).on('scroll', function() {
+		var newPos = $(document).scrollTop();
+		if (Math.abs(newPos - lastPos) > (!$('#menucontainer').hasClass('scrolled') ? 0 : tolerance)) {
+			$('#menucontainer').toggleClass('scrolled', newPos > lastPos && newPos > minScroll);
+			lastPos = newPos;
+		}
+	});
 });
 
 emnet.search.init();

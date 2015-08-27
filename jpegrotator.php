@@ -32,8 +32,8 @@ I needed a small application to batch-rotate the images, so I rolled my own. Jus
 </p>
 
 <div style="text-align: center;">
-<a href="download/jpegrotator.zip" style="background: none;">
-<img src="content/images/jpegrotator.jpg" alt="JPEG Rotator" />
+<a href="download/jpegrotator.zip">
+<img src="content/images/jpegrotator.jpg" alt="JPEG Rotator" style="max-width: 100%;" />
 </a>
 </div>
 
@@ -52,18 +52,10 @@ I needed a small application to batch-rotate the images, so I rolled my own. Jus
 <b><a href="download/jpegrotator.zip">Get it now! (Version 1.0, 20 KB)</a></b>
 </div>
 
-<div style="margin-top: 30px;">
-	<div style="float: left;">
-		<g:plusone></g:plusone>
-	</div>
-	<div style="float: left;">
-		<a style="margin-left: 10px;" href="http://twitter.com/share" class="twitter-share-button" data-text="JPEG Rotator - Automatically correct image orientation based on EXIF data" data-count="horizontal" data-via="erikmoberg_swe">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
-	</div>
-	<div style="float: left;">
-		<script src="http://connect.facebook.net/en_US/all.js#xfbml=1"></script><fb:like href="http://www.erikmoberg.net/jpegrotator.php" layout="button_count" show_faces="true" width="450" font=""></fb:like>
-	</div>
-</div>
 <div class="clearfix"></div>
+</div>
+
+<div class="page-section">
 
 <h3>Things to note</h3>
 

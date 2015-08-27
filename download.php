@@ -14,17 +14,6 @@ PrintStartHtml('Download',2,'Fix image orientation with the JPEG Rotator! Downlo
 Fix image orientation with the <a href="#jpegrotator">JPEG Rotator</a>! Download <a href="#hires">high resolution images</a> for printing! Play <a href="#projectc">Project Cataclysm</a> for some good old shoot em up action!
 </p>
 
-<p>
-If you like anything you find here, please find it in your heart to use the button below to buy me a burger. Double cheese please! ;)
-</p>
-
-<form action="https://www.paypal.com/cgi-bin/webscr" method="post">
-<input type="hidden" name="cmd" value="_s-xclick">
-<input type="hidden" name="hosted_button_id" value="6PL45QBHGVR2C">
-<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
-<img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1" />
-</form>
-
 </div>
 <div class="page-section">
 
@@ -34,8 +23,8 @@ If you like anything you find here, please find it in your heart to use the butt
 When shooting vertically, some cameras rotate images using EXIF metadata, but they still later show up in Windows in landscape format. JPEG Rotator to the rescue! This small application automatically corrects orientation based on the EXIF metadata.
 </p>
 <div style="text-align: center;">
-<a href="/jpegrotator" style="background: none;">
-<img src="/content/images/jpegrotator.jpg" alt="JPEG Rotator" />
+<a href="/jpegrotator">
+<img src="/content/images/jpegrotator.jpg" alt="JPEG Rotator" style="max-width: 100%;" />
 </a>
 </div>
 <p>

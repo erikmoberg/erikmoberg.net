@@ -31,7 +31,11 @@ $metadescription = "Erik Moberg's personal homepage - " . ($metadescription == n
 	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js" type="text/javascript"></script>
 	<link rel="shortcut icon" href="/favicon.ico" type="image/vnd.microsoft.icon" />
-    <link rel="icon" href="/favicon.ico" type="image/vnd.microsoft.icon" />
+    <link rel="icon" type="image/png" href="content/favicon/favicon-192.png" sizes="192x192">
+	<link rel="icon" type="image/png" href="content/favicon/favicon-160.png" sizes="160x160">
+	<link rel="icon" type="image/png" href="content/favicon/favicon-96.png" sizes="96x96">
+	<link rel="icon" type="image/png" href="content/favicon/favicon-16.png" sizes="16x16">
+	<link rel="icon" type="image/png" href="content/favicon/favicon-32.png" sizes="32x32">
 	<link rel="alternate" type="application/rss+xml" href="/rss.php" title="erikmoberg.net" />
 	<meta name="robots" content="index, follow" />
 	<meta name="googlebot" content="index, follow" />
@@ -73,9 +77,7 @@ if(true || $highlightitem == 0) {
 		<a href="/" id="logo"></a>
 		<a id="menu-toggle" href="javascript:void(0);" title="Toggle menu"><i class="fa fa-bars"></i></a>
 		<div id="open-search"><a href="javascript:void(0);"><i class="fa fa-search"></i></a></div>
-		<div id='cse-search-form'>
-			<span>Loading search...</span>
-		</div>
+		<div id='cse-search-form'></div>
 		<ul id="horizontal">
 <?php
 $namesArr = array('Home','Images','Downloads','Icon&nbsp;Maker','Contact');
@@ -107,7 +109,7 @@ if(!$isFrontPage) {
 			<div id="main-sideinfo">
 				<div class="page-section">
 					<h2 class="firstHeader">About me</h2>
-					<img src="/content/images/me.jpg" id="self-image" alt="Erik Moberg" />
+					<img src="/content/images/me.jpg" id="self-image" alt="Portrait of Erik Moberg" />
 					<p>As a programmer with just enough time on my hands, I occasionally blog about my hobbies - mostly photography and various gadgets.</p>
 				</div>
 				
