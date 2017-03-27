@@ -24,18 +24,18 @@ $metadescription = "Erik Moberg's personal homepage - " . ($metadescription == n
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>Erik Moberg's personal homepage - photography, gadgets, DIY, and more - <?php echo $pageTitle; ?></title>
+	<title><?php echo $pageTitle; ?> - Erik Moberg's personal homepage - photography, gadgets, DIY, and more</title>
 	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 	<link href='http://fonts.googleapis.com/css?family=Roboto+Condensed|Roboto' rel='stylesheet' type='text/css'>
-	<link rel="stylesheet" type="text/css" href="/content/styles/style.css.php?_=1" />
+	<link rel="stylesheet" type="text/css" href="/content/styles/style.css.php?_=3" />
 	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js" type="text/javascript"></script>
 	<link rel="shortcut icon" href="/favicon.ico" type="image/vnd.microsoft.icon" />
-    <link rel="icon" type="image/png" href="content/favicon/favicon-192.png" sizes="192x192">
-	<link rel="icon" type="image/png" href="content/favicon/favicon-160.png" sizes="160x160">
-	<link rel="icon" type="image/png" href="content/favicon/favicon-96.png" sizes="96x96">
-	<link rel="icon" type="image/png" href="content/favicon/favicon-16.png" sizes="16x16">
-	<link rel="icon" type="image/png" href="content/favicon/favicon-32.png" sizes="32x32">
+  <link rel="icon" type="image/png" href="/content/favicon/favicon-192.png" sizes="192x192">
+	<link rel="icon" type="image/png" href="/content/favicon/favicon-160.png" sizes="160x160">
+	<link rel="icon" type="image/png" href="/content/favicon/favicon-96.png" sizes="96x96">
+	<link rel="icon" type="image/png" href="/content/favicon/favicon-16.png" sizes="16x16">
+	<link rel="icon" type="image/png" href="/content/favicon/favicon-32.png" sizes="32x32">
 	<link rel="alternate" type="application/rss+xml" href="/rss.php" title="erikmoberg.net" />
 	<meta name="robots" content="index, follow" />
 	<meta name="googlebot" content="index, follow" />
@@ -57,7 +57,7 @@ if($highlightitem == 0) {
 			<span class="btn close-search-results">Close search results</span>
 		</div>
 		<div id="header">
-		
+
 <?php
 if(true || $highlightitem == 0) {
 ?>
@@ -72,26 +72,42 @@ if(true || $highlightitem == 0) {
 }
 ?>
 		</div>
-	</div>	
+	</div>
 	<div id="menucontainer">
 		<a href="/" id="logo"></a>
 		<a id="menu-toggle" href="javascript:void(0);" title="Toggle menu"><i class="fa fa-bars"></i></a>
 		<div id="open-search"><a href="javascript:void(0);"><i class="fa fa-search"></i></a></div>
-		<div id='cse-search-form'></div>
+		<div id='cse-search-form'>
+			<form class="gsc-search-box" accept-charset="utf-8" id="cse-search-form-inner">
+				<table cellspacing="0" cellpadding="0" class="gsc-search-box">
+					<tbody>
+						<tr>
+							<td class="gsc-input">
+								<input autocomplete="off" type="text" id="gsc-search-input" size="10" class="gsc-input" name="search" title="search" style="outline: none; background: rgb(255, 255, 255); text-indent: 0px;">
+							</td>
+							<td class="gsc-search-button">
+								<input type="submit" value="Search" class="gsc-search-button" title="search">
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</form>
+		</div>
+
 		<ul id="horizontal">
 <?php
 $namesArr = array('Home','Images','Downloads','Icon&nbsp;Maker','Contact');
 $urlArr = array('','images','download','iconmaker','contact');
 for($i=0;$i<count($namesArr);$i++)
 {
-	echo "<li" . ($highlightitem == $i ? " class=\"active\"" : "") . "><a href=\"/$urlArr[$i]\">$namesArr[$i]</a></li> ";				
+	echo "<li" . ($highlightitem == $i ? " class=\"active\"" : "") . "><a href=\"/$urlArr[$i]\">$namesArr[$i]</a></li> ";
 }
 ?>
 		</ul>
 	</div>
 	<div id="containercontainer">
 	<div id="container">
-	<div id="content">	
+	<div id="content">
 <?php
 }
 
@@ -112,26 +128,26 @@ if(!$isFrontPage) {
 					<img src="/content/images/me.jpg" id="self-image" alt="Portrait of Erik Moberg" />
 					<p>As a programmer with just enough time on my hands, I occasionally blog about my hobbies - mostly photography and various gadgets.</p>
 				</div>
-				
+
 				<div class="social-container page-section">
 					<h2>Share</h2>
-					<?php 
+					<?php
 						$shareTitle = "erikmoberg.net";
 						if($myShareTitle != null) {
 							$shareTitle = $myShareTitle;
 						}
-						
+
 						PrintSocialNetworkingLinks($shareTitle, $myShareUrl);
 					?>
-					
+
 				</div>
-				
+
 				<div class="page-section">
 					<h2>Follow</h2>
 					<a target="_blank" class="rss-link" href="/rss.xml" title="Subscribe by RSS"><i class="fa fa-rss"></i> RSS</a>
 					<a target="_blank" class="twitter-link" href="https://twitter.com/erikmoberg_swe" title="Follow me on Twitter"><i class="fa fa-twitter"></i> Twitter</a>
 				</div>
-				
+
 			</div>
 			<div id="additional-sideinfo">
 				<div class="page-section">
@@ -144,7 +160,7 @@ if(!$isFrontPage) {
 	<div class="page-section">
 	<h2>Recent Comments</h2>
 	<?php PrintRecentComments(5); ?>
-	
+
 	</div>
 	<div class="page-section">
 	<h2>Most Commented Articles</h2>
@@ -167,7 +183,7 @@ if($isFrontPage) {
 ?>
 <div class="clearfix"></div>
 	</div>
-	
+
 <div id="bottom">
 </div>
 <div id="last">
@@ -177,34 +193,7 @@ echo date("Y");
 ?>
 </div>
 <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js" type="text/javascript"></script>
-<script src="/include/scripts.js.php?_=2" type="text/javascript"></script>
-
-<script src='//www.google.com/jsapi' type='text/javascript'></script>
-<script type='text/javascript'>
-google.load('search', '1', {language: 'en' });
-google.setOnLoadCallback(function() {
-  var customSearchOptions = {};
-  var orderByOptions = {};
-  orderByOptions['keys'] = [{label: 'Relevance', key: ''} , {label: 'Date', key: 'date'}];
-  customSearchOptions['enableOrderBy'] = true;
-  customSearchOptions['orderByOptions'] = orderByOptions;
-  var customSearchControl = new google.search.CustomSearchControl('009823758688195186637:ho3hw4ugdlg', customSearchOptions);
-  customSearchControl.setResultSetSize(google.search.Search.FILTERED_CSE_RESULTSET);
-  customSearchControl.setLinkTarget(google.search.Search.LINK_TARGET_SELF);
-  customSearchControl.setSearchCompleteCallback(null,function() {
-	emnet.search.showResults();
-  });
-  var options = new google.search.DrawOptions();
-  options.setSearchFormRoot('cse-search-form');
-  options.setAutoComplete(true);
-  customSearchControl.draw('cse', options);
-}, true);
-</script>
-
-<script type="text/javascript">
-var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
- document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
-</script>
+<script src="/include/scripts.js.php?_=3" type="text/javascript"></script>
 <script type="text/javascript">
 try {
 var pageTracker = _gat._getTracker("UA-1716455-2");

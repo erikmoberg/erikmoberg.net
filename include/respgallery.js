@@ -115,7 +115,6 @@ function RespGallery(options) {
 		var html = '';
 		
 		html += '<div id="' + self.imagesContainerId + '">\r\n';
-		//html += '  <a href="javascript:void(0);" id="' + self.imageContainerBackId + '"></a>\r\n';
 		html += '  <div id="' + self.imagesId + '">\r\n';
 		
 		$('.' + self.galleryThumbnailClass).each(function(i, el) {

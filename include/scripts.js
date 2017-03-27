@@ -15,26 +15,35 @@ emnet.search = {
 				emnet.search.closeResults();
 			}
 		});
+
+		$('#cse-search-form-inner').on('submit', function (e) {
+			e.preventDefault();
+			var query = $('#gsc-search-input').val();
+			$.get('/searchservice.php?q=' + encodeURIComponent(query), function(markup) {
+				$('#cse').html(markup);
+				emnet.search.showResults();
+			});
+		})
 	},
 
 	open: function() {
-	
+
 		$('#cse-search-form').addClass('display-search');
 		$('#menucontainer').addClass('display-search');
-		$('.gsc-input input')[0].focus();
+		$('#gsc-search-input')[0].focus();
 	},
-	
+
 	close: function() {
 		$('#cse-search-form').removeClass('display-search');
 		$('#menucontainer').removeClass('display-search');
-		
+
 		if ($('#search-results:visible').length > 0) {
 			$('#search-results').fadeOut({queue:false}).hide("slide", { direction: "up" }, function() {
 				$('#header').fadeIn('fast');
 			});
 		}
 	},
-	
+
 	showResults: function() {
 		if ($('#search-results:visible').length == 0) {
 			$("html, body").animate({ scrollTop: 0 }, "fast");
@@ -44,7 +53,7 @@ emnet.search = {
 			});
 		}
 	},
-	
+
 	closeResults: function() {
 		emnet.search.close();
 	}
@@ -56,13 +65,13 @@ $(function() {
 		jscolor.dir = '/include/jscolor/';
 	}
 	// ---- end jscolor settings
-	
+
 	$('#menu-toggle').on('click', function() {
 		$(this).toggleClass('open');
 		$('#menucontainer').toggleClass('display-menu');
 		$('#search-results').toggleClass('display-menu');
 	});
-	
+
 	$.get('/flickr.php?type=recent', function(data) {
 		var photos = JSON.parse(data);
 		var html = '';
@@ -72,7 +81,7 @@ $(function() {
 		html += '<div class="clearfix"></div>';
 		$('#flickr-recent').html(html);
 	});
-	
+
 	var lastPos = $(document).scrollTop();
 	var minScroll = 250;
 	var tolerance = 50;
@@ -88,11 +97,8 @@ $(function() {
 emnet.search.init();
 
 // load quote
-var rssurl = 'http://quotes4all.net/rss/560210110/quotes.xml';
-$.getJSON('http://ajax.googleapis.com/ajax/services/feed/load?v=1.0&num=20&callback=?&q=' + encodeURIComponent(rssurl), function(data) {
-	var entryIndex = Math.floor(Math.random()*100%data.responseData.feed.entries.length);
-	var entry = data.responseData.feed.entries[entryIndex];
-	$('#bottom').html('<div id="quotecontainer"><p>' + entry.content + '</p><p>' + entry.title + '</p></div><div class="clearfix"></div>');
+$.get('/quoteservice.php', function(markup) {
+	$('#bottom').html(markup);
 });
 
 $(document).on('mouseover', '#flickr-recent img, .maingalleryitem, .gallery-thumbnail img', function() {
@@ -131,7 +137,7 @@ function postContact(txtName, txtEmail, txtTesttext, txtMessage)
 	var email = document.getElementById(txtEmail).value;
 	var message = document.getElementById(txtMessage).value;
 	var testtext = document.getElementById(txtTesttext).value;
-	
+
 	if(name == '' || testtext != 'emalj' || message == '' || email == '')
 	{
 		//Show error message
@@ -152,23 +158,23 @@ function postContact(txtName, txtEmail, txtTesttext, txtMessage)
 function validateCommentForm(formData) {
 
 	var errors = [];
-	
+
 	if (!formData.name) {
 		errors.push({field: 'txtName', message: 'Please enter a name.' });
 	}
-	
+
 	if (!formData.message) {
 		errors.push({field: 'txtMessage', message: 'Please enter a message.'});
 	}
-	
+
 	if (formData.website && !isValidUrl(formData.website)) {
 		errors.push({field: 'txtWebsite', message: 'The posted web site url is invalid.'});
 	}
-	
+
 	if (errors.length) {
 		errors.push({field: 'btnSend', message: 'The form contains errors; see above.'});
 	}
-	
+
 	return errors;
 }
 
@@ -183,7 +189,7 @@ function isValidUrl(website)
 	if (website.indexOf('.') < 0 || website.indexOf('@') >= 0) {
 		return false;
 	}
-		
+
 	return true;
 }
 

@@ -1,0 +1,47 @@
+#######################################################################
+#     Diese .htaccess wurde vom STRATO-Webservermanager erstellt      #
+#######################################################################
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Options -Indexes
+
+
+ 
+
+
+AddType application/x-httpd-php3 .php3 
+
+
+
+
+
+AddType application/x-httpd-php43 .php4 
+
+
+
+AddType application/x-httpd-php5 .php .php5 

@@ -32,7 +32,7 @@ PrintArticle($readableid);
 ?>
 <div class="social-container page-section">
 <?php
-PrintSocialNetworkingLinks($readableid);
+PrintSocialNetworkingLinks(GetArticleSubHeader($readableid) . ': ' . $header);
 ?>
 </div>
 <div class="comments">

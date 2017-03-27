@@ -44,7 +44,7 @@ function PrintComments($articlename)
 		$name = htmlspecialchars($comment->name);
 		$datetime = $comment->datetime;
 		$datetime = strtotime($datetime);
-		$datetime = date('F jS, Y H:m', $datetime);
+		$datetime = date('F jS, Y H:i', $datetime);
 		$website = htmlspecialchars($comment->website);
 		$message = htmlspecialchars($comment->message);
 		$message = AddLinksToMessage($message);
