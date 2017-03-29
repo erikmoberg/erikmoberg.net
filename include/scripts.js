@@ -17,9 +17,14 @@ emnet.search = {
 		});
 
 		$('#cse-search-form-inner').on('submit', function (e) {
-			$('#menucontainer input.gsc-search-button').addClass('searching');
+
 			e.preventDefault();
 			var query = $('#gsc-search-input').val();
+			if(!query) {
+				return;
+			}
+
+			$('#menucontainer input.gsc-search-button').addClass('searching');
 			$.get('/searchservice.php?q=' + encodeURIComponent(query), function(markup) {
 				$('#cse').html(markup);
 				$('#menucontainer input.gsc-search-button').removeClass('searching');

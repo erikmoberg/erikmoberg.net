@@ -974,7 +974,7 @@ aside {
 #search-results {
 	display: none;
 	margin: 125px auto 0;
-	width: 925px;
+	width: 885px;
 	z-index: 20;
 	transition: margin-top 0.4s ease-in-out;
 }
@@ -1019,12 +1019,16 @@ aside {
 	background-color: #9e321c;
 }
 
+#menucontainer .gsc-search-button input:focus {
+	outline:0;
+}
+
 #menucontainer input.gsc-search-button.searching {
 	background: none;
 	border: 5px solid #bbb;
 	border-left: 5px solid #da4526;
 	border-radius: 50%;
-	animation: spin 4s linear infinite;
+	animation: spin 2s linear infinite;
 }
 
 @keyframes spin {
