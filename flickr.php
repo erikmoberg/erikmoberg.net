@@ -10,7 +10,7 @@ if(isset($_GET['type'])) {
 $userId = '79903062@N00';
 
 if($type == 'recent') {
-	$url = 'https://www.flickr.com/services/rest/?method=flickr.photos.search&api_key=3eadeac9abe8ac84d2d27ff9a741b41e&user_id=' . $userId . '&per_page=8&extras=url_sq';
+	$url = 'https://www.flickr.com/services/rest/?method=flickr.photos.search&api_key=3eadeac9abe8ac84d2d27ff9a741b41e&user_id=' . $userId . '&per_page=10&extras=url_sq';
 	$flickrData = simplexml_load_file($url);
 	$photos = $flickrData->photos[0];
 	$photosCollection = array();

@@ -16,9 +16,10 @@ function GetQueryString()
 
 function PrintStartHtml($pageTitle, $highlightitem, $metadescription)
 {
-date_default_timezone_set('Europe/Berlin');
-$pageFileName = '';
-$metadescription = "Erik Moberg's personal homepage - " . ($metadescription == null ? "photography, travelling, web design and more" : $metadescription);
+	$isFrontPage = false; //$highlightitem == 0
+	date_default_timezone_set('Europe/Berlin');
+	$pageFileName = '';
+	$metadescription = "Erik Moberg's personal homepage - " . ($metadescription == null ? "photography, travelling, web design and more" : $metadescription);
 
 ?>
 <!DOCTYPE html>
@@ -44,7 +45,7 @@ $metadescription = "Erik Moberg's personal homepage - " . ($metadescription == n
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <?php
-if($highlightitem == 0) {
+if($isFrontPage) {
 	echo '<body class="frontpage">';
 } else {
 	echo '<body>';
@@ -59,7 +60,7 @@ if($highlightitem == 0) {
 		<div id="header">
 
 <?php
-if(true || $highlightitem == 0) {
+if(true || $isFrontPage) {
 ?>
 		<div class="header-image">
 			<div id="header-text-container">
@@ -113,6 +114,7 @@ for($i=0;$i<count($namesArr);$i++)
 
 function PrintEndHtml($isFrontPage = false, $myShareTitle = null, $myShareUrl = null)
 {
+	$isFrontPage = false
 ?>
 </div>
 <?php
@@ -166,14 +168,17 @@ if(!$isFrontPage) {
 	<h2>Most Commented Articles</h2>
 	<?php PrintMostCommentedArticlesList(); ?>
 	</div>
-				<div class="page-section">
-					<h2>Blogroll</h2>
-					<p><a href="http://itochpedagog.wordpress.com/" target="_blank">IT och Pedagog (Swedish)</a> - podcast about using modern technology in education.</p>
-					<p><a href="http://www.snapp.de/" target="_blank">Robert's blog (German)</a> - also a friend of mine, mostly blogging about travelling and online marketing.</p>
-				</div>
-			</div>
-			<div class="clearfix"></div>
+	<?php
+				//<div class="page-section">
+					//<h2>Blogroll</h2>
+					//<p><a href="http://itochpedagog.wordpress.com/" target="_blank">IT och Pedagog (Swedish)</a> - podcast about using modern technology in education.</p>
+					//<p><a href="http://www.snapp.de/" target="_blank">Robert's blog (German)</a> - also a friend of mine, mostly blogging about travelling and online marketing.</p>
+				//</div>
+			//</div>
+			//<div class="clearfix"></div>
+			?>
 		</div>
+		<div class="clearfix"></div>
 	</aside>
 <?php
 if($isFrontPage) {

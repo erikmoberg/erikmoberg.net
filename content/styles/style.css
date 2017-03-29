@@ -1019,6 +1019,20 @@ aside {
 	background-color: #9e321c;
 }
 
+#menucontainer input.gsc-search-button.searching {
+	background: none;
+	border: 5px solid #bbb;
+	border-left: 5px solid #da4526;
+	border-radius: 50%;
+	animation: spin 4s linear infinite;
+}
+
+@keyframes spin {
+	100% {
+		transform:rotate(360deg);
+	}
+}
+
 #menucontainer input.gsc-input {
 	border: none;
   height: 35px;
@@ -1035,6 +1049,7 @@ table.gsc-search-box {
 
 td.gsc-search-button {
 	width: 1%;
+	padding-left: 12px;
 }
 
 .cse .gsc-branding, .gsc-branding, .gsc-clear-button, #cse .gsc-url-bottom {
