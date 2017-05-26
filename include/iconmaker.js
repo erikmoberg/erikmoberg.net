@@ -1,4 +1,44 @@
-﻿var icons = [];
+var clickRectangle = null;
+function createIcons() {
+    var fill = {fill: "#333", stroke: "none"},
+        selected,
+        none = {fill: "#000", opacity: 0};
+
+	var clickableIcons = [];
+
+	var iconsArray = [];
+	$.each(emnet.icons, function(i, icon) {
+		iconsArray.push({ name: icon.title, path: icon.path, set: icon.set });
+	});
+
+	$.each(iconsArray, function(i, element) {
+		var name = element.name;
+		var path = element.path;
+		var set = element.set;
+		var containerElement = $("#symbols");
+		var iconContainer = document.createElement("div");
+		iconContainer.setAttribute("data-bind", 'visible: shouldDisplaySymbol("' + name + '")')
+		containerElement.append(iconContainer);
+
+		var r = Raphael(iconContainer, 32, 32);
+		var pathObject = r.path(path).attr(fill)
+
+		var rectangle = r.rect(0, 0, 32, 32).attr(none);
+		rectangle.click(function () {
+			selected && selected.attr(fill);
+
+			selected = pathObject.attr({fill: "90-#EDAF02-#FF5E00"});
+			selected = pathObject;
+			createIcon(path, false, name);
+		});
+
+		clickableIcons.push({name: name, set: set, clickFunction: rectangle.events[0].f});
+	});
+
+	return clickableIcons;
+}
+
+var icons = [];
 var paper;
 var cachedIconPathData;
 var iconmakerViewModel;
@@ -6,55 +46,55 @@ var iconmakerViewModel;
 function IconmakerViewModel() {
 
 	var self = this;
-	
+
 	// functions to select an icon
 	self.clickableIcons = null;
-	
+
 	// named icons with functions how to select them
 	self.icons = null;
-	
+
 	self.getValidIntegerValue = function(value, minValue, maxValue, defaultValue) {
 		if (!isNaN(value)) {
 			var valueAsInt = parseInt(value);
 			return Math.max(Math.min(maxValue, valueAsInt), minValue);
 		}
-		
+
 		return defaultValue;
 	};
-	
+
 	self.isValidIntegerValue = function(value, minValue, maxValue) {
 		if (!isNaN(value)) {
 			var valueAsInt = parseInt(value);
 			if(isNaN(valueAsInt)) {
 				return false;
 			}
-			
+
 			return valueAsInt <= maxValue && valueAsInt >= minValue;
 		}
-		
+
 		return false;
 	};
-	
+
 	ko.extenders.numeric = function(target, options) {
-	
+
 		// parse the options object and extract properties
 		var options = JSON.parse(options);
 		var min = options.min;
 		var max = options.max;
 		var defaultValue = options.defaultValue;
-		
+
 		//create a writeable computed observable to intercept writes to our observable
 		var result = ko.computed({
 			read: target,  //always return the original observables value
 			write: function(newValue) {
-			
+
 			if(!self.isValidIntegerValue(newValue, min, max)) {
 				return;
 			}
-			
+
 				var current = target();
 				var valueToWrite = parseInt(newValue);
-	 
+
 				//only write if it changed
 				if (valueToWrite !== current) {
 					target(valueToWrite);
@@ -66,78 +106,102 @@ function IconmakerViewModel() {
 				}
 			}
 		});
-	 
+
 		//initialize with current value to make sure it is rounded appropriately
 		result(target());
-	 
+
 		//return the new computed observable
 		return result;
 	};
-	
+
 	self.selectedIconName = ko.observable();
-	
+
 	self.fontSize = ko.observable(37).extend({ numeric: JSON.stringify({ min: 8, max: 300, defaultValue: 37 }) });
-	
+
 	self.textRotation = ko.observable(0).extend({ numeric: JSON.stringify({ min: 0, max: 360, defaultValue: 0 }) });
-	
+
 	self.textXPos = ko.observable(0).extend({ numeric: JSON.stringify({ min: -100, max: 100, defaultValue: 0 }) });
-	
+
 	self.textYPos = ko.observable(0).extend({ numeric: JSON.stringify({ min: -100, max: 100, defaultValue: 0 }) });
-	
+
 	self.iconText = ko.observable('Sample');
-	
+
 	self.shapeType = ko.observable('roundedSquare');
-	
+
 	self.iconBackFromColor = ko.observable('00dbcf');
-	
+
 	self.iconBackToColor = ko.observable('0039ff');
-	
+
 	self.iconFromColor = ko.observable('ffffff');
-	
+
 	self.iconToColor = ko.observable('cccccc');
-	
+
+	self.symbolName = ko.observable();
+
+	self.symbolSets = ko.observableArray();
+
+	self.shouldDisplaySymbol = function (name) {
+		var icon = $.grep(self.clickableIcons, function (icon) {
+			return icon.name === name;
+		})[0];
+
+		if(!icon) {
+			return false;
+		}
+
+		var set = $.grep(self.symbolSets(), function(set) {
+			return set.checked() && set.name == icon.set;
+		});
+
+		if (!set.length) {
+			return false;
+		}
+
+		return !self.symbolName() || name.toLowerCase().indexOf(self.symbolName().toLowerCase()) != -1;
+	}
+
 	var availableFonts = ["Trebuchet MS", "Verdana", "Arial", "Times New Roman"]
 	self.fonts = ko.observableArray(availableFonts);
 	self.iconFontFamily = ko.observable(availableFonts[0]);
-	
+
 	self.bold = ko.observable(false);
-	
+
 	self.fileType = ko.observable('png');
-	
+
 	self.svgSupported = ko.observable(true);
-	
+
 	self.iconsize_backingfield = ko.observable(128);
 	self.iconsize = ko.computed({
 		read: function() {
 			return self.iconsize_backingfield();
 		},
 		write: function(value) {
-			self.iconsize_backingfield(self.getValidIntegerValue(value, 8, 256, 128));
+			self.iconsize_backingfield(self.getValidIntegerValue(value, 8, 1024, 128));
 		}
 	});
-	
+
 	self.shiny = ko.observable(true);
-	
+
 	self.glow = ko.observable(false);
 	self.glowWidth = ko.observable(10).extend({ numeric: JSON.stringify({ min: 0, max: 50, defaultValue: 10 }) });
 	self.glowOffsetX = ko.observable(0).extend({ numeric: JSON.stringify({ min: -30, max: 30, defaultValue: 0 }) });
 	self.glowOffsetY = ko.observable(0).extend({ numeric: JSON.stringify({ min: -30, max: 30, defaultValue: 0 }) });
 	self.glowColor = ko.observable('000000');
-	
+
 	self.iconType = ko.observable('icon');
-	
+
 	self.symbolSize = ko.observable(100).extend({ numeric: JSON.stringify({ min: 1, max: 300, defaultValue: 10 }) });
-	
+
 	self.symbolXPos = ko.observable(0).extend({ numeric: JSON.stringify({ min: -100, max: 100, defaultValue: 0 }) });
-	
+
 	self.symbolYPos = ko.observable(0).extend({ numeric: JSON.stringify({ min: -100, max: 100, defaultValue: 0 }) });
-	
+
 	self.symbolRotation = ko.observable(0).extend({ numeric: JSON.stringify({ min: 0, max: 360, defaultValue: 0 }) });
-	
+
 	self.glowOpacity = ko.observable(50).extend({ numeric: JSON.stringify({ min: 0, max: 100, defaultValue: 50 }) });
-	
+
 	// saving and loading
-	
+
 	var locallySavedPresetsStr = localStorage.getItem("savedPresets");
 	var locallySavedPresets = [];
 	if (locallySavedPresetsStr) {
@@ -152,15 +216,15 @@ function IconmakerViewModel() {
 			localStorage.removeItem("savedPresets");
 		}
 	}
-	
+
 	self.savedPresets = ko.observableArray(locallySavedPresets);
-	
+
 	self.addPreset = function() {
-	
+
 		createIcon(cachedIconPathData,true, null, 96);
 		var imageData = document.getElementById("canvas").toDataURL("image/png");
 		createIcon(cachedIconPathData,false);
-	
+
 		self.savedPresets.push({
 			imageData: imageData,
 			selectedIconName: self.selectedIconName(),
@@ -191,19 +255,19 @@ function IconmakerViewModel() {
 			symbolRotation: self.symbolRotation(),
 			glowOpacity: self.glowOpacity()
 		})
-		
+
 		localStorage.setItem("savedPresets", JSON.stringify(self.savedPresets()));
 	};
-	
+
 	self.setSettings = function(settings) {
-	
+
 		var defVal = function(value, defaultValue) {
 			if(value === null || value === undefined) {
 				return defaultValue;
 			}
 			return value;
 		};
-	
+
 		self.selectedIconName(defVal(settings.selectedIconName, self.selectedIconName()));
 		self.fontSize(defVal(settings.fontSize, self.fontSize()));
 		self.textRotation(defVal(settings.textRotation, self.textRotation()));
@@ -231,28 +295,28 @@ function IconmakerViewModel() {
 		self.symbolYPos(defVal(settings.symbolYPos, self.symbolYPos()));
 		self.symbolRotation(defVal(settings.symbolRotation, self.symbolRotation()));
 		self.glowOpacity(defVal(settings.glowOpacity, self.glowOpacity()));
-		
+
 		// select the icon
 		$.grep(self.clickableIcons, function(icon) { return icon.name == settings.selectedIconName; })[0].clickFunction();
-		
+
 		$('#shapes').buttonset("refresh");
-		
+
 		// update colors
 		$.each(self.colorPickers, function(i, entry) {
 			entry.picker.fromString(entry.observable());
 		});
 	};
-	
+
 	self.deletePreset = function (preset) {
 		self.savedPresets.remove(preset);
 		localStorage.setItem("savedPresets", JSON.stringify(self.savedPresets()));
 	};
-	
+
 	// saving and loading end
-	
+
 	// color pickers do not update automatically on external change (random icon) so keep references for update later
 	self.colorPickers = [];
-	
+
 	var idsAndObservables = [
 	{id: 'iconBackFromColor', observable: self.iconBackFromColor},
 	{id: 'iconBackToColor', observable: self.iconBackToColor},
@@ -263,12 +327,12 @@ function IconmakerViewModel() {
 		var id = io.id;
 		var picker = new jscolor.color(document.getElementById(id), {});
 		picker.fromString(observable());
-		self.colorPickers.push({ 
-			observable: observable, 
+		self.colorPickers.push({
+			observable: observable,
 			picker: picker
 		});
 	});
-	
+
 	var createIconOn = [ self.shapeType, self.iconBackFromColor, self.iconBackToColor, self.iconFromColor, self.iconToColor, self.iconFontFamily, self.iconText, self.bold, self.shiny, self.glow, self.glowWidth, self.glowOffsetX, self.glowOffsetY, self.glowColor, self.iconType, self.symbolSize, self.symbolXPos, self.symbolYPos, self.symbolRotation, self.glowOpacity ];
 	$.each(createIconOn, function(i, prop) {
 		prop.subscribe(function() {
@@ -277,16 +341,16 @@ function IconmakerViewModel() {
 			}
 		});
 	});
-	
+
 	self.randomize = function() {
-	
+
 		var getColor = function() {
 			var getColorComponent = function() {
 				return padLeft(Math.floor(Math.random()*256).toString(16).toUpperCase(), 2, '0');
 			};
 			return getColorComponent() + getColorComponent() + getColorComponent();
 		};
-	
+
 		var settings = {
 			selectedIconName: self.clickableIcons[Math.floor(Math.random()*(self.clickableIcons.length))].name,
 			shapeType: ['roundedSquare', 'sphere', 'square', 'none'][Math.floor(Math.random()*4)], // pick a background
@@ -307,7 +371,7 @@ function IconmakerViewModel() {
 			symbolRotation: 0,
 			glowOpacity: 50
 		};
-		
+
 		self.setSettings(settings);
 	};
 };
@@ -325,7 +389,7 @@ ko.bindingHandlers.jqSlider = {
 				createIcon(cachedIconPathData);
 			}
 		};
-		
+
         //handle the value changing in the UI
         ko.utils.registerEventHandler(element, "slide", bindChange);
 		ko.utils.registerEventHandler(element, "slidechange", bindChange);
@@ -334,7 +398,7 @@ ko.bindingHandlers.jqSlider = {
     //handle the model value changing
     update: function(element, valueAccessor) {
         var value = ko.utils.unwrapObservable(valueAccessor());
-        $(element).slider("value", value);   
+        $(element).slider("value", value);
 
     }
 };
@@ -355,7 +419,17 @@ ko.bindingHandlers.fadeVisible = {
 function downloadIcon() {
 	var svg = document.getElementById("icon").innerHTML;
 	svg = svg.replace('<div id="svggroup">','').replace('</div>','');
-	
+
+	var icon = $.grep(iconmakerViewModel.clickableIcons, function (icon) {
+		return icon.name === iconmakerViewModel.selectedIconName();
+	})[0];
+
+	if(!icon) {
+		return;
+	}
+
+	document.getElementById("downloadIconName").value = icon.name + " (by " + icon.set + ")";
+
 	if(iconmakerViewModel.fileType() == 'svg') {
 		if(svg.match(/xmlns/g).length > 1) {
 			svg = svg.replace('xmlns="http://www.w3.org/2000/svg"', '');
@@ -373,23 +447,23 @@ function createIcon(iconPathData, renderCanvas, selectedIconName, size) {
 
 	var paperWidth = 138;
 	var paperHeight = 138;
-	
+
 	if(!renderCanvas) {
 		paper.changeSize(paperWidth, paperHeight, false, false);
 	}
-	
+
 	if (selectedIconName) {
 		iconmakerViewModel.selectedIconName(selectedIconName);
 	}
-	
+
 	var createFromShape = iconmakerViewModel.iconType() == 'icon';
-		
+
 	var shapeType = iconmakerViewModel.shapeType();
 	var icon = $.grep(icons, function(icon) { return icon.name == shapeType; })[0];
-		
+
 	cachedIconPathData = iconPathData;
 	paper.clear();
-	
+
 	var iconBackFromColor = iconmakerViewModel.iconBackFromColor();
 	var iconBackToColor = iconmakerViewModel.iconBackToColor();
 	if(icon.iconBackFunction != null) {
@@ -399,7 +473,7 @@ function createIcon(iconPathData, renderCanvas, selectedIconName, size) {
 
 	var iconFromColor = document.getElementById("iconFromColor").value;
 	var iconToColor = document.getElementById("iconToColor").value;
-	
+
 	var text = iconmakerViewModel.iconText();
 	var fontSize = iconmakerViewModel.fontSize();
 	var fontFamily = iconmakerViewModel.iconFontFamily();
@@ -441,20 +515,20 @@ function createIcon(iconPathData, renderCanvas, selectedIconName, size) {
 				color: '#' + iconmakerViewModel.glowColor()
 		});
 	}
-	
+
 	if(iconmakerViewModel.shiny()) {
 		paper.path(icon.reflectionPath)
-			.attr({"fill-opacity": icon.reflectionOpacity, 
+			.attr({"fill-opacity": icon.reflectionOpacity,
 			fill: "#fff", stroke: "none"})
 			.translate(icon.reflectionTranslateBy,icon.reflectionTranslateBy);
 	}
-	
+
 	iconmakerViewModel.svgSupported(Raphael.type == "SVG");
-	
+
 	var svg = document.getElementById("icon").innerHTML;
 	svg = svg.replace('<div id="svggroup">','').replace('</div>','');
 	document.getElementById("stdin").value = svg;
-	
+
 	if(renderCanvas) {
 		var newPaperSize = size || iconmakerViewModel.iconsize();
 		paper.changeSize(newPaperSize, newPaperSize, false, false);
@@ -462,7 +536,7 @@ function createIcon(iconPathData, renderCanvas, selectedIconName, size) {
 		svg = svg.replace('<div id="svggroup">','').replace('</div>','');
 		document.getElementById("stdin").value = svg;
 		render(svg);
-		
+
 		if(!createFromShape) {
 			var splitText = text.split("\n");
 			var noOfRows = splitText.length;
@@ -477,7 +551,7 @@ function createIcon(iconPathData, renderCanvas, selectedIconName, size) {
 			context.font = fontWeight + " " + fontSize * (newPaperSize/138) + "px " + fontFamily;
 			context.textAlign = "center";
 			context.textBaseline = "middle";
-			
+
 			if (false && iconmakerViewModel.glow()) {
 
 				context.shadowColor = '#' + iconmakerViewModel.glowColor();
@@ -485,7 +559,7 @@ function createIcon(iconPathData, renderCanvas, selectedIconName, size) {
 				context.shadowOffsetY = iconmakerViewModel.glowOffsetY();
 				context.shadowBlur = iconmakerViewModel.glowWidth();
 			}
-			
+
 			var lineHeight = fontSize * (newPaperSize/138)*1.2;
 			var totalHeight = lineHeight * noOfRows;
 			for(var i=0;i<noOfRows;i++) {
@@ -498,17 +572,17 @@ function createIcon(iconPathData, renderCanvas, selectedIconName, size) {
 function setupIcons(){
 	// raphael icons
 	var clickRectangles = createIcons();
-	
+
 	var roundedSquareIcon = {
 		name: "roundedSquare",
 		image: "roundedsquare-shape.png",
 		iconBackFunction: function(paperWidth, paperHeight){
 			return paper.rect(0, 0, paperWidth, paperHeight, 17);
-		}, 
-		translateBy: 53, 
-		scaleFactor: 3.8, 
+		},
+		translateBy: 53,
+		scaleFactor: 3.8,
 		reflectionPath: "m 22.444235,4.4963017 c -9.75114,0 -17.6346801,8.7523503 -17.6346801,19.6274903 l 0,61.0011 c 9.6095001,1.77284 19.7746601,2.75828 30.2872401,2.75828 59.725779,0 108.138005,-30.66952 108.138005,-68.51632 0,-0.32871 -0.0285,-0.67181 -0.0357,-0.99938 -0.006,-0.0253 0.006,-0.0553 0,-0.08 -2.22194,-8.00058 -8.88753,-13.7912303 -16.81033,-13.7912303 l -103.944395,0 z",
-		reflectionOpacity: 0.3, 
+		reflectionOpacity: 0.3,
 		reflectionTranslateBy: -5
 	};
 	var sphereIcon = {
@@ -516,11 +590,11 @@ function setupIcons(){
 		image: "sphere-shape.png",
 		iconBackFunction: function(paperWidth, paperHeight){
 			return paper.circle(paperWidth/2, paperHeight/2, paperWidth/2);
-		}, 
-		translateBy: 53, 
-		scaleFactor: 3.2, 
+		},
+		translateBy: 53,
+		scaleFactor: 3.2,
 		reflectionPath: "m 69.014556,-0.00369946 c -29.762634,0 -55.133675,18.78230946 -64.7415235,45.06249946 4.03e-5,0.0103 -9.05e-5,0.021 0,0.0312 0.1026507,11.59059 29.0196565,21 64.7100805,21 35.690407,0 64.638867,-9.40941 64.741507,-21 -0.003,-0.009 0.003,-0.0222 0,-0.0312 C 124.11665,18.77891 98.776981,-0.00369946 69.014556,-0.00369946 z",
-		reflectionOpacity: 0.3, 
+		reflectionOpacity: 0.3,
 		reflectionTranslateBy: 0
 	};
 	var squareIcon = {
@@ -528,28 +602,28 @@ function setupIcons(){
 		image: "square-shape.png",
 		iconBackFunction: function(paperWidth, paperHeight){
 			return paper.rect(0, 0, paperWidth, paperHeight, 0);
-		}, 
-		translateBy: 53, 
-		scaleFactor: 3.8, 
+		},
+		translateBy: 53,
+		scaleFactor: 3.8,
 		reflectionPath: "m 5.5357143,5.6785711 0,93.1249999 L 131.30405,5.6857998 z",
-		reflectionOpacity: 0.3, 
+		reflectionOpacity: 0.3,
 		reflectionTranslateBy: 0
 	};
 	var noneIcon = {
 		name: "none",
 		image: "none-shape.png",
-		iconBackFunction: null, 
-		translateBy: 53, 
-		scaleFactor: 3.8, 
+		iconBackFunction: null,
+		translateBy: 53,
+		scaleFactor: 3.8,
 		reflectionPath: null,
-		reflectionOpacity: 0.3, 
+		reflectionOpacity: 0.3,
 		reflectionTranslateBy: 0
 	};
 
 	icons = [roundedSquareIcon, sphereIcon, squareIcon, noneIcon];
-	
+
 	createIcon(null);
-	
+
 	return clickRectangles;
 }
 
@@ -561,7 +635,7 @@ function render(svg)
 	}
 
 	var c = document.getElementById('canvas');
-	canvg(c, svg); 
+	canvg(c, svg);
 }
 
 function downloadPng() {

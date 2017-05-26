@@ -246,6 +246,10 @@ pre code {
 	text-transform: none;
 }
 
+#content h4 {
+	text-transform: none;
+}
+
 article, .full-article, .article-navigation, .social-links, #frmComments, .page-section {
 	padding: 20px;
 	margin-bottom: 20px;
@@ -358,6 +362,10 @@ article, .full-article, .article-navigation, .social-links, #frmComments, .page-
 
 .textinput:hover, .textinput:focus {
 	border-color: #da4526;
+}
+
+.textinput::placeholder {
+	font-style: italic;
 }
 
 #bottom {
@@ -718,6 +726,23 @@ aside {
 
 #symbols {
 	width: 710px;
+}
+
+#symbols div {
+	padding: 2px;
+	display: inline-block;
+}
+
+.symbol-set-selection {
+	padding: 10px 0;
+}
+
+.symbol-set-selection h4 {
+	padding-bottom: 5px;
+}
+
+.symbol-set-selection .checkbox-label {
+	padding-right: 10px;
 }
 
 .slider-container {

@@ -5,11 +5,11 @@ $commentXml = null;
 function LoadCommentXml()
 {
 	global $commentXml;
-	
+
 	if($commentXml != null) {
 		return $commentXml;
 	}
-	
+
 	$xmlFile = 'xml/comments.xml';
 	if (file_exists($xmlFile))
 	{
@@ -63,28 +63,28 @@ function PrintRecentComments($count)
 	{
 		$comments = $articles[$j]->comment;
 		$readableid = $articles[$j]->attributes()->articlename;
-		
+
 		for($i=0;!empty($comments) && $i < count($comments);$i++)
 		{
 			$comment = $comments[$i];
 			$datetime = strtotime($comment->datetime);
 			$myObject = array(
-				'comment' => $comment, 
-				'datetime' => $datetime, 
+				'comment' => $comment,
+				'datetime' => $datetime,
 				'readableid' => $readableid,
 				'number' => $i
 			);
-			
+
 			array_push($entries, $myObject);
 		}
 	}
-	
+
 	function cmp1($x, $y) {
 		return $x['datetime'] - $y['datetime'];
 	}
-	
+
 	usort($entries, 'cmp1');
-	
+
 	for($i = count($entries)-1; $i >= 0 && $i >= count($entries)-$count;$i--)
 	{
 		$comment = $entries[$i]['comment'];
@@ -141,21 +141,21 @@ function AddComment($articlename, $name, $website, $message)
 		$commentId = GetNoOfCommentsForArticle($articlename);
 		$name = htmlspecialchars($name);
 		$message = htmlspecialchars($message);
-		
+
 		if($website != null && $website != '') {
 			$website = CreateValidUrl($website);
 		}
-			
+
 		$website = htmlspecialchars($website);
-		
+
 		$t = getdate();
-		
+
 		$datetime = date('Y-m-d H:i',$t[0]);
-		
+
 		$xml = LoadCommentXml();
-		
+
 		$articleComments = $xml->xpath("/articlecomments/comments[@articlename='$articlename']");
-		
+
 		// Do comments for the article exist?
 		if( $articleComments == null)
 		{
@@ -166,43 +166,43 @@ function AddComment($articlename, $name, $website, $message)
 		{
 			$articleComments = $articleComments[0];
 		}
-		
+
 		$comment = $articleComments->addChild('comment');
-		
+
 		$comment->addChild('name', $name);
 		$comment->addChild('datetime', $datetime);
 		$comment->addChild('website', $website);
 		$comment->addChild('message', $message);
-		
+
 		$doc = new domDocument('1.0');
 		$someXml = $xml->asXML();
 		$doc->formatOutput = true;
 		$doc->preserveWhiteSpace = false;
 		$doc->loadXML($someXml);
-		
-		//////////!!!!!!!!!!! 
-		
+
+		//////////!!!!!!!!!!!
+
 		$doc->save('xml/comments.xml');
-		
-		//////////!!!!!!!!!!! 
-		
-		
+
+		//////////!!!!!!!!!!!
+
+
 		$to = "erikmoberg@hotmail.com";
 		$subject = "erikmoberg.net comment - $articlename - $name";
 		$message = "$message";
 		$header = "From: erikmoberg";
-		
+
 		$header_ = 'MIME-Version: 1.0' . "\r\n" . 'Content-type: text/plain; charset=UTF-8' . "\r\n";
-		
-		//////////!!!!!!!!!!! 
-		
+
+		//////////!!!!!!!!!!!
+
 		mail($to, "=?UTF-8?B?".base64_encode($subject).'?=', $message, $header_ . $header);
-		
-		//////////!!!!!!!!!!! 
-		
+
+		//////////!!!!!!!!!!!
+
 		return $commentId;
 	}
-	
+
 	return -1;
 }
 
@@ -223,10 +223,10 @@ function GetCommentsAsRss($article, $readableid)
 	$pubDate = strtotime($pubDate);
 	$pubDate = date($dateFormat, $pubDate);
 	$lastBuildDate = $pubDate; // when last comment was added
-	
+
 	$content = '';
 	$entries = '';
-	
+
 	for($i=0;!empty($comments) && $i < count($comments);$i++)
 	{
 		$comment = $comments[$i];
@@ -237,8 +237,8 @@ function GetCommentsAsRss($article, $readableid)
 		$message = htmlspecialchars(AddLinksToMessage($comment->message));
 		$lastBuildDate = $datetime;
 		//$guid = hash('ripemd160', $name . $datetime . $message);
-		$link = 'http://www.erikmoberg.net/article/' . $readableid . '#comment-' . $i;
-		
+		$link = 'https://www.erikmoberg.net/article/' . $readableid . '#comment-' . $i;
+
 		$newentry = '
    <item>
     <title>' . $name . '</title>
@@ -249,22 +249,22 @@ function GetCommentsAsRss($article, $readableid)
    </item>';
 		$entries = $newentry . $entries;
 	}
-    
+
 	$intro = '';
 	$intro .= '<?xml version="1.0" encoding="utf-8"?>
  <rss version="2.0">
  <channel>
   <title>erikmoberg.net comments for the article ' . $article['header'] . '</title>
-  <link>http://www.erikmoberg.net/article/' . $readableid . '</link>
+  <link>https://www.erikmoberg.net/article/' . $readableid . '</link>
   <description>Comments for the article ' . $article['header'] . ' from erikmoberg.net</description>
   <image>
-   <url>http://www.erikmoberg.net/content/images/rss-logo.png</url>
+   <url>https://www.erikmoberg.net/content/images/rss-logo.png</url>
    <title>erikmoberg.net comments for the article ' . $article['header'] . '</title>
-   <link>http://www.erikmoberg.net/article/' . $readableid . '</link>
+   <link>https://www.erikmoberg.net/article/' . $readableid . '</link>
   </image>
   <lastBuildDate>' . $lastBuildDate . '</lastBuildDate>
   <pubDate>' . $pubDate . '</pubDate>';
-	
+
 	$content .= $intro . $entries;
 	$content .= "\n </channel>\n";
 	$content .= "</rss>\n";

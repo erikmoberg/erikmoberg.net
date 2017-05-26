@@ -15,14 +15,14 @@ if(isset($_GET['iconmaker'])) {
 
 if ($iconmaker) {
 	readfile('jscolor/jscolor.js');
+  readfile('raphael-icons.js');
 	readfile('iconmaker.js');
 	readfile('raphael-min.js');
 	echo ';';
-	readfile('raphael-icons.js');
 	readfile('scale.raphael.js');
 	readfile('rgbcolor.js');
 	readfile('canvg.js');
-	
+
 }
 else {
 	readfile('json2.min.js');

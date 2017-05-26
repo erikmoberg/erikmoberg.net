@@ -7,7 +7,7 @@ $blogXml = null;
 function PrintSocialNetworkingLinks($shareTitle, $url = null)
 {
 	$shareContent = "";
-	$currentUrl = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+	$currentUrl = "https://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
 	if($url != null) {
 		$currentUrl = $url;
 	}
@@ -15,7 +15,7 @@ function PrintSocialNetworkingLinks($shareTitle, $url = null)
 	<a title="Share on Facebook" target="_blank" class="facebook" href="http://www.facebook.com/sharer.php?u=<?php echo $currentUrl; ?>&t=<?php echo $shareTitle; ?>"><i class="fa fa-facebook"></i></a>
 	<a title="Share on Twitter" target="_blank" class="twitter" href="https://twitter.com/intent/tweet?text=<?php echo $shareTitle; ?>&url=<?php echo $currentUrl; ?>"><i class="fa fa-twitter"></i></a>
 	<a title="Share on Reddit" target="_blank" class="reddit" href="http://reddit.com/submit?url=<?php echo $currentUrl; ?>&title=<?php echo $shareTitle; ?>"><i class="fa fa-reddit"></i></a>
-	<a title="Share on Google+" target="_blank" class="google-plus" href="https://plus.google.com/share?url=<?php echo $currentUrl; ?>"><i class="fa fa-google-plus"></i></a>	
+	<a title="Share on Google+" target="_blank" class="google-plus" href="https://plus.google.com/share?url=<?php echo $currentUrl; ?>"><i class="fa fa-google-plus"></i></a>
 <?php
 /*
 
@@ -36,12 +36,12 @@ function PrintSocialNetworkingLinks($shareTitle, $url = null)
 function PrintFacebookLink($readableid)
 {
 	$url = 'http://www.erikmoberg.net/article/' . $readableid;
-	
+
 	echo '<div class="social-link"><fb:like href="' . $url . '" layout="button_count" show_faces="false" width="100" font=""></fb:like></div>';
 }
 
 function PrintTwitterLink($readableid)
-{	
+{
 	$shortAddress = GetArticleShortUrl($readableid);
 	$text = GetArticleSubHeader($readableid) . ' - ' . GetArticleHeader($readableid);
 	echo '<div class="social-link"><a style="margin-left: 10px;" href="http://twitter.com/share" class="twitter-share-button" data-text="' . $text . '" data-count="horizontal" data-via="erikmoberg_swe">Tweet</a></div>';
@@ -105,7 +105,7 @@ function GetArticleIntro($readableid)
 			$intro = RemovePseudoLinks($intro);
 			$intro = strip_tags($intro);
 			$intro = htmlspecialchars($intro);
-			$intro = trim( preg_replace( '/\s+/', ' ', $intro ) );  
+			$intro = trim( preg_replace( '/\s+/', ' ', $intro ) );
 			return $intro;
 		}
 	}
@@ -114,7 +114,7 @@ function GetArticleIntro($readableid)
 function PrintArticle($readableid)
 {
 	$article = GetArticle($readableid);
-			
+
 	PrintCompleteEntry(
 		$article['readableid'],
 		$article['datetime'],
@@ -141,7 +141,7 @@ function GetArticle($readableid)
 				'images' => $entry->images,
 				'content' => html_entity_decode($entry->content)
 				);
-		
+
 			return $article;
 		}
 	}
@@ -169,23 +169,23 @@ function PrintNextAndPreviousArticleLinks($readableid, $end)
 			$lastentry = $entry;
 		}
 	}
-	
+
 	echo '<div class="article-navigation">';
-	
-	if($nextentry != null) 
+
+	if($nextentry != null)
 	{
 		echo '<div class="nextArticle">';
 		echo '<a href="/article/' . html_entity_decode($nextentry->readableid) . '">Next: ' . html_entity_decode($nextentry->header) . ' <i class="fa fa-chevron-circle-right"></i></a>';
 		echo '</div>';
 	}
-	
-	if($lastentry != null) 
+
+	if($lastentry != null)
 	{
 		echo '<div class="previousArticle">';
 		echo '<a href="/article/' . html_entity_decode($lastentry->readableid) . '"><i class="fa fa-chevron-circle-left"></i> Previous: ' . html_entity_decode($lastentry->header) . '</a>';
 		echo '</div>';
 	}
-	
+
 	echo '</div>';
 }
 
@@ -198,10 +198,10 @@ function PrintRecentBlogHeadings($count)
 	{
 		$noOfEntries++;
 	}
-	
+
 	$startAt = $noOfEntries-1;
 	$stopAt = $startAt-$count;
-	
+
 	for($i=$startAt;$i>=$stopAt;$i--)
 	{
 		$entry = $xml->entry[$i];
@@ -220,7 +220,7 @@ function PrintBlogEntries($currentPage)
 	{
 		$noOfEntries++;
 	}
-	
+
 	$startAt = $noOfEntries-1-($maxEntriesPerPage*($currentPage-1));
 	$stopAt = $startAt-$maxEntriesPerPage+1;
 	if($stopAt < 0)
@@ -235,22 +235,22 @@ function PrintBlogEntries($currentPage)
 		$intro = html_entity_decode($entry->intro);
 		$images = $entry->images;
 		$content = html_entity_decode($entry->content);
-		
+
 		PrintIntroEntry($readableid, $datetime, $header, $subheader, $intro, $images, $content, $i, true);
 	}
-	
+
 	$noOfPages = $noOfEntries/$maxEntriesPerPage;
 	$lastPage = $currentPage >= $noOfPages;
 	return $lastPage;
 }
 
-function PrintMostCommentedArticlesList() 
-{	
+function PrintMostCommentedArticlesList()
+{
 	$xml = LoadBlogXml();
 	$entries = array();
 	$noOfEntries = 0;
 	$count = 5;
-	
+
 	foreach ($xml->entry as $entry)
 	{
 		$noOfEntries++;
@@ -259,13 +259,13 @@ function PrintMostCommentedArticlesList()
 		$myObject = array('entry' => $entry, 'noOfComments' => $noOfComments);
 		array_push($entries, $myObject);
 	}
-	
+
 	function cmp($x, $y) {
 		return $x['noOfComments'] - $y['noOfComments'];
 	}
-	
+
 	usort($entries, 'cmp');
-	
+
 	$startAt = $noOfEntries-1;
 	$stopAt = $startAt-$count+1;
 	for($i=$startAt;$i>=$stopAt;$i--)
@@ -280,18 +280,18 @@ function PrintMostCommentedArticlesList()
 function LoadBlogXml()
 {
 	global $blogXml;
-	
+
 	if($blogXml != null) {
 		return $blogXml;
 	}
-		
+
 	$xmlFile = 'xml/content.xml';
 	if (file_exists($xmlFile))
 	{
-	    $xmlObject = simplexml_load_file($xmlFile); 
+	    $xmlObject = simplexml_load_file($xmlFile);
 		if($xmlObject == false)
 			exit("Error opening xml file.");
-		
+
 		$blogXml = $xmlObject;
 		return $xmlObject;
 	}
@@ -312,9 +312,9 @@ return;
 function PrintIntroEntry($readableid, $datetime, $header, $subheader, $intro, $images, $content, $introno, $isListview)
 {
 	$isLongArticle = trim($content) != '';
-	
+
 	$intro = '<p>' . $intro . '</p>';
-	
+
 	$intro = AddSpecialTags($intro, $readableid, $images, false, false, $introno, false, false, true);
 	echo '<article><div class="articleintro">';
 	echo '<h2><a href="/article/' . $readableid . '">' . $header . "</a></h2>\n";
@@ -322,7 +322,7 @@ function PrintIntroEntry($readableid, $datetime, $header, $subheader, $intro, $i
 	$time = strtotime($datetime);
 	echo "<h4>" . date('F dS, Y', $time) . "</h4>\n";
 	echo $intro . "\n";
-	
+
 	$noOfComments = GetNoOfCommentsForArticle($readableid);
 	$commentstring = '';
 	if($noOfComments == 0)
@@ -331,23 +331,23 @@ function PrintIntroEntry($readableid, $datetime, $header, $subheader, $intro, $i
 		$commentstring = $noOfComments . ' comment';
 	else
 		$commentstring = $noOfComments . ' comments';
-	
+
 	echo '<div style="clear: both;">';
-	
+
 	echo '<div class="articlecommentlink">';
 	echo '<a href="/article/' . $readableid . '#comments"><i class="fa fa-comment"></i> ' . $commentstring . '</a>';
 	echo '</div>';
-	
+
 	if($isLongArticle) {
 		echo '<div class="fullarticlelink">';
 		echo '<a href="/article/' . $readableid . '"><i class="fa fa-chevron-circle-right"></i> Read the full article</a>' . "\n";
 		echo '</div>';
 	}
-		
+
 	echo '</div>';
 	echo '<div class="clearfix"></div>';
 	echo '</div></article>';
-	
+
 }
 
 function PrintCompleteEntry($readableid, $datetime, $header, $subheader, $intro, $content, $images)
@@ -373,22 +373,22 @@ function PrintCompleteEntry($readableid, $datetime, $header, $subheader, $intro,
 function AddSpecialTags($text, $readableid, $images, $clearImage, $includeImageDescription, $introno, $addImagesLast, $removeImages, $printTeasers)
 {
 	$thumbNo = 0;
-	
+
 	$text = str_replace('[note]','<div class="note"><div class="noteicon"><i class="fa fa-hand-o-right"></i></div><div class="notecontent">',$text);
 	$text = str_replace('[/note]','</div></div>',$text);
-	
+
 	while(strrpos($text,'[image') !== false)
 	{
 		$thumbNo++;
-		
+
 		// Get complete pseudo tag
 		$startOfTagIndex = strrpos($text,'[image');
 		$endOfTagIndex = strrpos($text,']');
 		$pseudotag = substr($text,$startOfTagIndex,$endOfTagIndex-$startOfTagIndex+1);
-		
+
 		// Get name of image
 		$imagename = substr($pseudotag,7,$endOfTagIndex-$startOfTagIndex-7);
-		
+
 		// Get additional image information
 		$imagedescription = '';
 		$imagefileextension = '';
@@ -400,10 +400,10 @@ function AddSpecialTags($text, $readableid, $images, $clearImage, $includeImageD
 				$imagefileextension = $image->extension;
 			}
 		}
-		
+
 		$completebigimagename = '/blogimages/' . $readableid . '/' . $imagename . $imagefileextension;
 		$completesmallimagename = '/blogimages/' . $readableid . '/' . $imagename . '_thumb' . $imagefileextension;
-		
+
 		// Create html tag
 		$htmltag = '';
 		if($addImagesLast) {
@@ -423,7 +423,7 @@ function AddSpecialTags($text, $readableid, $images, $clearImage, $includeImageD
 			$htmltag = GetSingleImageMarkup($imagedescription, $completebigimagename, $completesmallimagename, $clearImage, $includeImageDescription, $thumbNo, $introno);
 			// Replace pseudo tag with html tag
 			$text = str_replace($pseudotag,$htmltag,$text);
-		}		
+		}
 	}
 	return $text;
 }
@@ -448,46 +448,46 @@ function GetEntriesAsRss()
 
 	$lastBuildDate = ''; // when last article was added
 	$pubDate = ''; // when first article was ever published
-  
+
 	$entries = '';
 	foreach ($xml->entry as $entry)
 	{
 		$datetime = $entry->date;
 		$datetime = strtotime($datetime);
 		$datetime = date($dateFormat, $datetime);
-		
+
 		$lastBuildDate = $datetime;
 		if ($pubDate == '') {
 			$pubDate = $datetime;
 		}
-		
+
 		$newentry = '
    <item>
     <title>' . $entry->header . '</title>
     <description>' . CreateIntroRssEntry($entry->intro) . '</description>
-    <link>http://www.erikmoberg.net/article/' . $entry->readableid . '</link>
-	<guid>http://www.erikmoberg.net/article/' . $entry->readableid . '</guid>
+    <link>https://www.erikmoberg.net/article/' . $entry->readableid . '</link>
+	<guid>https://www.erikmoberg.net/article/' . $entry->readableid . '</guid>
     <pubDate>' . $datetime . '</pubDate>
    </item>';
 		$entries = $newentry . $entries;
 	}
-    
+
 	$content = '<?xml version="1.0" encoding="utf-8"?>
 <rss version="2.0">
  <channel>
   <title>erikmoberg.net blog</title>
-  <link>http://www.erikmoberg.net</link>
+  <link>https://www.erikmoberg.net</link>
   <description>Erik Moberg\'s personal homepage</description>
   <image>
-   <url>http://www.erikmoberg.net/content/rss-logo.png</url>
+   <url>https://www.erikmoberg.net/content/rss-logo.png</url>
    <title>erikmoberg.net blog</title>
-   <link>http://www.erikmoberg.net</link>
+   <link>https://www.erikmoberg.net</link>
   </image>
   <lastBuildDate>' . $lastBuildDate . '</lastBuildDate>
   <pubDate>' . $pubDate . '</pubDate>';
-	
+
 	$content .= $entries;
-	
+
 	$content .= '
  </channel>
 </rss>';
@@ -519,20 +519,20 @@ function RemovePseudoLinks($text)
 function MakeReferencesGlobal($introtext, $stringToReplace)
 {
 	$currentIndex = 0;
-	
+
 	while(true)
 	{
 		$startOfTagIndex = strrpos($introtext,$stringToReplace, $currentIndex);
 		if($startOfTagIndex < 0 || !$startOfTagIndex)
 			break;
-		
+
 		$startOfTagIndex += strlen($stringToReplace);
-		
+
 		$currentIndex = $startOfTagIndex;
 		$endOfTagIndex = strrpos($introtext,'"',$startOfTagIndex+1);
 		$oldlink = substr($introtext, $startOfTagIndex, $endOfTagIndex - $startOfTagIndex);
 		$newlink = $oldlink;
-		
+
 		if(!(strpos($oldlink, 'http://') === 0) && !(strpos($oldlink, 'https://') === 0))
 		{
 			$newlink = 'http://www.erikmoberg.net';
@@ -541,14 +541,14 @@ function MakeReferencesGlobal($introtext, $stringToReplace)
 			else
 				$newlink .= '/' . $oldlink;
 		}
-		
+
 		$introtext = str_replace($oldlink,$newlink,$introtext);
 	}
-	
+
 	return $introtext;
 }
 
-function myUrlEncode($string) 
+function myUrlEncode($string)
 {
 	$string = str_replace("+", '%2B', $string);
     $entities = array(    '%21', '%2A', '%27', '%28',    '%29', '%3B', '%3A', '%40', '%26', '%3D', '%2B', '%24', '%2C', '%2F', '%3F', '%25', '%23', '%5B', '%5D');

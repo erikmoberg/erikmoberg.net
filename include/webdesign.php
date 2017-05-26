@@ -27,10 +27,10 @@ function PrintStartHtml($pageTitle, $highlightitem, $metadescription)
 <head>
 	<title><?php echo $pageTitle; ?> - Erik Moberg's personal homepage - photography, gadgets, DIY, and more</title>
 	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
-	<link href='http://fonts.googleapis.com/css?family=Roboto+Condensed|Roboto' rel='stylesheet' type='text/css'>
-	<link rel="stylesheet" type="text/css" href="/content/styles/style.css.php?_=3" />
+	<link href='https://fonts.googleapis.com/css?family=Roboto+Condensed|Roboto' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" type="text/css" href="/content/styles/style.css.php?_=4" />
 	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
-	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js" type="text/javascript"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js" type="text/javascript"></script>
 	<link rel="shortcut icon" href="/favicon.ico" type="image/vnd.microsoft.icon" />
   <link rel="icon" type="image/png" href="/content/favicon/favicon-192.png" sizes="192x192">
 	<link rel="icon" type="image/png" href="/content/favicon/favicon-160.png" sizes="160x160">
@@ -199,14 +199,16 @@ echo date("Y");
 </div>
 <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js" type="text/javascript"></script>
 <script src="/include/scripts.js.php?_=3" type="text/javascript"></script>
-<script type="text/javascript">
-try {
-var pageTracker = _gat._getTracker("UA-1716455-2");
- pageTracker._trackPageview();
-} catch(err) {}
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-1716455-2', 'auto');
+  ga('send', 'pageview');
 </script>
-<script src="http://ajax.aspnetcdn.com/ajax/knockout/knockout-2.2.0.js" type="text/javascript"></script>
-<script src="/include/scripts.js.php?iconmaker=1&amp;_=8" type="text/javascript"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.4.2/knockout-min.js" type="text/javascript"></script>
+<script src="/include/scripts.js.php?iconmaker=1&amp;_=9" type="text/javascript"></script>
 </body>
 </html>
 <?php
