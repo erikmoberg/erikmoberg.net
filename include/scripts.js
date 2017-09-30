@@ -92,8 +92,10 @@ $(function() {
 	var lastPos = $(document).scrollTop();
 	var minScroll = 250;
 	var tolerance = 50;
+	var headerElement = $("#header .header-image");
 	$(document).on('scroll', function() {
 		var newPos = $(document).scrollTop();
+		headerElement.css("opacity", Math.max(0, headerElement.height() - newPos)/headerElement.height());
 		if (Math.abs(newPos - lastPos) > (!$('#menucontainer').hasClass('scrolled') ? 0 : tolerance)) {
 			$('#menucontainer').toggleClass('scrolled', newPos > lastPos && newPos > minScroll);
 			lastPos = newPos;

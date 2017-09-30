@@ -70,6 +70,7 @@ pre code {
 #header {
 	padding-top: 0px;
 	margin-top: 70px;
+	background-color: #fff;
 }
 
 #header h1{
@@ -92,11 +93,10 @@ pre code {
 #header .header-image {
 	margin: 0;
 	max-width: 100%;
-	background: url(/content/images/lens.jpg);
+	background: url(/content/images/lens.jpg) no-repeat center center fixed;
 	height: 300px;
 	width: 100%;
-	background-size: 100%;
-	background-position: 50% 50%;
+	background-size: cover;
 	display: block;
 	text-align: center;
 	color: #333;
@@ -1439,7 +1439,6 @@ body.gallery {
 	}
 
 	#header .header-image {
-		background-size: 150%;
 		background-image: url(/content/images/lens-700.jpg);
 	}
 
