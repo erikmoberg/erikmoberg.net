@@ -28,7 +28,7 @@ function PrintStartHtml($pageTitle, $highlightitem, $metadescription)
 	<title><?php echo $pageTitle; ?> - Erik Moberg's personal homepage - photography, gadgets, DIY, and more</title>
 	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 	<link href='https://fonts.googleapis.com/css?family=Roboto+Condensed|Roboto' rel='stylesheet' type='text/css'>
-	<link rel="stylesheet" type="text/css" href="/content/styles/style.css.php?_=4" />
+	<link rel="stylesheet" type="text/css" href="/content/styles/style.css.php?_=5" />
 	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js" type="text/javascript"></script>
 	<link rel="shortcut icon" href="/favicon.ico" type="image/vnd.microsoft.icon" />
@@ -198,7 +198,7 @@ echo date("Y");
 ?>
 </div>
 <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js" type="text/javascript"></script>
-<script src="/include/scripts.js.php?_=3" type="text/javascript"></script>
+<script src="/include/scripts.js.php?_=5" type="text/javascript"></script>
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -208,7 +208,7 @@ echo date("Y");
   ga('send', 'pageview');
 </script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.4.2/knockout-min.js" type="text/javascript"></script>
-<script src="/include/scripts.js.php?iconmaker=1&amp;_=9" type="text/javascript"></script>
+<script src="/include/scripts.js.php?iconmaker=1&amp;_=5" type="text/javascript"></script>
 </body>
 </html>
 <?php

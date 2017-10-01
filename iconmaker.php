@@ -52,7 +52,15 @@ To download the icon as a PNG or SVG file, click the "Download Icon" button at t
 
 <div id="iconmaker">
 
-<div class="page-section">
+	<div class="page-section">
+		<h3>Mode</h3>
+		<input type="radio" name="mode" value="simple" data-bind="checked: mode" id="iconTypeSimple" class="checkbox" /><label for="iconTypeSimple" class="checkbox-label" data-bind="css: { unchecked: mode() != 'simple' }">Simple (flat)</label>
+		<br />
+		<input type="radio" name="mode" value="advanced" data-bind="checked: mode" id="iconTypeAdvanced" class="checkbox" /><label for="iconTypeAdvanced" class="checkbox-label" data-bind="css: { unchecked: mode() != 'advanced' }">Advanced</label>
+		<div class="clearfix"></div>
+	</div>
+
+<div class="page-section" data-bind="visible: mode() === 'advanced'">
 
 <h3>Background Shape</h3>
 <div id="shapes">
@@ -75,7 +83,7 @@ To download the icon as a PNG or SVG file, click the "Download Icon" button at t
 <div class="clearfix"></div>
 
 </div>
-<div class="page-section">
+<div class="page-section" data-bind="visible: mode() === 'advanced'">
 
 <h3>Background color</h3>
 <label>From:</label>
@@ -84,18 +92,23 @@ To download the icon as a PNG or SVG file, click the "Download Icon" button at t
 <input id="iconBackToColor" class="color textinput" size="6" data-bind="value: iconBackToColor" />
 
 </div>
-<div class="page-section">
 
-<h3>Icon Color</h3>
-<label>From:</label>
-<input id="iconFromColor" class="color textinput" size="6" data-bind="value: iconFromColor" />
-<label>To:</label>
-<input id="iconToColor" class="color textinput" size="6" data-bind="value: iconToColor" />
-
-<div style="clear: both;"></div>
-
+<div class="page-section" data-bind="visible: mode() === 'advanced'">
+	<h3>Icon Color</h3>
+	<label>From:</label>
+	<input id="iconFromColor" class="color textinput" size="6" data-bind="value: iconFromColor" />
+	<label>To:</label>
+	<input id="iconToColor" class="color textinput" size="6" data-bind="value: iconToColor" />
+	<div style="clear: both;"></div>
 </div>
-<div class="page-section">
+
+<div class="page-section" data-bind="visible: mode() === 'simple'">
+	<h3>Icon Color</h3>
+	<input id="iconFromAndToColor" class="color textinput" size="6" data-bind="value: iconFromColor" />
+	<div style="clear: both;"></div>
+</div>
+
+<div class="page-section" data-bind="visible: mode() === 'advanced'">
 
 <h3>Symbol Type</h3>
 <input type="radio" name="iconType" value="icon" data-bind="checked: iconType" id="iconTypeIcon" class="checkbox" /><label for="iconTypeIcon" class="checkbox-label" data-bind="css: { unchecked: iconType() != 'icon' }">Use Predefined Symbols</label>
@@ -105,7 +118,7 @@ To download the icon as a PNG or SVG file, click the "Download Icon" button at t
 </div>
 <div data-bind="fadeVisible: iconType() == 'icon'">
 
-<div class="page-section">
+<div class="page-section" data-bind="visible: mode() === 'advanced'">
 
 <h3>Symbol Options</h3>
 
@@ -138,7 +151,7 @@ To download the icon as a PNG or SVG file, click the "Download Icon" button at t
 	</div>
 
 </div>
-<div class="page-section">
+<div class="page-section" data-bind="visible: mode() === 'advanced'">
 
 	<h3>Glow/Drop Shadow Options</h3>
 
@@ -188,9 +201,13 @@ To download the icon as a PNG or SVG file, click the "Download Icon" button at t
 
 	<div class="symbol-set-selection">
 		<h4>Included Icon Sets</h4>
-		<div data-bind="foreach: symbolSets">
-			<input type="checkbox" class="checkbox" data-bind="checked: checked, attr: {id: id}" />
-			<label class="checkbox-label" data-bind="text: name, css: { unchecked: !checked() }, attr: {for: id}"></label>
+		<div>
+			<input type="radio" class="checkbox" data-bind="value: null, checked: $root.selectedSymbolSet" id="allSymbolSets" />
+			<label class="checkbox-label" data-bind="css: { unchecked: $root.selectedSymbolSet() !== null }" for="allSymbolSets">All</label>
+			<!-- ko foreach: symbolSets -->
+			<input type="radio" class="checkbox" data-bind="value: id, checked: $root.selectedSymbolSet, attr: {id: id}" />
+			<label class="checkbox-label" data-bind="text: name, css: { unchecked: id !== $root.selectedSymbolSet() }, attr: {for: id}"></label>
+			<!-- /ko -->
 		</div>
 	</div>
 
@@ -249,7 +266,10 @@ To download the icon as a PNG or SVG file, click the "Download Icon" button at t
 	<h3>Icon Preview</h3>
 	<a href="javascript:void(0);" data-bind="click: randomize" id="randomize-icon">Surprise me!</a>
 	<div id="icon"></div>
-	<div id="downloadTip">Tip: Adjust the settings and then download the icon using the button at the end of the page.</div>
+	<div class="displayIconName">
+		<span data-bind="text: displayIconName"></span>
+	</div>
+	<div id="downloadTip"><a href="#downloadSection">Go to download</a></div>
 </div>
 
 <div style="clear: both;"></div>
@@ -271,6 +291,7 @@ To download the icon as a PNG or SVG file, click the "Download Icon" button at t
 </ul>
 
 <p class="info-text" data-bind="visible: savedPresets().length >= 5"><b>You have used all 5 slots.</b> To save more settings, you must remove an old one.</p>
+<div id="downloadSection"></div>
 </div>
 
 <div class="page-section">
@@ -332,10 +353,11 @@ $(function() {
 
 		// create a random icon
 		iconmakerViewModel.randomize();
+		iconmakerViewModel.mode('simple');
 
 		$('#loader').hide();
 		$('#iconmaker').fadeIn('fast');
-		$("input:text").focus(function() { $(this).select(); } );
+		//$("input:text").focus(function() { $(this).select(); } );
 
 		$(document).on({
 			mouseenter: function() {

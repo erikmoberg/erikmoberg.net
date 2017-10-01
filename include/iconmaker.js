@@ -18,6 +18,7 @@ function createIcons() {
 		var containerElement = $("#symbols");
 		var iconContainer = document.createElement("div");
 		iconContainer.setAttribute("data-bind", 'visible: shouldDisplaySymbol("' + name + '")')
+    iconContainer.setAttribute("title", name);
 		containerElement.append(iconContainer);
 
 		var r = Raphael(iconContainer, 32, 32);
@@ -134,11 +135,20 @@ function IconmakerViewModel() {
 
 	self.iconFromColor = ko.observable('ffffff');
 
+  self.iconFromColor.subscribe(function(newValue) {
+    if(self.mode() === 'simple') {
+      self.iconToColor(newValue);
+      self.refreshColors();
+    }
+  })
+
 	self.iconToColor = ko.observable('cccccc');
 
 	self.symbolName = ko.observable();
 
 	self.symbolSets = ko.observableArray();
+
+  self.selectedSymbolSet = ko.observable(null);
 
 	self.shouldDisplaySymbol = function (name) {
 		var icon = $.grep(self.clickableIcons, function (icon) {
@@ -150,7 +160,7 @@ function IconmakerViewModel() {
 		}
 
 		var set = $.grep(self.symbolSets(), function(set) {
-			return set.checked() && set.name == icon.set;
+			return (!self.selectedSymbolSet() || set.id === self.selectedSymbolSet()) && set.name == icon.set;
 		});
 
 		if (!set.length) {
@@ -180,6 +190,11 @@ function IconmakerViewModel() {
 		}
 	});
 
+  self.displayIconName = ko.computed(function() {
+    var name = self.selectedIconName() || 'icon';
+    return name[0].toUpperCase() + name.substring(1, name.length);
+  });
+
 	self.shiny = ko.observable(true);
 
 	self.glow = ko.observable(false);
@@ -199,6 +214,29 @@ function IconmakerViewModel() {
 	self.symbolRotation = ko.observable(0).extend({ numeric: JSON.stringify({ min: 0, max: 360, defaultValue: 0 }) });
 
 	self.glowOpacity = ko.observable(50).extend({ numeric: JSON.stringify({ min: 0, max: 100, defaultValue: 50 }) });
+
+  self.mode = ko.observable('simple');
+
+  self.mode.subscribe(function (newValue) {
+    if(newValue === 'simple') {
+      var settings = {
+  			shapeType: 'none',
+        iconToColor: self.iconFromColor(),
+        shiny: false,
+        glow: false,
+        iconType: 'icon',
+        symbolSize: 100,
+      	symbolXPos: 0,
+      	symbolYPos: 0,
+      	symbolRotation: 0,
+      	glow: false,
+        shapeType: 'none',
+        mode: 'simple'
+      }
+
+      self.setSettings(settings);
+    }
+  });
 
 	// saving and loading
 
@@ -268,7 +306,8 @@ function IconmakerViewModel() {
 			return value;
 		};
 
-		self.selectedIconName(defVal(settings.selectedIconName, self.selectedIconName()));
+    var selectedIconName = defVal(settings.selectedIconName, self.selectedIconName());
+		self.selectedIconName(selectedIconName);
 		self.fontSize(defVal(settings.fontSize, self.fontSize()));
 		self.textRotation(defVal(settings.textRotation, self.textRotation()));
 		self.textXPos(defVal(settings.textXPos, self.textXPos()));
@@ -295,22 +334,27 @@ function IconmakerViewModel() {
 		self.symbolYPos(defVal(settings.symbolYPos, self.symbolYPos()));
 		self.symbolRotation(defVal(settings.symbolRotation, self.symbolRotation()));
 		self.glowOpacity(defVal(settings.glowOpacity, self.glowOpacity()));
+    self.mode(defVal(settings.mode, 'advanced'));
 
 		// select the icon
-		$.grep(self.clickableIcons, function(icon) { return icon.name == settings.selectedIconName; })[0].clickFunction();
+		$.grep(self.clickableIcons, function(icon) { return icon.name == selectedIconName; })[0].clickFunction();
 
 		$('#shapes').buttonset("refresh");
 
-		// update colors
-		$.each(self.colorPickers, function(i, entry) {
-			entry.picker.fromString(entry.observable());
-		});
+		self.refreshColors();
 	};
 
 	self.deletePreset = function (preset) {
 		self.savedPresets.remove(preset);
 		localStorage.setItem("savedPresets", JSON.stringify(self.savedPresets()));
 	};
+
+  self.refreshColors = function () {
+    // update colors
+		$.each(self.colorPickers, function(i, entry) {
+			entry.picker.fromString(entry.observable());
+		});
+  }
 
 	// saving and loading end
 
@@ -321,7 +365,8 @@ function IconmakerViewModel() {
 	{id: 'iconBackFromColor', observable: self.iconBackFromColor},
 	{id: 'iconBackToColor', observable: self.iconBackToColor},
 	{id: 'iconFromColor', observable: self.iconFromColor},
-	{id: 'iconToColor', observable: self.iconToColor}];
+	{id: 'iconToColor', observable: self.iconToColor},
+  {id: 'iconFromAndToColor', observable: self.iconFromColor}];
 	$.each(idsAndObservables, function(i, io) {
 		var observable = io.observable;
 		var id = io.id;
@@ -369,7 +414,8 @@ function IconmakerViewModel() {
 			symbolXPos: 0,
 			symbolYPos: 0,
 			symbolRotation: 0,
-			glowOpacity: 50
+			glowOpacity: 50,
+      mode: 'advanced'
 		};
 
 		self.setSettings(settings);

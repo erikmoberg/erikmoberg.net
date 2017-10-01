@@ -733,6 +733,12 @@ aside {
 	display: inline-block;
 }
 
+.displayIconName {
+	text-align: center;
+	margin-bottom: 10px;
+	font-weight: bold;
+}
+
 .symbol-set-selection {
 	padding: 10px 0;
 }
@@ -790,6 +796,7 @@ aside {
 	width: 138px;
 	font-size: 12px;
 	margin-top: 3px;
+	text-align: center;
 }
 
 .rss-link, .twitter-link {
