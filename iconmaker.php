@@ -197,8 +197,9 @@ To download the icon as a PNG or SVG file, click the "Download Icon" button at t
 	<div class="page-section">
 
 	<h3>Symbol Selection</h3>
-	<input type="text" class="textinput" data-bind="textInput: symbolName" placeholder="Search by name" style="width:280px" />
 
+	<input type="text" class="textinput" data-bind="textInput: symbolName" placeholder="Search by name" style="width:280px" />
+  <a href="javascript:void(0);" data-bind="click: function() { randomize(); }" id="randomize-icon">Surprise me!</a>
 	<div class="symbol-set-selection">
 		<h4>Included Icon Sets</h4>
 		<div>
@@ -263,13 +264,11 @@ To download the icon as a PNG or SVG file, click the "Download Icon" button at t
 
 
 <div id="iconContainer">
-	<h3>Icon Preview</h3>
-	<a href="javascript:void(0);" data-bind="click: randomize" id="randomize-icon">Surprise me!</a>
-	<div id="icon"></div>
 	<div class="displayIconName">
 		<span data-bind="text: displayIconName"></span>
 	</div>
-	<div id="downloadTip"><a href="#downloadSection">Go to download</a></div>
+	<div id="icon"></div>
+	<div id="downloadTip"><a href="javascript:void(0)" data-bind="click: function() { emnet.utils.scrollIntoView('downloadSection'); }">Go to download</a></div>
 </div>
 
 <div style="clear: both;"></div>

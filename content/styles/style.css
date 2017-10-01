@@ -716,12 +716,12 @@ aside {
 	background-color: #fff;
 	border: 3px solid #ccc;
 	padding: 5px;
+	text-align: center;
 }
 
 #randomize-icon {
 	padding-left: 26px;
 	background: transparent url(../images/randomize.png) center left no-repeat;
-	display: block;
 }
 
 #symbols {
@@ -734,8 +734,7 @@ aside {
 }
 
 .displayIconName {
-	text-align: center;
-	margin-bottom: 10px;
+	margin: 5px 0;
 	font-weight: bold;
 }
 
@@ -793,10 +792,7 @@ aside {
 }
 
 #downloadTip {
-	width: 138px;
-	font-size: 12px;
-	margin-top: 3px;
-	text-align: center;
+	margin: 5px 0;
 }
 
 .rss-link, .twitter-link {

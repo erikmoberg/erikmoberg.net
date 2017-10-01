@@ -211,3 +211,9 @@ function checkMaxLength(textBox, e, maxLength) {
 		return false;
     }
 }
+
+emnet.utils = {
+	scrollIntoView: function (elementId) {
+		document.getElementById(elementId).scrollIntoView({ behavior: 'smooth' })
+	}
+}
