@@ -18,7 +18,7 @@ function createIcons() {
 		var containerElement = $("#symbols");
 		var iconContainer = document.createElement("div");
 		iconContainer.setAttribute("data-bind", 'visible: shouldDisplaySymbol("' + name + '")')
-    iconContainer.setAttribute("title", name);
+        iconContainer.setAttribute("title", name);
 		containerElement.append(iconContainer);
 
 		var r = Raphael(iconContainer, 32, 32);
@@ -659,8 +659,8 @@ function setupIcons(){
 		name: "none",
 		image: "none-shape.png",
 		iconBackFunction: null,
-		translateBy: 53,
-		scaleFactor: 3.8,
+		translateBy: 54,
+		scaleFactor: 4.5,
 		reflectionPath: null,
 		reflectionOpacity: 0.3,
 		reflectionTranslateBy: 0

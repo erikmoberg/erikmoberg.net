@@ -214,6 +214,15 @@ function checkMaxLength(textBox, e, maxLength) {
 
 emnet.utils = {
 	scrollIntoView: function (elementId) {
-		document.getElementById(elementId).scrollIntoView({ behavior: 'smooth' })
+		var offset = $("#" + elementId).offset();
+		var height = $(window).height();
+		$('html, body').animate({
+			scrollTop: offset.top - (height / 2)
+		}, function() {
+			$("#" + elementId).addClass("pulse");
+			setTimeout(function() {
+				$("#" + elementId).removeClass("pulse")
+			}, 3000);
+		});
 	}
 }

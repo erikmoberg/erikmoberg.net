@@ -4,7 +4,7 @@ if (extension_loaded("zlib") && (ini_get("output_handler") != "ob_gzhandler")) {
 }
 header ('content-type: text/javascript; charset: UTF-8');
 header ('cache-control: must-revalidate');
-$offset = 60 * 60;
+$offset = 60 * 60 * 24 * 7;
 $expire = 'expires: ' . gmdate ('D, d M Y H:i:s', time() + $offset) . ' GMT';
 header ($expire);
 

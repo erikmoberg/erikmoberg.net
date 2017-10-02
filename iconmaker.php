@@ -268,7 +268,7 @@ To download the icon as a PNG or SVG file, click the "Download Icon" button at t
 		<span data-bind="text: displayIconName"></span>
 	</div>
 	<div id="icon"></div>
-	<div id="downloadTip"><a href="javascript:void(0)" data-bind="click: function() { emnet.utils.scrollIntoView('downloadSection'); }">Go to download</a></div>
+	<div id="downloadTip"><a href="javascript:void(0)" data-bind="click: function() { emnet.utils.scrollIntoView('btnSave'); }">Go to download</a></div>
 </div>
 
 <div style="clear: both;"></div>
@@ -290,14 +290,13 @@ To download the icon as a PNG or SVG file, click the "Download Icon" button at t
 </ul>
 
 <p class="info-text" data-bind="visible: savedPresets().length >= 5"><b>You have used all 5 slots.</b> To save more settings, you must remove an old one.</p>
-<div id="downloadSection"></div>
 </div>
 
 <div class="page-section">
 <h3>Download icon</h3>
 <input name="fileType" id="fileTypePng" type="radio" value="png" data-bind="checked: fileType" class="checkbox" /><label for="fileTypePng" class="checkbox-label" data-bind="css: { unchecked: fileType() != 'png' }">PNG</label>
 <label for="iconsize"> - Image Size: </label>
-<input type="text" class="textinput" maxlength="4" size="4" data-bind="value: iconsize, enable: fileType() == 'png'" />
+<input type="text" class="textinput" maxlength="4" data-bind="value: iconsize, enable: fileType() == 'png'" style="width: 40px;" />
 <label> px (max 1024)</label>
 <br />
 <input name="fileType" id="fileTypeSvg" type="radio" value="svg" data-bind="checked: fileType" class="checkbox" /><label for="fileTypeSvg" class="checkbox-label" data-bind="css: { unchecked: fileType() != 'svg' }">SVG</label>

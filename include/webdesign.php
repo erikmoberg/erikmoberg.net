@@ -207,6 +207,7 @@ echo date("Y");
   ga('create', 'UA-1716455-2', 'auto');
   ga('send', 'pageview');
 </script>
+</script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.4.2/knockout-min.js" type="text/javascript"></script>
 <script src="/include/scripts.js.php?iconmaker=1&amp;_=6" type="text/javascript"></script>
 </body>

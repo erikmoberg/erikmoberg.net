@@ -225,6 +225,7 @@ pre code {
 #content {
 	padding-top: 20px;
 	position: relative;
+	display: inline-block;
 }
 
 .frontpage #content {
@@ -1261,6 +1262,19 @@ body.gallery {
 
 /* Responsive gallery end */
 
+.pulse {
+	animation: pulse 1.5s;
+	animation-iteration-count: 2;
+  }
+
+  @keyframes pulse {
+	0% {
+		box-shadow: 0 0 0 0 rgba(218, 69, 38, 0.8);
+	}
+	100% {
+		box-shadow: 0 0 0 20px rgba(218, 69, 38, 0);
+	}
+  }
 
 @media screen and (max-width: 950px) {
 
@@ -1474,6 +1488,10 @@ body.gallery {
 
 	article, .full-article, .article-navigation, .social-links, #frmComments, .page-section {
 		padding: 10px;
+	}
+
+	.symbol-set-selection .checkbox-label {
+		display: block;
 	}
 }
 
