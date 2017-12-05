@@ -1313,8 +1313,12 @@ body.gallery {
 
 	#container, #sideInfo {
 		width: auto;
-		margin: 0 5px;
-	}
+		margin: 0 10px;
+    }
+    
+    #content {
+        padding-top: 10px;
+    }
 
 	.frontpage #content {
 		width: 70%;
@@ -1495,12 +1499,21 @@ body.gallery {
 	}
 
 	article, .full-article, .article-navigation, .social-links, #frmComments, .page-section {
-		padding: 10px;
+        padding: 10px;
+        margin-bottom: 10px;
 	}
 
 	.symbol-set-selection .checkbox-label {
 		display: block;
-	}
+    }
+
+    #load-more-entries {
+        margin-bottom: 10px;
+    }
+
+    aside {
+        padding-top: 10px;
+    }
 }
 
 @media screen and (max-width: 400px) {
@@ -1563,23 +1576,15 @@ body.gallery {
 
 	article, .full-article, .article-navigation, .social-links, #frmComments, .page-section {
 		padding: 10px;
-    margin-bottom: 10px;
+        margin-bottom: 10px;
 	}
 
 	#content {
 		padding-top: 0;
 	}
 
-	#container {
-		margin: 0;
-	}
-
-	.teaser {
-    margin: 0 -10px;
-	}
-
 	#load-more-entries {
-  	margin: 0 10px 10px 10px;
+  	    margin: 0 10px 10px 10px;
 	}
 
 	#bottom {
@@ -1591,11 +1596,12 @@ body.gallery {
 	}
 
 	#sideInfo {
-		margin: 0;
+        margin: 0;
+        padding: 10px;
 	}
 
 	.articleimage {
 		margin-left: -10px;
-    margin-right: -10px;
+        margin-right: -10px;
 	}
 }
