@@ -57,13 +57,13 @@ if(isset($_POST['btnSend']))
 	$testtext = htmlspecialchars($_POST['txtTesttext']);
 	if($testtext == 'emalj' && $spamTest == '')
 	{
-		$to = "erikmoberg@hotmail.com";
+		$to = "erik@erikmoberg.net";
 		$subject = "erikmoberg.net contact - $name";
 		$message = "$email - $message";
-		$header = "From: erikmoberg";
+		$header = "From: erik@erikmoberg.net";
 		
 		$header_ = 'MIME-Version: 1.0' . "\r\n" . 'Content-type: text/plain; charset=UTF-8' . "\r\n";
-		mail($to, "=?UTF-8?B?".base64_encode($subject).'?=', $message, $header_ . $header);
+        mail($to, "=?UTF-8?B?".base64_encode($subject).'?=', $message, $header_ . $header);
 		
 		echo " <script>window.location=\"/contact/posted\"</script> ";
 	}

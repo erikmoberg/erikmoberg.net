@@ -187,10 +187,10 @@ function AddComment($articlename, $name, $website, $message)
 		//////////!!!!!!!!!!!
 
 
-		$to = "erikmoberg@hotmail.com";
+		$to = "erik@erikmoberg.net";
 		$subject = "erikmoberg.net comment - $articlename - $name";
 		$message = "$message";
-		$header = "From: erikmoberg";
+		$header = "From: erik@erikmoberg.net";
 
 		$header_ = 'MIME-Version: 1.0' . "\r\n" . 'Content-type: text/plain; charset=UTF-8' . "\r\n";
 

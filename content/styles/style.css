@@ -733,6 +733,18 @@ aside {
 	display: inline-block;
 }
 
+.animatableSymbol {
+  transition: all 500ms;
+	margin: 0 1px 1px 0;
+}
+
+.animatableSymbol.hide {
+  transition: all 500ms;
+  height: 0;
+	width: 0;
+	margin: 0;
+}
+
 .displayIconName {
 	margin: 5px 0;
 	font-weight: bold;
@@ -1315,7 +1327,7 @@ body.gallery {
 		width: auto;
 		margin: 0 10px;
     }
-    
+
     #content {
         padding-top: 10px;
     }
@@ -1375,6 +1387,10 @@ body.gallery {
 	#search-results {
 		width: auto;
 		margin-top: 105px;
+	}
+
+	#iconContainer {
+		display: none;
 	}
 }
 
