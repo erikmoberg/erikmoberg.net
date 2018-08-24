@@ -16,7 +16,7 @@ function GetQueryString()
 
 function PrintStartHtml($pageTitle, $highlightitem, $metadescription)
 {
-	$isFrontPage = false; //$highlightitem == 0
+	$isFrontPage = false;
 	date_default_timezone_set('Europe/Berlin');
 	$pageFileName = '';
 	$metadescription = "Erik Moberg's personal homepage - " . ($metadescription == null ? "photography, travelling, web design and more" : $metadescription);
@@ -28,11 +28,11 @@ function PrintStartHtml($pageTitle, $highlightitem, $metadescription)
 	<title><?php echo $pageTitle; ?> - Erik Moberg's personal homepage - photography, gadgets, DIY, and more</title>
 	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 	<link href='https://fonts.googleapis.com/css?family=Roboto+Condensed:400,400i,700|Roboto' rel='stylesheet' type='text/css'>
-	<link rel="stylesheet" type="text/css" href="/content/styles/style.css.php?_=9" />
-	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js" type="text/javascript"></script>
+	<link rel="stylesheet" type="text/css" href="/content/styles/style.css.php?_=11" />
+	<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js" type="text/javascript"></script>
 	<link rel="shortcut icon" href="/favicon.ico" type="image/vnd.microsoft.icon" />
-  <link rel="icon" type="image/png" href="/content/favicon/favicon-192.png" sizes="192x192">
+    <link rel="icon" type="image/png" href="/content/favicon/favicon-192.png" sizes="192x192">
 	<link rel="icon" type="image/png" href="/content/favicon/favicon-160.png" sizes="160x160">
 	<link rel="icon" type="image/png" href="/content/favicon/favicon-96.png" sizes="96x96">
 	<link rel="icon" type="image/png" href="/content/favicon/favicon-16.png" sizes="16x16">
@@ -75,7 +75,12 @@ if(true || $isFrontPage) {
 		</div>
 	</div>
 	<div id="menucontainer">
-		<a href="/" id="logo"></a>
+        
+        
+        <div class="change-theme-container">
+    <a href="javascript:void(0);" id="changetheme-dark"><i class="fa fa-moon-o"></i></a>/<a href="javascript:void(0);" id="changetheme-light"><i class="fa fa-sun-o"></i></a>
+</div>
+
 		<a id="menu-toggle" href="javascript:void(0);" title="Toggle menu"><i class="fa fa-bars"></i></a>
 		<div id="open-search"><a href="javascript:void(0);"><i class="fa fa-search"></i></a></div>
 		<div id='cse-search-form'>
@@ -105,7 +110,12 @@ for($i=0;$i<count($namesArr);$i++)
 }
 ?>
 		</ul>
-	</div>
+    </div>
+    <script>
+        if (sessionStorage.getItem('theme') === 'dark') {
+            $("body").addClass("dark-theme");
+        }
+    </script>
 	<div id="containercontainer">
 	<div id="container">
 	<div id="content">
@@ -192,26 +202,18 @@ if($isFrontPage) {
 <div id="bottom">
 </div>
 <div id="last">
-<a href="/about" rel="author">Erik Moberg</a>&nbsp;
+Erik Moberg&nbsp;
 <?php
 echo date("Y");
 ?>
 </div>
 <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js" type="text/javascript"></script>
-<script src="/include/scripts.js.php?_=7" type="text/javascript"></script>
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-  ga('create', 'UA-1716455-2', 'auto');
-  ga('send', 'pageview');
-</script>
+<script src="/include/scripts.js.php?_=8" type="text/javascript"></script>
 <?php
 if ($pageHint == "shiny-iconmaker") {
 	?>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.4.2/knockout-min.js" type="text/javascript"></script>
-	<script src="/include/scripts.js.php?iconmaker=1&amp;_=7" type="text/javascript"></script>
+	<script src="/include/scripts.js.php?iconmaker=1&amp;_=8" type="text/javascript"></script>
 	<?php
 }
 ?>

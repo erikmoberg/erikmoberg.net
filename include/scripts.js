@@ -100,7 +100,10 @@ $(function() {
 			$('#menucontainer').toggleClass('scrolled', newPos > lastPos && newPos > minScroll);
 			lastPos = newPos;
 		}
-	});
+    });
+    
+    $("#changetheme-dark").on("click", function() { $("body").addClass("dark-theme"); sessionStorage.setItem('theme', 'dark'); });
+    $("#changetheme-light").on("click", function() { $("body").removeClass("dark-theme"); sessionStorage.removeItem('theme'); });
 });
 
 emnet.search.init();
