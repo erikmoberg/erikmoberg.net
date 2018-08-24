@@ -4,6 +4,7 @@ include_once("include/webdesign.php");
 PrintStartHtml('Shiny Icon Maker',3,'The Shiny Icon Maker is a simple tool to create your own free custom Web 2.0-style icons for your applications or websites using text, predefined icons, and the colors of your choice.');
 
 ?>
+
 <div class="page-section">
 <h2>Shiny Icon Maker</h2>
 <p>
@@ -377,5 +378,5 @@ $(function() {
 </script>
 
 <?php
-PrintEndHtml();
+PrintEndHtml(false, null, null, "shiny-iconmaker");
 ?>

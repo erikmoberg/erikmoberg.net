@@ -68,7 +68,7 @@ emnet.search = {
 
 $(function() {
 	// ---- jscolor settings
-	if (jscolor) {
+	if (typeof jscolor !== "undefined") {
 		jscolor.dir = '/include/jscolor/';
 	}
 	// ---- end jscolor settings

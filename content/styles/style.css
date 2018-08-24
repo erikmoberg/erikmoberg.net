@@ -7,7 +7,7 @@ body {
 	font-family: 'Roboto', Segoe UI, Helvetica, Arial, sans-serif;
 	color: #555;
 	background-color: #ccc;
-	font-size: 16px;
+	font-size: 18px;
 }
 
 h1, h2, h3, h4 {
@@ -436,7 +436,7 @@ article, .full-article, .article-navigation, .social-links, #frmComments, .page-
 	background: none;
 }
 
-.btn{
+.btn {
 	border: none;
 	padding: 10px;
 	margin-top: 5px;
@@ -1395,6 +1395,10 @@ body.gallery {
 }
 
 @media screen and (max-width: 700px) {
+
+	body {
+		font-size: 16px;
+	}
 
 	/* menu stacked */
 
