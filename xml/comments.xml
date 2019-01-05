@@ -201,6 +201,12 @@ Any suggestions?</message>
 
 you may not like my answer, but I currently use a wired Steelseries Siberia V2 headset and I have no complaints. Cutting the cord still has its share of problems, mostly battery life. Some colleagues of mine use wireless headsets for Skype (Logitech H800) and because of the battery drain, they simply keep them plugged in most of the time, mostly defeating the purpose of using a wireless headset. But at least you can charge while using them. Maybe worth a shot?</message>
     </comment>
+    <comment>
+      <name>AlexL</name>
+      <datetime>2018-09-13 02:58</datetime>
+      <website>http://https://pupuweb.com/solved-logitech-bluetooth-wireless-headset-h800-microphone-not-working/</website>
+      <message>The microphone of Logitech Wireless Headset H800 may not working sometime, especially on Windows 10.</message>
+    </comment>
   </comments>
   <comments articlename="shiny_icon_maker_-_new_features">
     <comment>
@@ -3610,6 +3616,66 @@ the 50mm will produce more background blur than the 40mm. You can actually tell 
 
 For wedding photography, it really depends - there is much more to it than just having a fast prime. Wedding shoots tend to be a tad chaotic - lots of stuff going on, limited time - and I think a good quality zoom lens might be the right tool for the job here, since it allows for more flexibility.</message>
     </comment>
+    <comment>
+      <name>Suraj Tiwary</name>
+      <datetime>2018-02-17 05:50</datetime>
+      <website/>
+      <message>Hi Erik,
+
+ I am a budding photographer. I have been learning for 1 year. I have 1300d. And I am using 18-55mm lens. Now I want to enhance my kit. So I am looking for a small aperture lens. What will be better choice 40mm or 50mm lens? As I am going for a wedding shoot or portrait. </message>
+    </comment>
+    <comment>
+      <name>Erik</name>
+      <datetime>2018-02-20 19:08</datetime>
+      <website/>
+      <message>Hi Suraj Tiwary,
+
+either one should do fine! Also refer to my reply just above yours. Apart from a new lens, you might also want to consider an external flash gun so that you don't have to rely on available light.</message>
+    </comment>
+    <comment>
+      <name>Hank</name>
+      <datetime>2018-03-14 21:52</datetime>
+      <website/>
+      <message>Thank you. Great article. Now I know which I want to get. </message>
+    </comment>
+    <comment>
+      <name>hala sabet</name>
+      <datetime>2018-08-06 16:01</datetime>
+      <website/>
+      <message>hi..thanks for the review. i am an artist and would like to photograph my paintings and sculpture. which lens would be better the 40mm or 50mm.  i have the 500d camera.
+thanks</message>
+    </comment>
+    <comment>
+      <name>Erik</name>
+      <datetime>2018-08-08 20:11</datetime>
+      <website/>
+      <message>Hi hala sabet,
+
+either one should probably do just fine, even though I usually lean toward the 40mm for its better build quality and sharpness. You might also want to look into getting a good tripod as well, if you do not have one already. It will get rid of any camera shake and help with composition. Hope this helps!</message>
+    </comment>
+    <comment>
+      <name>Suraj Tiwary</name>
+      <datetime>2018-09-26 07:28</datetime>
+      <website/>
+      <message>Thanks for the input Erik.</message>
+    </comment>
+    <comment>
+      <name>Ray</name>
+      <datetime>2018-12-07 15:16</datetime>
+      <website/>
+      <message>Thanks fpr this very excellent review!I
+
+I would love to see your review on the newer Canon pancake 24mm lens.
+</message>
+    </comment>
+    <comment>
+      <name>Erik</name>
+      <datetime>2018-12-07 16:16</datetime>
+      <website/>
+      <message>Hi Ray,
+
+I would like that too - because it would mean that I had the 24mm in my possession. Please let me know if you could help me with that! ;)</message>
+    </comment>
   </comments>
   <comments articlename="homer_simpson_bao_song">
     <comment>
@@ -4261,6 +4327,21 @@ Andreas</message>
 
 I'm glad it worked out. And yes, those star locks are terrible to deal with! Better get a few spare ones when you order, just in case they get damaged while installing.</message>
     </comment>
+    <comment>
+      <name>nadja</name>
+      <datetime>2018-08-24 14:02</datetime>
+      <website/>
+      <message>hi Erik
+is it possible to remove the wheels without damaging them? i got the replacement wheels but don't kn9w how to remove the old ones. </message>
+    </comment>
+    <comment>
+      <name>Erik</name>
+      <datetime>2018-08-24 20:59</datetime>
+      <website/>
+      <message>Hi nadja,
+
+no damage to the wheels themselves should be caused by following the instructions above. However, the star locks will probably be badly damaged and need to be replaced. But they are of course much less expensive than the wheels. I hope this helps!</message>
+    </comment>
   </comments>
   <comments articlename="velbon_sherpa_200r_review">
     <comment>
@@ -4313,7 +4394,7 @@ What is the problem ? I don't understand the reaction of Unity.</message>
       <name>Dorian</name>
       <datetime>2017-08-04 03:48</datetime>
       <website/>
-      <message>^^' I have found myself (I forgot to rename each sliced image with the same name) 
+      <message>^^' I have found myself (I forgot to rename each sliced image with the same name)
 
 Your code just work perfectly :) thank you so much for your help and time :)</message>
     </comment>
@@ -4351,6 +4432,39 @@ maybe there is a simple solution to it. At which step are you having trouble?</m
       <datetime>2018-01-11 15:55</datetime>
       <website/>
       <message>Thank you so much! It works perfect! You saved me so much time.</message>
+    </comment>
+    <comment>
+      <name>Rafael</name>
+      <datetime>2018-05-28 16:58</datetime>
+      <website/>
+      <message>The code works perfectly, but the console keep showing this every frame:
+
+ArgumentException: An element with the same key already exists in the dictionary.
+System.Collections.Generic.Dictionary`2[System.String,UnityEngine.Sprite].Add (System.String key, UnityEngine.Sprite value) (at /Users/builduser/buildslave/mono/build/mcs/class/corlib/System.Collections.Generic/Dictionary.cs:404)
+System.Linq.Enumerable.ToDictionary[Sprite,String,Sprite] (IEnumerable`1 source, System.Func`2 keySelector, System.Func`2 elementSelector, IEqualityComparer`1 comparer)
+System.Linq.Enumerable.ToDictionary[Sprite,String,Sprite] (IEnumerable`1 source, System.Func`2 keySelector, System.Func`2 elementSelector)
+SpriteSwapDemo.LoadSpriteSheet () (at Assets/Scripts/SpriteSwapDemo.cs:49)
+SpriteSwapDemo.LateUpdate () (at Assets/Scripts/SpriteSwapDemo.cs:35)</message>
+    </comment>
+    <comment>
+      <name>Erik</name>
+      <datetime>2018-05-28 17:53</datetime>
+      <website/>
+      <message>Hi Rafael,
+
+you probably have to or more sprites with the same name in the same sprite sheet. Take a look at the first image in this guide. Click each sprite in the sheet and make sure the name is unique across the sprites in the sheet, such as "walk0", "walk1" etc. Then also make sure to name each sprite in the second sheet with the same name as in the first one. Hope this helps!</message>
+    </comment>
+    <comment>
+      <name>Obsession</name>
+      <datetime>2018-09-04 20:48</datetime>
+      <website/>
+      <message>Life saver.</message>
+    </comment>
+    <comment>
+      <name>Martin</name>
+      <datetime>2018-11-04 14:14</datetime>
+      <website/>
+      <message>Erik, thanks a lot for this, it is simply awesome! You helped me a lot.</message>
     </comment>
   </comments>
   <comments articlename="hands-on-cheap-interchangeable-cell-phone-lenses">

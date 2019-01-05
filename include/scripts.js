@@ -101,9 +101,9 @@ $(function() {
 			lastPos = newPos;
 		}
     });
-    
+
     $("#changetheme-dark").on("click", function() { $("body").addClass("dark-theme"); sessionStorage.setItem('theme', 'dark'); });
-    $("#changetheme-light").on("click", function() { $("body").removeClass("dark-theme"); sessionStorage.removeItem('theme'); });
+    $("#changetheme-light").on("click", function() { $("body").removeClass("dark-theme"); sessionStorage.setItem('theme', 'light'); });
 });
 
 emnet.search.init();

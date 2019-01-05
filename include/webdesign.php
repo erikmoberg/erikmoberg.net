@@ -40,7 +40,7 @@ function PrintStartHtml($pageTitle, $highlightitem, $metadescription)
 	<link rel="alternate" type="application/rss+xml" href="/rss.php" title="erikmoberg.net" />
 	<meta name="robots" content="index, follow" />
 	<meta name="googlebot" content="index, follow" />
-	<meta name="description" content="$metadescription" />
+	<meta name="description" content="<?php echo $metadescription; ?>" />
 	<meta name="keywords" content="Erik Moberg, photography, cameras, travel, web design, web development, programming, personal blog, php, css" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
@@ -51,6 +51,19 @@ if($isFrontPage) {
 	echo '<body>';
 }
 ?>
+  <script>
+		var pageTheme = sessionStorage.getItem('theme');
+		if (pageTheme) {
+			if (pageTheme === 'dark') {
+					$("body").addClass("dark-theme");
+			}
+		} else {
+			var currentHours = new Date().getHours();
+			if (currentHours >= 19 || currentHours <= 5) {
+				$("body").addClass("dark-theme");
+			}
+		}
+  </script>
 	<div id="headerContainer">
 		<div id='search-results' class="page-section">
 			<span class="btn close-search-results">Close search results</span>
@@ -75,8 +88,8 @@ if(true || $isFrontPage) {
 		</div>
 	</div>
 	<div id="menucontainer">
-        
-        
+
+
         <div class="change-theme-container">
     <a href="javascript:void(0);" id="changetheme-dark"><i class="fa fa-moon-o"></i></a>/<a href="javascript:void(0);" id="changetheme-light"><i class="fa fa-sun-o"></i></a>
 </div>
@@ -111,11 +124,6 @@ for($i=0;$i<count($namesArr);$i++)
 ?>
 		</ul>
     </div>
-    <script>
-        if (sessionStorage.getItem('theme') === 'dark') {
-            $("body").addClass("dark-theme");
-        }
-    </script>
 	<div id="containercontainer">
 	<div id="container">
 	<div id="content">
@@ -208,7 +216,7 @@ echo date("Y");
 ?>
 </div>
 <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js" type="text/javascript"></script>
-<script src="/include/scripts.js.php?_=8" type="text/javascript"></script>
+<script src="/include/scripts.js.php?_=9" type="text/javascript"></script>
 <?php
 if ($pageHint == "shiny-iconmaker") {
 	?>

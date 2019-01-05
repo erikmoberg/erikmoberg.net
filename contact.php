@@ -25,11 +25,11 @@ if($displayform)
 	<h2>About</h2>
 	<p>
 	Although great website building tools exist, being a web developer but not having a hand-crafted web site felt just plain wrong.
-	I have been working as a software developer since 2005, specializing in web development using ASP.NET (MVC) with C# and some client side magic with JavaScript, jQuery and Knockout JS.
+	I have been working as a software developer since 2005, specializing in web development using ASP.NET - MVC as well as Core - with C# along with some client side magic using JavaScript, with libaries and frameworks such as React and Angular.
 	So as a side project, I set up this web site to make use of my skills and learn a few new ones.
 	</p>
 	<p>
-	The site uses PHP, and is programmed with Notepad++. For image manipulation, GIMP and Inkscape are used. 
+	The site uses PHP, and is programmed with Atom. For image manipulation, GIMP and Inkscape are used.
 	The image gallery and the first page use XML for storing data, handled by a simple CMS-like application.
 	</p>
 	<p>
@@ -61,10 +61,10 @@ if(isset($_POST['btnSend']))
 		$subject = "erikmoberg.net contact - $name";
 		$message = "$email - $message";
 		$header = "From: erik@erikmoberg.net";
-		
+
 		$header_ = 'MIME-Version: 1.0' . "\r\n" . 'Content-type: text/plain; charset=UTF-8' . "\r\n";
         mail($to, "=?UTF-8?B?".base64_encode($subject).'?=', $message, $header_ . $header);
-		
+
 		echo " <script>window.location=\"/contact/posted\"</script> ";
 	}
 }
