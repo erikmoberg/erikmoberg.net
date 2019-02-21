@@ -5283,7 +5283,7 @@ Canon EF-S 18-55mm f/3.5-5.6 IS II (kit lens), Canon EF 50mm 1:1.8 II and the Ca
     <header>Experiment: Shooting art with cheap lenses</header>
     <readableid>experiment-shooting-art-with-cheap-lenses</readableid>
     <subheader>Analog to digital conversion</subheader>
-    <intro>[image org] A dear reader asked if the Canon 40mm 2.8 pancake is any good for shooting paintings. While I figured that it would be, I decided to compare the 40mm to the 50mm 1.8 and the 18-55mm kit lens to see which one would be more suitable. Please read on for the 3 test shots - 1 will shock you and blow your mind! Not. ;)</intro>
+    <intro>[image org] A dear reader asked if the Canon 40mm 2.8 pancake is any good for shooting paintings. While I figured that it would be, I decided to compare the 40mm to the 50mm 1.8 and the 18-55mm kit lens to see which one would be more suitable. Please read on for the 3 test shots - 1 will shock you and blow your mind! Not. ;) </intro>
     <content>&lt;h2&gt;What are we looking for?&lt;/h2&gt;
 
 &lt;p&gt;In order to shoot a painting - or a framed picture in this case - the lens should have very little distortion or the paiting will look awkwardly bent. Also, we want good sharpness all the way out to the edges.&lt;/p&gt;
@@ -5329,7 +5329,7 @@ Canon EF-S 18-55mm f/3.5-5.6 IS II (kit lens), Canon EF 50mm 1:1.8 II and the Ca
 &lt;p&gt;Don't we all love animated gifs? Anyway, it should help some in comparing the distortion.&lt;/p&gt;
 
 &lt;div class="articleimage"&gt;
-&lt;image src="/content/distortion-40-50-55.gif" alt="Distortion comparison" /&gt;
+&lt;image src="/content/images/distortion-40-50-55.gif" alt="Distortion comparison" /&gt;
 &lt;/div&gt;
 
 &lt;h2&gt;Conclusion&lt;/h2&gt;
@@ -5432,6 +5432,777 @@ Now, have fun downloading frameworks and tools for your windows PC!</intro>
       <image>
         <description>Pieces that fell into place.</description>
         <name>blocks</name>
+        <extension>.jpg</extension>
+      </image>
+    </images>
+  </entry>
+  <entry>
+    <guid>de50986c-1b3f-428f-b63b-70d188d03b1b</guid>
+    <date>2015-09-05</date>
+    <shorturl>http://bit.ly/1JHXMJO</shorturl>
+    <header>External USB3 Hard Drive not Recognized by Windows</header>
+    <readableid>external-usb3-not-recognized-by-windows</readableid>
+    <subheader>Back to basics</subheader>
+    <intro>[image drive] Super-simple fix here. I hooked up an external USB3 hard drive to my box, but although it was powered up, it did not show up in Windows. Missing drivers? Broken drive? Perhaps my Google-Fu was weak that day but I promised myself I would write a blog post once I had solved it. And it was extremely trivial: Turns out the USB3 controller was disabled in the mainboard (ASUS P8P67) BIOS. After enabling it, everything worked like a charm! And yes, it's weird how these low-level settings somehow manage to stay relevant even to this day. ;)</intro>
+    <content>
+    </content>
+    <images>
+      <image>
+        <description>The Samsung hard drive that eventually turned out to work just fine.</description>
+        <name>drive</name>
+        <extension>.jpg</extension>
+      </image>
+    </images>
+  </entry>
+  <entry>
+    <guid>225dee3e-0fe5-43a1-9c05-8ddd1cae3801</guid>
+    <date>2016-05-21</date>
+    <shorturl>
+    </shorturl>
+    <header>Fixing Broken Breaks on Maclaren Techno XLR Buggy</header>
+    <readableid>fixing-broken-breaks-on-maclaren-techno-xlr-buggy</readableid>
+    <subheader>Yes, we have entered baby territory</subheader>
+    <intro>[image maclaren-techno-xlr] For reasons that may be related to my absence from this blog lately, I found myself in a situation with a used baby stroller in need of repairs. The problem was that the breaks would not click into place. After looking into it, it turned out that it could be easily fixed with some spare parts bought online, plus some basic tools and, of course, my not-so-valuable spare time. Read on for a step for step guide.</intro>
+    <content>[image maclaren-techno-xlr]
+
+&lt;h2&gt;The Problem&lt;/h2&gt;
+&lt;p&gt;
+In my case, the cause turned out to be worn down brake cogs. They are made of plastic and as they wear down over time, the breaks will have a harder time of working properly.
+&lt;/p&gt;
+
+[image the-problem]
+
+&lt;h2&gt;The Solution&lt;/h2&gt;
+&lt;p&gt;
+Luckily, new cogs can be purchased online. A suitable shop is just a &lt;a target="_blank" href="http://bfy.tw/5smB"&gt;quick google away.&lt;/a&gt; The wheels are held in place by 8mm star locks (wheel retainers),  three per axle, so you need to get a few of these as well. 
+&lt;/p&gt;
+
+[image spare-parts]
+
+[image wheel]
+
+[image cap-off]
+
+[image old-starlocks]
+
+[image damaged-starlock]
+
+[image starlocks-finally]
+
+[image starlocks-removed]
+
+[image comparison]
+
+[image washer]
+
+[image new-starlock]
+
+[image two-starlocks]
+
+[image ok]
+
+&lt;h2&gt;Possible alternative solution&lt;/h2&gt;
+&lt;p&gt;
+I have noticed that the front wheels have identical brake cogs, even though there are no front breaks. The cogs in the front also do not seem to wear nearly as much as the ones in the back. This means you could probably use the front cogs as spare parts and simply switch them with the ones in the back. This is a little more work, but you also save a little since you only need to purchase star locks and no new brake cogs.
+&lt;/p&gt;
+
+&lt;h2&gt;Conclusion&lt;/h2&gt;
+&lt;p&gt;
+While there are still a few things to be brushed up on this particular stroller, having the brakes working properly certainly increases safety quite a bit. Definitely worth my time and the small investment.
+&lt;/p&gt;</content>
+    <images>
+      <image>
+        <description>The spare parts I found online: Four break cogs (two per wheel pair) and a bunch of star locks. With international shipping, this set me back around £20.</description>
+        <name>spare-parts</name>
+        <extension>.jpg</extension>
+      </image>
+      <image>
+        <description>This is the back right wheel pair. The problem is shown here. The cogs are worn down almost flat and the break cannot easily be pushed in between.</description>
+        <name>the-problem</name>
+        <extension>.jpg</extension>
+      </image>
+      <image>
+        <description>The wheel caps are held in place by three black plastic clips. Push them with a screwdriver or similar and the cap should pop off.</description>
+        <name>wheel</name>
+        <extension>.jpg</extension>
+      </image>
+      <image>
+        <description>The wheel with the cap removed.</description>
+        <name>cap-off</name>
+        <extension>.jpg</extension>
+      </image>
+      <image>
+        <description>There are three star locks on each axle, holding the wheels in place. These need to be removed.</description>
+        <name>old-starlocks</name>
+        <extension>.jpg</extension>
+      </image>
+      <image>
+        <description>Star locks removed. The wheels can now easily be removed.</description>
+        <name>starlocks-removed</name>
+        <extension>.jpg</extension>
+      </image>
+      <image>
+        <description>Finally!</description>
+        <name>starlocks-finally</name>
+        <extension>.jpg</extension>
+      </image>
+      <image>
+        <description>On the left, the old cogs. Compared to the ones on the right, they are badly worn.</description>
+        <name>comparison</name>
+        <extension>.jpg</extension>
+      </image>
+      <image>
+        <description>Pop a fresh cog on. And a new washer felt good here - or reuse the old one.</description>
+        <name>washer</name>
+        <extension>.jpg</extension>
+      </image>
+      <image>
+        <description>With the second wheel on, completing the pair. I used the tools in the picture for putting the star locks on. And possibly a hammer.</description>
+        <name>new-starlock</name>
+        <extension>.jpg</extension>
+      </image>
+      <image>
+        <description>Is there a neat way of doing this? I used a pair of pliers, a screwdriver and a few more tools I had nearby just for the sake of it. It was a bit of a struggle.</description>
+        <name>damaged-starlock</name>
+        <extension>.jpg</extension>
+      </image>
+      <image>
+        <description>It works! The new cogs create enough space for the breaks to lock into place.</description>
+        <name>ok</name>
+        <extension>.jpg</extension>
+      </image>
+      <image>
+        <description>I settle for two star locks for now.</description>
+        <name>two-starlocks</name>
+        <extension>.jpg</extension>
+      </image>
+      <image>
+        <description>The Maclaren Techno XLR.</description>
+        <name>maclaren-techno-xlr</name>
+        <extension>.jpg</extension>
+      </image>
+    </images>
+  </entry>
+  <entry>
+    <guid>9fdf9358-3aab-4941-aa2c-9aedb8a388ec</guid>
+    <date>2016-08-04</date>
+    <shorturl>
+    </shorturl>
+    <header>Unity3D: Replace Sprite Programmatically in Animation</header>
+    <readableid>unity3d-replace-sprite-programmatically-in-animation</readableid>
+    <subheader>Luigi says: Don't repeat yourself</subheader>
+    <intro>[image logo] Just starting out creating a 2D game using Unity3D, I came across a simple problem: There seems to be no easy way to swap out the sprite in an animation (think: Luigi using the same animations as Mario). It may seem simple to just create a new animation, but with many different characters (sprites) using the same animation it gets old fast. Read on for a short explanation and some code.</intro>
+    <content>&lt;p&gt;
+Note: A solution based on the same approach is also described in &lt;a target="_blank" href="https://www.youtube.com/watch?v=rMCLWt1DuqI"&gt;this video&lt;/a&gt; starting at 20:00. The link to the source code is broken, however.
+&lt;/p&gt;
+
+&lt;p&gt;
+It is assumed that you have already done the following:
+&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Imported the sprite sheets and split them up in sprites accordingly, making sure corresponding sprites have the same name&lt;/li&gt;
+&lt;li&gt;Created one or more animations from the sprites&lt;/li&gt;
+&lt;/ol&gt;
+
+[image spriteeditor]
+
+[image resources]
+
+[image animation]
+
+&lt;p&gt;
+Now, in order to swap out the sprite programmatically, we create the following script and add it to the game object:
+&lt;/p&gt;
+
+&lt;pre&gt;
+&lt;code&gt;
+using System.Collections.Generic;
+using UnityEngine;
+using System.Linq;
+
+public class SpriteSwapDemo : MonoBehaviour
+{
+    // The name of the sprite sheet to use
+    public string SpriteSheetName;
+
+    // The name of the currently loaded sprite sheet
+    private string LoadedSpriteSheetName;
+
+    // The dictionary containing all the sliced up sprites in the sprite sheet
+    private Dictionary&amp;amp;lt;string, Sprite&amp;amp;gt; spriteSheet;
+
+    // The Unity sprite renderer so that we don't have to get it multiple times
+    private SpriteRenderer spriteRenderer;
+
+    // Use this for initialization
+    private void Start()
+    {
+        // Get and cache the sprite renderer for this game object
+        this.spriteRenderer = GetComponent&amp;amp;lt;SpriteRenderer&amp;amp;gt;();
+
+        this.LoadSpriteSheet();
+    }
+
+    // Runs after the animation has done its work
+    private void LateUpdate()
+    {
+        // Check if the sprite sheet name has changed (possibly manually in the inspector)
+        if (this.LoadedSpriteSheetName != this.SpriteSheetName)
+        {
+            // Load the new sprite sheet
+            this.LoadSpriteSheet();
+        }
+
+        // Swap out the sprite to be rendered by its name
+        // Important: The name of the sprite must be the same!
+        this.spriteRenderer.sprite = this.spriteSheet&amp;amp;#91;this.spriteRenderer.sprite.name&amp;amp;#93;;
+    }
+
+    // Loads the sprites from a sprite sheet
+    private void LoadSpriteSheet()
+    {
+        // Load the sprites from a sprite sheet file (png). 
+        // Note: The file specified must exist in a folder named Resources
+        var sprites = Resources.LoadAll&amp;amp;lt;Sprite&amp;amp;gt;(this.SpriteSheetName);
+        this.spriteSheet = sprites.ToDictionary(x =&amp;amp;gt; x.name, x =&amp;amp;gt; x);
+
+        // Remember the name of the sprite sheet in case it is changed later
+        this.LoadedSpriteSheetName = this.SpriteSheetName;
+    }
+}
+&lt;/code&gt;
+&lt;/pre&gt;
+
+&lt;p&gt;
+By changing the parameter "Sprite Sheet Name", we can apply a different sprite sheet at runtime.
+&lt;/p&gt;
+
+[image parameters]
+
+[image player1]
+
+[image parameters2]
+
+[image player2]
+
+&lt;p&gt;I hope you don't mind my terrible artwork. Have fun creating awesome games!&lt;/p&gt;
+
+[note]
+&lt;h3&gt;Update: &lt;/h3&gt;
+&lt;p&gt;It happened - &lt;a href="https://www.erikmoberg.net/ten-tiny-levels"&gt;the game is released!&lt;/a&gt;&lt;/p&gt;
+[/note]</content>
+    <images>
+      <image>
+        <description>The script 'Sprite Swap Demo' was created and added to the game object. The parameter 'Sprite Sheet Name' is set to 'player', which is the name of the PNG file of the player. We can start the game and change it to another value on the fly.</description>
+        <name>parameters</name>
+        <extension>.jpg</extension>
+      </image>
+      <image>
+        <description>The player with the default sprite is seen at the bottom.</description>
+        <name>player1</name>
+        <extension>.jpg</extension>
+      </image>
+      <image>
+        <description>By typing 'player2' in the sprite sheet name text box, the sprite is swapped out.</description>
+        <name>player2</name>
+        <extension>.jpg</extension>
+      </image>
+      <image>
+        <description>
+        </description>
+        <name>logo</name>
+        <extension>.jpg</extension>
+      </image>
+      <image>
+        <description>The sprites to swap between are located in a 'Resources' sub folder - 'player' and 'player2'.</description>
+        <name>resources</name>
+        <extension>.jpg</extension>
+      </image>
+      <image>
+        <description>Important: In the sprite editor, name each sprite (frame) consistently across all sprite sheets. The name is used as key for the mapping between sprite sheets.</description>
+        <name>spriteeditor</name>
+        <extension>.jpg</extension>
+      </image>
+      <image>
+        <description>A simple walk animation.</description>
+        <name>animation</name>
+        <extension>.jpg</extension>
+      </image>
+      <image>
+        <description>The name of the sprite is changed to 'player2'.</description>
+        <name>parameters2</name>
+        <extension>.jpg</extension>
+      </image>
+    </images>
+  </entry>
+  <entry>
+    <guid>883fad6c-56f7-4c60-bdd2-bf4ec83dda9f</guid>
+    <date>2017-01-04</date>
+    <shorturl>
+    </shorturl>
+    <header>Repairing the Toshiba Regza 42XV556D Power Button</header>
+    <readableid>repairing-the-toshiba-regza-42xv556d-power-button</readableid>
+    <subheader>As good as new... still old though</subheader>
+    <intro>[image board] I have a 42" 42XV556D Toshiba Regza TV at home. While it started showing its age a few years ago, I rather keep using it a while longer instead of contributing to the local landfill. However, the power button just stopped working recently. Turned out fixing it is rather easy though, and a no-brainer considering the warranty expired a long time ago. Read on for a quick how-to.</intro>
+    <content>&lt;h2&gt;A word of warning&lt;/h2&gt;
+
+&lt;p&gt;Be careful after removing the back cover of the TV as there is a risk of electric shock. Before starting, remove the power cord and preferably let the TV sit without power for a day. Also, I cannot be held accountable for damages cased by following this guide and yadda yadda.&lt;/p&gt;
+
+[image not-working] 
+
+[image button]
+
+[image hole]
+
+[image no-back]
+
+[image broken]
+
+[image plastic]
+
+[image cable-tie]
+
+[image fixed]
+
+[image working]
+</content>
+    <images>
+      <image>
+        <description>The back, along with any possible warranty, successfully removed. The button is located at the far end. Note that the vintage Cherry keyboard in the background is not required to complete the repair.</description>
+        <name>no-back</name>
+        <extension>.jpg</extension>
+      </image>
+      <image>
+        <description>The button does not push directly on a switch, but on a flat plastic piece, which in turn pushes on the switch. Almost as if the button was installed at the wrong height. Since the button pushes not in the center, but close to the edge, it puts stress on the plastic piece which might break over time.</description>
+        <name>broken</name>
+        <extension>.jpg</extension>
+      </image>
+      <image>
+        <description>This is obviously the problem.</description>
+        <name>plastic</name>
+        <extension>.jpg</extension>
+      </image>
+      <image>
+        <description>By using glue and a cable tie, we are back in business.</description>
+        <name>cable-tie</name>
+        <extension>.jpg</extension>
+      </image>
+      <image>
+        <description>Seems to be working. Time to put the back cover on.</description>
+        <name>fixed</name>
+        <extension>.jpg</extension>
+      </image>
+      <image>
+        <description>Look for these. A screw is hiding in each, removing all allows you to remove the back cover.</description>
+        <name>hole</name>
+        <extension>.jpg</extension>
+      </image>
+      <image>
+        <description>The rather worn power button. It now has a mushy feeling to it and when pressed, the TV still stays off.</description>
+        <name>button</name>
+        <extension>.jpg</extension>
+      </image>
+      <image>
+        <description>Shot of the curcuit board inside the TV to make this guide seem more complicated than it is.</description>
+        <name>board</name>
+        <extension>.jpg</extension>
+      </image>
+      <image>
+        <description>The TV. It stays black.</description>
+        <name>not-working</name>
+        <extension>.jpg</extension>
+      </image>
+      <image>
+        <description>It works!</description>
+        <name>working</name>
+        <extension>.jpg</extension>
+      </image>
+    </images>
+  </entry>
+  <entry>
+    <guid>0d0f4cda-3c2f-4efe-95c6-a14a15b61ca4</guid>
+    <date>2017-03-29</date>
+    <shorturl>
+    </shorturl>
+    <header>Review: Razer DeathAdder Left-Hand Edition</header>
+    <readableid>review-razer-deathadder-left-hand-edition</readableid>
+    <subheader>Save the southpaws</subheader>
+    <intro>[image razer-deathadder-left] I have been considering getting another mouse to use with my left hand to relieve the right hand from some stress. And yes, that means I am not a left hander myself. I hope I am still allowed to write this review! While symmetrical mice are all around, finding a pure left handed design is easier said than done. Read on for my thoughts on the Razer DeathAdder - Left Hand Edition.</intro>
+    <content>[image razer-deathadder-left]
+
+&lt;h2&gt;Why a pure left-hand mouse?&lt;/h2&gt;
+&lt;p&gt;
+While a symmetrical mouse would get the job done, certainly a proper left-hand design is not too much to ask for. No only with the back and forward buttons properly placed - next to each other instead of on opposite sides - but also the primary and secondary buttons switched. This means that you can left-click using the index finger without having to switch the buttons in software. This is especially interesting if you use remote desktop, because on the remote machine, the settings for the buttons will be set to default - meaning left-clicking is now right-clicking, but only in the remote session. Sounds confusing? Well, it is! But a mouse with the proper wiring, such as the DeathAdder, solves this.
+&lt;/p&gt;
+
+&lt;h2&gt;Design and ergonomics&lt;/h2&gt;
+&lt;p&gt;
+Since this mouse is marketed toward gamers, it is expected to have a few bells and whistles, design-wise. In my opinion, it still seems fairly subtle - and all-black design with five buttons. It's mostly the LED-equipped wheel and logo that are drawing attention to themselves. On the default setting, the wheel is constantly lit while the logo slowly pulsates - both of which can be switched off with the Razer Synapse software.
+&lt;/p&gt;
+
+[image back]
+
+&lt;p&gt;The mouse feels great in the hand, and the feet are, as the packaging says, ultra-slick. You will be in for a smooth ride.&lt;/p&gt;
+
+&lt;h2&gt;Usage&lt;/h2&gt;
+&lt;p&gt;
+Usage? Like, using a mouse? This section is only here because the mouse has a major flaw - which, by the way, may not apply to you. I am using a regular white IKEA desk and all my optical mice work just fine on it, such as the Logitech G9x or the 2001 Microsoft Wheel Mouse Optical. But the DeathAdder (3500 DPI infrared) sensor just won't work. The cursor just sits there, or jumps around occasionally. The right-hand edition actually uses a different and newer sensor (which I assume would work on this surface) but it seems the left-handed edition is left behind. However: As a mouse pad is required for smooth mousing anyway, for any mouse, this might not really be an issue.
+&lt;/p&gt;
+
+[image top] 
+
+&lt;h2&gt;Conclusion&lt;/h2&gt;
+
+&lt;h3&gt;Pros&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;A real left hand mouse with properly wired buttons - one of the very few&lt;/li&gt;
+&lt;li&gt;Feels great in the hand&lt;/li&gt;
+&lt;li&gt;Good looking, but subtle design&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3&gt;Cons&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Old sensor which does not work on all surfaces.&lt;/li&gt;
+&lt;li&gt;Lighting and DPI settings on the mouse would have been better than having to install Razer Synapse&lt;/li&gt;
+&lt;li&gt;Pricey&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;While not perfect, it's still a good product. Or is it just the only product? Still recommended though.&lt;/p&gt;
+
+[image the-box]</content>
+    <images>
+      <image>
+        <description>
+        </description>
+        <name>top</name>
+        <extension>.jpg</extension>
+      </image>
+      <image>
+        <description>
+        </description>
+        <name>back</name>
+        <extension>.jpg</extension>
+      </image>
+      <image>
+        <description>The box shot!</description>
+        <name>the-box</name>
+        <extension>.jpg</extension>
+      </image>
+      <image>
+        <description>
+        </description>
+        <name>razer-deathadder-left</name>
+        <extension>.jpg</extension>
+      </image>
+    </images>
+  </entry>
+  <entry>
+    <guid>28ac53a0-a301-4535-94ab-8f905b937a5c</guid>
+    <date>2017-05-07</date>
+    <shorturl>
+    </shorturl>
+    <header>Icon Maker - Now with even more icons</header>
+    <readableid>icon-maker---now-with-even-more-icons</readableid>
+    <subheader>Because more is moar</subheader>
+    <intro>[image icons] While I'm mostly using fonts for icons these days, traditional PNG icons, which the &lt;a href="/iconmaker"&gt;Shiny Icon Maker&lt;/a&gt; produces, still have their uses. And to further increase the usefulness of the icon maker, I just added a quite a few new icons from different icon sets. You may now also filter the icons by name and icon set. &lt;a href="/iconmaker"&gt;Try it out!&lt;/a&gt;</intro>
+    <content>
+    </content>
+    <images>
+      <image>
+        <description>Some of the new icons, these from the icon set Afiado.</description>
+        <name>icons</name>
+        <extension>.jpg</extension>
+      </image>
+    </images>
+  </entry>
+  <entry>
+    <guid>4ce8b825-44c3-43cd-93d5-531d7ead576a</guid>
+    <date>2017-05-26</date>
+    <shorturl>
+    </shorturl>
+    <header>SSL Enabled</header>
+    <readableid>ssl-enabled</readableid>
+    <subheader>Even more safe for work</subheader>
+    <intro>[image secure] In the unlikely case anyone ever felt that the only thing lacking on this site was privacy, I just enabled SSL. Your browser should now indicate this site is secure. So have fun and enjoy the secure world of HTTPS!</intro>
+    <content>
+    </content>
+    <images>
+      <image>
+        <description>Your data is safe with me.</description>
+        <name>secure</name>
+        <extension>.jpg</extension>
+      </image>
+    </images>
+  </entry>
+  <entry>
+    <guid>48a75f41-e082-422a-99d1-51c83857dce0</guid>
+    <date>2018-01-07</date>
+    <shorturl>
+    </shorturl>
+    <header>A year with the Razer Blackwidow Ultimate Stealth 2016 Edition</header>
+    <readableid>a-year-with-the-razer-blackwidow-ultimate-stealth-2016-edition</readableid>
+    <subheader>Mechanical yearly</subheader>
+    <intro>[image fonts] Mechanical keyboards have been all the rage for  quite some time now (since the 70s?). One year ago, wanting to jump on the bandwagon, I treated myself to one. This although my regular $12 keyboard was working just fine, that a mechanical keyboard is rather expensive, and that I wasn't even very fond of the tactile feel - or noise - of a mechanical keyboard. But as a programmer, I do type a lot, and good tools would hopefully help me in my line of work. How it went? Read on for more. (Spoiler: it turned out well!)</intro>
+    <content>&lt;h2&gt;Picking the right keyboard... randomly&lt;/h2&gt;
+&lt;p&gt;
+There wasn't much thought going into choosing this particular keyboard. I already had a mouse from Razer, and they have keyboards too, so I figured I could use the already installed and somewhat awful Razer synapse software. After seeing a couple of models in the shop, I went for the Blackwidow Ultimate Stealth 2016 Edition as the orange switches, similar to Cherry MX brown, were reasonably quiet and I didn't care for the macro buttons of the non-2016 model.
+&lt;/p&gt;
+
+[image keyboard]
+
+&lt;h2&gt;Initial impressions&lt;/h2&gt;
+&lt;p&gt;
+After unboxing, I started wondering what I had gotten myself into. The thing was heavy as a brick. I was used to repositioning the keyboard on the desk every so often with a gentle push, which was impossible with the Razer. Instead, I needed to lift it using both hands. But enough of that, let's hook out up… with possibly the thickest and stiffest keyboard cable ever made. I found it interesting that Razer had integrated not only passthrough analog audio cables into the braided cord, but also a passthrough USB cable. A better solution could have been a USB hub, which would have enabled more than just one port. But my biggest gripe by far was the fact that Razer apparently forgot to label the USB connectors. As I had no use for the passthrough cable, I only wanted to connect the keyboard cable. But it doesn't say which one is which so it was trial and error. Super pro tip: mark the correct cable with a piece of tape for later!
+&lt;/p&gt;
+
+[image cables]
+
+&lt;p&gt;
+Once properly hooked up, I played around with the very green lighting effect settings of the Razer Synapse software. And even though the novelty wears off quickly, the tool is quite flexible and it let me, for example, use dimmed light and then lighting up individual keys as they were pressed and slowly fading them out. Like fading footprints in the snow, except from fingers on plastic.
+&lt;/p&gt;
+
+[image fonts]
+
+&lt;h2&gt;Months later...&lt;/h2&gt;
+&lt;p&gt;
+One hope I had for this keyboard was that it would be easier on the fingers. Typing on a regular rubber dome keyboard requires each keypress to bottom out for it to register, but a mechanical keyboard of this type would register around halfway down. However, old habits die hard and I inadvertently kept bottoming out the keys. There is no dampening on the Razer, just cold, hard plastic - causing even more stress on the fingers. I got hold of a pack of clear o-ring keyboard dampeners, and after installing them, the problem went away. It definitely felt easier on the fingers, and the keyboard was much quieter, too.
+&lt;/p&gt;
+
+[image dampeners]
+
+&lt;p&gt;
+A couple of months later, I connected my old keyboard to another computer and was typing a little. It felt awfully mushy. And I realized that my way to type had changed; I wasn't bottoming out the keys anymore so lots of my presses didn't register. Had I been using that thing for years? Back to the Razer…
+&lt;/p&gt;
+
+&lt;h2&gt;Conclusion&lt;/h2&gt;
+&lt;p&gt;
+There was a note in the box saying "Congratulations, there is no turning back". And after a year, I think I both understand and agree. So would I recommend the jump from a regular keyboard to a mechanical one? I would say yes. But it may take time to understand why. As a tldr, here are my pros and cons after a week of using it, and a year later:
+&lt;/p&gt;
+
+&lt;p&gt;
+&lt;b&gt;Pros (after one week of usage):&lt;/b&gt;
+&lt;ul&gt;
+&lt;li&gt;Keys feel different I guess??&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/p&gt;
+
+&lt;p&gt;
+&lt;b&gt;Pros (after one year of usage):&lt;/b&gt;
+&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Great tactile feel with slight audible feedback&lt;/li&gt;
+&lt;li&gt;Stays put on desk, doesn’t move around as you type&lt;/li&gt;
+&lt;li&gt;Easy on the fingers&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;
+&lt;b&gt;Cons (after one week of usage):&lt;/b&gt;
+&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Expensive (compared to a regular keyboard)&lt;/li&gt;
+&lt;li&gt;Heavy&lt;/li&gt;
+&lt;li&gt;Thick, stiff cable&lt;/li&gt;
+&lt;li&gt;USB cables not labeled with what they do&lt;/li&gt;
+&lt;li&gt;No adapter included for the combined audio jack - cannot connect the good ol' Steelseries Siberia V2 without one&lt;/li&gt;
+&lt;li&gt;Different fonts used for ASCII and (many) non ASCII characters (Scandinavian/Nordic model)&lt;/li&gt;
+&lt;li&gt;Razer Synapse is slow to start and always nags about updates&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;
+&lt;b&gt;Cons (after one year of usage):&lt;/b&gt;
+&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;OK, most previous negative points still stand, I just don't care so much anymore.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;
+And in case you were wondering, no, I don’t really type faster or more accurately. But it feels better!
+&lt;/p&gt;
+
+[image backlight]</content>
+    <images>
+      <image>
+        <description>Sorry for the terrible shot, but these cables have a life of their own! Oh, and note how the USB cable that actually goes to the keyboard has been equipped with a piece of scotch tape, courtesy yours truly.</description>
+        <name>cables</name>
+        <extension>.jpg</extension>
+      </image>
+      <image>
+        <description>The keyboard. This is the messy Nordic model, meaning it has letter such as Å and Æ. It kept defaulting to Norweigan Bokmål in the beginning but that has since stopped.</description>
+        <name>keyboard</name>
+        <extension>.jpg</extension>
+      </image>
+      <image>
+        <description>The keyboard while programming.</description>
+        <name>backlight</name>
+        <extension>.jpg</extension>
+      </image>
+      <image>
+        <description>The keyboard uses Razer's own font, but not for all keys. Note that the $ character has the typical Razer blocky font, while the £ and € do not.</description>
+        <name>fonts</name>
+        <extension>.jpg</extension>
+      </image>
+      <image>
+        <description>Keyboard dampeners, keycap removal tool and a keycap with a dampener on it.</description>
+        <name>dampeners</name>
+        <extension>.jpg</extension>
+      </image>
+    </images>
+  </entry>
+  <entry>
+    <guid>d53aa425-bdf4-49ff-8b01-ffbd502e1c47</guid>
+    <date>2018-02-25</date>
+    <shorturl>
+    </shorturl>
+    <header>Android Works Surprisingly Well With Mouse and Keyboard</header>
+    <readableid>android-works-surprisingly-well-with-mouse-and-keyboard</readableid>
+    <subheader>OK, it was Sunday and I had nothing better to do</subheader>
+    <intro>[image android-desktop] On some phone models, a broken display also means that the touch functionality breaks. As a last resort, some people have attached a wireless mouse to their device as a temporary solution. But why wait for the display to break before attaching proper peripherals? Surely a mechanical keyboard would improve the user experience significantly! With a poor man's docking station - a USB adapter connected to a USB hub - you can get that proper PC feel and still be using your phone. (OK, it makes no sense, but still cool that it works.)</intro>
+    <content>
+    </content>
+    <images>
+      <image>
+        <description>All set up: Mouse and keyboard connected using a USB hub, plus a headset connected using the keyboard passthrough audio cable.</description>
+        <name>android-desktop</name>
+        <extension>.jpg</extension>
+      </image>
+    </images>
+  </entry>
+  <entry>
+    <guid>1be5182a-7e3f-4022-a59a-2c346caf90b4</guid>
+    <date>2018-07-11</date>
+    <shorturl>http://bit.ly/2L5ypNo</shorturl>
+    <header>Wall Mounting a D-Link COVR AC1200 Mesh Node</header>
+    <readableid>wall-mounting-a-d-link-covr-ac1200-mesh-node</readableid>
+    <subheader>Or rather, how not to</subheader>
+    <intro>[image covr-ac1200] To get better wi-fi coverage at home, I recently started looking at getting a mesh system. With mesh, two or more units are placed around your house and then they will magically work together to produce perfect coverage everywhere. Each node typically also has a couple of RJ45 ports for connecting wired network equipment. I ended up betting on the affordable AC1202 kit by D-Link (same as AC1203 except with two nodes instead of three). I had originally planned to wall mount one node, and the guy in the shop told be this would be easy because they come with mounting holes - which turned out to be inaccurate. Read on for a simple method endorsed by no one.</intro>
+    <content>&lt;h2&gt;Disclaimer (of course)&lt;/h2&gt;
+&lt;p&gt;
+It goes without saying that suspending expensive equipment by the cables is not recommended! Please don't blame me if a node comes crashing down.
+&lt;/p&gt;
+
+&lt;h2&gt;How to&lt;/h2&gt;
+
+[image cabletiemount]
+
+[image cabletiemount2]
+
+[image 3cables]
+
+[image mount-wall]
+
+[image cover]
+
+&lt;h2&gt;Conclusion&lt;/h2&gt;
+
+&lt;p&gt;The unit has now stayed up on the wall for a couple of weeks and it is doing just fine. However, there might be a reason why the units don't come with mounting holes. If I ever found out, I will post it here - until then, at least I have decent wi-fi that stays mostly out of sight.&lt;/p&gt;
+
+[image sunset]</content>
+    <images>
+      <image>
+        <description>On the wall. The unit is now suspended by the cables. Make sure to tighten up that cable tie!</description>
+        <name>cables</name>
+        <extension>.jpg</extension>
+      </image>
+      <image>
+        <description>What you will need: A cable tie mount with screw holes. This one also has an adhesive back, but I really recommend using screws instead.</description>
+        <name>cabletiemount</name>
+        <extension>.jpg</extension>
+      </image>
+      <image>
+        <description>What you also will need: A cable tie. The cable tie simply loops through like this.</description>
+        <name>cabletiemount2</name>
+        <extension>.jpg</extension>
+      </image>
+      <image>
+        <description>The COVR AC1200 by sunset.</description>
+        <name>sunset</name>
+        <extension>.jpg</extension>
+      </image>
+      <image>
+        <description>The D-Link COVR AC1200.</description>
+        <name>covr-ac1200</name>
+        <extension>.jpg</extension>
+      </image>
+      <image>
+        <description>For your reference, the back of the unit. It has no mounting holes and no obvious way to mount it on a wall.</description>
+        <name>back</name>
+        <extension>.jpg</extension>
+      </image>
+      <image>
+        <description>Two ethernet cables can be connected to the unit. This is the primary unit, meaning one cable is connected to the "Internet", and the other one can be used for other cabled equipment. Even though I only need one cable, I still use two so that it will hang straight. Hint: The middle cable is for power.</description>
+        <name>back-cables</name>
+        <extension>.jpg</extension>
+      </image>
+      <image>
+        <description>The cable tie mount on the wall.</description>
+        <name>mount-wall</name>
+        <extension>.jpg</extension>
+      </image>
+      <image>
+        <description>The back of the unit. It has no mounting holes and no obvious way to mount it on a wall. Two ethernet cables can be connected to the unit. This is the primary unit, meaning one cable is connected to the "Internet", and the other one can be used for other cabled equipment. Even though I only need one cable, I still use two so that it will hang straight. Hint: The middle cable is for power.</description>
+        <name>3cables</name>
+        <extension>.jpg</extension>
+      </image>
+      <image>
+        <description>On the wall. The unit is now suspended by the cables. Make sure to tighten up that cable tie! Also, I like cable management just as much as the next guy, but it does not mean I am particularly good at it!</description>
+        <name>cover</name>
+        <extension>.jpg</extension>
+      </image>
+    </images>
+  </entry>
+  <entry>
+    <guid>f606c128-19e4-4c6d-b96d-4a043dee524d</guid>
+    <date>2018-08-12</date>
+    <shorturl>
+    </shorturl>
+    <header>Icon Maker Revamped</header>
+    <readableid>icon-maker-revamped</readableid>
+    <subheader>Now even more flat</subheader>
+    <intro>[image react] I haven't touched the Shiny Icon Maker in a while, and it was slowly starting to show its age, both by what icons it could handle and the technology stack behind it. And as soon as something starts to feel old, simply change the stack! The new version uses React instead instead of Knockout JS and also adds a bunch of new icons, while also removing a lot of clutter. &lt;a href="/iconmaker"&gt;Try it out!&lt;/a&gt;</intro>
+    <content>
+    </content>
+    <images>
+      <image>
+        <description>The React logo.</description>
+        <name>react</name>
+        <extension>.png</extension>
+      </image>
+    </images>
+  </entry>
+  <entry>
+    <guid>71f9a3b5-4a2f-49cd-b7b7-e6251b0623c1</guid>
+    <date>2018-08-29</date>
+    <shorturl>
+    </shorturl>
+    <header>Swedish Armed Forces Air Show</header>
+    <readableid>swedish-armed-forces-air-show</readableid>
+    <subheader>Up, up and away</subheader>
+    <intro>[image sk60] Visited the air show in Uppsala organized by the Swedish Armed Forces. It was great! Make sure to check out the &lt;a href="/images/39"&gt;image gallery.&lt;/a&gt;</intro>
+    <content>
+    </content>
+    <images>
+      <image>
+        <description>Six SK60 in formation.</description>
+        <name>sk60</name>
+        <extension>.jpg</extension>
+      </image>
+    </images>
+  </entry>
+  <entry>
+    <guid>9ad590fe-870c-4664-b333-7806cd31c20f</guid>
+    <date>2019-02-21</date>
+    <shorturl>http://bit.ly/2SSEt0n</shorturl>
+    <header>Ten Tiny Levels for Android Released</header>
+    <readableid>ten-tiny-levels-for-android-released</readableid>
+    <subheader>Yes, this was my New Year's resolution</subheader>
+    <intro>[image ten-tiny-levels] After way too much ado, I finally finished up my game and published it on the &lt;a href="https://play.google.com/store/apps/details?id=com.regalraccoongames.tentinylevels"&gt;Google Play store&lt;/a&gt;. It's called Ten Tiny Levels and is a simple and fun arcade platformer for one or two players. It has no ads or in-app purchases, but it costs a buck or so; if you always wanted to give money to a random guy on the internet, now is your chance! For more info, check out the &lt;a href="https://www.erikmoberg.net/ten-tiny-levels"&gt;microsite.&lt;/a&gt;</intro>
+    <content>
+    </content>
+    <images>
+      <image>
+        <description>The game plays in portrait mode.</description>
+        <name>ten-tiny-levels</name>
         <extension>.jpg</extension>
       </image>
     </images>

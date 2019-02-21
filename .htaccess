@@ -1,43 +1,90 @@
 #######################################################################
+
 #     Diese .htaccess wurde vom STRATO-Webservermanager erstellt      #
+
 #######################################################################
 
+
+
 Options -Indexes
+
 AddType application/x-httpd-php5 .php .php4 .php3 .php5
 
+
+
 RewriteEngine On
+
 RewriteCond %{HTTP_HOST} !^www\.erikmoberg\.net$
-RewriteRule ^(.*)$ http://www.erikmoberg.net/$1 [L,R=301]
+RewriteRule ^(.*)$ https://www.erikmoberg.net/$1 [L,R=301]
+
+RewriteCond %{HTTPS} !=on
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
 RewriteRule ^article/([^/]*)$ /article.php?name=$1 [L,NC]
+
 RewriteRule ^contact[/]*$ /contact.php [L,NC]
+
 RewriteRule ^guestbook[/]*$ /guestbook.php [L,NC]
+
 RewriteRule ^archivedimages[/]*$ /archivedimages.php [L,NC]
+
 RewriteRule ^images[/]*$ /images.php [L,NC]
+
 RewriteRule ^images/([^/]*)$ /images.php?galleryid=$1 [L,NC]
+
 RewriteRule ^iconmaker[/]*$ /iconmaker.php [L,NC]
+
 RewriteRule ^shiny-iconmaker[/]*$ /shiny-iconmaker.php [L,NC]
+
 RewriteRule ^about[/]*$ /about.php [L,NC]
+
 RewriteRule ^index[/]*$ /index.php [L,NC]
+
 RewriteRule ^download[/]*$ /download.php [L,NC]
+
 RewriteRule ^jpegrotator[/]*$ /jpegrotator.php [L,NC]
+
 RewriteRule ^index/([^/]*)$ /index.php?page=$1 [L,NC]
+
 RewriteRule ^contact/posted$ /contact.php?message=posted [L,NC]
+
 RewriteRule ^article/([^/]*)/posted([^/]*)$ /article.php?name=$1&message=posted$2 [L,NC]
+
 RewriteRule ^rss.xml[/]*$ /rss.php [L,NC]
+
 RewriteRule ^rss[/]*$ /rss.php [L,NC]
+
 RewriteRule ^rss/([^/]*)[/]*$ /rss.php?article=$1 [L]
+
+RewriteRule ^ten-tiny-levels[/]*$ /ten-tiny-levels.php [L]
+
+
 
 AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css
 
+
+
 # Caching
+
+
 
 FileETag MTime Size
 
+
+
 ExpiresActive On
+
 ExpiresByType text/css "access plus 1 weeks"
+
 ExpiresByType application/javascript "access plus 1 weeks"
+
 ExpiresByType application/x-javascript "access plus 1 weeks"
+
 ExpiresByType image/gif "access plus 1 months"
+
 ExpiresByType image/jpeg "access plus 1 months"
+
 ExpiresByType image/png "access plus 1 months"
+
 ExpiresByType image/x-icon "access plus 1 months"
+
