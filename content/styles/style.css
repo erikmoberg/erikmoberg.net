@@ -547,7 +547,7 @@ img.about-image {
 }
 
 .commententry .fa-comment {
-	font-size: 45px;
+	font-size: 36px;
   float: left;
   padding-right: 15px;
 }
@@ -565,13 +565,12 @@ img.about-image {
 
 .guestbooktime, .commenttime
 {
-	font-size: 16px;
+	font-size: 11px;
   color: #a6a6a6;
-  font-family: 'Roboto Condensed', Segoe UI, Helvetica, Arial, sans-serif;
 }
 
 .commentmessage {
-	margin-left: 60px;
+	margin-left: 51px;
 }
 
 .commentnumber {
