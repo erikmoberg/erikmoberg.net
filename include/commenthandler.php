@@ -44,7 +44,8 @@ function PrintComments($articlename)
 		$name = htmlspecialchars($comment->name);
 		$datetime = $comment->datetime;
 		$datetime = strtotime($datetime);
-		$datetime = date('F jS, Y H:i', $datetime);
+		//$datetime = date('F jS, Y H:i', $datetime);
+		$datetime = date('F jS, Y', $datetime);
 		$website = htmlspecialchars($comment->website);
 		$message = htmlspecialchars($comment->message);
 		$message = AddLinksToMessage($message);
@@ -113,16 +114,14 @@ function GetSingleCommentMarkup($name, $datetime, $website, $message, $number)
 	$markup = '';
 	$markup .= '<div class="commententry page-section" id="comment-' . $number . '">';
 	$markup .= '<div class="commentheader">';
-	$markup .= '<div class="commenttime">';
-	$markup .= $datetime;
+	$markup .= '<div class="commentnumber">#';
+	$markup .= ($number + 1);
 	$markup .= '</div>';
 	$markup .= '<div class="commentname"><i class="fa fa-comment"></i> ';
-	//if($website != null && $website != '') {
-	//	$markup .= '<a href="' . $website . '" target="_blank">' . $name . '</a>';
-	//}
-	//else {
-		$markup .= $name;
-	//}
+	$markup .= $name;
+	$markup .= '</div>';
+	$markup .= '<div class="commenttime">';
+	$markup .= $datetime;
 	$markup .= '</div>';
 	$markup .= '</div>';
 	$markup .= '<div class="commentmessage">';
