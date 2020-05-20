@@ -1,0 +1,497 @@
+
+<html>
+<head>
+	<title>Gallery.js</title>
+	<meta name="viewport" content="width=device-width,initial-scale=1.0" />
+	<style>
+	
+* {
+  padding: 0;
+  margin: 0;
+}
+
+.gallery-thumbnail {
+  background: none;
+}
+.gallery-thumbnail img {
+  border: none;
+  vertical-align: bottom;
+  margin: 0 2px 2px 0;
+}
+
+body.gallery {
+  overflow: hidden;
+  height: 100%;
+}
+
+#imagesContainer {
+  display: none;
+  position: fixed;
+  top: 0;
+  background-color: #222;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+#images {
+  position: absolute;
+}
+
+#images.ease {
+  -webkit-transition:all 0.3s ease-out;
+  -moz-transition:all 0.3s ease-out;
+  -o-transition:all 0.3s ease-out;
+  -ms-transition:all 0.3s ease-out; 
+  transition:all 0.3s ease-out;
+}
+
+.gallery-image {
+  position: absolute;
+  text-align: center;
+}
+
+.gallery-image img {
+  vertical-align: middle;
+  max-width: 100%;
+  max-height: 100%;
+  /*box-shadow: 0 0 1em black;
+  border: 10px white;*/
+}
+	
+#scroll-left-container, #scroll-right-container {
+  width: 50px;
+  height: 100px;
+  position: fixed;
+  top: 50%;
+  left: 0;
+}
+
+#scroll-right-container {
+  left: auto;
+  right: 0;
+}
+
+#scroll-left, #scroll-right {
+  background: #ccc center center no-repeat;
+  background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAXCAYAAAAC9s/ZAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAE7wAABO8BJ9fcHwAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAADESURBVDiNrdSxSgNREIXhL1pGJCJBRPBpUqSx8L2s0likSeMj2FoIgoIghEBA8h4Rm5vGBTfJ7izsFKe58B8uM2eOUoouwhDPmNTeO8JneEXBFtPOBjjH2x9c6Qd3oQFG+NiDK/3ivg2+wGcDXOmpCb7EVwhzegweYxnAC5wczABXWAXwvIJrBrjGOoAfMTjIAW7wHcCzhnm5xSaAH1q25SWA34Os9PxB7xmkbCElBylJTLmFlGtM6YOURkrpxH8mR1t5B5JNhz8N7mg/AAAAAElFTkSuQmCC');
+  opacity: 0.5;
+  height: 100%;
+  margin-top: -50px;
+  cursor: pointer;
+}
+
+#scroll-left {
+  border-radius: 0 4px 4px 0;
+}
+
+#scroll-right {
+  border-radius: 4px 0 0 4px;
+  background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAXCAYAAAAC9s/ZAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAE7AAABOwBim79cgAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAADHSURBVDiNtdQxagJRFAXQo5YGUUQkBFxNChuL7CuVjYWNjUuwTREIKAiBEBDEfURsJs0MDKLzJvla3GbgHob/33+yLFMEz1ihXf5elXJ5jB9keMdDbQATHPNykQ90QgAvOJ2Vi2zQjYDllXKRLXpVQKsG8ol+1Rk0sQiQLwyqbqGJeYB8Y3gRyJEGZgGyw+NFoARNA2SPp6tAjrwGyAGjaEjWAfJ2nz/49xkk3ULSHCRNotS3UKMcvsa0fZC8kW6yE0vIn7fyL3mqhz8nwm5eAAAAAElFTkSuQmCC');
+}
+
+#scroll-left:hover, #scroll-right:hover {
+  opacity: 0.8;
+}
+
+#close-images {
+  width: 35px;
+  height: 35px;
+  position: fixed;
+  right: 10px;
+  top: 10px;
+  background: #ccc center center no-repeat;
+  background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAEXwAABF8B2dhh0gAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAACRSURBVDiNtZVLCsAgDEQfvUOP0fuvegmP4SWmGy22WJxAKmQTJk/zISIJSQAHcAJ7960M2FvMcfsGWAUEFAfaYKXF1A59w+RAXzCNUNqTNbEp9APW7VwJHlBH6wvNi91Uip1FoD5Wnd0O+k0LjIU1VhvZ59eUA7B1Uxaw2NgYMH+wXWHg4vzlkLu+0hds9hdwAUdCLv91bAeKAAAAAElFTkSuQmCC');
+  opacity: 0.5;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+#close-images:hover {
+  opacity: 0.8;
+}
+
+#touch {
+  position:fixed;
+  left:10%;
+  top:0;
+  width:80%;
+  height:100%;
+}
+
+#image-caption {
+  padding: 10px;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 100px;
+  color: white;
+  left: 0;
+  text-align: center;
+  background-color: rgba(0,0,0,0.5);
+}
+
+#imageContainer-back {
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  background: transparent url(headerback.png) center center no-repeat;
+  width: 500px;
+  height: 92px;
+}
+
+.ui-effects-transfer {
+  border: 3px dotted #ddd;
+}
+
+	</style>
+</head>
+<body>
+<h2>Gallery: Canon EF 40mm Sample Shots</h2>
+<p>Some sample shots taken with the Canon EF 40mm 2.8 pancake and the Canon 600D.</p>
+<p><a href="/images" class="backToImageGallery">Back to overview</a></p>
+
+<a href="http://www.erikmoberg.net/images/canon40mmsamples/img_8849.jpg" class="gallery-thumbnail"><img src="http://www.erikmoberg.net/images/canon40mmsamples/img_8849_thumb.jpg" title="An almost OK bike. (click to enlarge)" alt="An almost OK bike" /></a>
+
+<a href="http://www.erikmoberg.net/images/canon40mmsamples/img_8851.jpg" class="gallery-thumbnail"><img src="http://www.erikmoberg.net/images/canon40mmsamples/img_8851_thumb.jpg" alt="Highslide JS" title="Click to enlarge" /></a>
+
+<a href="http://www.erikmoberg.net/images/canon40mmsamples/img_8855.jpg" class="gallery-thumbnail"><img src="http://www.erikmoberg.net/images/canon40mmsamples/img_8855_thumb.jpg" alt="Highslide JS" title="Click to enlarge" /></a>
+
+<a href="http://www.erikmoberg.net/images/canon40mmsamples/img_8857.jpg" class="gallery-thumbnail"><img src="http://www.erikmoberg.net/images/canon40mmsamples/img_8857_thumb.jpg" alt="Highslide JS" title="Click to enlarge" /></a>
+
+<a href="http://www.erikmoberg.net/images/canon40mmsamples/img_8867.jpg" class="gallery-thumbnail"><img src="http://www.erikmoberg.net/images/canon40mmsamples/img_8867_thumb.jpg" alt="Highslide JS" title="Click to enlarge" /></a>
+
+<a href="http://www.erikmoberg.net/images/canon40mmsamples/img_8878.jpg" class="gallery-thumbnail"><img src="http://www.erikmoberg.net/images/canon40mmsamples/img_8878_thumb.jpg" alt="Highslide JS" title="Click to enlarge" /></a>
+
+<a href="http://www.erikmoberg.net/images/canon40mmsamples/img_8882.jpg" class="gallery-thumbnail"><img src="http://www.erikmoberg.net/images/canon40mmsamples/img_8882_thumb.jpg" alt="Highslide JS" title="Click to enlarge" /></a>
+
+<a href="http://www.erikmoberg.net/images/canon40mmsamples/img_8883.jpg" class="gallery-thumbnail"><img src="http://www.erikmoberg.net/images/canon40mmsamples/img_8883_thumb.jpg" alt="Highslide JS" title="Click to enlarge" /></a>
+
+<a href="http://www.erikmoberg.net/images/canon40mmsamples/img_8906.jpg" class="gallery-thumbnail"><img src="http://www.erikmoberg.net/images/canon40mmsamples/img_8906_thumb.jpg" alt="Highslide JS" title="Click to enlarge" /></a>
+
+<a href="http://www.erikmoberg.net/images/canon40mmsamples/img_8907.jpg" class="gallery-thumbnail"><img src="http://www.erikmoberg.net/images/canon40mmsamples/img_8907_thumb.jpg" alt="Highslide JS" title="Click to enlarge" /></a>
+
+<a href="http://www.erikmoberg.net/images/canon40mmsamples/img_8909.jpg" class="gallery-thumbnail"><img src="http://www.erikmoberg.net/images/canon40mmsamples/img_8909_thumb.jpg" alt="Highslide JS" title="Click to enlarge" /></a>
+
+<a href="http://www.erikmoberg.net/images/canon40mmsamples/img_8910.jpg" class="gallery-thumbnail"><img src="http://www.erikmoberg.net/images/canon40mmsamples/img_8910_thumb.jpg" alt="Highslide JS" title="Click to enlarge" /></a>
+
+<a href="http://www.erikmoberg.net/images/canon40mmsamples/img_8894.jpg" class="gallery-thumbnail"><img src="http://www.erikmoberg.net/images/canon40mmsamples/img_8894_thumb.jpg" alt="Highslide JS" title="Click to enlarge" /></a>
+
+<div style="clear:both;"></div><p><a href="/images" class="backToImageGallery">Back to overview</a></p>
+
+<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
+<script src="tocca.js"></script>
+
+
+<script>
+
+function RespGallery(options) {
+
+	var self = this;
+	
+	self.orgX;
+	self.currX;
+	self.isMoving = false;
+	self.imageIndex = 0;
+	self.isWaitingForAnimationFrame = false;
+	self.maxIndex = 0;
+	self.transformProperty;
+	
+	// CSS Ids/classes
+	self.imagesContainerId = 'imagesContainer';
+	self.imagesId = 'images'
+	self.imageContainerBackId = 'imageContainer-back';
+	self.imageCaptionId = 'image-caption';
+	self.imageCaptionNumberId = 'image-caption-number';
+	self.imageCaptionTextId = 'image-caption-text';
+	self.touchId = 'touch';
+	self.closeImagesId = 'close-images';
+	self.scrollLeftContainerId = 'scroll-left-container';
+	self.scrollLeftId = 'scroll-left';
+	self.scrollRightContainerId = 'scroll-right-container';
+	self.scrollRightId = 'scroll-right';
+	self.imageClass = 'gallery-image';
+	self.overlayClass = 'overlay';
+	self.galleryThumbnailClass = 'gallery-thumbnail';
+	
+	// elements
+	self.imagesContainer;
+	
+	self.init = function () {
+	
+		self.generateMarkup();
+	
+		self.transformProperty = self.getTransformProperty();
+		self.maxIndex = $('.' + self.imageClass).length-1;
+		self.imagesContainer = $('#' + self.imagesContainerId);
+		
+		$('#' + self.touchId).on('touchstart mousedown',function(e) {
+			self.isMoving = true;
+		});
+
+		$('#' + self.scrollLeftId).on('click', function() {
+		  self.scrollImages(-1);
+		});
+
+		$('#' + self.scrollRightId).on('click', function() {
+		  self.scrollImages(1);
+		});
+
+		$('#' + self.imageContainerBackId).on('click', function() {
+			self.hideGallery();
+		});
+
+		$('#' + self.closeImagesId).on('click', function() {
+			self.hideGallery();
+		});
+		
+		$('#' + self.touchId).on('touchend mouseup touchcancel',function(e) {
+			self.handleTouchEnd();
+		});
+
+		$('#' + self.touchId).on('touchmove mousemove',function(e) {
+			self.handleTouchMove();
+		});
+
+		$('#' + self.touchId).on('touchmove touchstart touchend',function(e){e.preventDefault()});
+		
+		$('.' + self.galleryThumbnailClass).on('click', function(e, element) {
+			e.preventDefault();
+			var index = $('.' + self.galleryThumbnailClass).index($(e.delegateTarget));
+			self.showGallery(index);
+		});
+		
+		$('#' + self.imagesId + ' img').load(function() {
+			// run when each image is loaded
+			self.setImageHeight();
+		});
+
+		$(window).load(function() {
+		  // run when all images are loaded
+		  self.setImageHeight();
+		});
+		
+		$(window).resize(function() {
+			self.setImageHeight();
+			self.scrollImages(0, true);
+		});
+		
+		$(document).keydown(function(event) {
+			switch(event.which) {
+				case 27: // esc
+					self.hideGallery();
+				break;
+				case 37: // left
+					self.scrollImages(-1);
+				break;
+				case 39: // right
+					self.scrollImages(1);
+				break;
+			}
+		});
+		
+		$(window).on('hashchange', function() {
+			if (location.hash == '') {
+				self.hideGallery();
+			}
+		});
+	};
+
+	self.generateMarkup = function () {
+	
+		var html = '';
+		
+		html += '<div id="' + self.imagesContainerId + '">\r\n';
+		html += '  <a href="javascript:void(0);" id="' + self.imageContainerBackId + '"></a>\r\n';
+		html += '  <div id="' + self.imagesId + '">\r\n';
+		
+		$('.' + self.galleryThumbnailClass).each(function(i, el) {
+			var link = $(el);
+			var image = link.find('img');
+			var url = link.attr('href');
+			var alt = image.attr('alt');
+			html += '    <div class="' + self.imageClass + '">\r\n';
+			html += '      <img src="' + url + '" alt="' + alt + '" />\r\n';
+			html += '    </div>\r\n';
+		})
+		
+		html += '  </div>\r\n';
+		html += '  <div id="' + self.imageCaptionId + '" class="' + self.overlayClass + '">\r\n';
+		html += '    <span id="' + self.imageCaptionNumberId + '"></span>\r\n';
+		html += '    <span id="' + self.imageCaptionTextId + '"></span>\r\n';
+		html += '  </div>\r\n';
+		html += '  <div id="' + self.touchId + '"></div>\r\n';
+		html += '  <div id="' + self.closeImagesId + '" class="' + self.overlayClass + '"></div>\r\n';
+		html += '  <div id="' + self.scrollLeftContainerId + '" class="' + self.overlayClass + '"><div id="' + self.scrollLeftId + '"></div></div>\r\n';
+		html += '  <div id="' + self.scrollRightContainerId + '" class="' + self.overlayClass + '"><div id="' + self.scrollRightId + '"></div></div>\r\n';
+		html += '</div>\r\n';
+		$(document.body).append(html);
+	};
+	
+	self.showGallery = function(index) {
+
+		location.hash = 'gallery';
+	
+		$('body').addClass('gallery');
+		
+		self.imagesContainer.fadeTo(0.1);
+		self.imagesContainer.show();
+		
+		self.imageIndex = index || 0;
+		self.scrollImages(0, true);
+		self.setImageHeight();
+		
+		var delay = 300;
+		$($('.gallery-thumbnail').get(index)).effect( "transfer", { to: $($('#' + self.imagesId + ' img')[index]) }, delay );
+		
+		setTimeout(function() {
+			self.imagesContainer.fadeTo(delay/2, 1);
+		}, delay/2);
+	}
+	
+	self.getX = function(e) {
+		var event = e.originalEvent;
+		var pointer = event.targetTouches ? event.targetTouches[0] : event;
+		return pointer.pageX;
+	}
+
+	self.handleTouchMove = function () {
+		if (self.isWaitingForAnimationFrame) {
+			return;
+		}
+		
+		if(!self.isMoving) {
+			return;
+		}
+
+		self.isWaitingForAnimationFrame = true;
+		
+		if (!self.orgX) {
+			self.orgX = getX(e);
+		}
+			
+		currX = getX(e);
+			
+		var pos = Math.max(imageIndex * $(window).width(), 0) + (orgX - currX);
+		
+		requestAnimationFrame(function() {
+			self.isWaitingForAnimationFrame = false;
+			if (!self.isMoving) {
+				return;
+			}
+
+			if (!self.transformProperty) {
+				self.imagesContainer.css({"left": '-' + (pos) + "px"});
+			} else {
+				// css transform
+				$('#' + self.imagesId).css(self.transformProperty, "translate3d(-" + pos + "px, 0px, 0px)");
+			}
+		});
+	};
+	
+	self.handleTouchEnd = function() {
+		self.isMoving = false;
+		var diff = self.orgX - self.currX;
+		if (Math.abs(diff) < 20) {
+			$('.' + self.overlayClass).fadeToggle('fast');
+			self.scrollImages(0, false);
+		} else {
+			self.scrollImages(diff >= 0 ? 1 : -1, false);
+		}
+	};
+	
+	self.scrollImages = function(direction, instant) {
+		self.orgX = null;
+		self.currX = null;
+		self.isMoving = false;
+		if ((self.imageIndex === 0 && direction < 0) || (self.imageIndex >= self.maxIndex && direction > 0)) {
+			return;
+		}
+  
+		self.imageIndex += direction;
+		var pos = Math.max(self.imageIndex * $(window).width(), 0);
+		var transformProperty = self.transformProperty;
+		var delay = 0;
+		if (!instant) {
+			delay = 1000;
+			$('#' + self.imagesId).addClass('ease');
+		}
+		if (!transformProperty) {
+			self.imagesContainer.animate({"left": '-' + (pos) + "px"}, delay);
+		} else {
+			$('#' + self.imagesId).css(transformProperty, "translate3d(-" + pos + "px, 0px, 0px)");
+		}
+
+		setTimeout(function() {
+				$('#' + self.imagesId).removeClass('ease');
+			}, 300);
+
+		$('#' + self.imageCaptionNumberId).text((self.imageIndex+1) + '/' + (self.maxIndex+1));
+		$('#' + self.imageCaptionTextId).text($($('#' + self.imagesId + ' img')[self.imageIndex]).attr('alt') || '');
+		self.adjustTouchArea();
+	};
+
+	self.setImageHeight = function() {
+		$('.' + self.imageClass).height($(window).height());
+		$('.' + self.imageClass).width($(window).width());
+		$('.' + self.imageClass).each(function(i) {
+			$(this).css({left: $(window).width()*i + 'px'});
+			$(this).css({top: ($(window).height()/2 - $(this).find('img').height()/2) + 'px'});
+		});
+		self.maxPos = ($('.' + self.imageClass).length-1) * $(window).width();
+		self.imagesContainer.width(($('.' + self.imageClass).length) * $(window).width());
+		self.adjustTouchArea();
+	}
+
+	self.adjustTouchArea = function() {
+	  $('#' + self.touchId).height($($('.' + self.imageClass + ' img')[self.imageIndex]).height());
+	  $('#' + self.touchId).width($($('.' + self.imageClass + ' img')[self.imageIndex]).width());
+	  $('#' + self.touchId).css({ 
+		left: $(window).width()/2 - $('#' + self.touchId).width()/2,
+		top: $(window).height()/2 - $('#' + self.touchId).height()/2
+	  });
+	}
+
+	self.hideGallery = function() {
+		$('body').removeClass('gallery');
+		self.imagesContainer.fadeOut(200, function() {
+			$('#' + self.imagesId).css(self.transformProperty, '');
+		});
+	}
+	
+	self.getTransformProperty = function() {
+		var div = document.createElement("div"),
+			supportProperty = null,
+			divStyle = div.style,
+			suffix = "Transform",
+			testProperties = [
+				"O" + suffix,
+				"ms" + suffix,
+				"Webkit" + suffix,
+				"Moz" + suffix
+			],
+			i = testProperties.length;
+		
+		while ( i-- ) {
+			if (testProperties[i] in divStyle) {
+				supportProperty = testProperties[i];
+				break;
+			}
+		}
+		
+		return supportProperty;
+	}
+	
+	self.logMessage = function (msg) {
+		$('#image-caption-text').text(msg);
+	}
+	
+	self.init();
+}
+
+var g = new RespGallery({ container: $('#imagesContainer') });
+
+</script>
+</body>
+</html>

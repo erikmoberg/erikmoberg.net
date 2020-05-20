@@ -28,7 +28,7 @@ function PrintStartHtml($pageTitle, $highlightitem, $metadescription)
 	<title><?php echo $pageTitle; ?> - Erik Moberg's personal homepage - photography, gadgets, DIY, and more</title>
 	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 	<link href='https://fonts.googleapis.com/css?family=Roboto+Condensed:400,400i,700|Roboto' rel='stylesheet' type='text/css'>
-	<link rel="stylesheet" type="text/css" href="/content/styles/style.css.php?_=12" />
+	<link rel="stylesheet" type="text/css" href="/content/styles/style.css.php?_=18" />
 	<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js" type="text/javascript"></script>
 	<link rel="shortcut icon" href="/favicon.ico" type="image/vnd.microsoft.icon" />
@@ -168,34 +168,38 @@ if(!$isFrontPage) {
 					<a target="_blank" class="twitter-link" href="https://twitter.com/erikmoberg_swe" title="Follow me on Twitter"><i class="fa fa-twitter"></i> Twitter</a>
 				</div>
 
+                <div class="page-section">
+                    <h2 id="flickr-header">flickr uploads</h2>
+                    <div id="flickr-recent">
+                        <p>Loading images...</p>
+                    </div>
+                </div>
+
 			</div>
 			<div id="additional-sideinfo">
-				<div class="page-section">
-					<h2 id="flickr-header">flickr uploads</h2>
-					<div id="flickr-recent">
-						<p>Loading images...</p>
-					</div>
+
+                <div class="page-section">
+                    <h2>Recent Comments</h2>
+                    <?php PrintRecentComments(5); ?>
+                </div>
+
+                <div class="page-section">
+                    <h2>Most Commented Articles</h2>
+                    <?php PrintMostCommentedArticlesList(); ?>
+                </div>
+
+                <div class="page-section">
+                    <h2>Ten Tiny Levels</h2>
+                    <p>
+                        My 100% free game for Android - fast-paced platform arcade action for one or two players! Check out the <a href="/ten-tiny-levels">microsite</a> or download using the badge below.
+                    </p>
+                    <div style="text-align: center; margin-top: -5px;">
+                        <a href="https://play.google.com/store/apps/details?id=com.regalraccoongames.tentinylevels">
+                            <img class="google-play-badge" src="/ttl-assets/google-play-badge.png" style="width: 200px; max-width: 100%;" />
+                        </a>
+                    </div>
 				</div>
-
-	<div class="page-section">
-	<h2>Recent Comments</h2>
-	<?php PrintRecentComments(5); ?>
-
-	</div>
-	<div class="page-section">
-	<h2>Most Commented Articles</h2>
-	<?php PrintMostCommentedArticlesList(); ?>
-	</div>
-	<?php
-				//<div class="page-section">
-					//<h2>Blogroll</h2>
-					//<p><a href="http://itochpedagog.wordpress.com/" target="_blank">IT och Pedagog (Swedish)</a> - podcast about using modern technology in education.</p>
-					//<p><a href="http://www.snapp.de/" target="_blank">Robert's blog (German)</a> - also a friend of mine, mostly blogging about travelling and online marketing.</p>
-				//</div>
-			//</div>
-			//<div class="clearfix"></div>
-			?>
-		</div>
+            </div>
 		<div class="clearfix"></div>
 	</aside>
 <?php
@@ -216,7 +220,7 @@ echo date("Y");
 ?>
 </div>
 <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js" type="text/javascript"></script>
-<script src="/include/scripts.js.php?_=9" type="text/javascript"></script>
+<script src="/include/scripts.js.php?_=10" type="text/javascript"></script>
 <?php
 if ($pageHint == "shiny-iconmaker") {
 	?>

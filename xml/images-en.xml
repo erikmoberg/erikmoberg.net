@@ -1,4 +1,58 @@
 <galleries>
+  <gallery id="39">
+    <name>Flight day 2018</name>
+    <description>Paid a visit to the air show organized by the swedish armed forces in Uppsala.</description>
+    <datetime>2018-08-28</datetime>
+    <basedir>flightday2018</basedir>
+    <frontpic>frontpic.jpg</frontpic>
+    <archived>false</archived>
+    <images>
+      <image>
+        <description>Team 60, flying SK 60</description>
+        <basefilename>img_0074</basefilename>
+      </image>
+      <image>
+        <description>Team SK 60</description>
+        <basefilename>img_0109</basefilename>
+      </image>
+      <image>
+        <description>Gliders can do aerobatics too!</description>
+        <basefilename>img_9066</basefilename>
+      </image>
+      <image>
+        <description>F-18 Hornet dropping flares.</description>
+        <basefilename>img_9204</basefilename>
+      </image>
+      <image>
+        <description>The AJS 39 Viggen "Thunderbolt" coming in for landing.</description>
+        <basefilename>img_9339</basefilename>
+      </image>
+      <image>
+        <description>Helicopter 16, AKA Black Hawk.</description>
+        <basefilename>img_9502</basefilename>
+      </image>
+      <image>
+        <description>JAS 39 Gripen "Gryphon" dropping flares.</description>
+        <basefilename>img_9691</basefilename>
+      </image>
+      <image>
+        <description>JAS 39 Gripen.</description>
+        <basefilename>img_9751</basefilename>
+      </image>
+      <image>
+        <description>JAS 39 Gripen.</description>
+        <basefilename>img_9799</basefilename>
+      </image>
+      <image>
+        <description>J 35 Draken "Dragon".</description>
+        <basefilename>img_9841</basefilename>
+      </image>
+      <image>
+        <description>Made in Sweden: J 32 Lansen, J 29 Tunnan, J 35 Draken, JAS 39 Gripen, SK 60, AJS 37 Viggen.</description>
+        <basefilename>img_9949</basefilename>
+      </image>
+    </images>
+  </gallery>
   <gallery id="38">
     <name>Trip to Northern Sweden</name>
     <description>Went with some friends to the very north of Sweden to hopefully shoot some northern lights.</description>
@@ -1947,7 +2001,7 @@
         <basefilename>03</basefilename>
       </image>
       <image>
-        <description>Also kn&amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;auml;ckebr&amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;ouml;d.</description>
+        <description>Also kn&amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;auml;ckebr&amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;ouml;d.</description>
         <basefilename>04</basefilename>
       </image>
       <image>

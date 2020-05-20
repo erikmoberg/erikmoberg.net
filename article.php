@@ -12,7 +12,7 @@ if($readableid == '')
 	header("Location: /");
 	return;
 }
-	
+
 $header = GetArticleHeader($readableid);
 
 if($header == '')
@@ -47,7 +47,7 @@ echo '<a target="_blank" class="rss-link" href="/rss/' . $readableid . '.xml"><i
 echo '</div>';
 echo '<div id="comment-entries">';
 
-PrintComments($readableid);	
+PrintComments($readableid);
 echo '</div>';
 echo '<div style="clear: both;"></div>';
 echo '</div>';
@@ -67,14 +67,14 @@ echo '</div>';
 <br />
 <input type="text" class="textinput" name="txtName" id="txtName" />
 </p>
-
-<p>
-<label for="txtWebsite">Web site (optional)</label>
-<label id="txtWebsiteError" class="form-error"></label>
-<br />
-<input type="text" class="textinput" name="txtWebsite" id="txtWebsite" />
-</p>
-
+<?php
+//<p>
+//<label for="txtWebsite">Web site (optional)</label>
+//<label id="txtWebsiteError" class="form-error"></label>
+//<br />
+//<input type="text" class="textinput" name="txtWebsite" id="txtWebsite" />
+//</p>
+?>
 <p>
 <label for="txtMessage">Comment</label>
 <label id="txtMessageError" class="form-error"></label>
@@ -108,16 +108,15 @@ $(function() {
 
 	$('#btnSend').on('click', function() {
 		$('.form-error').hide();
-		
+
 		var formData = {
-			name: $('#txtName').val(), 
-			message: $('#txtMessage').val(), 
-			website: $('#txtWebsite').val(),
+			name: $('#txtName').val(),
+			message: $('#txtMessage').val(),
 			readableid: '<?php echo $readableid; ?>'
 		};
-		
+
 		var formErrors = validateCommentForm(formData);
-		
+
 		if (formErrors.length > 0) {
 			$.each(formErrors, function(i, formError) {
 				$('#' + formError.field + 'Error')
@@ -142,7 +141,7 @@ $(function() {
 					$('html, body').animate({ scrollTop: $('#' + result.id).offset().top - $('#menucontainer').height() - 10 }, 500, function() {
 						setTimeout(function() {
 							$('#' + result.id).css({backgroundColor: '#da4526'})
-								.animate({backgroundColor: '#ffe9c3'}, 1500);
+								.animate({backgroundColor: emnet.isDarkTheme() ? '#581c0f' : '#ffe9c3'}, 1500);
 						}, 50);
 					});
 				}

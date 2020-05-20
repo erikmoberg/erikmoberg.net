@@ -106,12 +106,16 @@ $(function() {
     $("#changetheme-light").on("click", function() { $("body").removeClass("dark-theme"); sessionStorage.setItem('theme', 'light'); });
 });
 
+emnet.isDarkTheme = function() {
+  return $("body").hasClass("dark-theme")
+}
+
 emnet.search.init();
 
 // load quote
-$.get('/quoteservice.php', function(markup) {
-	$('#bottom').html(markup);
-});
+//$.get('/quoteservice.php', function(markup) {
+//	$('#bottom').html(markup);
+//});
 
 $(document).on('mouseover', '#flickr-recent img, .maingalleryitem, .gallery-thumbnail img', function() {
 	$(this).stop().fadeTo('fast', 0.6);

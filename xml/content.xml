@@ -6196,7 +6196,7 @@ It goes without saying that suspending expensive equipment by the cables is not 
     <header>Ten Tiny Levels for Android Released</header>
     <readableid>ten-tiny-levels-for-android-released</readableid>
     <subheader>Yes, this was my New Year's resolution</subheader>
-    <intro>[image ten-tiny-levels] After way too much ado, I finally finished up my game and published it on the &lt;a href="https://play.google.com/store/apps/details?id=com.regalraccoongames.tentinylevels"&gt;Google Play store&lt;/a&gt;. It's called Ten Tiny Levels and is a simple and fun arcade platformer for one or two players. It has no ads or in-app purchases, but it costs a buck or so; if you always wanted to give money to a random guy on the internet, now is your chance! For more info, check out the &lt;a href="https://www.erikmoberg.net/ten-tiny-levels"&gt;microsite.&lt;/a&gt;</intro>
+    <intro>[image ten-tiny-levels] After way too much ado, I finally finished up my game and published it on the &lt;a href="https://play.google.com/store/apps/details?id=com.regalraccoongames.tentinylevels"&gt;Google Play store&lt;/a&gt;. It's called Ten Tiny Levels and is a simple and fun arcade platformer for one or two players. Free and without ads or in-app purchases! For more info, check out the &lt;a href="https://www.erikmoberg.net/ten-tiny-levels"&gt;microsite.&lt;/a&gt;</intro>
     <content>
     </content>
     <images>
@@ -6204,6 +6204,110 @@ It goes without saying that suspending expensive equipment by the cables is not 
         <description>The game plays in portrait mode.</description>
         <name>ten-tiny-levels</name>
         <extension>.jpg</extension>
+      </image>
+    </images>
+  </entry>
+  <entry>
+    <guid>4ad71dac-c8e1-451d-b7df-753be7be8c42</guid>
+    <date>2019-08-13</date>
+    <shorturl>
+    </shorturl>
+    <header>Google Play: Violation of Usage of Android Advertising ID policy</header>
+    <readableid>google-play-violation-of-usage-of-android-advertising-id-policy</readableid>
+    <subheader>Google Play not playing around</subheader>
+    <intro>[image google-play] I recently received a friendly e-mail from Google explaining that my game &lt;a href="https://play.google.com/store/apps/details?id=com.regalraccoongames.tentinylevels"&gt;Ten Tiny Levels&lt;/a&gt; had been removed from Google Play. Excerpt:
+&lt;/p&gt;
+
+&lt;p&gt;
+&lt;i&gt;After review, Ten Tiny Levels, com.regalraccoongames.tentinylevels, has been removed from Google Play due to a policy violation. This app won’t be available to users until you submit a compliant update.&lt;/i&gt;
+&lt;/p&gt;
+
+&lt;p&gt;
+Luckily, I did get the app back in the store after a few attempts. Read on for the solution.</intro>
+    <content>&lt;h2&gt;The complete e-mail&lt;/h2&gt;
+&lt;code&gt;
+&lt;p&gt;Hi developers at Regal Raccoon Games,&lt;/p&gt;
+
+&lt;p&gt;After review, Ten Tiny Levels, com.regalraccoongames.tentinylevels, has been removed from Google Play due to a policy violation. This app won’t be available to users until you submit a compliant update.&lt;/p&gt;
+
+&lt;p&gt;Issue: Violation of Usage of Android Advertising ID policy and section 4.8 of the Developer Distribution Agreement&lt;/p&gt;
+
+&lt;p&gt;Google Play requires developers to provide a valid privacy policy when the app requests or handles sensitive user or device information. We’ve identified that your app collects and transmits the Android advertising identifier, which is subject to a privacy policy requirement. If your app collects the Android advertising ID, you must provide a valid privacy policy in both the designated field in the Play Console, and from within the app.&lt;/p&gt;
+
+&lt;p&gt;Next steps: Submit your app for another review&lt;/p&gt;
+
+&lt;p&gt;
+1. Read through the &lt;a href="https://play.google.com/about/monetization-ads/ads/ad-id/"&gt;Usage of Android Advertising ID&lt;/a&gt; and &lt;a href="https://play.google.com/about/privacy-security-deception/user-data/"&gt;User Data&lt;/a&gt; policies, as well as the &lt;a href="https://play.google.com/intl/ALL_us/about/developer-distribution-agreement.html"&gt;Developer Distribution Agreement&lt;/a&gt;, and make appropriate changes to your app. If you decide to collect sensitive user information, be sure to abide by the above policies, and include a link to a valid &lt;a href="https://support.google.com/googleplay/android-developer/answer/113469#privacy"&gt;privacy policy&lt;/a&gt; on your app's store listing page and within your app. &lt;br /&gt;
+2. Make sure that your app is compliant with all other &lt;a href="https://play.google.com/about/developer-content-policy.html"&gt;Developer Program Policies&lt;/a&gt;. Additional enforcement could occur if there are further policy violations.&lt;br /&gt;
+3. Sign in to your &lt;a href="https://play.google.com/apps/publish"&gt;Play Console&lt;/a&gt; and submit the update to your app.&lt;br /&gt;
+&lt;/p&gt;
+
+&lt;p&gt;Alternatively, you may opt-out of this requirement by removing any requests for sensitive permissions or user data.&lt;/p&gt;
+
+&lt;p&gt;If approved, your app will again be available with all installs, ratings, and reviews intact.&lt;/p&gt;
+
+&lt;p&gt;If you’ve reviewed the policy and feel this removal may have been in error, please reach out to our &lt;a href="https://support.google.com/googleplay/android-developer/contact/emailappeals?aid=com.regalraccoongames.tentinylevels&amp;t=9139962&amp;ts=BR&amp;email=$%7BEMAIL_ADDRESS%7D&amp;n=Regal%20Raccoon%20Games"&gt;policy support team&lt;/a&gt;. One of my colleagues will get back to you within 2 business days.&lt;/p&gt;
+&lt;p&gt;Please help us improve the developer experience by completing this &lt;a href="https://docs.google.com/forms/d/e/1FAIpQLScYSJsd99JFYRmybEPSdw508BVZwn2QS_tIGWx8PSbEiQgBfQ/viewform?entry.1019438846=9139962"&gt;two question survey.&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Thanks for helping us provide a clear and transparent experience for Google Play users. &lt;/p&gt;
+
+&lt;p&gt;Regards,
+The Google Play Team
+&lt;/p&gt;
+&lt;/code&gt;
+&lt;/p&gt;
+
+&lt;h2&gt;Some background&lt;/h2&gt;
+&lt;p&gt;
+This caught me by surprise. As far as I am aware, my app does not collect any data, nor does it have any ads, so assumed it was safe to skip adding a privacy policy. Turns out I was wrong.
+&lt;/p&gt;
+
+&lt;p&gt;
+I developed the app using Unity 3D, and it does seem like the version I was using (2018.3.12f1) made the application do something behind the scenes, using the advertising ID. The problem did also first arrive when I switched the scripting backend from Mono to IL2CPP in order to create app bundles but it might have been a coincidence.
+&lt;/p&gt;
+
+&lt;h2&gt;The solution&lt;/h2&gt;
+
+&lt;p&gt;In order to fix this, we need to 1) Create a privacy policy, 2) Upload the privacy policy to a publicly accessible URL, and 3) Add the URL the the app in the Google Play Console.&lt;/p&gt;
+
+&lt;h3&gt;Step 1: Create a privacy policy&lt;/h3&gt;
+&lt;p&gt;If you are lazy like me, and also don't collect any sensitive data, a privacy policy generator such as &lt;a target="_blank" href="https://app-privacy-policy-generator.firebaseapp.com/"&gt;this one&lt;/a&gt; should do the job just fine.
+
+&lt;h3&gt;Step 2: Upload the privacy policy to a publicly accessible URL&lt;/h3&gt;
+&lt;p&gt;In my case, I simply put the text in a plain TXT file and uploaded the file to the webserver hosting the page you are reading right now. If you have a website, good - otherwise, you will need to find yourself some webspace.&lt;/p&gt;
+
+&lt;h3&gt;Step 3: Add the URL the the app in the Google Play Console&lt;/h3&gt;
+&lt;p&gt;Add the URL using the Google Play Console like so:&lt;/p&gt;
+[image store]
+
+&lt;p&gt;That's it! Your app should hopefully appear on the store shortly.&lt;/p&gt;
+
+&lt;h2&gt;Things to note&lt;/h2&gt;
+&lt;p&gt;It was suggested that opening the package manager in Unity 3D and removing packages related to advertising would fix the issue. I tried this but the app was soon removed again.&lt;/p&gt;
+&lt;p&gt;It states in the e-mail above that the URL to the privacy policy must be accessible from within the app. In my case, this was apparently not necessary. Adding it to Google Play was enough.&lt;/p&gt;
+
+[image ten-tiny-levels-google-play]
+
+&lt;div style="text-align: center; margin-top: -5px;"&gt;
+  &lt;a href="https://play.google.com/store/apps/details?id=com.regalraccoongames.tentinylevels"&gt;
+    &lt;img class="google-play-badge" src="/ttl-assets/google-play-badge.png" style="width: 200px; max-width: 100%;"&gt;
+  &lt;/a&gt;
+&lt;/div&gt;</content>
+    <images>
+      <image>
+        <description>Expand Store presence, select Store listing, scroll down and paste the URL.</description>
+        <name>store</name>
+        <extension>.png</extension>
+      </image>
+      <image>
+        <description>The game is back in the store!</description>
+        <name>ten-tiny-levels-google-play</name>
+        <extension>.png</extension>
+      </image>
+      <image>
+        <description>
+        </description>
+        <name>google-play</name>
+        <extension>.png</extension>
       </image>
     </images>
   </entry>

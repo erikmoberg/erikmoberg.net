@@ -16,3 +16,4 @@ RewriteRule ^article/([^/]*)/posted([^/]*)$ /article.php?name=$1&message=posted$
 RewriteRule ^rss[/]*$ /rss.php [L]
 RewriteRule ^rss/([^/]*)[/]*$ /rss.php?article=$1 [L]
 RewriteRule ^ten-tiny-levels[/]*$ /ten-tiny-levels.php [L]
+RewriteRule ^korv[/]*$ /korv.php [L]

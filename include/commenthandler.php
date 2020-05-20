@@ -93,7 +93,7 @@ function PrintRecentComments($count)
 		$datetime = strtotime($datetime);
 		$datetime = date('M dS, Y', $datetime);
 		$message = $comment->message;
-		$maxlength = 50;
+		$maxlength = 70;
 		$message = $comment->message;
 		$message = strlen($message) > $maxlength ? substr($message, 0, $maxlength) . '...' : $message;
 		$message = htmlspecialchars($message);
@@ -117,12 +117,12 @@ function GetSingleCommentMarkup($name, $datetime, $website, $message, $number)
 	$markup .= $datetime;
 	$markup .= '</div>';
 	$markup .= '<div class="commentname"><i class="fa fa-comment"></i> ';
-	if($website != null && $website != '') {
-		$markup .= '<a href="' . $website . '" target="_blank">' . $name . '</a>';
-	}
-	else {
+	//if($website != null && $website != '') {
+	//	$markup .= '<a href="' . $website . '" target="_blank">' . $name . '</a>';
+	//}
+	//else {
 		$markup .= $name;
-	}
+	//}
 	$markup .= '</div>';
 	$markup .= '</div>';
 	$markup .= '<div class="commentmessage">';

@@ -4,7 +4,7 @@ function LoadImageXml()
 	$xmlFile = 'xml/images-en.xml';
 	if (file_exists($xmlFile))
 	{
-	    return simplexml_load_file($xmlFile); 
+	    return simplexml_load_file($xmlFile);
 	}
 	else
 	{
@@ -42,7 +42,7 @@ function DisplayMainGallery()
 			PrintMainGalleryImage($galleryname, $gallerydatetime, $galleryfrontpic, $galleryid);
 		}
 	}
-	
+
 	echo '<div style="clear: both"></div>';
 	echo '</div>';
 	echo '<div class="page-section">';
@@ -69,7 +69,7 @@ function DisplayArchivedGallery()
 			PrintMainGalleryImage($galleryname, $gallerydatetime, $galleryfrontpic, $galleryid);
 		}
 	}
-	
+
 	echo '<div style="clear: both"></div>';
 	echo '</div>';
 }
@@ -98,7 +98,7 @@ function DisplaySingleGallery($galleryid)
 	$backlink = '<p><a href="/images"><i class="fa fa-chevron-circle-left"></i> Back to overview</a></p>';
 	echo $backlink;
 	echo '</div>';
-	echo '<div class="page-section">';
+	echo '<div class="page-section gallery-thumbnails-container">';
 
 	$imagebasedir = '/images/' . $gallerynode->basedir;
 	$thumbNo = 1;
@@ -109,13 +109,13 @@ function DisplaySingleGallery($galleryid)
 		$imagethumb = $basefilename . '_thumb.jpg';
 		$imagethumb_small = $basefilename . '_thumb_small.jpg';
 		$imagefile = $basefilename . '.jpg';
-		
+
 		echo "<a href=\"$imagefile\" class=\"gallery-thumbnail\">";
 		echo "<img src=\"$imagethumb\" alt=\"" . htmlentities(htmlentities($imagedescription, ENT_QUOTES, "UTF-8"), ENT_QUOTES, "UTF-8") . "\" title=\"" . htmlentities(htmlentities($imagedescription, ENT_QUOTES, "UTF-8"), ENT_QUOTES, "UTF-8") . " (Click to enlarge)\" />";
 		echo "</a>";
 		$thumbNo++;
 	}
-	
+
 	echo '<div style="clear:both;"></div>';
 	echo '</div>';
 	echo '<div class="page-section">';

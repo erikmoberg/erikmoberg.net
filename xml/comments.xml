@@ -204,8 +204,14 @@ you may not like my answer, but I currently use a wired Steelseries Siberia V2 h
     <comment>
       <name>AlexL</name>
       <datetime>2018-09-13 02:58</datetime>
-      <website>http://https://pupuweb.com/solved-logitech-bluetooth-wireless-headset-h800-microphone-not-working/</website>
+      <website/>
       <message>The microphone of Logitech Wireless Headset H800 may not working sometime, especially on Windows 10.</message>
+    </comment>
+    <comment>
+      <name>The Telecom Shop PTY Ltd</name>
+      <datetime>2020-02-10 12:16</datetime>
+      <website/>
+      <message>Well done Erik! After reading this post, it is easy to distinguish the features of Plantronics Audio 995 and Creative Hs-1200 headsets. I hope this piece of information will help people to choose the one that meets their needs.</message>
     </comment>
   </comments>
   <comments articlename="shiny_icon_maker_-_new_features">
@@ -800,7 +806,7 @@ Good luck - you might need it, I assume no responsibility! ;)</message>
     <comment>
       <name>Erik F.</name>
       <datetime>2011-04-12 13:10</datetime>
-      <website>http://threemilesfinal.com</website>
+      <website/>
       <message>Nice article and great site!</message>
     </comment>
     <comment>
@@ -3676,6 +3682,32 @@ I would love to see your review on the newer Canon pancake 24mm lens.
 
 I would like that too - because it would mean that I had the 24mm in my possession. Please let me know if you could help me with that! ;)</message>
     </comment>
+    <comment>
+      <name>Aria</name>
+      <datetime>2019-04-13 12:00</datetime>
+      <website/>
+      <message>I'm one of those people with a full-frame DSLR (and three crops, all four Canons), and I use the 40mm quite often, even over my much pricier other lenses.  I've got a 50mm, but get better results with the 40.  Sometimes it's not the lens, but how you use it and what you're using it for that makes all the difference.</message>
+    </comment>
+    <comment>
+      <name>Zo</name>
+      <datetime>2019-06-13 14:24</datetime>
+      <website/>
+      <message>Hi Erik,
+
+Thanks for the review there. I'm a new photographer and was hoping to get some advice on lenses. I have the Canon M50 with the kit lens. I want to do photo and video which will be portraits, landscapes in both day and night and some indoor/outdoor and night time videos.
+
+Which of the 2 should I get as an additional lens to complement the kit lens I have.  I ahve also been looking at Canon EF-M 22mm f/2 STM.
+
+Thank you</message>
+    </comment>
+    <comment>
+      <name>Erik</name>
+      <datetime>2019-08-14 22:19</datetime>
+      <website/>
+      <message>Hi Zo,
+
+the Canon EOS M50 uses the EF-M mount so these lenses will not fit without an adapter. Since the adapter and either of these lenses would cost more than the 22mm, just go with the 22mm. It should probably a better walkaround lens anyway.</message>
+    </comment>
   </comments>
   <comments articlename="homer_simpson_bao_song">
     <comment>
@@ -4342,6 +4374,45 @@ is it possible to remove the wheels without damaging them? i got the replacement
 
 no damage to the wheels themselves should be caused by following the instructions above. However, the star locks will probably be badly damaged and need to be replaced. But they are of course much less expensive than the wheels. I hope this helps!</message>
     </comment>
+    <comment>
+      <name>Paul</name>
+      <datetime>2019-02-05 10:50</datetime>
+      <website/>
+      <message>Hi Erik,
+
+Thanks a lot for your awesome write-up, wouldn&#x2019;t have known where to start without this. Really appreciate you taking the time to write this up. Buggy is as good as new &#x1F642;
+
+Thanks,
+Paul</message>
+    </comment>
+    <comment>
+      <name>Erik</name>
+      <datetime>2019-02-06 12:57</datetime>
+      <website/>
+      <message>Hi Paul,
+
+exactly the reason I wrote this in the first place; to help someone else in my situation. Great to hear the buggy is alright again!</message>
+    </comment>
+    <comment>
+      <name>Alex</name>
+      <datetime>2019-10-03 20:07</datetime>
+      <website/>
+      <message>Dear pros,
+I have turned  internet with legs up to find the cogs online, but i couldn't.
+Can you suggest, or someone sells me their old thinned cogs so i could cut/file them and glue to my also thinned cogs?
+
+Thank you. Sasko.basko at gmail dot com</message>
+    </comment>
+    <comment>
+      <name>Erik</name>
+      <datetime>2019-10-03 20:26</datetime>
+      <website/>
+      <message>Hi Alex,
+
+it seems that finding these parts is getting harder. The link I posted above also does not work anymore.
+
+You could contact them directly, or check if they still have any other parts that might help you in any way: https://www.babyboom2000.co.uk/categories/spare-parts/maclaren-spares.html</message>
+    </comment>
   </comments>
   <comments articlename="velbon_sherpa_200r_review">
     <comment>
@@ -4466,6 +4537,134 @@ you probably have to or more sprites with the same name in the same sprite sheet
       <website/>
       <message>Erik, thanks a lot for this, it is simply awesome! You helped me a lot.</message>
     </comment>
+    <comment>
+      <name>Xenonq</name>
+      <datetime>2019-07-10 17:29</datetime>
+      <website/>
+      <message>Does the sheet need to look exactly like yours. Sprite next to sprite?
+[][][][][] &lt; your sheet
+[]   []
+[]   []   &lt; my sheet
+can I have it like this?
+</message>
+    </comment>
+    <comment>
+      <name>Xenon</name>
+      <datetime>2019-07-10 17:50</datetime>
+      <website/>
+      <message>I did exactly what you showed and this came up KeyNotFoundException: The given key was not present in the dictionary.
+System.Collections.Generic.Dictionary`2[System.String,UnityEngine.Sprite].get_Item (System.String key) (at /Users/builduser/buildslave/mono/build/mcs/class/corlib/System.Collections.Generic/Dictionary.cs:150)
+SkinSwapper.LateUpdate () (at Assets/SkinSwapper.cs:41)
+I don't know what to do pls help :(
+</message>
+    </comment>
+    <comment>
+      <name>Erik</name>
+      <datetime>2019-08-14 22:11</datetime>
+      <website/>
+      <message>Hi Xenon,
+
+please check the answer above, Dorian had the same issue.</message>
+    </comment>
+    <comment>
+      <name>Shamahan</name>
+      <datetime>2019-09-09 16:20</datetime>
+      <website/>
+      <message>Holy hell thank you so much for this piece of code, you wouldn't believe how long I searched for something like this, it is exactly what I needed!
+
+One question - is there some way to make the sprite sheet change only once at the press of a button or does it have to constantly be in the LateUpdate function?</message>
+    </comment>
+    <comment>
+      <name>Erik</name>
+      <datetime>2019-09-10 21:18</datetime>
+      <website/>
+      <message>Hi Shamahan,
+
+that's great! And with the above code, the sprite sheet should only reload once if changed on the fly. Let me know if you have found that it doesn't.</message>
+    </comment>
+    <comment>
+      <name>John</name>
+      <datetime>2019-09-15 00:46</datetime>
+      <website/>
+      <message>Ok so I followed the instructions item by item, and have named each frame of both my sprite sheets individual cells to match each other, I am getting the same error as above:
+
+KeyNotFoundException: The given key was not present in the dictionary.
+System.Collections.Generic.Dictionary`2[TKey,TValue].get_Item (TKey key) (at &lt;7d97106330684add86d080ecf65bfe69&gt;:0)
+Crowd_Sprite_Sheet_Swapper.LateUpdate () (at Assets/Crowd_Sprite_Sheet_Swapper.cs:40)
+
+What's up fam?
+</message>
+    </comment>
+    <comment>
+      <name>John</name>
+      <datetime>2019-09-15 03:18</datetime>
+      <website/>
+      <message>Just to update - got it working - thank you! But I'm getting spammed hard in the console:
+
+ArgumentException: An item with the same key has already been added. Key: Crowd_Generic_0
+System.Collections.Generic.Dictionary`2[TKey,TValue].TryInsert (TKey key, TValue value, System.Collections.Generic.InsertionBehavior behavior) (at &lt;7d97106330684add86d080ecf65bfe69&gt;:0)
+
+Any idea why? </message>
+    </comment>
+    <comment>
+      <name>Erik</name>
+      <datetime>2019-09-15 07:22</datetime>
+      <website/>
+      <message>Hi John,
+
+probably, two sprites in the sprite sheet have the same name. Make sure each name only appears once ("walk1", "walk2"...). If you can't find the problem, try setting a debugging breakpoint in your code in visual studio. Then click "attach to unity" and start your game. Hopefully, stepping through the code will make the problem obvious. Hope this helps!</message>
+    </comment>
+    <comment>
+      <name>John</name>
+      <datetime>2019-09-16 14:10</datetime>
+      <website/>
+      <message>Hey thanks for getting back to me so quickly. I can confirm that within the sheet, no sliced sprites are named the same. Each has a unique name (Crowd_Generic_0, Crowd_Generic_1, etc...)
+
+So I am using the sprite swapping because I am emulating a large crowd (50+ NPCS). A crowd NPC is to use the same animation set, but I am swapping their sheets in order to avoid having to create unique animations over and over again for each NPC.
+
+So essentially 50 NPCs are in the scene - all at once - all referencing one "leader" NPC's animations.
+
+I appreciate the help!
+</message>
+    </comment>
+    <comment>
+      <name>Tutmo</name>
+      <datetime>2019-09-17 17:20</datetime>
+      <website/>
+      <message>Hey John,
+
+I ran into the exact same issue - all my Sprite names were unique per Sprite Sheet, but still getting the exception error.
+
+After debugging in circles, I realized the issue (for me anyways) was that my initial Sprite in the Sprite Renderer was set to 'None'. I just needed to set the initial Sprite to any one of the Sprites in my Resource Sprite Sheets and the error went away. Hope that helps.
+
+Thanks for the original post Erik! This was way clearer than anything else I've found after hours of Googling!!
+</message>
+    </comment>
+    <comment>
+      <name>Erik</name>
+      <datetime>2019-09-17 17:39</datetime>
+      <website/>
+      <message>Hi Tutmo,
+
+that's great to know, let's hope it helps John - or someone else for that matter.
+
+And happy to hear you found the post useful!</message>
+    </comment>
+    <comment>
+      <name>Tuan</name>
+      <datetime>2019-09-21 09:29</datetime>
+      <website/>
+      <message>Hi Erik,
+I have 1 character with 7 spriteRenders for Head, hand, weapon, horse .... and I want change sprites for 1 or more of them, maybe change all of them.
+I learn from your youtube , but when change sprite in Head and Body  Sprite Render, it have problem is run change 1st sprite and not others.
+With multi spriteRenderer in one character, so I would like ask how is the best way to solve it?</message>
+    </comment>
+    <comment>
+      <name>Marcel</name>
+      <datetime>2020-03-01 11:59</datetime>
+      <website/>
+      <message>You're awesome thanks</message>
+    </comment>
   </comments>
   <comments articlename="hands-on-cheap-interchangeable-cell-phone-lenses">
     <comment>
@@ -4501,6 +4700,65 @@ I have to take photos of objects outside, like houses,  and fixed interior. Do y
 for interior shots, usually an ultra wide angle lens (starting at 12 mm or so) is a good choice. To get decent lighting, have all available lights turned on and use fill flash. Put the camera on a tripod, keep the ISO low and shoot with a remote trigger. Experiment with taking several shots with different exposure settings, then create a composite image with Photoshop.
 
 For architecture photography, you might want to look into tilt-shift lenses. They are usually quite expensive, but they can do cool things like parallax correction and let you capture tall buildings without perspective distortion.</message>
+    </comment>
+  </comments>
+  <comments articlename="wall-mounting-a-d-link-covr-ac1200-mesh-node">
+    <comment>
+      <name>Per-Erik</name>
+      <datetime>2019-01-07 21:50</datetime>
+      <website/>
+      <message>Brilliant, Thanks !</message>
+    </comment>
+    <comment>
+      <name>Chad</name>
+      <datetime>2019-03-28 03:50</datetime>
+      <website/>
+      <message>Can&#x2019;t believe I looked this up for my dlink covrs lol. Good hack.
+
+But would be better if these d kink had a google wifi style plug adaptor.
+
+Anyone know if those exist or can be 3 d printed?
+</message>
+    </comment>
+    <comment>
+      <name>Algernon</name>
+      <datetime>2019-11-29 23:30</datetime>
+      <website/>
+      <message>I'm going to drill 2 different diameter "snow man" holes to hang it with screws from the bottom of a cabinet. Wish me luck. </message>
+    </comment>
+    <comment>
+      <name>Erik</name>
+      <datetime>2019-11-29 23:49</datetime>
+      <website/>
+      <message>Good luck, Algernon!</message>
+    </comment>
+    <comment>
+      <name>Manu</name>
+      <datetime>2020-01-29 02:43</datetime>
+      <website/>
+      <message>Actually this one option seems only viable one</message>
+    </comment>
+  </comments>
+  <comments articlename="rocket-league-split-screen-on-pc-with-keyboard-and-controller">
+    <comment>
+      <name>Renny</name>
+      <datetime>2020-01-10 01:35</datetime>
+      <website/>
+      <message>Muchas gracias amigo, solucion&#xF3; el problema a la perfecci&#xF3;n :)</message>
+    </comment>
+  </comments>
+  <comments articlename="google-play-violation-of-usage-of-android-advertising-id-policy">
+    <comment>
+      <name>test</name>
+      <datetime>2020-04-14 23:37</datetime>
+      <website/>
+      <message>test</message>
+    </comment>
+    <comment>
+      <name>Erik</name>
+      <datetime>2020-04-14 23:40</datetime>
+      <website/>
+      <message>dsafd</message>
     </comment>
   </comments>
 </articlecomments>

@@ -541,9 +541,9 @@ img.about-image {
 
 .guestbookheader, .commentheader
 {
-	padding: 5px;
-	color: black;
-	margin-bottom: 10px;
+  padding: 5px 5px 5px 0;
+  color: black;
+  margin-bottom: 15px;
 }
 
 .guestbookname, .commentname {
@@ -581,7 +581,6 @@ img.about-image {
 .hires_image
 {
 	margin: 5px;
-	border: 1px solid #ccc;
 	padding: 10px;
 	width: 270px;
 	height: 195px;
@@ -667,8 +666,9 @@ aside {
 
 .note {
 	background-color: #eee;
-    padding: 10px;
+  padding: 10px;
 	min-height: 60px;
+	margin: 10px 0;
 }
 
 .notecontent {
@@ -979,6 +979,7 @@ aside {
 	top: 0;
 	display: none;
 	opacity: 0.7;
+	right: 0;
 }
 
 #submitting-form {
@@ -1155,13 +1156,21 @@ td.gsc-search-button {
 
 /* Responsive gallery start */
 
+.gallery-thumbnails-container {
+	display: flex;
+  flex-flow: row wrap;
+  align-content: flex-start;
+}
+
 .gallery-thumbnail {
   background: none;
+	width: 33.3333%;
 }
 .gallery-thumbnail img {
-  border: none;
+	border: none;
   vertical-align: bottom;
   margin: 0 2px 2px 0;
+  width: calc(100% - 2px);
 }
 
 body.gallery {
@@ -1205,28 +1214,29 @@ body.gallery {
 
 #scroll-left-container, #scroll-right-container {
   width: 50px;
-  height: 100px;
+  height: 50px;
   position: fixed;
-  top: 50%;
-  left: 0;
+  top: calc(50% + 25px);
+  left: 5px;
 }
 
 #scroll-right-container {
   left: auto;
-  right: 0;
+  right: 5px;
 }
 
 #scroll-left, #scroll-right {
   background: #ccc center center no-repeat;
-  background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAXCAYAAAAC9s/ZAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAE7wAABO8BJ9fcHwAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAADESURBVDiNrdSxSgNREIXhL1pGJCJBRPBpUqSx8L2s0likSeMj2FoIgoIghEBA8h4Rm5vGBTfJ7izsFKe58B8uM2eOUoouwhDPmNTeO8JneEXBFtPOBjjH2x9c6Qd3oQFG+NiDK/3ivg2+wGcDXOmpCb7EVwhzegweYxnAC5wczABXWAXwvIJrBrjGOoAfMTjIAW7wHcCzhnm5xSaAH1q25SWA34Os9PxB7xmkbCElBylJTLmFlGtM6YOURkrpxH8mR1t5B5JNhz8N7mg/AAAAAElFTkSuQmCC');
+	background-image: url(/gallery/arrow-left.min.svg);
   opacity: 0.5;
   height: 100%;
   margin-top: -50px;
   cursor: pointer;
+	border-radius: 25px;
 }
 
 #scroll-right {
-  background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAXCAYAAAAC9s/ZAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAE7AAABOwBim79cgAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAADHSURBVDiNtdQxagJRFAXQo5YGUUQkBFxNChuL7CuVjYWNjUuwTREIKAiBEBDEfURsJs0MDKLzJvla3GbgHob/33+yLFMEz1ihXf5elXJ5jB9keMdDbQATHPNykQ90QgAvOJ2Vi2zQjYDllXKRLXpVQKsG8ol+1Rk0sQiQLwyqbqGJeYB8Y3gRyJEGZgGyw+NFoARNA2SPp6tAjrwGyAGjaEjWAfJ2nz/49xkk3ULSHCRNotS3UKMcvsa0fZC8kW6yE0vIn7fyL3mqhz8nwm5eAAAAAElFTkSuQmCC');
+	background-image: url(/gallery/arrow-right.min.svg);
 }
 
 #scroll-left:hover, #scroll-right:hover {
@@ -1234,15 +1244,16 @@ body.gallery {
 }
 
 #close-images {
-  width: 35px;
-  height: 35px;
+  width: 50px;
+  height: 50px;
   position: fixed;
-  right: 10px;
-  top: 10px;
+  right: 5px;
+  top: 5px;
   background: #ccc center center no-repeat;
-  background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAEXwAABF8B2dhh0gAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAACRSURBVDiNtZVLCsAgDEQfvUOP0fuvegmP4SWmGy22WJxAKmQTJk/zISIJSQAHcAJ7960M2FvMcfsGWAUEFAfaYKXF1A59w+RAXzCNUNqTNbEp9APW7VwJHlBH6wvNi91Uip1FoD5Wnd0O+k0LjIU1VhvZ59eUA7B1Uxaw2NgYMH+wXWHg4vzlkLu+0hds9hdwAUdCLv91bAeKAAAAAElFTkSuQmCC');
+	background-image: url(/gallery/close.min.svg);
   opacity: 0.5;
   cursor: pointer;
+	border-radius: 25px;
 }
 
 #close-images:hover {
@@ -1262,7 +1273,6 @@ body.gallery {
   position: fixed;
   bottom: 0;
   width: 100%;
-  height: 100px;
   color: white;
   left: -5px;
   text-align: center;
@@ -1271,6 +1281,9 @@ body.gallery {
 
 #image-caption-number {
   color: #ccc;
+	position: fixed;
+  top: 5px;
+  left: 5px;
 }
 
 #imageContainer-back {
@@ -1406,6 +1419,10 @@ body.gallery {
 		font-size: 16px;
 	}
 
+	.articleintro p, .full-article p {
+		text-align: left;
+	}
+
 	/* menu stacked */
 
 	#horizontal li, #horizontal li a, #horizontal li a:hover, #horizontal li a:visited {
@@ -1473,8 +1490,8 @@ body.gallery {
 		font-size: 20px;
 	}
 
-	.gallery-thumbnail img {
-		max-width: 45%;
+	.gallery-thumbnail {
+		width: 50%;
 	}
 
 	.teaser {
@@ -1681,4 +1698,8 @@ body:not(.dark-theme) #changetheme-dark:hover {
 
 body.dark-theme .flat-icon-container {
     background-color: #adadad;
+}
+
+body.dark-theme .shroud {
+	background-color: #555;
 }

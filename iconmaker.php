@@ -20,7 +20,10 @@ PrintStartHtml('Flat Icon Maker',3,'The Flat Icon Maker is a simple tool to crea
   </div>
 </div>
 
-<script type="text/javascript" src="iconmaker-static/js/main.js"></script>
+<script src="iconmaker-static/js/runtime.js"></script>
+<script src="iconmaker-static/js/2.js"></script>
+<script src="iconmaker-static/js/main.js"></script>
+
 
 <?php
 echo '</div>';
