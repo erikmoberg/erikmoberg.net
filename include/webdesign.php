@@ -28,7 +28,7 @@ function PrintStartHtml($pageTitle, $highlightitem, $metadescription)
 	<title><?php echo $pageTitle; ?> - Erik Moberg's personal homepage - photography, gadgets, DIY, and more</title>
 	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 	<link href='https://fonts.googleapis.com/css?family=Roboto+Condensed:400,400i,700|Roboto' rel='stylesheet' type='text/css'>
-	<link rel="stylesheet" type="text/css" href="/content/styles/style.css.php?_=19" />
+	<link rel="stylesheet" type="text/css" href="/content/styles/style.css.php?_=20" />
 	<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js" type="text/javascript"></script>
 	<link rel="shortcut icon" href="/favicon.ico" type="image/vnd.microsoft.icon" />
@@ -58,10 +58,11 @@ if($isFrontPage) {
 					$("body").addClass("dark-theme");
 			}
 		} else {
-			var currentHours = new Date().getHours();
-			if (currentHours >= 19 || currentHours <= 5) {
-				$("body").addClass("dark-theme");
-			}
+			$("body").addClass("dark-theme");
+			//var currentHours = new Date().getHours();
+			//if (currentHours >= 19 || currentHours <= 5) {
+			//	$("body").addClass("dark-theme");
+			//}
 		}
   </script>
 	<div id="headerContainer">

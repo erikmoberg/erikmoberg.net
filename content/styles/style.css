@@ -1386,7 +1386,7 @@ body.gallery {
 	}
 
 	#main-sideinfo, #additional-sideinfo {
-		width: 49%;
+		width: 48%;
 		margin-right: 0;
 	}
 
@@ -1563,8 +1563,16 @@ body.gallery {
 
 	article, .full-article, .article-navigation, .social-links, #frmComments, .page-section {
         padding: 10px;
-        margin-bottom: 10px;
+        margin: 0 -10px 10px;
 	}
+
+    #main-sideinfo .page-section {
+        margin: 0 0 10px;
+	}
+
+    #sideInfo {
+        margin: 0;
+    }
 
 	.symbol-set-selection .checkbox-label {
 		display: block;
