@@ -28,15 +28,15 @@ function PrintStartHtml($pageTitle, $highlightitem, $metadescription)
 	<title><?php echo $pageTitle; ?> - Erik Moberg's personal homepage - photography, gadgets, DIY, and more</title>
 	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 	<link href='https://fonts.googleapis.com/css?family=Roboto+Condensed:400,400i,700|Roboto' rel='stylesheet' type='text/css'>
-	<link rel="stylesheet" type="text/css" href="/content/styles/style.css.php?_=20" />
+	<link rel="stylesheet" type="text/css" href="/content/styles/style.css.php?_=28" />
 	<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js" type="text/javascript"></script>
 	<link rel="shortcut icon" href="/favicon.ico" type="image/vnd.microsoft.icon" />
-    <link rel="icon" type="image/png" href="/content/favicon/favicon-192.png" sizes="192x192">
-	<link rel="icon" type="image/png" href="/content/favicon/favicon-160.png" sizes="160x160">
-	<link rel="icon" type="image/png" href="/content/favicon/favicon-96.png" sizes="96x96">
-	<link rel="icon" type="image/png" href="/content/favicon/favicon-16.png" sizes="16x16">
-	<link rel="icon" type="image/png" href="/content/favicon/favicon-32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="/content/favicon/favicon-red-192.png" sizes="192x192">
+	<link rel="icon" type="image/png" href="/content/favicon/favicon-red-160.png" sizes="160x160">
+	<link rel="icon" type="image/png" href="/content/favicon/favicon-red-96.png" sizes="96x96">
+	<link rel="icon" type="image/png" href="/content/favicon/favicon-red-16.png" sizes="16x16">
+	<link rel="icon" type="image/png" href="/content/favicon/favicon-red-32.png" sizes="32x32">
 	<link rel="alternate" type="application/rss+xml" href="/rss.php" title="erikmoberg.net" />
 	<meta name="robots" content="index, follow" />
 	<meta name="googlebot" content="index, follow" />
@@ -89,12 +89,7 @@ if(true || $isFrontPage) {
 		</div>
 	</div>
 	<div id="menucontainer">
-
-
-        <div class="change-theme-container">
-    <a href="javascript:void(0);" id="changetheme-dark"><i class="fa fa-moon-o"></i></a>/<a href="javascript:void(0);" id="changetheme-light"><i class="fa fa-sun-o"></i></a>
-</div>
-
+    <a href="/" id="logo"></a>
 		<a id="menu-toggle" href="javascript:void(0);" title="Toggle menu"><i class="fa fa-bars"></i></a>
 		<div id="open-search"><a href="javascript:void(0);"><i class="fa fa-search"></i></a></div>
 		<div id='cse-search-form'>
@@ -215,6 +210,9 @@ if($isFrontPage) {
 <div id="bottom">
 </div>
 <div id="last">
+<div class="change-theme-container">
+Page Theme: <a href="javascript:void(0);" id="changetheme-dark"><i class="fa fa-moon-o"></i> Dark</a> / <a href="javascript:void(0);" id="changetheme-light"><i class="fa fa-sun-o"></i> Light</a>
+</div>
 Erik Moberg&nbsp;
 <?php
 echo date("Y");

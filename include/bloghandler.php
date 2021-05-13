@@ -375,7 +375,8 @@ function AddSpecialTags($text, $readableid, $images, $clearImage, $includeImageD
 {
 	$thumbNo = 0;
 
-	$text = str_replace('[note]','<div class="note"><div class="noteicon"><i class="fa fa-hand-o-right"></i></div><div class="notecontent">',$text);
+	//$text = str_replace('[note]','<div class="note"><div class="noteicon"><i class="fa fa-hand-o-right"></i></div><div class="notecontent">',$text);
+    $text = str_replace('[note]','<div class="note"><div class="notecontent">',$text);
 	$text = str_replace('[/note]','</div></div>',$text);
 
 	while(strrpos($text,'[image') !== false)

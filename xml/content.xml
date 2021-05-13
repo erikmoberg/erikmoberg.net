@@ -6282,8 +6282,8 @@ I developed the app using Unity 3D, and it does seem like the version I was usin
 &lt;p&gt;That's it! Your app should hopefully appear on the store shortly.&lt;/p&gt;
 
 &lt;h2&gt;Things to note&lt;/h2&gt;
-&lt;p&gt;It was suggested that opening the package manager in Unity 3D and removing packages related to advertising would fix the issue. I tried this but the app was soon removed again.&lt;/p&gt;
 &lt;p&gt;It states in the e-mail above that the URL to the privacy policy must be accessible from within the app. In my case, this was apparently not necessary. Adding it to Google Play was enough.&lt;/p&gt;
+&lt;p&gt;Obviously, the best solution in my case would be if the use of the advertising ID in Unity 3D could somehow be disabled. It was suggested that opening the package manager in Unity 3D and removing packages related to advertising would fix the issue. I tried this but the app was soon removed again. Feel free to post a comment if you know how to accomplish this!&lt;/p&gt;
 
 [image ten-tiny-levels-google-play]
 
@@ -6307,6 +6307,403 @@ I developed the app using Unity 3D, and it does seem like the version I was usin
         <description>
         </description>
         <name>google-play</name>
+        <extension>.png</extension>
+      </image>
+    </images>
+  </entry>
+  <entry>
+    <guid>062fdf6a-21e9-4d35-af88-c377231f86a7</guid>
+    <date>2019-11-18</date>
+    <shorturl>http://bit.ly/2QvTiDH</shorturl>
+    <header>Rocket League Split Screen on PC with Keyboard and Controller</header>
+    <readableid>rocket-league-split-screen-on-pc-with-keyboard-and-controller</readableid>
+    <subheader>You'll never game alone</subheader>
+    <intro>[image intro] Rocket League is a great game for split screen! At least for console gamers - the PC crowd was apparently partially forgotten in this area. While split screen pretty much works out of the box if you have two Xbox 360 for PC controllers, you are left hanging if you have only one such controller, or are using generic USB gaming controllers. Luckily, the TocaEdit Xbox 360 Controller Emulator comes to the rescue, enabling you to play split screen using the keyboard and one controller, and also adding more controllers as you see fit. Read on for a detailed guide.</intro>
+    <content>&lt;h2&gt;Step 1: Download TocaEdit Xbox 360 Controller Emulator&lt;/h2&gt;
+
+&lt;p&gt;Also known as x360ce. The program will emulate an Xbox 360 controller and also enable us to change what player the controller maps to. &lt;a href="https://www.x360ce.com/"&gt;Download from here&lt;/a&gt; - &lt;span style="text-decoration: line-through;"&gt;and make sure to click "Download for 32-bit games".&lt;/span&gt;
+
+&lt;p&gt;
+&lt;strong&gt;Update: &lt;/strong&gt; As pointed out in the comments, Rocket League also has a 64 bit DX11 client (as of spring 2020). Make sure you are using the correct version (32/64 bit) of x360ce depending on the bitness of your Rocket League client.
+&lt;/p&gt;
+
+[note]
+Pro tip: Read the system requirements first - refer to the page above. In my case, I needed to install &lt;a href="https://www.microsoft.com/en-us/download/details.aspx?id=40784"&gt;Visual C++ Redistributable Packages for Visual Studio 2013&lt;/a&gt; or the application would give me errors.
+[/note]
+
+&lt;h2&gt;Step 2: Locate the Rocket League directory and copy x360ce.exe&lt;/h2&gt;
+
+&lt;p&gt;First off, start Steam if it is not already running.&lt;/p&gt;
+
+[image 01_browse_local_files]
+
+&lt;p&gt;After opening the folder, navigate to the subfolder Binaries\Win32 - the RocketLeague.exe is located here. Note that in case of the 64 bit client, the path says "Win64" instead.&lt;/p&gt;
+
+[image 02_copy]
+
+&lt;h2&gt;Step 3. Set up the controller and map to Player 2&lt;/h2&gt;
+
+&lt;p&gt;Double-click x360ce.exe to set up the controller.&lt;/p&gt;
+
+[image 03_create_file]
+[image 04_start]
+[image 05_map]
+[image 06_2nd]
+
+&lt;p&gt;We're done here, so hit save and close the program.&lt;/p&gt;
+
+&lt;h2&gt;Step 4: Play Rocket League!&lt;/h2&gt;
+
+[image 07_ingame]
+
+[image 08_3up]
+
+&lt;p&gt;Good thing is, once this has been set up, there is no need to do it again. Just make sure the controller is plugged in and start Rocket League from Steam as usual, then join by pressing start. Have fun!&lt;/p&gt;</content>
+    <images>
+      <image>
+        <description>To locate the Rocket League folder using the Steam client, right-click the game in the games list, select properties, and click "Browse local files" from the "Local files" tab.</description>
+        <name>01_browse_local_files</name>
+        <extension>.png</extension>
+      </image>
+      <image>
+        <description>Copy the x360ce.exe file that we just downloaded into the same directory as RocketLeague.exe.</description>
+        <name>02_copy</name>
+        <extension>.png</extension>
+      </image>
+      <image>
+        <description>When the application first starts, it needs to create xinput1_3.dll in order to work. Click create to proceed.</description>
+        <name>03_create_file</name>
+        <extension>.png</extension>
+      </image>
+      <image>
+        <description>Your gaming devices can be configured automatically and it's a good way to get up and running quickly. Just click next and then finish.</description>
+        <name>04_start</name>
+        <extension>.png</extension>
+      </image>
+      <image>
+        <description>Important: In order to jump into the game later, we will press the start button - so make sure it's mapped!</description>
+        <name>05_map</name>
+        <extension>.png</extension>
+      </image>
+      <image>
+        <description>Switch to the tab with the same name as the controller. In the Map To dropdown, pick 2. This means that this controller will map to Player 2. This step is important, or both the keyboard and the controller will map to Player 1.</description>
+        <name>06_2nd</name>
+        <extension>.png</extension>
+      </image>
+      <image>
+        <description>When the game starts, just press any key on the keyboard as usual. Then, press start on the controller (which we mapped in step 3 above). Another car will magically show up and we are in business!</description>
+        <name>07_ingame</name>
+        <extension>.jpg</extension>
+      </image>
+      <image>
+        <description>
+        </description>
+        <name>intro</name>
+        <extension>.jpg</extension>
+      </image>
+      <image>
+        <description>If you have more controllers and map them to player 3 and 4, they can join in as well. I'm afraid I only have two controllers to test it with though!</description>
+        <name>08_3up</name>
+        <extension>.jpg</extension>
+      </image>
+    </images>
+  </entry>
+  <entry>
+    <guid>a0bf0b41-de34-4465-b3cd-6dc6a2f3266d</guid>
+    <date>2020-07-29</date>
+    <shorturl>
+    </shorturl>
+    <header>Create Unity3D Skybox with Space Engine</header>
+    <readableid>create-unity3d-skybox-with-space-engine</readableid>
+    <subheader>Aim for the stars</subheader>
+    <intro>[image result-view] Unity3D allows you to combine 6 images to create a skybox to use in your game. Sounds good at first - but how can you create such images to begin with? Turns out the excellent Space Engine is able to export the current scene as a skybox, letting us capture stunning views of galaxies, planets, and everything else out there to use in our game. While some post processing effects are missing, it's easy and still looks great! Continue reading if your game needs a little splash of the final frontier.</intro>
+    <content>&lt;h2&gt;Introduction&lt;/h2&gt;
+
+&lt;p&gt;Space Engine might be one of the coolest programs ever made. It uses procedural generation to simulate a virtual planetarium, letting you just hang around in our solar system, or explore far away galaxies unknown to man. If you haven't tried Space Engine yet, stop reading now, get it from &lt;a href="http://spaceengine.org/download/spaceengine/"&gt;here&lt;/a&gt;, play around with it and come back in a few hours after marvelling at the vastness of the universe. And while doing so, see if you can find any interesting views to use in your game.&lt;/p&gt;
+
+&lt;p&gt;Note: In this tutorial, I will be using the older but free version 0.9.8.0 of Space Engine.&lt;/p&gt;
+
+&lt;h2&gt;Step 1: Find a view in Space Engine and export it&lt;/h2&gt;
+
+[image spaceengine-view]
+
+Now, press ESC, select "Editor" and then "Export Skybox".
+
+[image spaceengine-export]
+
+[image files]
+
+&lt;h2&gt;Step 2: Import the skybox into Unity3D and set the wrap mode&lt;/h2&gt;
+
+[image import]
+
+[image clamp]
+
+&lt;h2&gt;Step 3: Create a material and select the images&lt;/h2&gt;
+
+[image material]
+
+[image assign]
+
+&lt;p&gt;If you are unsure how to map the exported images, they should be set as following:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Front (+Z): sky_pos_z.jpg&lt;/li&gt;
+&lt;li&gt;Back (-Z): sky_neg_z.jpg&lt;/li&gt;
+&lt;li&gt;Left (+X): sky_pos_x.jpg&lt;/li&gt;
+&lt;li&gt;Right (-X): sky_neg_x.jpg&lt;/li&gt;
+&lt;li&gt;Up (+Y): sky_pos_y.jpg&lt;/li&gt;
+&lt;li&gt;Down (-Y): sky_neg_y.jpg&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2&gt;Step 4: Set the skybox&lt;/h2&gt;
+
+[image lighting]
+
+[image skybox]
+
+[image result-view]</content>
+    <images>
+      <image>
+        <description>Select the shader "Skybox/6 Sided" and assign each image.</description>
+        <name>assign</name>
+        <extension>.png</extension>
+      </image>
+      <image>
+        <description>Select all images and set the wrap mode to Clamp or you might experience gaps between the textures.</description>
+        <name>clamp</name>
+        <extension>.png</extension>
+      </image>
+      <image>
+        <description>The files will be written to the Export folder in the SpaceEngine folder. Note that the files will be overwritten if you export again.</description>
+        <name>files</name>
+        <extension>.png</extension>
+      </image>
+      <image>
+        <description>In the Project tree, create a new folder called Skybox and add the images.</description>
+        <name>import</name>
+        <extension>.png</extension>
+      </image>
+      <image>
+        <description>Open the lighting settings window.</description>
+        <name>lighting</name>
+        <extension>.png</extension>
+      </image>
+      <image>
+        <description>Create a new material and call it "space".</description>
+        <name>material</name>
+        <extension>.png</extension>
+      </image>
+      <image>
+        <description>From here, set the Skybox Material to our new material that we called "space".</description>
+        <name>skybox</name>
+        <extension>.png</extension>
+      </image>
+      <image>
+        <description>The end result. You can tell that some post processing is missing, but I still think it looks impressive.</description>
+        <name>result-game</name>
+        <extension>.jpg</extension>
+      </image>
+      <image>
+        <description>A view of the planet RS 8474-914-6-200694-117 5 from one of its moons. Looks pretty neat, so we will use it in our game.</description>
+        <name>spaceengine-view</name>
+        <extension>.jpg</extension>
+      </image>
+      <image>
+        <description>From here, we can set up the resolution and image format. I will go with JPG and 2048px resolution.</description>
+        <name>spaceengine-export</name>
+        <extension>.jpg</extension>
+      </image>
+      <image>
+        <description>The end result. You can tell that some post processing effects are missing, but I still think it looks impressive.</description>
+        <name>result-view</name>
+        <extension>.jpg</extension>
+      </image>
+    </images>
+  </entry>
+  <entry>
+    <guid>36569f0f-98a4-4a9a-b24b-9e6b03338903</guid>
+    <date>2021-03-29</date>
+    <shorturl>
+    </shorturl>
+    <header>Using Canon 600D as a Webcam</header>
+    <readableid>using-canon-600d-as-a-webcam</readableid>
+    <subheader>It works, but got quirks</subheader>
+    <intro>[image large-webcam] Video conferencing seems more popular than ever, and is probably not going anywhere soon. An important component of video conferencing is obviously video, but the recent surge in popularity has lead to a shortage of webcams, and many have to settle with a poor camera or no camera at all. But fear not - if you happen to have a Canon DSLR collecting dust, you can pretty easily up your game with a heavy-hitting webcam. Read on for more.</intro>
+    <content>[image large-webcam]
+
+&lt;h2&gt;Getting Started (the easy part!)&lt;/h2&gt;
+
+&lt;p&gt;This will focus on using the Canon 600D (AKA Rebel T3i) on Windows 10.&lt;/p&gt;
+
+&lt;p&gt;First, download &lt;a href="https://www.google.com/search?q=canon%20eos%20webcam%20utility" target="_blank"&gt;Canon EOS Webcam Utility&lt;/a&gt;.&lt;/p&gt; Unzip the file, and run setup.exe.&lt;/p&gt;
+
+[image installer]
+
+&lt;p&gt;According to Canon, after installation, you will need to reboot but that wasn't the case for me. Oh well.&lt;/p&gt;
+
+&lt;p&gt;After installation, set the camera to movie mode (on the mode dial). While not strictly necessary, it enables you to control various camera settings.&lt;/p&gt;
+
+&lt;p&gt;Then, connect the camera to the PC using a mini USB cable.&lt;/p&gt;
+
+&lt;p&gt;Finally, launch you video conferencing program or video capture application and the camera should show up as "EOS Webcam Utility".&lt;p&gt;
+
+[image preview]
+
+&lt;h2&gt;Setting it up&lt;/h2&gt;
+
+&lt;p&gt;Now, if you want to do it properly, you may want to pick up a desk camera mount with a ballhead. I happened to have a small tripod that fit behind the monitor so I just went with that.&lt;/p&gt;
+
+[image tilt_handle]
+
+[image tilt_handle_replaced]
+
+&lt;h2&gt;Comparison to a regular webcam&lt;/h2&gt;
+
+&lt;p&gt;I also have an older Logitech HD C310 webcam, which is probably fairly representative of a typical office webcam.&lt;/p&gt;
+
+&lt;h3&gt;Logitech HD C310:&lt;/h3&gt;
+
+[image Logitech_HD_C310]
+
+&lt;p&gt;Some video conferencing software, such as Microsoft Teams, can apply background blur in software. While this works OK most of the time, it's still far from perfect.&lt;/p&gt;
+
+&lt;h3&gt;Logitech HD C310 with "fake" blur:&lt;/h3&gt;
+[image msteams_fake_blur]
+
+&lt;h3&gt;Canon 600D:&lt;/h3&gt;
+
+[image canon_600d]
+
+&lt;p&gt;So that's great! Quality is good and there is nothing to worry about then? Well - there are a few quirks, at least with the 600D. So now comes the hard part: All the things that the 600D cannot do, or does differently than a regular webcam.&lt;/p&gt;
+
+&lt;h2&gt;Adjusting focus&lt;/h2
+
+&lt;p&gt;The 600D will not focus automatically, but you have different options for setting the focus:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Setting the lens to Manual Focus and turning the focus ring&lt;/li&gt;
+&lt;li&gt;With the lens in Auto Focus, press the shutter half way to let the camera focus. Tip: Connect a remote release, sit back, and press the remote release half way to focus.&lt;/li&gt;
+&lt;/ul&gt;
+ 
+&lt;p&gt;Note that focusing with the shutter, and changing settings on the camera, only works while the mode dial is set to movie mode. While in this mode, you may also use the shutter to take pictures and use the record button to record movies. Such images and videos will be saved to the memory card.&lt;/p&gt;
+
+&lt;h2&gt;Getting rid of the black bars&lt;/h2&gt;
+
+&lt;p&gt;You might expect the resolution to be full HD (1080p), but the video resolution is actually 576p (or, to be exact 1056x702px). This is then padded with black bars to 720p, pillarbox-style. Some users have speculated that the reason for the low resolution might be bandwidth limitations of USB 2.&lt;/p&gt;
+
+&lt;p&gt;At any rate, if you find the black bars annoying there seems to be two fixes:&lt;/p&gt;
+
+&lt;p&gt;&lt;b&gt;Solution 1: Set the video resolution of the camera to 1280x720, 50 fps.&lt;/b&gt; This should magically crop the video resolution to 1024x576. Except sometimes it doesn't - I am still trying to figure out why. If the cropping doesn't work, try the second solution:&lt;/p&gt;
+
+&lt;p&gt;&lt;b&gt;Solution 2: Use a virtual webcam&lt;/b&gt;&lt;/p&gt;
+
+&lt;p&gt;By using a virtual webcam, we can apply cropping in software instead.&lt;/p&gt;
+
+&lt;p&gt;OBS Studio is a popular program that works as a virtual camera. It can, among many other things, apply cropping on the fly. Try this:&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Download and install &lt;a href="https://obsproject.com/" target="_blank"&gt;OBS Studio&lt;/a&gt;&lt;/i&gt;.
+&lt;li&gt;Close the video conferencing application that you intend to use. This is because OBS Studio must be started first, or no virtual camera will be found.&lt;/i&gt;
+&lt;li&gt;Start OBS Studio.&lt;/i&gt;
+&lt;li&gt;In the Sources window, click Add (the plus icon) and select "Video Capture Device". Select "Create new" and hit OK. &lt;/i&gt;
+&lt;li&gt;In the following window, select "EOS Webcam Utility" from the dropdown and click OK.&lt;/i&gt;
+&lt;li&gt;You should now see a preview. Optionally, check "Deactivate when not showing". This is explained below.&lt;/i&gt;
+&lt;li&gt;Go to File -&gt; Settings -&gt; Video and enter 1024x576 as the base (canvas) resolution. You can also try 1056x702 if you want to preserve every pixel but it's just a weird, non-16:9 resolution that may lead to some applications stretching the video incorrectly.
+&lt;li&gt;Right-click the preview and select Transform -&gt; "Center to Screen" (CTRL+D).&lt;/i&gt;
+&lt;li&gt;In the bottom right, click "Start Virtual Camera".&lt;/i&gt;
+&lt;li&gt;Start your video conferencing application and select "OBS Virtual Camera" as the camera.&lt;/i&gt;
+&lt;/ol&gt;
+
+[image obs-canvas]
+
+&lt;p&gt;If you want the camera to automatically go into standby when not used, you can check "Deactivate when not showing" when adding a new video capture device, and then click the "Deactivate" or the eye icon. If you want to make this more convenient, go to File -&gt; Settings -&gt; Hotkeys and add hotkeys for showing and hiding the camera (look under "Scene"). Hotkeys are global so you can then enable or disable video from anywhere in Windows.&lt;/p&gt;
+
+[image deactivate]
+
+[note]
+Expert super-pro tip: You can start the virtual camera in OBS automatically if you launch it with the command line parameter "startvirtualcam". Like so: &lt;br /&gt; &lt;code&gt;obs64.exe --startvirtualcam&lt;/code&gt;
+[/note]
+
+&lt;p&gt;Also, &lt;a href="https://splitcam.com/" target="_blank"&gt;SplitCam&lt;/a&gt; seems to be getting the job done but does not offer as much flexibility.&lt;/p&gt;
+
+&lt;h2&gt;Things to note&lt;/h2&gt;
+
+&lt;p&gt;The built-in mic cannot be used for audio, so you will need an external microphone or headset.&lt;/p&gt;
+
+&lt;p&gt;The camera will drain the battery quite quickly so you might want to get a &lt;a href="https://www.google.com/search?q=canon+dummy+battery" target="_blank"&gt;dummy battery&lt;/a&gt; in order to connect the camera to mains power or a USB power source.
+
+&lt;p&gt;If you need to conserve battery, you can switch the mode dial to a photo mode (such as P) and the display will be turned off. However, you will not be able to:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Use the shutter button to focus&lt;/li&gt;
+&lt;li&gt;Use the shutter to take pictures&lt;/li&gt;
+&lt;li&gt;Use the record button to record movie&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Also, the camera switches to auto exposure, meaning, among other things, that the camera will set the aperture automatically.&lt;/p&gt;
+
+&lt;h2&gt;Should you be using it?&lt;/h2&gt;
+
+&lt;p&gt;I think one idea behind all of this is that a lot of users have found themselves in need of a webcam, or a better webcam, but may be having an old Canon DSLR at home collecting dust. If you are in that situation, downloading and trying out the utility is a no-brainer. Surely your colleagues and friends will be impressed by the crisp quality and smooth bouquet unattainable to regular webcams?? It's worth a shot.&lt;/p&gt;
+
+&lt;p&gt;But in order to be able to use it as a proper webcam replacement, you will likely need to get a dummy battery adapter and a good desk mount, and also have a bit of patience setting everything up properly.&lt;/p&gt;
+
+[image webcams]</content>
+    <images>
+      <image>
+        <description>Install wizards are the best!</description>
+        <name>installer</name>
+        <extension>.png</extension>
+      </image>
+      <image>
+        <description>The device shows up in the list. If the preview looks like above, it usually means that the USB cable is not connected, or the camera is switched off.</description>
+        <name>preview</name>
+        <extension>.png</extension>
+      </image>
+      <image>
+        <description>Luckily, replacing the handle with a screw worked just fine. It now fits nicely behind the monitor.</description>
+        <name>tilt_handle_replaced</name>
+        <extension>.jpg</extension>
+      </image>
+      <image>
+        <description>With the Logitech HD C310, we get that characteristic webcam quality. Things in the foreground, as well as in the background, are mostly in focus, but it's all quite soft and the image has a fair bit of noise.</description>
+        <name>Logitech_HD_C310</name>
+        <extension>.jpg</extension>
+      </image>
+      <image>
+        <description>Now the Canon 600D. It's sharper, has less noise and provides a pleasant background blur. We have black bars showing here, this is discussed further down.</description>
+        <name>canon_600d</name>
+        <extension>.jpg</extension>
+      </image>
+      <image>
+        <description>Set the canvas resolution to 1024x576 by entering the value into the box.</description>
+        <name>obs-canvas</name>
+        <extension>.png</extension>
+      </image>
+      <image>
+        <description>
+        </description>
+        <name>large-webcam</name>
+        <extension>.jpg</extension>
+      </image>
+      <image>
+        <description>The tilt handle turned out to be too large to fit between the wall and the monitor.</description>
+        <name>tilt_handle</name>
+        <extension>.jpg</extension>
+      </image>
+      <image>
+        <description>
+        </description>
+        <name>webcams</name>
+        <extension>.jpg</extension>
+      </image>
+      <image>
+        <description>If you are not using the camera, you will need to let OBS know so that it can switch off.</description>
+        <name>deactivate</name>
+        <extension>.png</extension>
+      </image>
+      <image>
+        <description>Logitech webcam again. With software blur, things look good at first but it some details are distracting - the mic boom is blurred out, and the bag is not blurred inside of the headband.</description>
+        <name>msteams_fake_blur</name>
         <extension>.png</extension>
       </image>
     </images>

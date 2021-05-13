@@ -30,6 +30,10 @@ a, a:visited {
 	color: #da4526;
 }
 
+.full-article a, .articleintro p a {
+    text-decoration: underline;
+}
+
 a:hover {
 	color: #9e321c;
 }
@@ -157,15 +161,16 @@ pre code {
 #logo {
 	position: absolute;
 	left: 10px;
-	background: transparent url(/content/images/logo.png) no-repeat;
+	background: transparent url(/content/images/logo-red.png) no-repeat;
 	width: 112px;
-	height: 65px;
+	height: 55px;
 	display: block;
-	background-size: auto 130px;
+	background-size: auto 110px;
+    margin-top: 5px;
 }
 
 #logo:hover {
-	background-position: 0 -65px;
+	background-position: 0 -55px;
 }
 
 #logo img {
@@ -685,21 +690,23 @@ aside {
 }*/
 
 .note {
-	background-color: #eee;
+  background-color: #eee;
   padding: 10px;
-	min-height: 60px;
-	margin: 10px 0;
+  min-height: 60px;
+  margin: 10px 0;
+  border-left: 5px solid #da4526;
 }
 
-.notecontent {
+/*.notecontent {
 	margin-left: 90px;
-}
+}*/
 
 .noteicon {
 	float: left;
 	width: 60px;
 	height: 45px;
 	font-size: 65px;
+    line-height: 0;
 }
 
 .checkbox {
@@ -1024,10 +1031,7 @@ aside {
 }
 
 .change-theme-container {
-    font-size: 25px;
-    position: absolute;
-    left: 20px;
-    top: 15px;
+    margin-bottom: 10px;
 }
 
 /* Google Custom search start */
@@ -1044,7 +1048,7 @@ aside {
 }
 
 #open-search a:hover, #menu-toggle:hover {
-	color: #9e321c;
+	color: #9e321c !important;
 }
 
 #search-results {
@@ -1350,12 +1354,12 @@ body.gallery {
 	}
 
 	#logo {
-		height: 50px;
-		background-size: auto 100px;
+		height: 40px;
+		background-size: auto 80px;
 	}
 
 	#logo:hover {
-		background-position: 0 -50px;
+		background-position: 0 -40px;
 	}
 
 	#open-search, .change-theme-container {
@@ -1386,7 +1390,7 @@ body.gallery {
 	}
 
 	#main-sideinfo, #additional-sideinfo {
-		width: 48%;
+		width: calc(50% - 5px);
 		margin-right: 0;
 	}
 
@@ -1563,7 +1567,7 @@ body.gallery {
 
 	article, .full-article, .article-navigation, .social-links, #frmComments, .page-section {
         padding: 10px;
-        margin: 0 -10px 10px;
+        margin-bottom: 10px;
 	}
 
     #main-sideinfo .page-section {
@@ -1585,6 +1589,22 @@ body.gallery {
     aside {
         padding-top: 10px;
     }
+
+    #container, #sideInfo {
+        margin: 0;
+    }
+
+    .articleimage, .teaser {
+        margin: 0 -10px;
+    }
+
+    .articleimage, .teaser {
+        margin-bottom: 20px;
+    }
+
+    #menucontainer.scrolled {
+		top: -55px;
+	}
 }
 
 @media screen and (max-width: 400px) {
@@ -1639,10 +1659,6 @@ body.gallery {
 
 	.rss-link.mobile {
 		display: block;
-	}
-
-	#menucontainer.scrolled {
-		top: -55px;
 	}
 
 	article, .full-article, .article-navigation, .social-links, #frmComments, .page-section {
