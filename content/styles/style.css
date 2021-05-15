@@ -1344,11 +1344,11 @@ body.gallery {
   }
 
 svg.feather {
-  height: 1em;
-  width: 1em;
+  height: 0.92em;
+  width: 0.92em;
   display: inline-block;
-  vertical-align: middle;
-  margin-top: -0.1em;
+  vertical-align: top;
+  margin-top: 2px;
 }
 
 @media screen and (max-width: 950px) {
@@ -1617,6 +1617,14 @@ svg.feather {
     #menucontainer.scrolled {
 		top: -55px;
 	}
+
+    svg.feather {
+      margin-top: 2px;
+    }
+
+    svg.feather-rss, svg.feather-twitter {
+      margin-top: 4px;
+    }
 }
 
 @media screen and (max-width: 400px) {
