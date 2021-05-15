@@ -117,7 +117,8 @@ function GetSingleCommentMarkup($name, $datetime, $website, $message, $number)
 	$markup .= '<div class="commentnumber">#';
 	$markup .= ($number + 1);
 	$markup .= '</div>';
-	$markup .= '<div class="commentname"><i class="fa fa-comment"></i> ';
+	$markup .= '<div class="commentname">';
+    $markup .= GetIconMarkup('message-circle');
 	$markup .= $name;
 	$markup .= '</div>';
 	$markup .= '<div class="commenttime">';

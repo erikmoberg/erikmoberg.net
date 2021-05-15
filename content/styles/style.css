@@ -304,6 +304,12 @@ article, .full-article, .article-navigation, .social-links, #frmComments, .page-
 	background-color: #dd4b39;
 }
 
+.social-container svg.feather {
+    margin-top: 5px;
+    height: 20px;
+    width: 20px;
+}
+
 #content .articleintro h2 {
 	padding-bottom: 3px;
 }
@@ -551,8 +557,8 @@ img.about-image {
 	margin-right: 10px;
 }
 
-.commententry .fa-comment {
-	font-size: 36px;
+.commententry .fa-comment, .commententry .feather {
+  font-size: 36px;
   float: left;
   padding-right: 15px;
 }
@@ -803,9 +809,6 @@ aside {
 	padding: 2px;
 	width: 30px;
 	margin-left: 10px;
-}
-
-.slider-unit {
 }
 
 .color-container {
@@ -1086,7 +1089,8 @@ aside {
 
 #menucontainer input.gsc-search-button {
 	text-indent: -99999px;
-	background: #da4526 url(../images/search.png) no-repeat;
+	/*background: #da4526 url(../images/search.png) no-repeat;*/
+    background: #da4526 url(../images/feather-icons/search-light.svg) no-repeat;
   border: none;
   padding: 0px;
 	cursor: pointer;
@@ -1338,6 +1342,14 @@ body.gallery {
 		box-shadow: 0 0 0 20px rgba(218, 69, 38, 0);
 	}
   }
+
+svg.feather {
+  height: 1em;
+  width: 1em;
+  display: inline-block;
+  vertical-align: middle;
+  margin-top: -0.1em;
+}
 
 @media screen and (max-width: 950px) {
 

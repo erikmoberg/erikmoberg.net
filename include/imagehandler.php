@@ -95,7 +95,7 @@ function DisplaySingleGallery($galleryid)
 	echo '<div class="page-section">';
 	echo "<h2>Gallery: $galleryname</h2>";
 	echo "<p>$gallerdescription</p>";
-	$backlink = '<p><a href="/images"><i class="fa fa-chevron-circle-left"></i> Back to overview</a></p>';
+	$backlink = '<p><a href="/images">' . GetIconMarkup('arrow-left-circle') . ' Back to overview</a></p>';
 	echo $backlink;
 	echo '</div>';
 	echo '<div class="page-section gallery-thumbnails-container">';

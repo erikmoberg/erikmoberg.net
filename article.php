@@ -43,7 +43,7 @@ $numberOfComments = GetNoOfCommentsForArticle($readableid);
 
 echo '<div class="page-section">';
 echo "<h2><span id='comment-counter'>$numberOfComments</span> <span id='comment-text'>Comment" . ($numberOfComments != 1 ? 's' : '') . "</span></h2>";
-echo '<a target="_blank" class="rss-link" href="/rss/' . $readableid . '.xml"><i class="fa fa-rss"></i> Subscribe to new comments by RSS</a>';
+echo '<a target="_blank" class="rss-link" href="/rss/' . $readableid . '.xml">' . GetIconMarkup('rss') . ' Subscribe to new comments by RSS</a>';
 echo '</div>';
 echo '<div id="comment-entries">';
 
@@ -98,7 +98,7 @@ echo '</div>';
 
 <?php
 echo '<div class="page-section">';
-echo '<a target="_blank" class="rss-link" href="/rss/' . $readableid . '.xml"><i class="fa fa-rss"></i> Subscribe to new comments by RSS</a>';
+echo '<a target="_blank" class="rss-link" href="/rss/' . $readableid . '.xml">' . GetIconMarkup('rss') . ' Subscribe to new comments by RSS</a>';
 echo '</div>';
 ?>
 

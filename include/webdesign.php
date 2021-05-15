@@ -4,6 +4,10 @@ ini_set('display_errors', '1');
 require_once("bloghandler.php");
 require_once("commenthandler.php");
 
+function GetIconMarkup($name) {
+    return file_get_contents('content/images/feather-icons/' . $name . '.svg');
+}
+
 function GetQueryString()
 {
 	$s = '?';
@@ -28,9 +32,8 @@ function PrintStartHtml($pageTitle, $highlightitem, $metadescription)
 	<title><?php echo $pageTitle; ?> - Erik Moberg's personal homepage - photography, gadgets, DIY, and more</title>
 	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 	<link href='https://fonts.googleapis.com/css?family=Roboto+Condensed:400,400i,700|Roboto' rel='stylesheet' type='text/css'>
-	<link rel="stylesheet" type="text/css" href="/content/styles/style.css.php?_=28" />
-	<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js" type="text/javascript"></script>
+	<link rel="stylesheet" type="text/css" href="/content/styles/style.css.php?_=30" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 	<link rel="shortcut icon" href="/favicon.ico" type="image/vnd.microsoft.icon" />
     <link rel="icon" type="image/png" href="/content/favicon/favicon-red-192.png" sizes="192x192">
 	<link rel="icon" type="image/png" href="/content/favicon/favicon-red-160.png" sizes="160x160">
@@ -90,8 +93,8 @@ if(true || $isFrontPage) {
 	</div>
 	<div id="menucontainer">
     <a href="/" id="logo"></a>
-		<a id="menu-toggle" href="javascript:void(0);" title="Toggle menu"><i class="fa fa-bars"></i></a>
-		<div id="open-search"><a href="javascript:void(0);"><i class="fa fa-search"></i></a></div>
+		<a id="menu-toggle" href="javascript:void(0);" title="Toggle menu"><?php echo GetIconMarkup('menu') ?></a>
+		<div id="open-search"><a href="javascript:void(0);"><?php echo GetIconMarkup('search') ?></a></div>
 		<div id='cse-search-form'>
 			<form class="gsc-search-box" accept-charset="utf-8" id="cse-search-form-inner">
 				<table cellspacing="0" cellpadding="0" class="gsc-search-box">
@@ -160,8 +163,8 @@ if(!$isFrontPage) {
 
 				<div class="page-section">
 					<h2>Follow</h2>
-					<a target="_blank" class="rss-link" href="/rss.xml" title="Subscribe by RSS"><i class="fa fa-rss"></i> RSS</a>
-					<a target="_blank" class="twitter-link" href="https://twitter.com/erikmoberg_swe" title="Follow me on Twitter"><i class="fa fa-twitter"></i> Twitter</a>
+					<a target="_blank" class="rss-link" href="/rss.xml" title="Subscribe by RSS"><?php echo GetIconMarkup('rss') ?> RSS</a>
+					<a target="_blank" class="twitter-link" href="https://twitter.com/erikmoberg_swe" title="Follow me on Twitter"><?php echo GetIconMarkup('twitter') ?> Twitter</a>
 				</div>
 
                 <div class="page-section">
@@ -211,7 +214,7 @@ if($isFrontPage) {
 </div>
 <div id="last">
 <div class="change-theme-container">
-Page Theme: <a href="javascript:void(0);" id="changetheme-dark"><i class="fa fa-moon-o"></i> Dark</a> / <a href="javascript:void(0);" id="changetheme-light"><i class="fa fa-sun-o"></i> Light</a>
+Page Theme: <a href="javascript:void(0);" id="changetheme-dark"><?php echo GetIconMarkup('moon') ?> Dark</a> / <a href="javascript:void(0);" id="changetheme-light"><?php echo GetIconMarkup('sun') ?> Light</a>
 </div>
 Erik Moberg&nbsp;
 <?php

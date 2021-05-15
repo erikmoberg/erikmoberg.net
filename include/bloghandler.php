@@ -12,26 +12,9 @@ function PrintSocialNetworkingLinks($shareTitle, $url = null)
 		$currentUrl = $url;
 	}
 ?>
-	<a title="Share on Facebook" target="_blank" class="facebook" href="http://www.facebook.com/sharer.php?u=<?php echo $currentUrl; ?>&t=<?php echo $shareTitle; ?>"><i class="fa fa-facebook"></i></a>
-	<a title="Share on Twitter" target="_blank" class="twitter" href="https://twitter.com/intent/tweet?text=<?php echo $shareTitle; ?>&url=<?php echo $currentUrl; ?>"><i class="fa fa-twitter"></i></a>
-	<a title="Share on Reddit" target="_blank" class="reddit" href="http://reddit.com/submit?url=<?php echo $currentUrl; ?>&title=<?php echo $shareTitle; ?>"><i class="fa fa-reddit"></i></a>
+	<a title="Share on Facebook" target="_blank" class="facebook" href="http://www.facebook.com/sharer.php?u=<?php echo $currentUrl; ?>&t=<?php echo $shareTitle; ?>"><?php echo GetIconMarkup('facebook') ?></a>
+	<a title="Share on Twitter" target="_blank" class="twitter" href="https://twitter.com/intent/tweet?text=<?php echo $shareTitle; ?>&url=<?php echo $currentUrl; ?>"><?php echo GetIconMarkup('twitter') ?></a>
 <?php
-/*
-
-<a title="Share on Google+" target="_blank" class="google-plus" href="https://plus.google.com/share?url=<?php echo $currentUrl; ?>"><i class="fa fa-google-plus"></i></a>
-
-<a title="Share on tumblr" target="_blank" class="tumblr" href="http://www.tumblr.com/share/link?url=<?php echo $currentUrl; ?>&name=<?php echo $shareTitle; ?>&description=<?php echo $shareContent; ?>"><i class="fa fa-tumblr"></i></a>
-
-	echo '<div style="clear: both;"></div>';
-	echo '<div class="social-links">';
-	//PrintDeliciousLink($readableid);
-	echo '<div class="social-link"><g:plusone></g:plusone></div>';
-	PrintTwitterLink($readableid);
-	PrintFacebookLink($readableid);
-	echo '<div style="clear: both;"></div>';
-	echo '</div>';
-	echo '<div style="clear: both;"></div>';
-	*/
 }
 
 function PrintFacebookLink($readableid)
@@ -176,14 +159,14 @@ function PrintNextAndPreviousArticleLinks($readableid, $end)
 	if($nextentry != null)
 	{
 		echo '<div class="nextArticle">';
-		echo '<a href="/article/' . html_entity_decode($nextentry->readableid) . '">Next: ' . html_entity_decode($nextentry->header) . ' <i class="fa fa-chevron-circle-right"></i></a>';
+		echo '<a href="/article/' . html_entity_decode($nextentry->readableid) . '">Next: ' . html_entity_decode($nextentry->header) . ' ' . GetIconMarkup('arrow-right-circle') . '</a>';
 		echo '</div>';
 	}
 
 	if($lastentry != null)
 	{
 		echo '<div class="previousArticle">';
-		echo '<a href="/article/' . html_entity_decode($lastentry->readableid) . '"><i class="fa fa-chevron-circle-left"></i> Previous: ' . html_entity_decode($lastentry->header) . '</a>';
+		echo '<a href="/article/' . html_entity_decode($lastentry->readableid) . '">' . GetIconMarkup('arrow-left-circle') . ' Previous: ' . html_entity_decode($lastentry->header) . '</a>';
 		echo '</div>';
 	}
 
@@ -336,12 +319,12 @@ function PrintIntroEntry($readableid, $datetime, $header, $subheader, $intro, $i
 	echo '<div style="clear: both;">';
 
 	echo '<div class="articlecommentlink">';
-	echo '<a href="/article/' . $readableid . '#comments"><i class="fa fa-comment"></i> ' . $commentstring . '</a>';
+    echo '<a href="/article/' . $readableid . '#comments">' . GetIconMarkup('message-circle') . ' ' . $commentstring . '</a>';
 	echo '</div>';
 
 	if($isLongArticle) {
 		echo '<div class="fullarticlelink">';
-		echo '<a href="/article/' . $readableid . '"><i class="fa fa-chevron-circle-right"></i> Read the full article</a>' . "\n";
+		echo '<a href="/article/' . $readableid . '">' . GetIconMarkup('arrow-right-circle') . ' Read the full article</a>' . "\n";
 		echo '</div>';
 	}
 
@@ -375,7 +358,6 @@ function AddSpecialTags($text, $readableid, $images, $clearImage, $includeImageD
 {
 	$thumbNo = 0;
 
-	//$text = str_replace('[note]','<div class="note"><div class="noteicon"><i class="fa fa-hand-o-right"></i></div><div class="notecontent">',$text);
     $text = str_replace('[note]','<div class="note"><div class="notecontent">',$text);
 	$text = str_replace('[/note]','</div></div>',$text);
 
