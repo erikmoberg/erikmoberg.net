@@ -684,16 +684,12 @@ aside {
 }
 
 .teaser {
-	margin-bottom: 5px;
+	margin-bottom: 10px;
 }
 
 .teaser a {
 	background: none;
 }
-
-/*.teaser + p {
-  margin-left: 208px;
-}*/
 
 .note {
   background-color: #eee;
@@ -702,10 +698,6 @@ aside {
   margin: 10px 0;
   border-left: 5px solid #da4526;
 }
-
-/*.notecontent {
-	margin-left: 90px;
-}*/
 
 .noteicon {
 	float: left;
@@ -1607,11 +1599,7 @@ svg.feather {
     }
 
     .articleimage, .teaser {
-        margin: 0 -10px;
-    }
-
-    .articleimage, .teaser {
-        margin-bottom: 20px;
+        margin: 0 -10px 10px;
     }
 
     #menucontainer.scrolled {
