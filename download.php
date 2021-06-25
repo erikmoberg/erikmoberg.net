@@ -24,6 +24,8 @@ Fix image orientation with the <a href="#jpegrotator">JPEG Rotator</a>! Download
   <p>
     Fast-paced platform arcade action for one or two players! Check out the <a href="/ten-tiny-levels">microsite</a> or download using the badge below.
   </p>
+
+  <div class="flex-container">
   <?php
   $images = [
     0 => 'screenshot-01.png',
@@ -39,13 +41,15 @@ Fix image orientation with the <a href="#jpegrotator">JPEG Rotator</a>! Download
       ?>
         <div class="thumb_small" style="float: none; text-align: center;">
           <a href="/ttl-assets/<?php echo $image ?>" class="gallery-thumbnail">
-          <img style="max-height: 200px; width: auto;" src="/ttl-assets/<?php echo $image ?>" alt="<?php echo $descriptions[$i] ?>" title="<?php echo $descriptions[$i] ?>" />
+          <img style="max-height: 280px; width: auto;" src="/ttl-assets/<?php echo $image ?>" alt="<?php echo $descriptions[$i] ?>" title="<?php echo $descriptions[$i] ?>" />
         </a>
         <div class="imagedescription"><?php echo $descriptions[$i] ?></div>
         </div>
       <?php
   }
   ?>
+  </div>
+
   <div style="text-align: center; margin-top: -5px;">
     <a href="https://play.google.com/store/apps/details?id=com.regalraccoongames.tentinylevels">
       <img class="google-play-badge" style="max-width: 250px" src="/ttl-assets/google-play-badge.png">
@@ -90,6 +94,7 @@ Download and play for free. A must if you like good ol' DOS games!
 <b><a href="/download/project_c.zip">Get it now! (450KB)</a></b>
 </p>
 
+<div class="flex-container">
 <?php
 $markup = '';
 
@@ -111,6 +116,7 @@ $markup .= '</div>';
 
 echo $markup;
 ?>
+</div>
 
 </div>
 
@@ -120,11 +126,13 @@ echo $markup;
 
 <p>These are a few of photos that I am particularly satisfied with. Feel free to download and use them as you wish. All in pictures are provided in full resolution. Click on each of them to download.</p>
 
+<div class="flex-container wrap">
 <?php
 
 DisplayHiresImages();
 
 ?>
+</div>
 
 <div class="clearfix"></div>
 

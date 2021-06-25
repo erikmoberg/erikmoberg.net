@@ -127,6 +127,69 @@ pre code {
 	top: 0;
 	left: 0;
 	position: absolute;
+
+    animation-fill-mode: backwards;
+    animation-delay: 0.1s;
+    animation-duration: 1s;
+    animation-name: header-back-animation;
+}
+
+@keyframes header-back-animation {
+    from {
+      height: 0;
+      width: 0;
+      left: 50%;
+      top: 50%;
+      opacity: 0;
+    }
+
+    50% {
+        width: 100%;
+        left: 0;
+      }
+  
+    to {
+    }
+}
+
+#header-text-container h1 {
+    animation-fill-mode: backwards;
+    animation-delay: 0.1s;
+    animation-duration: 1.5s;
+    animation-name: header-text-h1-animation;
+}
+
+@keyframes header-text-h1-animation {
+    from {
+      opacity: 0;
+    }
+
+    25% {
+        opacity: 0;
+    }
+
+    to {
+    }
+}
+
+#header-text-container h2 {
+    animation-fill-mode: backwards;
+    animation-delay: 0.1s;
+    animation-duration: 1.5s;
+    animation-name: header-text-h2-animation;
+}
+
+@keyframes header-text-h2-animation {
+    from {
+      opacity: 0;
+    }
+
+    50% {
+        opacity: 0;
+    }
+
+    to {
+    }
 }
 
 #containercontainer {
@@ -657,11 +720,11 @@ aside {
 	margin-right: 0;
 }
 
-#sideInfo  h2{
-	margin-bottom: 5px;
+#sideInfo h2{
+	margin-bottom: 20px;
 }
 
-#sideInfo  h2.firstHeader{
+#sideInfo h2.firstHeader{
 	margin-top: 0px
 }
 
@@ -1343,6 +1406,25 @@ svg.feather {
   margin-top: 2px;
 }
 
+/* Download page */
+
+.flex-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    align-content: flex-start;
+    align-items: flex-start;
+}
+
+.flex-container.wrap {
+    flex-wrap: wrap;
+}
+
+.flex-container div {
+    flex: 0 1 auto;
+}
+
 @media screen and (max-width: 950px) {
 
 	#quotecontainer, #horizontal, #headerContainer{
@@ -1509,6 +1591,10 @@ svg.feather {
 		overflow: hidden;
 		clear: both;
 	}
+
+    #sideInfo h2{
+        margin-bottom: 5px;
+    }
 
 	#content h2 {
 		font-size: 24px;
@@ -1695,6 +1781,10 @@ svg.feather {
 		margin-left: -10px;
         margin-right: -10px;
 	}
+
+    .flex-container {
+        flex-wrap: wrap;
+    }
 }
 
 body.dark-theme,
