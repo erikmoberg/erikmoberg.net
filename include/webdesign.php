@@ -31,8 +31,10 @@ function PrintStartHtml($pageTitle, $highlightitem, $metadescription)
 <head>
 	<title><?php echo $pageTitle; ?> - Erik Moberg's personal homepage - photography, gadgets, DIY, and more</title>
 	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
-	<link href='https://fonts.googleapis.com/css?family=Roboto+Condensed:400,400i,700|Roboto' rel='stylesheet' type='text/css'>
-	<link rel="stylesheet" type="text/css" href="/content/styles/style.css.php?_=40" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital@0;1&family=Roboto+Condensed:wght@400;700&family=Roboto+Mono" rel="stylesheet" type='text/css'>
+	<link rel="stylesheet" type="text/css" href="/content/styles/style.css.php?_=42" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 	<link rel="shortcut icon" href="/favicon.ico" type="image/vnd.microsoft.icon" />
     <link rel="icon" type="image/png" href="/content/favicon/favicon-red-192.png" sizes="192x192">

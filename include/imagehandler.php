@@ -31,6 +31,8 @@ function DisplayMainGallery()
 	echo '<p>Looking for high resolution images for printing? You can find some on the <a href="download.php">download page</a>.</p>';
 	echo '</div>';
 	echo '<div class="page-section">';
+    
+    echo '<div class="flex-container wrap">';
 	foreach ($xml->gallery as $gallery)
 	{
 		if($gallery->archived != 'true')
@@ -42,6 +44,7 @@ function DisplayMainGallery()
 			PrintMainGalleryImage($galleryname, $gallerydatetime, $galleryfrontpic, $galleryid);
 		}
 	}
+    echo '</div>';
 
 	echo '<div style="clear: both"></div>';
 	echo '</div>';
@@ -77,7 +80,7 @@ function DisplayArchivedGallery()
 function PrintMainGalleryImage($galleryname, $gallerydatetime, $galleryfrontpic, $galleryid)
 {
 	echo '<div class="maingalleryitem">';
-	echo "<a href=\"/images/$galleryid\"><img src=\"$galleryfrontpic\" alt=\"$galleryname\" /></a>";
+	echo "<a href=\"/images/$galleryid\"><img src=\"$galleryfrontpic?_=1\" alt=\"$galleryname\" /></a>";
 	echo "<div class=\"maingalleryitemcaption\"><a href=\"/images/$galleryid\">$galleryname</a></div>";
 	echo '</div>';
 }

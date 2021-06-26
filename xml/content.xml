@@ -6218,14 +6218,14 @@ It goes without saying that suspending expensive equipment by the cables is not 
     <intro>[image google-play] I recently received a friendly e-mail from Google explaining that my game &lt;a href="https://play.google.com/store/apps/details?id=com.regalraccoongames.tentinylevels"&gt;Ten Tiny Levels&lt;/a&gt; had been removed from Google Play. Excerpt:
 &lt;/p&gt;
 
-&lt;p&gt;
-&lt;i&gt;After review, Ten Tiny Levels, com.regalraccoongames.tentinylevels, has been removed from Google Play due to a policy violation. This app won’t be available to users until you submit a compliant update.&lt;/i&gt;
-&lt;/p&gt;
+&lt;blockquote&gt;
+After review, Ten Tiny Levels, com.regalraccoongames.tentinylevels, has been removed from Google Play due to a policy violation. This app won’t be available to users until you submit a compliant update.
+&lt;/blockquote&gt;
 
 &lt;p&gt;
 Luckily, I did get the app back in the store after a few attempts. Read on for the solution.</intro>
     <content>&lt;h2&gt;The complete e-mail&lt;/h2&gt;
-&lt;code&gt;
+&lt;blockquote&gt;
 &lt;p&gt;Hi developers at Regal Raccoon Games,&lt;/p&gt;
 
 &lt;p&gt;After review, Ten Tiny Levels, com.regalraccoongames.tentinylevels, has been removed from Google Play due to a policy violation. This app won’t be available to users until you submit a compliant update.&lt;/p&gt;
@@ -6253,7 +6253,7 @@ Luckily, I did get the app back in the store after a few attempts. Read on for t
 &lt;p&gt;Regards,
 The Google Play Team
 &lt;/p&gt;
-&lt;/code&gt;
+&lt;/blockquote&gt;
 &lt;/p&gt;
 
 &lt;h2&gt;Some background&lt;/h2&gt;
@@ -6608,7 +6608,8 @@ Now, press ESC, select "Editor" and then "Export Skybox".
 &lt;li&gt;In the Sources window, click Add (the plus icon) and select "Video Capture Device". Select "Create new" and hit OK. &lt;/i&gt;
 &lt;li&gt;In the following window, select "EOS Webcam Utility" from the dropdown and click OK.&lt;/i&gt;
 &lt;li&gt;You should now see a preview. Optionally, check "Deactivate when not showing". This is explained below.&lt;/i&gt;
-&lt;li&gt;Go to File -&gt; Settings -&gt; Video and enter 1024x576 as the base (canvas) resolution. You can also try 1056x702 if you want to preserve every pixel but it's just a weird, non-16:9 resolution that may lead to some applications stretching the video incorrectly.
+&lt;li&gt;Go to File -&gt; Settings -&gt; Video and enter 1024x576 as the base (canvas) resolution. You can also try 1056x702 if you want to preserve every pixel but it's just a weird, non-16:9 resolution that may lead to some applications stretching the video incorrectly.&lt;/i&gt;
+&lt;li&gt;You may have to experiment a bit with the output resolution; setting it to the same value as the base resolution should be fine, but some applications (like Google Meet) seem to produce pixelated video unless it's set to 1920x1080.&lt;/li&gt;
 &lt;li&gt;Right-click the preview and select Transform -&gt; "Center to Screen" (CTRL+D).&lt;/i&gt;
 &lt;li&gt;In the bottom right, click "Start Virtual Camera".&lt;/i&gt;
 &lt;li&gt;Start your video conferencing application and select "OBS Virtual Camera" as the camera.&lt;/i&gt;
@@ -6647,7 +6648,17 @@ Expert super-pro tip: You can start the virtual camera in OBS automatically if y
 
 &lt;p&gt;But in order to be able to use it as a proper webcam replacement, you will likely need to get a dummy battery adapter and a good desk mount, and also have a bit of patience setting everything up properly.&lt;/p&gt;
 
-[image webcams]</content>
+[image webcams]
+
+&lt;h2&gt;Update: 2 months later&lt;/h2&gt;
+
+&lt;p&gt;I picked up a dummy battery and have now been using this setup for a couple of months, doing video calls pretty much every day. While it's a bit fiddly at times (switching the camera on and of, making sure OBS is running etc.), I think the improved image quality is worth it!&lt;p&gt;
+&lt;p&gt;Some things I have learned:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Auto exposure is not great with this camera. Set the exposure to manual instead and adjust the exposure with the dial on the camera.&lt;/li&gt;
+&lt;li&gt;Good lighting is still key. Take the opportunity to set up better lighting in your room!&lt;/li&gt;
+&lt;li&gt;I finally found a use for that vintage Revuenon 28mm 1:2.8 lens that's been sitting around for years.&lt;/li&gt;
+&lt;/ul&gt;</content>
     <images>
       <image>
         <description>Install wizards are the best!</description>

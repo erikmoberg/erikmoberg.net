@@ -4,7 +4,7 @@
 }
 
 body {
-	font-family: 'Roboto', Segoe UI, Helvetica, Arial, sans-serif;
+	font-family: 'Lato', Segoe UI, Helvetica, Arial, sans-serif;
 	color: #555;
 	background-color: #ccc;
 	font-size: 18px;
@@ -45,13 +45,20 @@ p {
 code {
 	background-color: #eee;
     display: block;
-    font-family: "Courier New",Monospace;
+    font-family: 'Roboto Mono', "Courier New",Monospace;
     margin: 5px 0;
     padding: 5px;
 }
 
 pre code {
-	white-space: pre-wrap;
+    white-space: pre-wrap;
+}
+
+blockquote {
+    font-style: italic;
+    padding: 2px 10px;
+    margin: 10px 0;
+    border-left: 5px solid;
 }
 
 #contentheader
@@ -382,7 +389,6 @@ article, .full-article, .article-navigation, .social-links, #frmComments, .page-
 }
 
 .articleintro h3 {
-	font-style: italic;
 	margin: 0;
 }
 .articleintro h4 {
@@ -406,7 +412,7 @@ article, .full-article, .article-navigation, .social-links, #frmComments, .page-
 }
 
 .previousArticle, .nextArticle {
-	font-size: 14px;
+	font-size: 15px;
 	display: inline-block;
 }
 
@@ -544,7 +550,6 @@ article, .full-article, .article-navigation, .social-links, #frmComments, .page-
 .imagedescription
 {
 	font-style: italic;
-	font-size: 16px;
 }
 
 .blogpagelist
