@@ -21,7 +21,7 @@ img {
 
 ol, ul
 {
-	margin-bottom: 15px;
+	margin-bottom: 25px;
 	padding-left: 20px;
 }
 
@@ -39,14 +39,20 @@ a:hover {
 }
 
 p {
-	margin-bottom: 15px;
+	margin-bottom: 25px;
+}
+
+code, c {
+    font-size: 0.9em;
+	background-color: #eee;
+    font-family: 'Roboto Mono', "Courier New",Monospace;
+    padding: 0 3px;
+    text-transform: none;
 }
 
 code {
-	background-color: #eee;
     display: block;
-    font-family: 'Roboto Mono', "Courier New",Monospace;
-    margin: 5px 0;
+    margin: 5px 0 25px;
     padding: 5px;
 }
 
@@ -311,7 +317,7 @@ blockquote {
 	font-size: 24px;
 	color: #4c4c4c;
 	clear: left;
-	padding-bottom: 15px;
+	padding-bottom: 25px;
 }
 
 #content h3{
@@ -396,7 +402,7 @@ article, .full-article, .article-navigation, .social-links, #frmComments, .page-
 	font-weight: normal;
 	margin-top:0;
 	color: #a6a6a6;
-	margin-bottom: 10px;
+	margin-bottom: 25px;
 	text-transform: none;
 }
 
@@ -762,7 +768,6 @@ aside {
 .note {
   background-color: #eee;
   padding: 10px;
-  min-height: 60px;
   margin: 10px 0;
   border-left: 5px solid #da4526;
 }
@@ -1530,10 +1535,6 @@ svg.feather {
 
 @media screen and (max-width: 700px) {
 
-	body {
-		font-size: 16px;
-	}
-
 	.articleintro p, .full-article p {
 		text-align: left;
 	}
@@ -1701,7 +1702,7 @@ svg.feather {
       margin-top: 2px;
     }
 
-    svg.feather-rss, svg.feather-twitter {
+    .follow-icons .svg {
       margin-top: 4px;
     }
 }
@@ -1808,7 +1809,7 @@ body.dark-theme .commentheader {
     color: #d8d8d8;
 }
 
-body.dark-theme, body.dark-theme #containercontainer, body.dark-theme #bottom, body.dark-theme code, body.dark-theme .note {
+body.dark-theme, body.dark-theme #containercontainer, body.dark-theme #bottom, body.dark-theme code, body.dark-theme .note, body.dark-theme c {
     background-color: #252526;
 }
 

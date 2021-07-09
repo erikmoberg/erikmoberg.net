@@ -5,7 +5,7 @@ require_once("bloghandler.php");
 require_once("commenthandler.php");
 
 function GetIconMarkup($name) {
-    return file_get_contents('content/images/feather-icons/' . $name . '.svg');
+    return file_get_contents("content/images/feather-icons/$name.svg");
 }
 
 function GetQueryString()
@@ -31,10 +31,13 @@ function PrintStartHtml($pageTitle, $highlightitem, $metadescription)
 <head>
 	<title><?php echo $pageTitle; ?> - Erik Moberg's personal homepage - photography, gadgets, DIY, and more</title>
 	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lato:ital@0;1&family=Roboto+Condensed:wght@400;700&family=Roboto+Mono" rel="stylesheet" type='text/css'>
-	<link rel="stylesheet" type="text/css" href="/content/styles/style.css.php?_=42" />
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400&family=Roboto+Condensed:wght@400;700&family=Roboto+Mono" rel="stylesheet" type='text/css'>
+	<link rel="stylesheet" type="text/css" href="/content/styles/style.css.php?_=45" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 	<link rel="shortcut icon" href="/favicon.ico" type="image/vnd.microsoft.icon" />
     <link rel="icon" type="image/png" href="/content/favicon/favicon-red-192.png" sizes="192x192">
@@ -159,7 +162,7 @@ if(!$isFrontPage) {
 
 				</div>
 
-				<div class="page-section">
+				<div class="page-section follow-icons">
 					<h2>Follow</h2>
 					<a target="_blank" class="rss-link" href="/rss.xml" title="Subscribe by RSS"><?php echo GetIconMarkup('rss') ?> RSS</a>
 					<a target="_blank" class="rss-link" href="https://twitter.com/erikmoberg_swe" title="Follow me on Twitter"><?php echo GetIconMarkup('twitter') ?> Twitter</a>

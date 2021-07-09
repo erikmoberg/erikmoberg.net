@@ -28,7 +28,7 @@ function DisplayMainGallery()
 	echo '<div class="page-section">';
 	echo "<h2>Image gallery</h2>";
 	echo '<p>Some pictures, mostly from my trips.</p>';
-	echo '<p>Looking for high resolution images for printing? You can find some on the <a href="download.php">download page</a>.</p>';
+	echo '<p>Looking for high resolution images for printing? You can find some on the <a href="/download">download page</a>.</p>';
 	echo '</div>';
 	echo '<div class="page-section">';
     
