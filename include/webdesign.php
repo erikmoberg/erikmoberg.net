@@ -37,7 +37,7 @@ function PrintStartHtml($pageTitle, $highlightitem, $metadescription)
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400&family=Roboto+Condensed:wght@400;700&family=Roboto+Mono" rel="stylesheet" type='text/css'>
-	<link rel="stylesheet" type="text/css" href="/content/styles/style.css.php?_=45" />
+	<link rel="stylesheet" type="text/css" href="/content/styles/style.css.php?_=46" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 	<link rel="shortcut icon" href="/favicon.ico" type="image/vnd.microsoft.icon" />
     <link rel="icon" type="image/png" href="/content/favicon/favicon-red-192.png" sizes="192x192">

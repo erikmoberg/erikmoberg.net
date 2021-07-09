@@ -550,7 +550,7 @@ article, .full-article, .article-navigation, .social-links, #frmComments, .page-
 
 .articleimage {
 	text-align: center;
-	margin-bottom: 20px;
+	margin-bottom: 25px;
 }
 
 .imagedescription
@@ -1690,7 +1690,12 @@ svg.feather {
         margin: 0;
     }
 
-    .articleimage, .teaser {
+    .articleimage {
+        margin-right: -10px;
+        margin-left: -10px;
+    }
+
+    .teaser {
         margin: 0 -10px 10px;
     }
 
