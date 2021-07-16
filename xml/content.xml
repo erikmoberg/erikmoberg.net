@@ -6304,8 +6304,7 @@ I developed the app using Unity 3D, and it does seem like the version I was usin
         <extension>.png</extension>
       </image>
       <image>
-        <description>
-        </description>
+        <description>Google play logo.</description>
         <name>google-play</name>
         <extension>.png</extension>
       </image>
@@ -6396,8 +6395,7 @@ Pro tip: Read the system requirements first - refer to the page above. In my cas
         <extension>.jpg</extension>
       </image>
       <image>
-        <description>
-        </description>
+        <description>Two players ready to go!</description>
         <name>intro</name>
         <extension>.jpg</extension>
       </image>
@@ -6691,8 +6689,7 @@ Expert super-pro tip: You can start the virtual camera in OBS automatically if y
         <extension>.png</extension>
       </image>
       <image>
-        <description>
-        </description>
+        <description>A large webcam.</description>
         <name>large-webcam</name>
         <extension>.jpg</extension>
       </image>
@@ -6727,7 +6724,7 @@ Expert super-pro tip: You can start the virtual camera in OBS automatically if y
     <header>Embed SVG Icons in HTML with PHP</header>
     <readableid>embed-svg-icons-in-html-with-php</readableid>
     <subheader>Just a way to use SVG on the web</subheader>
-    <intro>[image svg-icon] I have been using the font awesome web font for the last few yeats to add small inline icons here and there on this site, such as the arrow next to "Read the full article" text. It has been working quite well but I found that the style of the icons looked a bit dated and started looking for an easy way to use individual SVG icons instead. Turns out that even in 2021, the question how to best add SVG icons to a website is still answered with "it depends". I found that using some server-side help from PHP gave me good results. Read on for details.</intro>
+    <intro>[image svg-icon-editor] I have been using the font awesome web font for the last few years to add small inline icons here and there on this site, such as the arrow next to "Read the full article" text. It has been working quite well but I found that the style of the icons looked a bit dated and started looking for an easy way to use individual SVG icons instead. Turns out that even in 2021, the question how to best add SVG icons to a website is still answered with "it depends". I found that using some server-side help from PHP gave me good results. Read on for details.</intro>
     <content>&lt;style type="text/css"&gt;
 .icon-background-06e825f0 {
   background-color: #ccc;
@@ -6735,7 +6732,11 @@ Expert super-pro tip: You can start the virtual camera in OBS automatically if y
 }
 &lt;/style&gt;
 
-[image svg-icon]
+[image svg-icon-editor]
+
+&lt;p&gt;
+TL;DR: &lt;a href="#embed-svg-icons-in-html-with-php-solution"&gt;Jump to the solution.&lt;/a&gt;
+&lt;/p&gt;
 
 &lt;h2&gt;Goals&lt;/h2&gt;
 
@@ -6792,7 +6793,7 @@ However, &lt;c&gt;object&lt;/c&gt; has a similar problem like &lt;c&gt;img&lt;/c
 
 &lt;p&gt;Using a library such as &lt;a target="_blank" href="https://github.com/iconfu/svg-inject"&gt;svg-inject&lt;/a&gt;, we can use the &lt;c&gt;img&lt;/c&gt; tag and let the library load and inject the SVG files into the document. So we have the simple usage of the &lt;c&gt;img&lt;/c&gt; tag, but we can style it using CSS. Pretty neat! However, there might be a slight delay until the icons show up since they are not delivered with the page. Also, why leave something to the client that the server can do? (OK, that might have been sarcasm.) So that leaves us with...&lt;/p&gt;
 
-&lt;h2&gt;Option 4: Inlining&lt;/h2&gt;
+&lt;h2 id="embed-svg-icons-in-html-with-php-solution"&gt;Option 4: Inlining&lt;/h2&gt;
 
 &lt;p&gt;
 So we end up with inlining as the only option. With inlining, the SVG code for each icon is simply added to the HTML itself. This enables styling using an external style sheet, and since the SVG is delivered with the HTML, there is no additional requests to load the icons - they are delivered instantly. But now we have a new problem: We obviously don't want to copy and paste the contents of the SVG every time we want to use it. PHP to the rescue! (Or whatever you might be using in the backend...)
@@ -6802,7 +6803,7 @@ So we end up with inlining as the only option. With inlining, the SVG code for e
 
 &lt;pre&gt;
 &lt;code&gt;function GetIconMarkup($name) {
-    return file_get_contents("content/images/feather-icons/$name.svg");
+  return file_get_contents("content/images/$name.svg");
 }
 &lt;/code&gt;&lt;/pre&gt;
 
@@ -6839,7 +6840,7 @@ Of course, adding more inline icons will make the page grow, but gzip helps a lo
     <images>
       <image>
         <description>Part of an SVG icon.</description>
-        <name>svg-icon</name>
+        <name>svg-icon-editor</name>
         <extension>.png</extension>
       </image>
     </images>

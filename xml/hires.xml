@@ -2,51 +2,58 @@
 <ArrayOfHiresImageEntry xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <HiresImageEntry>
     <Title>Water Drop - 1</Title>
-    <Comment />
+    <Comment>A droplet hitting the water.</Comment>
     <BaseFileName>water_drop_-_1</BaseFileName>
     <Id>60703f75-c150-41c1-847e-4819e7372004</Id>
     <DateTime>2011-04-25</DateTime>
   </HiresImageEntry>
   <HiresImageEntry>
     <Title>Water Drop - 2</Title>
-    <Comment />
+    <Comment>A droplet bouncing back out of the water.</Comment>
     <BaseFileName>water_drop_-_2</BaseFileName>
     <Id>c708c393-4653-4410-8ac6-5841844d1888</Id>
     <DateTime>2011-04-25</DateTime>
   </HiresImageEntry>
   <HiresImageEntry>
     <Title>Water Drop - 3</Title>
-    <Comment />
+    <Comment>A drop of water suspended over the water.</Comment>
     <BaseFileName>water_drop_-_3</BaseFileName>
     <Id>5ec04227-816c-4df3-a330-e5b9f57ba388</Id>
     <DateTime>2011-04-25</DateTime>
   </HiresImageEntry>
   <HiresImageEntry>
     <Title>Hong Kong Tram</Title>
-    <Comment />
+    <Comment>Trams and buses near Hong Kong Central.</Comment>
     <BaseFileName>hong_kong_tram</BaseFileName>
     <Id>b4268cd8-6206-473c-9420-d6a41e862f38</Id>
     <DateTime>2011-04-25</DateTime>
   </HiresImageEntry>
   <HiresImageEntry>
-    <Title>Creek</Title>
-    <Comment />
-    <BaseFileName>creek</BaseFileName>
-    <Id>f533454e-ad2f-479f-b33e-e56f800ab00a</Id>
-    <DateTime>2011-04-25</DateTime>
-  </HiresImageEntry>
-  <HiresImageEntry>
     <Title>Dew on Grass</Title>
-    <Comment>1</Comment>
+    <Comment>Water droplets on grass.</Comment>
     <BaseFileName>dew_on_grass</BaseFileName>
     <Id>b6f12fe2-4fff-4f9a-9d68-1663033f36c7</Id>
     <DateTime>2011-04-25</DateTime>
   </HiresImageEntry>
   <HiresImageEntry>
     <Title>Orange</Title>
-    <Comment />
+    <Comment>A sliced orange.</Comment>
     <BaseFileName>orange</BaseFileName>
     <Id>cdc45a11-9fe6-4d1f-bdaf-1b5245afdf79</Id>
     <DateTime>2011-04-25</DateTime>
+  </HiresImageEntry>
+  <HiresImageEntry>
+    <Title>Hello World</Title>
+    <Comment>Dark mode desktop wallpaper for the minimalistic programmer.</Comment>
+    <BaseFileName>hello_world</BaseFileName>
+    <Id>83eb1070-45ec-4816-b949-c34931a1665e</Id>
+    <DateTime>2021-07-15</DateTime>
+  </HiresImageEntry>
+  <HiresImageEntry>
+    <Title>Working on it</Title>
+    <Comment>Minimalistic desktop wallpaper for those who keep working on it.</Comment>
+    <BaseFileName>working_on_it</BaseFileName>
+    <Id>a0e5a21f-5c2f-46ef-b3bc-2e12c30af560</Id>
+    <DateTime>2021-07-15</DateTime>
   </HiresImageEntry>
 </ArrayOfHiresImageEntry>

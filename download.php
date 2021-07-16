@@ -122,9 +122,9 @@ echo $markup;
 
 <div class="page-section">
 
-<h2 id="hires">High Resolution Images</h2>
+<h2 id="hires">Background Images</h2>
 
-<p>These are a few of photos that I am particularly satisfied with. Feel free to download and use them as you wish. All in pictures are provided in full resolution. Click on each of them to download.</p>
+<p>Images provided in full resolution. Feel free to download and use them as you wish - desktop background, or maybe for printing? Click on each of them to download.</p>
 
 <div class="flex-container wrap">
 <?php

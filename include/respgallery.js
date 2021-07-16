@@ -74,22 +74,22 @@ function RespGallery(options) {
 			self.showGallery(index);
 		});
 		
-		$('#' + self.imagesId + ' img').load(function() {
+		$('#' + self.imagesId + ' img').on('load', function() {
 			// run when each image is loaded
 			self.setImageHeight();
 		});
 
-		$(window).load(function() {
+		$(window).on('load', function() {
 		  // run when all images are loaded
 		  self.setImageHeight();
 		});
 		
-		$(window).resize(function() {
+		$(window).on('resize', function() {
 			self.setImageHeight();
 			self.scrollImages(0, true);
 		});
 		
-		$(document).keydown(function(event) {
+		$(document).on('keydown', function(event) {
 			switch(event.which) {
 				case 27: // esc
 					self.hideGallery();
