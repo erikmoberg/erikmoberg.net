@@ -12,8 +12,8 @@ function PrintSocialNetworkingLinks($shareTitle, $url = null)
 		$currentUrl = $url;
 	}
 ?>
-	<a title="Share on Facebook" target="_blank" class="facebook" href="http://www.facebook.com/sharer.php?u=<?php echo $currentUrl; ?>&t=<?php echo $shareTitle; ?>"><?php echo GetIconMarkup('facebook') ?></a>
-	<a title="Share on Twitter" target="_blank" class="twitter" href="https://twitter.com/intent/tweet?text=<?php echo $shareTitle; ?>&url=<?php echo $currentUrl; ?>"><?php echo GetIconMarkup('twitter') ?></a>
+	<a title="Share on Facebook" rel="noreferrer" target="_blank" class="facebook" href="http://www.facebook.com/sharer.php?u=<?php echo $currentUrl; ?>&t=<?php echo $shareTitle; ?>"><?php echo GetIconMarkup('facebook') ?></a>
+	<a title="Share on Twitter" rel="noreferrer" target="_blank" class="twitter" href="https://twitter.com/intent/tweet?text=<?php echo $shareTitle; ?>&url=<?php echo $currentUrl; ?>"><?php echo GetIconMarkup('twitter') ?></a>
 <?php
 }
 

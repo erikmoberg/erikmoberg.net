@@ -1,4 +1,5 @@
 <?php
+include_once('include/webdesign.php');
 
 $commentXml = null;
 

@@ -1,6 +1,6 @@
 <?php
-error_reporting(E_ALL);
-ini_set('display_errors', '1');
+//error_reporting(E_ALL);
+//ini_set('display_errors', '1');
 require_once("bloghandler.php");
 require_once("commenthandler.php");
 
@@ -35,7 +35,6 @@ function PrintStartHtml($pageTitle, $highlightitem, $metadescription)
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400&family=Roboto+Condensed:wght@400;700&family=Roboto+Mono" rel="stylesheet" type='text/css'>
 	<link rel="stylesheet" type="text/css" href="/content/styles/style.css.php?_=51" />
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 	<link rel="shortcut icon" href="/favicon.ico" type="image/vnd.microsoft.icon" />
     <link rel="icon" type="image/png" href="/content/favicon/favicon-red-192.png" sizes="192x192">
 	<link rel="icon" type="image/png" href="/content/favicon/favicon-red-160.png" sizes="160x160">
@@ -60,10 +59,10 @@ if($isFrontPage) {
 		var pageTheme = sessionStorage.getItem('theme');
 		if (pageTheme) {
 			if (pageTheme === 'dark') {
-					$("body").addClass("dark-theme");
+                document.body.classList.add("dark-theme");
 			}
 		} else {
-			$("body").addClass("dark-theme");
+            document.body.classList.add("dark-theme");
 		}
   </script>
 	<div id="headerContainer">
@@ -124,6 +123,7 @@ for($i=0;$i<count($namesArr);$i++)
 	<div id="containercontainer">
 	<div id="container">
 	<div id="content">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <?php
 }
 
@@ -162,9 +162,9 @@ if(!$isFrontPage) {
 				<div class="page-section follow-icons">
 					<h2>Follow</h2>
 					<a target="_blank" class="rss-link" href="/rss.xml" title="Subscribe by RSS"><?php echo GetIconMarkup('rss') ?> RSS</a>
-					<a target="_blank" class="rss-link" href="https://twitter.com/erikmoberg_swe" title="Follow me on Twitter"><?php echo GetIconMarkup('twitter') ?> Twitter</a>
-                    <a target="_blank" class="rss-link" href="https://github.com/erikmoberg" title="My GitHub repos"><?php echo GetIconMarkup('github') ?> GitHub</a>
-                    <a target="_blank" class="rss-link" href="https://www.linkedin.com/in/erik-moberg-6a228357" title="Me on LinkedIn"><?php echo GetIconMarkup('linkedin') ?> LinkedIn</a>
+					<a target="_blank" rel="noreferrer" class="rss-link" href="https://twitter.com/erikmoberg_swe" title="Follow me on Twitter"><?php echo GetIconMarkup('twitter') ?> Twitter</a>
+                    <a target="_blank" rel="noreferrer" class="rss-link" href="https://github.com/erikmoberg" title="My GitHub repos"><?php echo GetIconMarkup('github') ?> GitHub</a>
+                    <a target="_blank" rel="noreferrer" class="rss-link" href="https://www.linkedin.com/in/erik-moberg-6a228357" title="Me on LinkedIn"><?php echo GetIconMarkup('linkedin') ?> LinkedIn</a>
 				</div>
 
                 <div class="page-section">
@@ -194,7 +194,7 @@ if(!$isFrontPage) {
                     </p>
                     <div style="text-align: center; margin-top: -5px;">
                         <a href="https://play.google.com/store/apps/details?id=com.regalraccoongames.tentinylevels">
-                            <img class="google-play-badge" src="/ttl-assets/google-play-badge.png" style="width: 200px; max-width: 100%;" />
+                            <img class="google-play-badge" src="/ttl-assets/google-play-badge.png" alt="Download Ten Tiny Levels from the Google Play" style="width: 200px; max-width: 100%;" />
                         </a>
                     </div>
 				</div>
@@ -221,13 +221,14 @@ Erik Moberg&nbsp;
 echo date("Y");
 ?>
 </div>
-<script src="/include/scripts.js.php?_=12" type="text/javascript"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js" type="text/javascript"></script>
+<script src="/include/scripts.js.php?_=14" defer type="text/javascript"></script>
+
 <?php
 if ($pageHint == "shiny-iconmaker") {
 	?>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js" type="text/javascript"></script>    
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.4.2/knockout-min.js" type="text/javascript"></script>
-	<script src="/include/scripts.js.php?iconmaker=1&amp;_=8" type="text/javascript"></script>
+	<script src="/include/scripts.js.php?iconmaker=1&amp;_=14" type="text/javascript"></script>
 	<?php
 }
 ?>

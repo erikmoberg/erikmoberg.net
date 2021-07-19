@@ -25,7 +25,7 @@ if ($iconmaker) {
 
 }
 else {
-	readfile('json2.min.js');
+	//readfile('json2.min.js');
 	readfile('scripts.js');
 	readfile('respgallery.js');
 }

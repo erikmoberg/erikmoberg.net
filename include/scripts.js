@@ -83,7 +83,7 @@ $(function() {
 		var photos = JSON.parse(data);
 		var html = '';
 		$.each(photos, function(i, photo) {
-			html += '<a href="' + photo.url + '" target="_blank"><img onload="javascript:$(this).fadeIn(\'slow\');" src="' + photo.image + '" alt="recent" /></a>';
+			html += '<a rel="noreferrer" href="' + photo.url + '" target="_blank"><img onload="javascript:$(this).fadeIn(\'slow\');" src="' + photo.image + '" alt="recent" /></a>';
 		});
 		html += '<div class="clearfix"></div>';
 		$('#flickr-recent').html(html);

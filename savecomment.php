@@ -21,7 +21,7 @@
 		return;
 	}
 	
-	$website = $_POST['website'];
+	$website = isset($_POST['website']) ? $_POST['website'] : null;
 	
 	if(!isset($_POST['readableid'])) {
 		echo json_encode(array('success' => false, 'reason' => 'General error occurred saving the comment. Please reload the page.'));
@@ -40,5 +40,5 @@
 	$message = AddLinksToMessage($message);
 	$markup = GetSingleCommentMarkup($name, $datetime, $website, $message, $commentId);
 	echo json_encode(array('success' => true, 'id' => 'comment-' . $commentId, 'markup' => $markup));
-
+    return;
 ?>

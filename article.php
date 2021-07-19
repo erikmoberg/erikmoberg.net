@@ -145,7 +145,11 @@ $(function() {
 						}, 50);
 					});
 				}
-			}, 'json');
+			}, 'json')
+            .fail(function(xhr) {
+                $('#comments-shroud, #submitting-form').hide();
+                alert("error saving comment: " + xhr.responseText);
+            });
 		}
 	});
 });

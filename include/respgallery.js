@@ -154,11 +154,13 @@ function RespGallery(options) {
 		self.setImageHeight();
 		
 		var delay = 300;
-		$($('.gallery-thumbnail').get(index)).effect( "transfer", { to: $($('#' + self.imagesId + ' img')[index]) }, delay );
-		
-		setTimeout(function() {
-			self.imagesContainer.fadeTo(delay/2, 1);
-		}, delay/2);
+        self.imagesContainer.fadeTo(delay/2, 1);
+
+        // "transfer" effect removed because it needs jquery UI and it doesn't look that great anyway
+		//$($('.gallery-thumbnail').get(index)).effect( "transfer", { to: $($('#' + self.imagesId + ' img')[index]) }, delay );
+		//setTimeout(function() {
+		// 	self.imagesContainer.fadeTo(delay/2, 1);
+		// }, delay/2);
 	}
 	
 	self.getX = function(e) {
