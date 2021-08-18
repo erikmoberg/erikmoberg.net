@@ -2,234 +2,231 @@ var emnet = {}
 
 emnet.search = {
 
-	init: function() {
-		$('.close-search-results').on('click', function() {
-			emnet.search.closeResults();
-		});
+    init: function () {
+        for (let button of document.querySelectorAll('.close-search-results')) {
+            button.addEventListener('click', function () {
+                emnet.search.closeResults();
+            });
+        }
 
-		$('#open-search').on('click', function() {
-			if (!$('#cse-search-form.display-search').length) {
-				emnet.search.open();
-			} else {
-				emnet.search.close();
-				emnet.search.closeResults();
-			}
-		});
+        document.querySelector('#open-search').addEventListener('click', function () {
+            if (!document.querySelectorAll('#cse-search-form.display-search').length) {
+                emnet.search.open();
+            } else {
+                emnet.search.close();
+                emnet.search.closeResults();
+            }
+        });
 
-		$('#cse-search-form-inner').on('submit', function (e) {
+        document.querySelector('#cse-search-form-inner').addEventListener('submit', function (e) {
 
-			e.preventDefault();
-			var query = $('#gsc-search-input').val();
-			if(!query) {
-				return;
-			}
+            e.preventDefault();
+            var query = document.querySelector('#gsc-search-input').value;
+            if (!query) {
+                return;
+            }
 
-			$('#menucontainer input.gsc-search-button').addClass('searching');
-			$.get('/searchservice.php?q=' + encodeURIComponent(query), function(markup) {
-				$('#cse').html(markup);
-				$('#menucontainer input.gsc-search-button').removeClass('searching');
-				emnet.search.showResults();
-			});
-		})
-	},
+            document.querySelector('#menucontainer input.gsc-search-button').classList.add('searching');
+            fetch('/searchservice.php?q=' + encodeURIComponent(query))
+                .then(function (response) {
+                    return response.text();
+                })
+                .then(function (markup) {
+                    document.querySelector('#cse').innerHTML = markup;
+                    document.querySelector('#menucontainer input.gsc-search-button').classList.remove('searching');
+                    emnet.search.showResults();
+                });
+        })
+    },
 
-	open: function() {
+    open: function () {
 
-		$('#cse-search-form').addClass('display-search');
-		$('#menucontainer').addClass('display-search');
-		$('#gsc-search-input')[0].focus();
-	},
+        document.querySelector('#cse-search-form').classList.add('display-search');
+        document.querySelector('#menucontainer').classList.add('display-search');
+        document.querySelector('#gsc-search-input').focus();
+    },
 
-	close: function() {
-		$('#cse-search-form').removeClass('display-search');
-		$('#menucontainer').removeClass('display-search');
+    close: function () {
+        document.querySelector('#cse-search-form').classList.remove('display-search');
+        document.querySelector('#menucontainer').classList.remove('display-search');
+        document.querySelector('#search-results').style.display = 'none';
+        document.querySelector('#header').style.display = 'block';
+    },
 
-		if ($('#search-results:visible').length > 0) {
-			$('#search-results').fadeOut({queue:false}).hide("slide", { direction: "up" }, function() {
-				$('#header').fadeIn('fast');
-			});
-		}
-	},
+    showResults: function () {
+        window.scroll({ top: 0, left: 0, behavior: 'smooth' });
+        document.querySelector('.gsc-input input').blur();
+        document.querySelector('#search-results').style.display = 'block';
+        document.querySelector('#header').style.display = 'none';
 
-	showResults: function() {
-		if ($('#search-results:visible').length == 0) {
-			$("html, body").animate({ scrollTop: 0 }, "fast");
-			$('.gsc-input input').blur();
-			$('#header').fadeOut('fast', function() {
-				$('#search-results').fadeIn({queue:false}).show("slide", { direction: "up" });
-			});
-		}
-	},
+        setTimeout(() => {
+            // trigger the scroll event so that the top image fades back in
+            document.dispatchEvent(new Event('scroll'));
+        }, 500);
+    },
 
-	closeResults: function() {
-		emnet.search.close();
-	}
+    closeResults: function () {
+        emnet.search.close();
+    }
 }
 
-$(function() {
-	// ---- jscolor settings
-	if (typeof jscolor !== "undefined") {
-		jscolor.dir = '/include/jscolor/';
-	}
-	// ---- end jscolor settings
+// ---- jscolor settings
+if (typeof jscolor !== "undefined") {
+    jscolor.dir = '/include/jscolor/';
+}
+// ---- end jscolor settings
 
-	$('#menu-toggle').on('click', function() {
-		$(this).toggleClass('open');
-		$('#menucontainer').toggleClass('display-menu');
-		$('#search-results').toggleClass('display-menu');
-	});
+document.querySelector('#menu-toggle').addEventListener('click', function (event) {
+    const shouldOpen = !document.querySelector('#menu-toggle').classList.contains('open');
 
-	$.get('/flickr.php?type=recent', function(data) {
-		var photos = JSON.parse(data);
-		var html = '';
-		$.each(photos, function(i, photo) {
-			html += '<a rel="noreferrer" href="' + photo.url + '" target="_blank"><img onload="javascript:$(this).fadeIn(\'slow\');" src="' + photo.image + '" alt="recent" /></a>';
-		});
-		html += '<div class="clearfix"></div>';
-		$('#flickr-recent').html(html);
-	});
-
-	var lastPos = $(document).scrollTop();
-	var minScroll = 250;
-	var tolerance = 50;
-	var headerElement = $("#header .header-image");
-	$(document).on('scroll', function() {
-		var newPos = $(document).scrollTop();
-		headerElement.css("opacity", Math.max(0, headerElement.height() - newPos)/headerElement.height());
-		if (Math.abs(newPos - lastPos) > (!$('#menucontainer').hasClass('scrolled') ? 0 : tolerance)) {
-			$('#menucontainer').toggleClass('scrolled', newPos > lastPos && newPos > minScroll);
-			lastPos = newPos;
-		}
-    });
-
-    $("#changetheme-dark").on("click", function() { $("body").addClass("dark-theme"); sessionStorage.setItem('theme', 'dark'); });
-    $("#changetheme-light").on("click", function() { $("body").removeClass("dark-theme"); sessionStorage.setItem('theme', 'light'); });
+    if (shouldOpen) {
+        document.querySelector('#menu-toggle').classList.add('open');
+        document.querySelector('#menucontainer').classList.add('display-menu');
+        document.querySelector('#search-results').classList.add('display-menu');
+    } else {
+        document.querySelector('#menu-toggle').classList.remove('open');
+        document.querySelector('#menucontainer').classList.remove('display-menu');
+        document.querySelector('#search-results').classList.remove('display-menu');
+    }
 });
 
-emnet.isDarkTheme = function() {
-  return $("body").hasClass("dark-theme")
+fetch('/flickr.php?type=recent')
+    .then(function (response) {
+        return response.json();
+    })
+    .then(function (photos) {
+        var html = '';
+        for (let photo of photos) {
+            html += '<a rel="noreferrer" href="' + photo.url + '" target="_blank"><img src="' + photo.image + '" alt="recent" /></a>';
+        }
+
+        html += '<div class="clearfix"></div>';
+        document.querySelector('#flickr-recent').innerHTML = html;
+    });
+
+var lastPos = document.body.scrollTop;
+var minScroll = 250;
+var tolerance = 50;
+var headerElement = document.querySelector("#header .header-image");
+document.addEventListener('scroll', function () {
+    var newPos = window.scrollY;
+    headerElement.style.opacity = Math.max(0, headerElement.clientHeight - newPos) / headerElement.clientHeight;
+    let menuContainer = document.querySelector('#menucontainer');
+    if (Math.abs(newPos - lastPos) > (!menuContainer.classList.contains('scrolled') ? 0 : tolerance)) {
+        if (newPos > lastPos && newPos > minScroll) {
+            menuContainer.classList.add('scrolled');
+        } else {
+            menuContainer.classList.remove('scrolled');
+        }
+
+        lastPos = newPos;
+    }
+});
+
+document.querySelector("#changetheme-dark").addEventListener("click", function () {
+    document.body.classList.add("dark-theme");
+    sessionStorage.setItem('theme', 'dark');
+});
+
+document.querySelector("#changetheme-light").addEventListener("click", function () {
+    document.body.classList.remove("dark-theme");
+    sessionStorage.setItem('theme', 'light');
+});
+
+emnet.isDarkTheme = function () {
+    return document.body.classList.contains("dark-theme");
 }
 
 emnet.search.init();
 
-// load quote
-//$.get('/quoteservice.php', function(markup) {
-//	$('#bottom').html(markup);
-//});
-
-$(document).on('mouseover', '#flickr-recent img, .maingalleryitem, .gallery-thumbnail img', function() {
-	$(this).stop().fadeTo('fast', 0.6);
-});
-$(document).on('mouseout', '#flickr-recent img, .maingalleryitem, .gallery-thumbnail img', function() {
-	$(this).stop().fadeTo('fast', 1);
-});
-
-if ($('.gallery-thumbnail').length) {
-	new RespGallery();
+if (document.querySelectorAll('.gallery-thumbnail').length) {
+    new RespGallery();
 }
 
-function getOffsetForMenuItem(item) {
-	return $(item).offset().left - $('#activeItemMarkerContainer').offset().left + $(item).width()/2 - $('#activeItemMarker').width()/2;
+function showPic(imagefile, thumbimagefile, description) {
+    if (document.getElementById) {
+        document.getElementById('placeholder').src = thumbimagefile;
+        document.getElementById('desc').childNodes[0].nodeValue = description;
+        document.getElementById('lnkplaceholder').href = imagefile;
+        return false;
+    }
+    else {
+        return true;
+    }
 }
 
-function showPic (imagefile, thumbimagefile, description)
-{
- if (document.getElementById)
- {
-  document.getElementById('placeholder').src = thumbimagefile;
-  document.getElementById('desc').childNodes[0].nodeValue = description;
-  document.getElementById('lnkplaceholder').href = imagefile;
-  return false;
- }
- else
- {
-  return true;
- }
-}
+function postContact(txtName, txtEmail, txtTesttext, txtMessage) {
+    var name = document.getElementById(txtName).value;
+    var email = document.getElementById(txtEmail).value;
+    var message = document.getElementById(txtMessage).value;
+    var testtext = document.getElementById(txtTesttext).value;
 
-function postContact(txtName, txtEmail, txtTesttext, txtMessage)
-{
-	var name = document.getElementById(txtName).value;
-	var email = document.getElementById(txtEmail).value;
-	var message = document.getElementById(txtMessage).value;
-	var testtext = document.getElementById(txtTesttext).value;
-
-	if(name == '' || testtext != 'emalj' || message == '' || email == '')
-	{
-		//Show error message
-		alert('Please enter name, email and a message.')
-		return false;
-	}
-	else
-	{
-		if(!isEmailValid(email))
-		{
-			alert('Enter a valid email address.');
-			return false;
-		}
-		return true;
-	}
+    if (name == '' || testtext != 'emalj' || message == '' || email == '') {
+        //Show error message
+        alert('Please enter name, email and a message.')
+        return false;
+    }
+    else {
+        if (!isEmailValid(email)) {
+            alert('Enter a valid email address.');
+            return false;
+        }
+        return true;
+    }
 }
 
 function validateCommentForm(formData) {
 
-	var errors = [];
+    var errors = [];
 
-	if (!formData.name) {
-		errors.push({field: 'txtName', message: 'Please enter a name.' });
-	}
+    if (!formData.name) {
+        errors.push({ field: 'txtName', message: 'Please enter a name.' });
+    }
 
-	if (!formData.message) {
-		errors.push({field: 'txtMessage', message: 'Please enter a message.'});
-	}
+    if (!formData.message) {
+        errors.push({ field: 'txtMessage', message: 'Please enter a message.' });
+    }
 
-	if (formData.website && !isValidUrl(formData.website)) {
-		errors.push({field: 'txtWebsite', message: 'The posted web site url is invalid.'});
-	}
+    if (formData.website && !isValidUrl(formData.website)) {
+        errors.push({ field: 'txtWebsite', message: 'The posted web site url is invalid.' });
+    }
 
-	if (errors.length) {
-		errors.push({field: 'btnSend', message: 'The form contains errors; see above.'});
-	}
+    if (errors.length) {
+        errors.push({ field: 'btnSend', message: 'The form contains errors; see above.' });
+    }
 
-	return errors;
+    return errors;
 }
 
-function isEmailValid(email)
-{
-	var filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
-	return filter.test(email)
+function isEmailValid(email) {
+    var filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+    return filter.test(email)
 }
 
-function isValidUrl(website)
-{
-	if (website.indexOf('.') < 0 || website.indexOf('@') >= 0) {
-		return false;
-	}
+function isValidUrl(website) {
+    if (website.indexOf('.') < 0 || website.indexOf('@') >= 0) {
+        return false;
+    }
 
-	return true;
+    return true;
 }
 
 function padLeft(str, max, padChar) {
-	return str.length < max ? padLeft(padChar + str, max) : str;
+    return str.length < max ? padLeft(padChar + str, max) : str;
 }
 
 function checkMaxLength(textBox, e, maxLength) {
-	if (textBox.value.length > maxLength - 1 && e.keyCode !=8 && e.keyCode!=46 && e.keyCode!=37 && e.keyCode!=38 && e.keyCode!=39 && e.keyCode!=40) {
-		return false;
+    if (textBox.value.length > maxLength - 1 && e.keyCode != 8 && e.keyCode != 46 && e.keyCode != 37 && e.keyCode != 38 && e.keyCode != 39 && e.keyCode != 40) {
+        return false;
     }
 }
 
 emnet.utils = {
-	scrollIntoView: function (elementId) {
-		var offset = $("#" + elementId).offset();
-		var height = $(window).height();
-		$('html, body').animate({
-			scrollTop: offset.top - (height / 2)
-		}, function() {
-			$("#" + elementId).addClass("pulse");
-			setTimeout(function() {
-				$("#" + elementId).removeClass("pulse")
-			}, 3000);
-		});
-	}
+    scrollIntoView: function (elementId) {
+        document.querySelector('#' + elementId).scrollIntoView({behavior: "smooth", block: "center"});
+        document.querySelector("#" + elementId).classList.add("pulse");
+            setTimeout(function () {
+                document.querySelector("#" + elementId).classList.remove("pulse")
+            }, 3000);
+    }
 }

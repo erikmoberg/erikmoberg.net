@@ -32,100 +32,154 @@ function RespGallery(options) {
 	
 	self.init = function () {
 	
+        function createDelegatedEventListener(selector, handler) {
+            return function (event) {
+                if (event.target.matches(selector) || event.target.closest(selector)) {
+                    handler(event);
+                }
+            }
+        }
+
 		self.generateMarkup();
 	
 		self.transformProperty = self.getTransformProperty();
-		self.maxIndex = $('.' + self.imageClass).length-1;
-		self.imagesContainer = $('#' + self.imagesContainerId);
+		self.maxIndex = document.querySelectorAll('.' + self.imageClass).length - 1;
+		self.imagesContainer = document.querySelector('#' + self.imagesContainerId);
 		
-		$('#' + self.touchId).on('touchstart mousedown',function(e) {
-			self.isMoving = true;
-		});
+        for (let eventName of ['touchstart', 'mousedown']) {
+		    document.querySelector('#' + self.touchId).addEventListener(eventName, function(e) {
+			    self.isMoving = true;
+		    });
+        }
 
-		$('#' + self.scrollLeftId).on('click', function() {
+		document.querySelector('#' + self.scrollLeftId).addEventListener('click', function() {
 		  self.scrollImages(-1);
 		});
 
-		$('#' + self.scrollRightId).on('click', function() {
+		document.querySelector('#' + self.scrollRightId).addEventListener('click', function() {
 		  self.scrollImages(1);
 		});
 
-		$('#' + self.imageContainerBackId).on('click', function() {
+		document.querySelector('body').addEventListener('click', createDelegatedEventListener('#' + self.imageContainerBackId, function() {
 			self.hideGallery();
-		});
+		}));
 
-		$('#' + self.closeImagesId).on('click', function() {
+		document.querySelector('body').addEventListener('click', createDelegatedEventListener('#' + self.closeImagesId, function() {
 			self.hideGallery();
-		});
+		}));
 		
-		$('#' + self.touchId).on('touchend mouseup touchcancel',function(e) {
-			self.handleTouchEnd();
-		});
+        for (let eventName of ['touchend', 'mouseup', 'touchcancel']) {
+		    document.querySelector('#' + self.touchId).addEventListener(eventName, function(e) {
+			    self.handleTouchEnd();
+		    });
+        }
 
-		$('#' + self.touchId).on('touchmove mousemove',function(e) {
-			self.handleTouchMove(e);
-		});
+        for (let eventName of ['touchmove', 'mousemove']) {
+            document.querySelector('#' + self.touchId).addEventListener(eventName, function(e) {
+                self.handleTouchMove(e);
+            });
+        }
 
-		$('#' + self.touchId).on('touchmove touchstart touchend',function(e){e.preventDefault()});
+        for (let eventName of ['touchmove', 'touchstart', 'touchend']) {
+            document.querySelector('#' + self.touchId).addEventListener(eventName, function(e) {
+                e.preventDefault()
+            });
+        }
 		
-		$('.' + self.galleryThumbnailClass).on('click', function(e, element) {
-			e.preventDefault();
-			var index = $('.' + self.galleryThumbnailClass).index($(e.delegateTarget));
-			self.showGallery(index);
-		});
+        let imageIndex = 0;
+		for (let element of document.querySelectorAll('.' + self.galleryThumbnailClass)) {
+            let currentIndex = imageIndex++;
+            element.addEventListener('click', function(e, element) {
+                e.preventDefault();
+                self.showGallery(currentIndex);
+		    });
+        }
 		
-		$('#' + self.imagesId + ' img').on('load', function() {
+		document.querySelector('#' + self.imagesId + ' img').addEventListener('load', function() {
 			// run when each image is loaded
 			self.setImageHeight();
 		});
 
-		$(window).on('load', function() {
+		window.addEventListener('load', function() {
 		  // run when all images are loaded
 		  self.setImageHeight();
 		});
 		
-		$(window).on('resize', function() {
+		window.addEventListener('resize', function() {
 			self.setImageHeight();
 			self.scrollImages(0, true);
 		});
 		
-		$(document).on('keydown', function(event) {
-			switch(event.which) {
-				case 27: // esc
+		document.addEventListener('keydown', function(event) {
+			switch (event.key) {
+				case "Escape":
 					self.hideGallery();
 				break;
-				case 37: // left
+				case "ArrowLeft":
 					self.scrollImages(-1);
 				break;
-				case 39: // right
+				case "ArrowRight":
 					self.scrollImages(1);
 				break;
 			}
 		});
 		
-		$(window).on('hashchange', function() {
+		window.addEventListener('hashchange', function() {
 			if (location.hash == '') {
 				self.hideGallery();
 			}
 		});
 	};
 
+    self.fadeOut = function(element, callback) {
+        element.animate({
+            opacity: 0
+          }, {
+            duration: 200,
+            easing: "linear",
+            iterations: 1,
+            fill: "both"
+          })
+          .onfinish = function() {
+            element.style.display = "none";
+            if (callback) {
+                callback();
+            }
+        }
+    }
+
+    self.fadeIn = function(element, callback) {
+        element.style.opacity = 0;
+        element.style.display = "block";
+        element.animate({
+            opacity: 1
+          }, {
+            duration: 200,
+            easing: "linear",
+            iterations: 1,
+            fill: "both"
+          })
+          .onfinish = function() {
+            if (callback) {
+                callback();
+            }
+        }
+    }
+
 	self.generateMarkup = function () {
 	
 		var html = '';
-		
 		html += '<div id="' + self.imagesContainerId + '">\r\n';
 		html += '  <div id="' + self.imagesId + '">\r\n';
 		
-		$('.' + self.galleryThumbnailClass).each(function(i, el) {
-			var link = $(el);
-			var image = link.find('img');
-			var url = link.attr('href');
-			var alt = image.attr('alt');
+		for (let link of document.querySelectorAll('.' + self.galleryThumbnailClass)) {
+			var image = link.querySelector('img');
+			var url = link.getAttribute('href');
+			var alt = image.getAttribute('alt');
 			html += '    <div class="' + self.imageClass + '">\r\n';
 			html += '      <img src="' + url + '" alt="' + alt + '" />\r\n';
 			html += '    </div>\r\n';
-		})
+		};
 		
 		html += '  </div>\r\n';
 		html += '  <div id="' + self.imageCaptionId + '" class="' + self.overlayClass + '">\r\n';
@@ -137,34 +191,25 @@ function RespGallery(options) {
 		html += '  <div id="' + self.scrollLeftContainerId + '" class="' + self.overlayClass + '"><div id="' + self.scrollLeftId + '"></div></div>\r\n';
 		html += '  <div id="' + self.scrollRightContainerId + '" class="' + self.overlayClass + '"><div id="' + self.scrollRightId + '"></div></div>\r\n';
 		html += '</div>\r\n';
-		$(document.body).append(html);
+        let div = document.createElement("div");
+        div.innerHTML = html;
+		document.body.append(div);
 	};
 	
 	self.showGallery = function(index) {
 
 		location.hash = 'gallery';
 	
-		$('body').addClass('gallery');
+		document.body.classList.add('gallery');
 		
-		self.imagesContainer.fadeTo(0.1);
-		self.imagesContainer.show();
+        self.fadeIn(self.imagesContainer);
 		
 		self.imageIndex = index || 0;
 		self.scrollImages(0, true);
 		self.setImageHeight();
-		
-		var delay = 300;
-        self.imagesContainer.fadeTo(delay/2, 1);
-
-        // "transfer" effect removed because it needs jquery UI and it doesn't look that great anyway
-		//$($('.gallery-thumbnail').get(index)).effect( "transfer", { to: $($('#' + self.imagesId + ' img')[index]) }, delay );
-		//setTimeout(function() {
-		// 	self.imagesContainer.fadeTo(delay/2, 1);
-		// }, delay/2);
 	}
 	
-	self.getX = function(e) {
-		var event = e.originalEvent;
+	self.getX = function(event) {
 		var pointer = event.targetTouches ? event.targetTouches[0] : event;
 		return pointer.pageX;
 	}
@@ -187,7 +232,7 @@ function RespGallery(options) {
 		
 		self.currX = self.getX(e);
 			
-		var pos = Math.max(self.imageIndex * $(window).width(), 0) + (self.orgX - self.currX);
+		var pos = Math.max(self.imageIndex * window.innerWidth, 0) + (self.orgX - self.currX);
 		
 		requestAnimationFrame(function() {
 			self.isWaitingForAnimationFrame = false;
@@ -196,15 +241,10 @@ function RespGallery(options) {
 			}
 
 			if (!self.transformProperty) {
-				self.imagesContainer.css({"left": '-' + (pos) + "px"});
+                self.imagesContainer.style.left = '-' + (pos) + "px";
 			} else {
 				// css transform
-				
-				//$("#images").css("-webkit-transform", "translate3d(-" + pos + "px, 0px, 0px)");
-				//$('#' + self.imagesId).css(self.transformProperty, "translate(-" + pos + "px, 0px)");
-				
-				$('#' + self.imagesId).css("-webkit-transform", "translate3d(-" + pos + "px, 0px, 0px)");
-				$('#' + self.imagesId).css("-moz-transform", "translate3d(-" + pos + "px, 0px, 0px)");
+				document.querySelector('#' + self.imagesId).style.transform = "translate3d(-" + pos + "px, 0px, 0px)";
 			}
 		});
 	};
@@ -213,7 +253,7 @@ function RespGallery(options) {
 		self.isMoving = false;
 		var diff = self.orgX - self.currX;
 		if (Math.abs(diff) < 20) {
-			$('.' + self.overlayClass).fadeToggle('fast');
+			self.fadeOut(document.querySelector('.' + self.overlayClass));
 			self.scrollImages(0, false);
 		} else {
 			self.scrollImages(diff >= 0 ? 1 : -1, false);
@@ -229,63 +269,71 @@ function RespGallery(options) {
 		}
   
 		self.imageIndex += direction;
-		var pos = Math.max(self.imageIndex * $(window).width(), 0);
+		var pos = Math.max(self.imageIndex * window.innerWidth, 0);
 		var transformProperty = self.transformProperty;
 		var delay = 0;
 		if (!instant) {
 			delay = 300;
-			$('#' + self.imagesId).addClass('ease');
+			document.querySelector('#' + self.imagesId).classList.add('ease');
 		}
 		
 		if (!transformProperty) {
 			self.imagesContainer.animate({"left": '-' + (pos) + "px"}, delay);
 		} else {
-			$('#' + self.imagesId).css(transformProperty, "translate3d(-" + pos + "px, 0px, 0px)");
+			document.querySelector('#' + self.imagesId).style[transformProperty] = "translate3d(-" + pos + "px, 0px, 0px)";
 		}
 
 		setTimeout(function() {
-				$('#' + self.imagesId).removeClass('ease');
+            document.querySelector('#' + self.imagesId).classList.remove('ease');
 			}, 300);
 
-		$('#' + self.imageCaptionNumberId).text((self.imageIndex+1) + ' / ' + (self.maxIndex+1));
-		$('#' + self.imageCaptionTextId).text($($('#' + self.imagesId + ' img')[self.imageIndex]).attr('alt') || '');
+        document.querySelector('#' + self.imageCaptionNumberId).innerHTML = (self.imageIndex+1) + ' / ' + (self.maxIndex+1);
+
+        var a = document.querySelectorAll('#' + self.imagesId + ' img')[self.imageIndex];
+        var html = !!a ? (a.getAttribute('alt') || '') : '';
+        document.querySelector('#' + self.imageCaptionTextId).innerHTML = html;
 		self.adjustTouchArea();
 	};
 
 	self.setImageHeight = function() {
-		$('.' + self.imageClass).height($(window).height());
-		$('.' + self.imageClass).width($(window).width());
-		$('.' + self.imageClass).each(function(i) {
-			$(this).css({left: $(window).width()*i + 'px'});
-			$(this).css({top: ($(window).height()/2 - $(this).find('img').height()/2) + 'px'});
-		});
-		self.maxPos = ($('.' + self.imageClass).length-1) * $(window).width();
-		self.imagesContainer.width(($('.' + self.imageClass).length) * $(window).width());
+        let images = document.querySelectorAll('.' + self.imageClass);
+        let index = 0;
+        for (let image of images) {
+            image.style.height = window.innerHeight + 'px';
+            image.style.width = window.innerWidth + 'px';
+            let currentIndex = index++;
+            image.style.left = window.innerWidth * currentIndex + 'px';
+            image.style.top = window.innerHeight / 2 - image.querySelector('img').clientHeight/2 + 'px';
+        }
+
+		self.maxPos = (document.querySelectorAll('.' + self.imageClass).length - 1) * window.innerWidth;
+		self.imagesContainer.style.width = document.querySelectorAll('.' + self.imageClass).length * window.innerWidth;
 		self.adjustTouchArea();
 	}
 
 	self.adjustTouchArea = function() {
-	  $('#' + self.touchId).height($($('.' + self.imageClass + ' img')[self.imageIndex]).height());
-	  $('#' + self.touchId).width($($('.' + self.imageClass + ' img')[self.imageIndex]).width());
-	  $('#' + self.touchId).css({ 
-		left: $(window).width()/2 - $('#' + self.touchId).width()/2,
-		top: $(window).height()/2 - $('#' + self.touchId).height()/2
-	  });
-	}
+      let currentImage = document.querySelectorAll('.' + self.imageClass + ' img')[self.imageIndex];
+      let target = document.querySelector('#' + self.touchId);
+      target.style.height = currentImage.clientHeight + 'px';
+      target.style.width = currentImage.clientWidth + 'px';
+      target.style.left = window.innerWidth/2 - target.clientWidth/2 + 'px';
+      target.style.top = window.innerHeight/2 - target.clientHeight/2 + 'px'
+    }
 
 	self.hideGallery = function() {
-		if (!$('body').hasClass('gallery')) {
+		if (!document.body.classList.contains('gallery')) {
 			return;
 		}
 		
-		$('body').removeClass('gallery');
-		self.imagesContainer.fadeOut(200, function() {
-			$('#' + self.imagesId).css(self.transformProperty, '');
-		});
+		document.body.classList.remove('gallery');
+
+        self.fadeOut(self.imagesContainer, function() {
+            document.querySelector('#' + self.imagesId).style[self.transformProperty] = '';
+        });
 	}
 	
 	self.getTransformProperty = function() {
-	
+	return "transform";
 		var el = document.createElement('p'), 
 				 t, 
 				 has3d,

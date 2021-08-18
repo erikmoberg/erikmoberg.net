@@ -30,38 +30,36 @@ if (!$continuation) {
 	var isLoadingEntries = false;
 	var loadMoreEntries = function () {
 		if (!isLoadingEntries) {
-			var loadEntriesButton = $('#load-more-entries');
+			var loadEntriesButton = document.querySelector('#load-more-entries');
 			isLoadingEntries = true;
-			var oldText = loadEntriesButton.html();
-			loadEntriesButton.html('Loading entries...');
+			var oldText = loadEntriesButton.innerHTML;
+			loadEntriesButton.innerHTML = 'Loading entries...';
+            loadEntriesButton.classList.add('loading');
 			
-			var pulse = function () {
-				loadEntriesButton.delay(200).addClass('loading', 'slow').delay(50).removeClass('loading', 'slow', function() {
-					if (isLoadingEntries) {
-						pulse();
-					}
-				});
-			};
-			pulse();
-			
-			var pageNumber = parseInt(loadEntriesButton.data('pagenumber'));
+			var pageNumber = parseInt(loadEntriesButton.getAttribute('data-pagenumber'));
 			var url = '/index.php?page=' + pageNumber + '&continuation=true';
-			$.get(url, function(data) {
-				var content = $(data).hide();
-				$('article').last().after(content);
-				content.slideDown('fast', function() {
-					isLoadingEntries = false;
-				});
-				loadEntriesButton.html(oldText);
-				loadEntriesButton.data('pagenumber', pageNumber+1);
-				if(content.filter('.no-more-entries').length) {
-					loadEntriesButton.remove();
+			fetch(url)
+              .then(function(response) { return response.text(); })
+              .then(function(data) {
+                loadEntriesButton.classList.remove('loading');
+				var content = data;
+				let articles = document.querySelectorAll('article');
+                let article = articles[articles.length - 1];
+                var newNode = document.createElement('div');
+                newNode.innerHTML = content;
+                article.parentNode.insertBefore(newNode, article.nextSibling);
+
+                isLoadingEntries = false;
+				loadEntriesButton.innerHTML = oldText;
+				loadEntriesButton.setAttribute('data-pagenumber', pageNumber+1);
+				if (content.indexOf('no-more-entries') > -1) {
+				 	loadEntriesButton.style.display = 'none';
 				}
 			});
 		}
 	};
 
-	$('#load-more-entries').on('click', function(e) {
+	document.querySelector('#load-more-entries').addEventListener('click', function(e) {
 		e.preventDefault();
 		loadMoreEntries();
 	});

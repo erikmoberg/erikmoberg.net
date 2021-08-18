@@ -62,7 +62,7 @@ pre code {
 
 blockquote {
     font-style: italic;
-    padding: 25px 10px;
+    padding: 15px 10px;
     margin: 10px 0;
     border-left: 5px solid;
     background-color: #eee;
@@ -547,6 +547,12 @@ article, .full-article, .article-navigation, .social-links, #frmComments, .page-
 .form-error {
 	margin-left: 5px;
 	color: red;
+    opacity: 0;
+    transition: all 0.2s ease-out;
+}
+
+.form-error-visible {
+    opacity: 1;
 }
 
 .articleimage {
@@ -774,7 +780,7 @@ aside {
 
 .note {
   background-color: #eee;
-  padding: 25px 10px;
+  padding: 15px 10px;
   margin: 10px 0;
   border-left: 5px solid #da4526;
 }
@@ -1020,7 +1026,6 @@ aside {
 }
 
 #flickr-recent img {
-	display: none;
 	width: 75px;
 	height: 75px;
 }
@@ -1107,8 +1112,22 @@ aside {
 }
 
 #load-more-entries.loading {
-	background-color: #ffd200;
+	animation: fadeInOut 1s;
+    animation-iteration-count: infinite;
 }
+
+@keyframes fadeInOut {
+  0% {
+    opacity: 0.5;
+  }
+75% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.5;
+  }
+}
+
 
 .change-theme-container {
     margin-bottom: 10px;
@@ -1292,6 +1311,7 @@ body.gallery {
   width: 100%;
   overflow: hidden;
   z-index: 110;
+  user-select: none;
 }
 
 #images {
@@ -1445,6 +1465,14 @@ svg.feather {
 
 .flex-container div {
     flex: 0 1 auto;
+}
+
+#flickr-recent img, .maingalleryitem, .gallery-thumbnail img {
+    transition: opacity .1s ease-in-out;
+}
+
+#flickr-recent img:hover, .maingalleryitem:hover, .gallery-thumbnail img:hover {
+    opacity: 0.6;
 }
 
 @media screen and (max-width: 950px) {
@@ -1830,7 +1858,13 @@ body.dark-theme .commentheader {
     color: #d8d8d8;
 }
 
-body.dark-theme, body.dark-theme #containercontainer, body.dark-theme #bottom, body.dark-theme code, body.dark-theme .note, body.dark-theme c, body.dark-theme blockquote {
+body.dark-theme, 
+body.dark-theme #containercontainer, 
+body.dark-theme #bottom, 
+body.dark-theme code, 
+body.dark-theme .note, 
+body.dark-theme c, 
+body.dark-theme blockquote {
     background-color: #252526;
 }
 
@@ -1847,7 +1881,8 @@ body.dark-theme #header-back {
 
 body.dark-theme aside,
 body.dark-theme #menucontainer,
-body.dark-theme .textinput {
+body.dark-theme .textinput,
+body.dark-theme #headerContainer {
     background-color: #333333;
 }
 

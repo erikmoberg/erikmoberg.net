@@ -5,6 +5,8 @@ PrintStartHtml('Shiny Icon Maker',3,'The Shiny Icon Maker is a simple tool to cr
 
 ?>
 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
 <div class="page-section">
 <h2>Shiny Icon Maker</h2>
 <p>

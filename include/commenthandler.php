@@ -107,7 +107,8 @@ function PrintRecentComments($count)
 
 function AddLinksToMessage($message)
 {
-	return preg_replace('@((https?://){1}([-\w]+\.[-\w\.]+)+\w(:\d+)?(/([-\w/_\.]*(\?\S+)?)?)*)@', '<a href="$1" rel="nofollow" target="_blank">$1</a>', $message);
+	//return preg_replace('@((https?://){1}([-\w]+\.[-\w\.]+)+\w(:\d+)?(/([-\w/_\.]*(\?\S+)?)?)*)@', '<a href="$1" rel="nofollow" target="_blank">$1</a>', $message);
+    return preg_replace('@((https?://){1}([-\w]+\.[-\w\.]+)+\w(:\d+)?(/([-\w/_\.]*(\?\S+)?)?)*#?[\S]*)@', '<a href="$1" rel="nofollow" target="_blank">$1</a>', $message);
 }
 
 function GetSingleCommentMarkup($name, $datetime, $website, $message, $number)

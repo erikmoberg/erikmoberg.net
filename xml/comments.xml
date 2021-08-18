@@ -4720,6 +4720,43 @@ Thank you very much!</message>
       <message>Saved me tons of time!
 THX so much</message>
     </comment>
+    <comment>
+      <name>Farn</name>
+      <datetime>2021-07-28 22:05</datetime>
+      <website/>
+      <message>This saved my life and probably hours and hours of work by not having to deal with animation overrides.</message>
+    </comment>
+    <comment>
+      <name>Jeff</name>
+      <datetime>2021-08-18 09:59</datetime>
+      <website/>
+      <message>Anyone can help? I can swap the sprite just fine, but I spammed with this line
+
+KeyNotFoundException: The given key was not present in the dictionary.
+System.Collections.Generic.Dictionary`2[TKey,TValue].get_Item (TKey key) (at &lt;eae584ce26bc40229c1b1aa476bfa589&gt;:0)
+SpriteSwap.LateUpdate () (at Assets/Farming RPG/Scripts/Misc/SpriteSwap.cs:41)
+
+Line 41 is:
+spriteRenderer.sprite = spriteSheet[spriteRenderer.sprite.name];
+
+Anyone can help me?</message>
+    </comment>
+    <comment>
+      <name>Jeff</name>
+      <datetime>2021-08-18 10:00</datetime>
+      <website/>
+      <message>And yes, I'm not "falsely" naming my sprite, because everything works. Just spammed with those line</message>
+    </comment>
+    <comment>
+      <name>Erik</name>
+      <datetime>2021-08-18 13:27</datetime>
+      <website/>
+      <message>Hi Jeff,
+
+strange if each slice is named correctly, but I think it still sounds like the problem that Dorian had above, check https://www.erikmoberg.net/article/unity3d-replace-sprite-programmatically-in-animation#comment-2
+
+Hope this helps!</message>
+    </comment>
   </comments>
   <comments articlename="hands-on-cheap-interchangeable-cell-phone-lenses">
     <comment>
@@ -4891,14 +4928,6 @@ I hope this can be solved... :)</message>
       <datetime>2021-07-13 22:08</datetime>
       <website/>
       <message>interesting, i imagine google assumes you use user data. XD</message>
-    </comment>
-  </comments>
-  <comments articlename="embed-svg-icons-in-html-with-php">
-    <comment>
-      <name>test</name>
-      <datetime>2021-07-20 00:20</datetime>
-      <website/>
-      <message>test</message>
     </comment>
   </comments>
 </articlecomments>

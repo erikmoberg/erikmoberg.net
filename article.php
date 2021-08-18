@@ -104,56 +104,66 @@ echo '</div>';
 
 <script type="text/javascript">
 
-$(function() {
+document.querySelector('#btnSend').addEventListener('click', function() {
+    for (const errorLabel of document.querySelectorAll('.form-error')) {
+        errorLabel.innerHTML = '';
+        errorLabel.classList.remove('form-error-visible');
+    }
 
-	$('#btnSend').on('click', function() {
-		$('.form-error').hide();
+    var formData = {
+        name: document.querySelector('#txtName').value,
+        message: document.querySelector('#txtMessage').value,
+        readableid: '<?php echo $readableid; ?>'
+    };
 
-		var formData = {
-			name: $('#txtName').val(),
-			message: $('#txtMessage').val(),
-			readableid: '<?php echo $readableid; ?>'
-		};
+    var formErrors = validateCommentForm(formData);
 
-		var formErrors = validateCommentForm(formData);
+    if (formErrors.length > 0) {
+        for (const formError of formErrors) {
+            const errorLabel = document.querySelector('#' + formError.field + 'Error')
+            errorLabel.innerHTML = formError.message;
+            errorLabel.classList.add('form-error-visible');
+        }
+    }
+    else {
+        document.querySelector('#comments-shroud').style.display = 'block';
+        document.querySelector('#submitting-form').style.display = 'block';
 
-		if (formErrors.length > 0) {
-			$.each(formErrors, function(i, formError) {
-				$('#' + formError.field + 'Error')
-					.html(formError.message)
-					.show()
-					.css({backgroundColor: '#FF0000'})
-					.animate({backgroundColor: 'transparent'}, '200');
-			});
-		}
-		else {
-			$('#comments-shroud, #submitting-form').fadeTo(200, 0.7);
-			$.post('/savecomment.php', formData, function(result) {
-				if (!result.success) {
-					$('#comments-shroud, #submitting-form').hide();
-					alert(result.reason);
-				}
-				else {
-					$('#frmComments').remove();
-					$('#comment-entries').append(result.markup);
-					$('#comment-counter').html(parseInt($('#comment-counter').html())+1);
-					$('#comment-text').html($('#comment-counter').html() == '1' ? 'Comment' : 'Comments');
-					$('html, body').animate({ scrollTop: $('#' + result.id).offset().top - $('#menucontainer').height() - 10 }, 500, function() {
-						setTimeout(function() {
-							$('#' + result.id).css({backgroundColor: '#da4526'})
-								.animate({backgroundColor: emnet.isDarkTheme() ? '#581c0f' : '#ffe9c3'}, 1500);
-						}, 50);
-					});
-				}
-			}, 'json')
-            .fail(function(xhr) {
-                $('#comments-shroud, #submitting-form').hide();
-                alert("error saving comment: " + xhr.responseText);
+        fetch('/savecomment.php', 
+        {
+            method: 'POST',
+            body: JSON.stringify(formData)
+        }).then(function (response) {
+            document.querySelector('#comments-shroud').style.display = 'none';
+            document.querySelector('#submitting-form').style.display = 'none';
+            if (!response.ok) {
+                alert("error saving comment.");
+                return;
+            }
+
+            response.json().then(function(result) {
+                if (!result.success) {    
+                    alert(result.reason);
+                }
+                else {
+                    var commentForm = document.querySelector('#frmComments');
+                    commentForm.parentNode.removeChild(commentForm);
+
+                    var parent = document.querySelector('#comment-entries');
+                    var newNode = document.createElement('div');
+                    newNode.innerHTML = result.markup;
+                    parent.appendChild(newNode);
+
+                    const numberOfComments = parseInt(document.querySelector('#comment-counter').innerHTML) + 1;
+                    document.querySelector('#comment-counter').innerHTML = numberOfComments;
+                    document.querySelector('#comment-text').innerHTML = numberOfComments == 1 ? 'Comment' : 'Comments';
+                    document.querySelector('#' + result.id).scrollIntoView({behavior: "smooth", block: "center"});
+                    document.querySelector('#' + result.id).classList.add('pulse');
+                }
             });
-		}
-	});
+        });
+    }
 });
-
 </script>
 
 <?php
