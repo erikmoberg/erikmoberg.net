@@ -24,7 +24,7 @@ if($displayform)
 <div class="page-section">
 	<h2>About</h2>
 	<p>
-	I have been working as a software developer since 2005, specializing in web development using ASP.NET - MVC as well as Core - with C# along with some client side magic using JavaScript, with libaries and frameworks such as React and Angular.
+	I have been working as a software developer since 2005, specializing in web development using ASP.NET - MVC as well as Core - with C# along with some client side magic using JavaScript, with libraries and frameworks such as React and Angular.
 	Although great website building tools exist, being a web developer but not having a hand-crafted web site felt just plain wrong - so as a side project, I set up this web site to make use of my skills and learn a few new ones.
 	</p>
 	<p>
