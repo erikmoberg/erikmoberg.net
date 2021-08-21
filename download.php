@@ -25,7 +25,7 @@ Fix image orientation with the <a href="#jpegrotator">JPEG Rotator</a>! Download
     Fast-paced platform arcade action for one or two players! Check out the <a href="/ten-tiny-levels">microsite</a> or download using the badge below.
   </p>
 
-  <div class="flex-container">
+  <div class="responsive-grid-2-columns">
   <?php
   $images = [
     0 => 'screenshot-01.png',
@@ -94,7 +94,7 @@ Download and play for free. A must if you like good ol' DOS games!
 <b><a href="/download/project_c.zip">Get it now! (450KB)</a></b>
 </p>
 
-<div class="flex-container wrap">
+<div class="responsive-grid-2-columns">
 <?php
 $markup = '';
 
@@ -103,7 +103,7 @@ $markup .= '<div class="thumb_small" style="float: none; text-align: center;">';
 $markup .= "<a href=\"/content/images/projectc2.jpg\" class=\"gallery-thumbnail\">";
 $markup .= "<img src=\"/content/images/projectc2_thumb.jpg\" style=\"width: auto;\" alt=\"" . $desc2 . "\" title=\"" . $desc2 . "\" />";
 $markup .= "</a>";
-$markup .= '<div class="imagedescription" style="max-width: 200px;">' . $desc2 . '</div>';
+$markup .= '<div class="imagedescription">' . $desc2 . '</div>';
 $markup .= '</div>';
 
 $desc1 = "Cooperative multiplayer action";
@@ -111,7 +111,7 @@ $markup .= '<div class="thumb_small" style="float: none; text-align: center;">';
 $markup .= "<a href=\"/content/images/projectc1.jpg\" class=\"gallery-thumbnail\">";
 $markup .= "<img src=\"/content/images/projectc1_thumb.jpg\" style=\"width: auto;\" alt=\"" . $desc1 . "\" title=\"" . $desc1 . "\" />";
 $markup .= "</a>";
-$markup .= '<div class="imagedescription" style="max-width: 200px;">' . $desc1 . '</div>';
+$markup .= '<div class="imagedescription">' . $desc1 . '</div>';
 $markup .= '</div>';
 
 echo $markup;
@@ -126,7 +126,7 @@ echo $markup;
 
 <p>Images provided in full resolution. Feel free to download and use them as you wish - desktop background, or maybe for printing? Click on each of them to download.</p>
 
-<div class="flex-container wrap">
+<div class="responsive-grid-2-columns">
 <?php
 
 DisplayHiresImages();

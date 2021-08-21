@@ -34,7 +34,7 @@ function PrintStartHtml($pageTitle, $highlightitem, $metadescription)
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400&family=Roboto+Condensed:wght@400;700&family=Roboto+Mono" rel="stylesheet" type='text/css'>
-	<link rel="stylesheet" type="text/css" href="/content/styles/style.css.php?_=52" />
+	<link rel="stylesheet" type="text/css" href="/content/styles/style.css.php?_=53" />
 	<link rel="shortcut icon" href="/favicon.ico" type="image/vnd.microsoft.icon" />
     <link rel="icon" type="image/png" href="/content/favicon/favicon-red-192.png" sizes="192x192">
 	<link rel="icon" type="image/png" href="/content/favicon/favicon-red-160.png" sizes="160x160">
@@ -226,11 +226,11 @@ if ($pageHint == "shiny-iconmaker") {
     <script src="/include/scripts.js.php?_=14" type="text/javascript"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js" type="text/javascript"></script>    
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.4.2/knockout-min.js" type="text/javascript"></script>
-	<script src="/include/scripts.js.php?iconmaker=1&amp;_=14" type="text/javascript"></script>
+	<script src="/include/scripts.js.php?iconmaker=1&amp;_=15" type="text/javascript"></script>
 	<?php
 } else {
     ?> 
-    <script src="/include/scripts.js.php?_=14" defer type="text/javascript"></script>
+    <script src="/include/scripts.js.php?_=15" defer type="text/javascript"></script>
     <?php
 }
 ?>

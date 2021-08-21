@@ -449,7 +449,7 @@ article, .full-article, .article-navigation, .social-links, #frmComments, .page-
 	height: 140px;
 }
 
-#txtName, #txtMessage {
+#txtName, #txtMessage, #txtEmail {
 	max-width: calc(100% - 10px);
 	width: 550px;
 }
@@ -551,7 +551,7 @@ article, .full-article, .article-navigation, .social-links, #frmComments, .page-
     transition: all 0.2s ease-out;
 }
 
-.form-error-visible {
+.form-error .form-error-visible {
     opacity: 1;
 }
 
@@ -573,12 +573,10 @@ article, .full-article, .article-navigation, .social-links, #frmComments, .page-
 .maingalleryitem
 {
 	overflow: hidden;
-	float: left;
-	margin: 0 10px 10px 0;
-	padding: 0px;
 	width: 285px;
 	height: 190px;
 	position: relative;
+    margin-bottom: 5px;
 }
 
 .maingalleryitem img
@@ -606,6 +604,7 @@ article, .full-article, .article-navigation, .social-links, #frmComments, .page-
 	display: block;
 	padding: 10px 5px;
 	color: #eee;
+    margin-top: 5px;
 }
 
 .singlegalleryitem a
@@ -695,10 +694,6 @@ img.about-image {
 	margin: 5px 0;
 	padding: 10px 0;
 	text-align: center;
-}
-
-.hires_image figcaption {
-	max-width: 400px;
 }
 
 .hires_image a
@@ -1277,24 +1272,37 @@ td.gsc-search-button {
 
 /* Google Custom search end */
 
+.responsive-grid-2-columns, .responsive-grid-3-columns {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(285px, 1fr));
+    grid-column-gap: 5px;
+    grid-row-gap: 5px;
+    justify-items: center;
+}
+
+.responsive-grid-2-columns {
+    grid-template-columns: repeat(auto-fit, minmax(440px, 1fr));
+}
+
+.responsive-grid-no-lineheight {
+  line-height: 0;
+}
+.responsive-grid-no-justify {
+    justify-items: normal;
+}
 
 /* Responsive gallery start */
 
 .gallery-thumbnails-container {
-	display: flex;
+  display: flex;
   flex-flow: row wrap;
   align-content: flex-start;
 }
 
 .gallery-thumbnail {
-  background: none;
-	width: 33.3333%;
 }
 .gallery-thumbnail img {
-	border: none;
-  vertical-align: bottom;
-  margin: 0 2px 2px 0;
-  width: calc(100% - 2px);
+    width: 100%;
 }
 
 body.gallery {
@@ -1650,10 +1658,6 @@ svg.feather {
 		font-size: 20px;
 	}
 
-	.gallery-thumbnail {
-		width: 50%;
-	}
-
 	.teaser {
 		float: none;
 	}
@@ -1750,6 +1754,10 @@ svg.feather {
     .follow-icons .svg {
       margin-top: 4px;
     }
+
+    .responsive-grid-2-columns {
+        grid-template-columns: 1fr;
+    }
 }
 
 @media screen and (max-width: 400px) {
@@ -1839,6 +1847,10 @@ svg.feather {
 
     .hires_image img {
         max-width: 100%;
+    }
+
+    .responsive-grid-3-columns {
+        grid-template-columns: 1fr;
     }
 }
 

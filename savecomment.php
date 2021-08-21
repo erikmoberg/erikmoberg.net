@@ -5,6 +5,7 @@
     $name = $data["name"];
     $message = $data["message"];
     $readableid = $data["readableid"];
+    $someTxt = $data["someTxt"];
 
 	if(empty($name)) {
 		echo json_encode(array('success' => false, 'reason' => 'Name is required.'));
@@ -26,20 +27,26 @@
     // website: not used
 	$website = null;
 	
-	if(empty(readableid)) {
+	if(empty($readableid)) {
 		echo json_encode(array('success' => false, 'reason' => 'General error occurred saving the comment. Please reload the page.'));
 		return;
 	}
 	
-	$commentId = AddComment($readableid, $name, $website, $message);
-	
-	if ($website != null && $website != '') {
-		$website = CreateValidUrl($website);
-	}
-	$datetime = date('F dS, Y H:m');
-	
-	$message = AddLinksToMessage($message);
-	$markup = GetSingleCommentMarkup($name, $datetime, $website, $message, $commentId);
-	echo json_encode(array('success' => true, 'id' => 'comment-' . $commentId, 'markup' => $markup));
-    return;
+    if (empty($someTxt)) {
+        $commentId = AddComment($readableid, $name, $website, $message);
+        
+        if ($website != null && $website != '') {
+            $website = CreateValidUrl($website);
+        }
+        $datetime = date('F dS, Y H:m');
+        
+        $message = AddLinksToMessage($message);
+        $markup = GetSingleCommentMarkup($name, $datetime, $website, $message, $commentId);
+        echo json_encode(array('success' => true, 'id' => 'comment-' . $commentId, 'markup' => $markup));
+        return;
+    } else {
+        // $testText should be empty, if filled out, indicates spam. Fake success
+        echo json_encode(array('success' => true, 'id' => 'comment-0', 'markup' => ''));
+        return;
+    }
 ?>

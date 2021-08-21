@@ -65,7 +65,7 @@ echo '</div>';
 <label for="txtName">Name</label>
 <label id="txtNameError" class="form-error"></label>
 <br />
-<input type="text" class="textinput" name="txtName" id="txtName" />
+<input type="text" class="textinput" id="txtName" />
 </p>
 <?php
 //<p>
@@ -79,8 +79,8 @@ echo '</div>';
 <label for="txtMessage">Comment</label>
 <label id="txtMessageError" class="form-error"></label>
 <br />
-<textarea class="textinput" name="txtMessage" id="txtMessage" onkeydown="return checkMaxLength(this,event,1000)" onkeyup="return checkMaxLength(this,event,1000)" onfocus="return checkMaxLength(this,event,1000)" onblur="return checkMaxLength(this,event,1000)"></textarea>
-<textarea rows="5" cols="54" class="textinput" name="someTxt" id="someTxt"></textarea>
+<textarea id="someTxt"></textarea>
+<textarea class="textinput" id="txtMessage" onkeydown="return checkMaxLength(this,event,1000)" onkeyup="return checkMaxLength(this,event,1000)" onfocus="return checkMaxLength(this,event,1000)" onblur="return checkMaxLength(this,event,1000)"></textarea>
 <br />
 <br />
 <button class="btn" id="btnSend">Post comment</button>
@@ -113,7 +113,8 @@ document.querySelector('#btnSend').addEventListener('click', function() {
     var formData = {
         name: document.querySelector('#txtName').value,
         message: document.querySelector('#txtMessage').value,
-        readableid: '<?php echo $readableid; ?>'
+        readableid: '<?php echo $readableid; ?>',
+        someTxt: document.querySelector('#someTxt').value
     };
 
     var formErrors = validateCommentForm(formData);

@@ -824,13 +824,6 @@ I cannot speak for that particular model, but the 731SP uses 5v so basically any
       <website/>
       <message>Thanks! And nice name, by the way. ;)</message>
     </comment>
-    <comment>
-      <name> Harold Burton</name>
-      <datetime>2021-06-23 05:41</datetime>
-      <website/>
-      <message>Please awnser this, I need to do offers that require me to download and open apps and I will get points. I have tried many different android emulators, but all of them are slow, my computer details are:OS: Microsoft Windows 10 Home Graphics And Processor: AMD A6-7310 APU with AMD Radeon R4 Graphics, 2000 Mhz, 4 Core(s), 4 Logical Processor(s)Memory: 4.00 GB (RAM)&#xFEFF;
-&lt;a hrefs="https://darkweblinkssites.com/"&gt; Harold Burton &lt;/a&gt;</message>
-    </comment>
   </comments>
   <comments articlename="the_social_network">
     <comment>
@@ -4756,6 +4749,46 @@ Anyone can help me?</message>
 strange if each slice is named correctly, but I think it still sounds like the problem that Dorian had above, check https://www.erikmoberg.net/article/unity3d-replace-sprite-programmatically-in-animation#comment-2
 
 Hope this helps!</message>
+    </comment>
+    <comment>
+      <name>Jeff</name>
+      <datetime>2021-08-19 06:33</datetime>
+      <website/>
+      <message>Hi Erik thanks for your reply.
+
+Well it's weird, I even test it by renaming each slice only with numbers (1 to 10) to make sure I'm not having a typo.
+
+The error is still there from the moment I hit the play button (still not interacting with anything in my game).
+I'm not using "this" in my code, don't know if it affects anything</message>
+    </comment>
+    <comment>
+      <name>Erik</name>
+      <datetime>2021-08-19 07:12</datetime>
+      <website/>
+      <message>Hi Jeff,
+
+no, "this" should not be required, it's mostly a convention. 
+
+Just make sure that each slice is named the same in every image - so that each slice for player 1 has the same name as for player 2 and so on. 
+
+Usually when I'm having trouble I just set a breakpoint on the offending line and start the debugger, inspecting the variables should definitely help in your case as well.</message>
+    </comment>
+    <comment>
+      <name>Jeff</name>
+      <datetime>2021-08-19 07:49</datetime>
+      <website/>
+      <message>So my solution is I'm following the exact code from the youtube link you give.
+It works fine too just like your code, except it does not give me any error warning.
+
+Though I prefer your code, maybe for now I'll stick with the one on the video.
+
+Thank you!</message>
+    </comment>
+    <comment>
+      <name>Erik</name>
+      <datetime>2021-08-19 09:01</datetime>
+      <website/>
+      <message>Sure Jeff, whatever floats you boat! Glad you got it working.</message>
     </comment>
   </comments>
   <comments articlename="hands-on-cheap-interchangeable-cell-phone-lenses">

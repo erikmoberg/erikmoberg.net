@@ -32,7 +32,7 @@ function DisplayMainGallery()
 	echo '</div>';
 	echo '<div class="page-section">';
     
-    echo '<div class="flex-container wrap">';
+    echo '<div class="responsive-grid-3-columns">';
 	foreach ($xml->gallery as $gallery)
 	{
 		if($gallery->archived != 'true')
@@ -101,7 +101,8 @@ function DisplaySingleGallery($galleryid)
 	$backlink = '<p><a href="/images">' . GetIconMarkup('arrow-left-circle') . ' Back to overview</a></p>';
 	echo $backlink;
 	echo '</div>';
-	echo '<div class="page-section gallery-thumbnails-container">';
+	echo '<div class="page-section">';
+    echo '<div class="responsive-grid-3-columns responsive-grid-no-lineheight responsive-grid-no-justify">';
 
 	$imagebasedir = '/images/' . $gallerynode->basedir;
 	$thumbNo = 1;
@@ -121,6 +122,7 @@ function DisplaySingleGallery($galleryid)
 
 	echo '<div style="clear:both;"></div>';
 	echo '</div>';
+    echo '</div>';
 	echo '<div class="page-section">';
 	echo $backlink;
 	echo '</div>';

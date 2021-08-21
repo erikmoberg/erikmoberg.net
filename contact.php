@@ -24,16 +24,15 @@ if($displayform)
 <div class="page-section">
 	<h2>About</h2>
 	<p>
-	Although great website building tools exist, being a web developer but not having a hand-crafted web site felt just plain wrong.
 	I have been working as a software developer since 2005, specializing in web development using ASP.NET - MVC as well as Core - with C# along with some client side magic using JavaScript, with libaries and frameworks such as React and Angular.
-	So as a side project, I set up this web site to make use of my skills and learn a few new ones.
+	Although great website building tools exist, being a web developer but not having a hand-crafted web site felt just plain wrong - so as a side project, I set up this web site to make use of my skills and learn a few new ones.
 	</p>
 	<p>
-	The site uses PHP, and is programmed with Atom. For image manipulation, GIMP and Inkscape are used.
-	The image gallery and the first page use XML for storing data, handled by a simple CMS-like application.
+	The site uses PHP, and is programmed with VS Code. For image manipulation, GIMP and Inkscape are used.
+	The image gallery and the first page use XML for storing data, handled by a self-developed simple CMS-like application.
 	</p>
 	<p>
-	I also like photography and travelling. You can find some of my pictures in the <a href="/images">image gallery</a>.
+	Besides programming, I also like photography and travelling. You can find some of my pictures in the <a href="/images">image gallery</a>.
 	</p>
 	<div class="clearfix"></div>
 </div>
@@ -77,17 +76,18 @@ if($displayform)
 <form id="frmContact" method="post" action="contact">
 <p>
 <label for="txtName">Name</label><br />
-<input class="textinput" type="text" style="width: 250px" name="txtName" id="txtName" />
+<input class="textinput" type="text" name="txtName" id="txtName" />
 </p>
 <p>
 <label for="txtEmail">Email</label><br />
-<input class="textinput" type="text" style="width: 250px" name="txtEmail" id="txtEmail" />
+<input class="textinput" type="text" name="txtEmail" id="txtEmail" />
 <input type="hidden" name="txtTesttext" id="txtTesttext" value="none" />
 </p>
 <p>
 <label for="txtMessage">Message</label><br />
-<textarea class="textinput" rows="5" cols="54" name="txtMessage" id="txtMessage" onkeydown="checkMaxLength(this,1000)" onkeyup="checkMaxLength(this,1000)" onfocus="checkMaxLength(this,1000)" onblur="checkMaxLength(this,1000)"></textarea>
-<textarea rows="5" cols="54" name="someTxt" id="someTxt"></textarea>
+<textarea class="textinput" name="txtMessage" id="txtMessage" onkeydown="checkMaxLength(this,1000)" onkeyup="checkMaxLength(this,1000)" onfocus="checkMaxLength(this,1000)" onblur="checkMaxLength(this,1000)"></textarea>
+<textarea name="someTxt" id="someTxt"></textarea>
+<br />
 <br />
 <input type="submit" id="btnSend" name="btnSend" class="btn" onclick="javascript:document.getElementById('txtTesttext').value = 'emalj';return postContact('txtName', 'txtEmail', 'txtTesttext', 'txtMessage');" value="Send message" />
 </p>
