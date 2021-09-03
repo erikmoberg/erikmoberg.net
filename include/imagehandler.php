@@ -82,7 +82,7 @@ function DisplayArchivedGallery()
 
 function PrintMainGalleryImage($galleryname, $gallerydatetime, $galleryfrontpic, $galleryid, $gallerdescription)
 {
-    $version = "4";
+    $version = "5";
 	echo '<div class="maingalleryitem">';
 	echo "<a href=\"/images/$galleryid\"><img src=\"$galleryfrontpic?_=$version\" alt=\"$galleryname\" />";
     echo "<h3 class=\"maingalleryitemname\">$galleryname</h3>";
@@ -93,7 +93,7 @@ function PrintMainGalleryImage($galleryname, $gallerydatetime, $galleryfrontpic,
 
 function DisplaySingleGallery($galleryid)
 {
-    $version = "4";
+    $version = "5";
 	$xml = LoadImageXml();
 	foreach($xml->gallery as $gallery)
 	{

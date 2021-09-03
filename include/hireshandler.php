@@ -35,7 +35,7 @@ function PrintImage($title, $thumbfilename, $filename, $comment)
 	$link = '<a href="' . $filename . '" target="_blank">';
     ?>
       <div class="hires_image">
-        <?php echo $link; ?></a>
+        <?php echo $link; ?>
           <img alt="<?php echo $title; ?>" src="<?php echo $thumbfilename; ?>?_=1" />
         </a>
         <h3><?php echo $link; ?> <?php echo $title; ?></a></h3>
