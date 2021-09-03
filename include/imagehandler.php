@@ -1,4 +1,5 @@
 <?php
+
 function LoadImageXml()
 {
 	$xmlFile = 'xml/images-en.xml';
@@ -32,7 +33,7 @@ function DisplayMainGallery()
 	echo '</div>';
 	echo '<div class="page-section">';
     
-    echo '<div class="responsive-grid-3-columns">';
+    echo '<div>';
 	foreach ($xml->gallery as $gallery)
 	{
 		if($gallery->archived != 'true')
@@ -41,7 +42,8 @@ function DisplayMainGallery()
 			$gallerydatetime = $gallery->datetime;
 			$galleryfrontpic = '/images/' . $gallery->basedir . '/' . $gallery->frontpic;
 			$galleryid = $gallery['id'];
-			PrintMainGalleryImage($galleryname, $gallerydatetime, $galleryfrontpic, $galleryid);
+            $gallerdescription = $gallery->description;
+			PrintMainGalleryImage($galleryname, $gallerydatetime, $galleryfrontpic, $galleryid, $gallerdescription);
 		}
 	}
     echo '</div>';
@@ -69,7 +71,8 @@ function DisplayArchivedGallery()
 			$gallerydatetime = $gallery->datetime;
 			$galleryfrontpic = '/images/' . $gallery->basedir . '/' . $gallery->frontpic;
 			$galleryid = $gallery['id'];
-			PrintMainGalleryImage($galleryname, $gallerydatetime, $galleryfrontpic, $galleryid);
+            $gallerdescription = $gallery->description;
+			PrintMainGalleryImage($galleryname, $gallerydatetime, $galleryfrontpic, $galleryid, $gallerdescription);
 		}
 	}
 
@@ -77,16 +80,20 @@ function DisplayArchivedGallery()
 	echo '</div>';
 }
 
-function PrintMainGalleryImage($galleryname, $gallerydatetime, $galleryfrontpic, $galleryid)
+function PrintMainGalleryImage($galleryname, $gallerydatetime, $galleryfrontpic, $galleryid, $gallerdescription)
 {
+    $version = "4";
 	echo '<div class="maingalleryitem">';
-	echo "<a href=\"/images/$galleryid\"><img src=\"$galleryfrontpic?_=1\" alt=\"$galleryname\" /></a>";
-	echo "<div class=\"maingalleryitemcaption\"><a href=\"/images/$galleryid\">$galleryname</a></div>";
+	echo "<a href=\"/images/$galleryid\"><img src=\"$galleryfrontpic?_=$version\" alt=\"$galleryname\" />";
+    echo "<h3 class=\"maingalleryitemname\">$galleryname</h3>";
+    echo "<div class=\"maingalleryitemcaption\">$gallerdescription</div>";
+    echo "</a>";
 	echo '</div>';
 }
 
 function DisplaySingleGallery($galleryid)
 {
+    $version = "4";
 	$xml = LoadImageXml();
 	foreach($xml->gallery as $gallery)
 	{
@@ -102,7 +109,7 @@ function DisplaySingleGallery($galleryid)
 	echo $backlink;
 	echo '</div>';
 	echo '<div class="page-section">';
-    echo '<div class="responsive-grid-3-columns responsive-grid-no-lineheight responsive-grid-no-justify">';
+    echo '<div class="responsive-grid-3-columns responsive-grid-no-lineheight responsive-grid-no-justify image-gallery-grid">';
 
 	$imagebasedir = '/images/' . $gallerynode->basedir;
 	$thumbNo = 1;
@@ -110,9 +117,9 @@ function DisplaySingleGallery($galleryid)
 	{
 		$imagedescription = trim($image->description);
 		$basefilename = $imagebasedir . '/' . $image->basefilename;
-		$imagethumb = $basefilename . '_thumb.jpg';
-		$imagethumb_small = $basefilename . '_thumb_small.jpg';
-		$imagefile = $basefilename . '.jpg';
+		$imagethumb = $basefilename . '_thumb.jpg?_=' . $version;
+		$imagethumb_small = $basefilename . '_thumb_small.jpg?_=' . $version;
+		$imagefile = $basefilename . '.jpg?_=' . $version;
 
 		echo "<a href=\"$imagefile\" class=\"gallery-thumbnail\">";
 		echo "<img src=\"$imagethumb\" alt=\"" . htmlentities(htmlentities($imagedescription, ENT_QUOTES, "UTF-8"), ENT_QUOTES, "UTF-8") . "\" title=\"" . htmlentities(htmlentities($imagedescription, ENT_QUOTES, "UTF-8"), ENT_QUOTES, "UTF-8") . " (Click to enlarge)\" />";

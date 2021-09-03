@@ -321,6 +321,10 @@ function RespGallery(options) {
     }
 
 	self.hideGallery = function() {
+        if (location.hash == '#gallery') {
+            history.back();
+        }
+        
 		if (!document.body.classList.contains('gallery')) {
 			return;
 		}

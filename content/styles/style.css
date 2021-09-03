@@ -572,16 +572,13 @@ article, .full-article, .article-navigation, .social-links, #frmComments, .page-
 
 .maingalleryitem
 {
-	overflow: hidden;
-	width: 285px;
-	height: 190px;
-	position: relative;
-    margin-bottom: 5px;
+	margin-bottom: 25px;
+    padding: 10px;
 }
 
 .maingalleryitem img
 {
-	border: none;
+	width: 100%;
 }
 
 .maingalleryitem a
@@ -591,19 +588,14 @@ article, .full-article, .article-navigation, .social-links, #frmComments, .page-
 
 .maingalleryitemcaption
 {
-	background: url(../images/transparent65.png);
-	position: absolute;
-	bottom: 0;
-	left: 0;
-	height: 40px;
-	width: 285px;
+    color: #888;
+    margin: 0 0 15px;
 }
 
-.maingalleryitemcaption a
+#content h3.maingalleryitemname
 {
-	display: block;
-	padding: 10px 5px;
-	color: #eee;
+    margin: 10px 0;
+    text-transform: uppercase;
 }
 
 .singlegalleryitem a
@@ -690,9 +682,12 @@ img.about-image {
 
 .hires_image
 {
-	margin: 5px 0;
-	padding: 10px 0;
-	text-align: center;
+	padding: 20px 0;
+    width: 100%;
+}
+
+#content .hires_image h3 {
+    text-transform: uppercase;
 }
 
 .hires_image a
@@ -701,8 +696,9 @@ img.about-image {
 }
 
 .hires_image img {
-    max-width: 400px;
-    box-shadow: 0 0 3px #888;
+    max-width: calc(100% - 20px);
+    box-shadow: 0 0 3px black;
+    margin-bottom: 5px;
 }
 
 .clearfix {
@@ -1474,11 +1470,11 @@ svg.feather {
     flex: 0 1 auto;
 }
 
-#flickr-recent img, .maingalleryitem, .gallery-thumbnail img {
+#flickr-recent img, .maingalleryitem, .gallery-thumbnail img, .hires_image {
     transition: opacity .1s ease-in-out;
 }
 
-#flickr-recent img:hover, .maingalleryitem:hover, .gallery-thumbnail img:hover {
+#flickr-recent img:hover, .maingalleryitem:hover, .gallery-thumbnail img:hover, .hires_image:hover {
     opacity: 0.6;
 }
 
@@ -1757,6 +1753,10 @@ svg.feather {
     .responsive-grid-2-columns {
         grid-template-columns: 1fr;
     }
+
+    .image-gallery-grid {
+        grid-template-columns: 1fr 1fr;
+    }
 }
 
 @media screen and (max-width: 400px) {
@@ -1847,10 +1847,6 @@ svg.feather {
     .hires_image img {
         max-width: 100%;
     }
-
-    .responsive-grid-3-columns {
-        grid-template-columns: 1fr;
-    }
 }
 
 body.dark-theme,
@@ -1865,7 +1861,8 @@ body.dark-theme #menu-toggle,
 body.dark-theme #content h2,
 body.dark-theme .textinput,
 body.dark-theme .guestbookheader,
-body.dark-theme .commentheader {
+body.dark-theme .commentheader,
+body.dark-theme .maingalleryitemcaption {
     color: #d8d8d8;
 }
 
