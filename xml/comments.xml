@@ -4790,6 +4790,29 @@ Thank you!</message>
       <website/>
       <message>Sure Jeff, whatever floats you boat! Glad you got it working.</message>
     </comment>
+    <comment>
+      <name>Camillo</name>
+      <datetime>2021-08-22 15:07</datetime>
+      <website/>
+      <message>'Sprite []' does not contain a definition of 'ToDictionary' and no accessible extension method 'ToDictionary' was found that accepts a first argument of type 'Sprite []'. Probably missing a directive using or a reference to the assembly. [Assembly-CSharp]</message>
+    </comment>
+    <comment>
+      <name>David from Ukraine</name>
+      <datetime>2021-09-03 15:29</datetime>
+      <website/>
+      <message>Hello Camillo! 
+Try turn on the Linq (Language Integrated Query) feature in the header of your script.
+*top of the script file*
+using System.Linq; &lt;---
+*script*
+
+Hello Erik!
+I'm really thankful to you for this great tutorial.
+Thank you so much! :)
+Have a success in your job and hobbies!
+
+Hello from Ukraine! =)</message>
+    </comment>
   </comments>
   <comments articlename="hands-on-cheap-interchangeable-cell-phone-lenses">
     <comment>

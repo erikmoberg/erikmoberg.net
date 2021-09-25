@@ -672,12 +672,8 @@ img.about-image {
 }
 
 .somemargin {
-	padding: 15px 0;
-	margin: 20px 0 15px 0;
-	border-top: 1px solid #ccc;
-	border-bottom: 1px solid #ccc;
-	text-align: center;
-	clear: both;
+	display: block;
+	margin-top: 20px;
 }
 
 .hires_image
@@ -1476,6 +1472,33 @@ svg.feather {
 
 #flickr-recent img:hover, .maingalleryitem:hover, .gallery-thumbnail img:hover, .hires_image:hover {
     opacity: 0.6;
+}
+
+/* ProjectC JS Dos related */
+
+#start-projectc {
+    text-align: center; 
+    position: relative; 
+    cursor: pointer;
+}
+
+#start-projectc img {
+    max-width: 100%;
+    opacity: 0.5;
+    transition: opacity .1s ease-in-out;
+}
+
+#start-projectc img:hover {
+    opacity: 1;
+}
+
+#start-projectc h2 {
+    position: absolute;
+    top: calc(50% - 20px);
+    left: calc(50% - 125px);
+    width: 250px;
+    pointer-events: none;
+    font-size: 35px;
 }
 
 @media screen and (max-width: 950px) {

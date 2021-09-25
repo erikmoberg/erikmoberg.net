@@ -84,39 +84,67 @@ When shooting vertically, some cameras rotate images using EXIF metadata, but th
 <p>
 A game I developed in back in 2002, called "Project Cataclysm". You can think of it like Bubble Bobble, except with machineguns (shotguns and grenades are also available). It can be played in single player mode, or in multiplayer with two players on the same computer, in deathmatch or cooperative mode. A precursor to Ten Tiny Levels if you will.
 </p>
+
+<div class="responsive-grid-2-columns">
+<?php
+// $markup = '';
+
+// $desc2 = "Mind-blowing outdoor levels";
+// $markup .= '<div class="thumb_small" style="float: none; text-align: center;">';
+// $markup .= "<a href=\"/content/images/projectc2.jpg\" class=\"gallery-thumbnail\">";
+// $markup .= "<img src=\"/content/images/projectc2_thumb.jpg\" style=\"width: auto;\" alt=\"" . $desc2 . "\" title=\"" . $desc2 . "\" />";
+// $markup .= "</a>";
+// $markup .= '<div class="imagedescription">' . $desc2 . '</div>';
+// $markup .= '</div>';
+
+// $desc1 = "Cooperative multiplayer action";
+// $markup .= '<div class="thumb_small" style="float: none; text-align: center;">';
+// $markup .= "<a href=\"/content/images/projectc1.jpg\" class=\"gallery-thumbnail\">";
+// $markup .= "<img src=\"/content/images/projectc1_thumb.jpg\" style=\"width: auto;\" alt=\"" . $desc1 . "\" title=\"" . $desc1 . "\" />";
+// $markup .= "</a>";
+// $markup .= '<div class="imagedescription">' . $desc1 . '</div>';
+// $markup .= '</div>';
+
+// echo $markup;
+?>
+</div>
+
+<div class="somemargin"></div>
+
+<h2>Play the game in the browser</h2>
+  <p>
+    Thanks to the wonders of <a href="https://www.dosbox.com/">DOSBox</a> and <a href="https://js-dos.com/">js-dos</a>, 
+    you can play the game directly in the browser!
+  </p>
+
+  <div id="start-projectc">
+    <img src="/content/images/projectc2.jpg">
+    <h2>Click to play!</h2>
+  </div>
+
+  <link rel="stylesheet" href="/include/jsdos/js-dos.css">
+  <script src="/include/jsdos/js-dos.js"></script>
+  <div id="jsdos"></div>
+  <script>
+      document.getElementById("start-projectc").addEventListener("click", function() {
+        document.getElementById("start-projectc").remove();
+        emulators.pathPrefix = "/include/jsdos/";
+        Dos(document.getElementById("jsdos")).run("/downloads/projectc.jsdos?v=4");
+      });
+  </script>
+
+<div class="somemargin"></div>
+
+<h2>Download and play</h2>
 <p>
-It's a bit old by now and won't run under modern versions of Windows without some tricks - the easiest way, however, is to install <a href="http://www.dosbox.com/" target="_blank">DosBox</a>.
+The game is a bit old by now and won't run under modern versions of Windows without some tricks - the easiest way, however, is to install <a href="http://www.dosbox.com/" target="_blank">DosBox</a>.
 </p>
 <p>
 Download and play for free. A must if you like good ol' DOS games!
 </p>
 <p>
-<b><a href="/download/project_c.zip">Get it now! (450KB)</a></b>
+<b><a href="/downloads/project_c.zip">Get it now! (450KB)</a></b>
 </p>
-
-<div class="responsive-grid-2-columns">
-<?php
-$markup = '';
-
-$desc2 = "Mind-blowing outdoor levels";
-$markup .= '<div class="thumb_small" style="float: none; text-align: center;">';
-$markup .= "<a href=\"/content/images/projectc2.jpg\" class=\"gallery-thumbnail\">";
-$markup .= "<img src=\"/content/images/projectc2_thumb.jpg\" style=\"width: auto;\" alt=\"" . $desc2 . "\" title=\"" . $desc2 . "\" />";
-$markup .= "</a>";
-$markup .= '<div class="imagedescription">' . $desc2 . '</div>';
-$markup .= '</div>';
-
-$desc1 = "Cooperative multiplayer action";
-$markup .= '<div class="thumb_small" style="float: none; text-align: center;">';
-$markup .= "<a href=\"/content/images/projectc1.jpg\" class=\"gallery-thumbnail\">";
-$markup .= "<img src=\"/content/images/projectc1_thumb.jpg\" style=\"width: auto;\" alt=\"" . $desc1 . "\" title=\"" . $desc1 . "\" />";
-$markup .= "</a>";
-$markup .= '<div class="imagedescription">' . $desc1 . '</div>';
-$markup .= '</div>';
-
-echo $markup;
-?>
-</div>
 
 </div>
 
