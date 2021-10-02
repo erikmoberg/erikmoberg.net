@@ -114,8 +114,22 @@ A game I developed in back in 2002, called "Project Cataclysm". You can think of
 <h2>Play the game in the browser</h2>
   <p>
     Thanks to the wonders of <a href="https://www.dosbox.com/">DOSBox</a> and <a href="https://js-dos.com/">js-dos</a>, 
-    you can play the game directly in the browser!
+    you can play the game directly in the browser! Click the image below to start.
   </p>
+
+  <h3>Keys (Desktop):</h3>
+    <ul>
+        <li>Confirm: <c>Enter</c></li>
+        <li>Cancel/Back: <c>ESC</c></li>
+        <li>Player 1 Movement: <c>Arrow keys</c></li>
+        <li>Player 1 Fire: <c>Space bar</c></li>
+        <li>Player 1 Grenade: <c>Return</c></li>
+        <li>Player 2 Movement: <c>R, D, F, G</c></li>
+        <li>Player 2 Fire: <c>W</c></li>
+        <li>Player 2 Grenade: <c>Q</c></li>
+    </ul>
+    <h3>Keys (Mobile):</h3>
+    <p>Use the overlay buttons. Note that only buttons for player 1 are available.</p>
 
   <div id="start-projectc">
     <img src="/content/images/projectc2.jpg">
@@ -132,7 +146,7 @@ A game I developed in back in 2002, called "Project Cataclysm". You can think of
             e.preventDefault();
         }
       }
-      
+
       // https://dos.zone/en/studio
       document.getElementById("start-projectc").addEventListener("click", function() {
         document.getElementById("start-projectc").remove();

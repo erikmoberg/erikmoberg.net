@@ -43,7 +43,7 @@ p {
 }
 
 code, c {
-    font-size: 0.9em;
+    font-size: 0.9rem;
 	background-color: #eee;
     font-family: 'Roboto Mono', "Courier New",Monospace;
     padding: 0 3px;
