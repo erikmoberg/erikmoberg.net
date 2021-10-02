@@ -126,10 +126,19 @@ A game I developed in back in 2002, called "Project Cataclysm". You can think of
   <script src="/include/jsdos/js-dos.js"></script>
   <div id="jsdos"></div>
   <script>
+      var keysToCapture = ["ArrowUp", "ArrowDown", "ArrowLeft", "ArrowRight", "Enter", "Space", "Escape"];
+      var keyPressHandler = function (e) {
+        if (keysToCapture.indexOf(e.code) != -1) {
+            e.preventDefault();
+        }
+      }
+      
+      // https://dos.zone/en/studio
       document.getElementById("start-projectc").addEventListener("click", function() {
         document.getElementById("start-projectc").remove();
         emulators.pathPrefix = "/include/jsdos/";
         Dos(document.getElementById("jsdos")).run("/downloads/projectc.jsdos?v=4");
+        window.addEventListener('keydown', keyPressHandler, true);
       });
   </script>
 
@@ -137,7 +146,7 @@ A game I developed in back in 2002, called "Project Cataclysm". You can think of
 
 <h2>Download and play</h2>
 <p>
-The game is a bit old by now and won't run under modern versions of Windows without some tricks - the easiest way, however, is to install <a href="http://www.dosbox.com/" target="_blank">DosBox</a>.
+The game is a bit old by now and won't run under modern versions of Windows without some tricks - the easiest way, however, is to install <a href="http://www.dosbox.com/" target="_blank">DOSBox</a>.
 </p>
 <p>
 Download and play for free. A must if you like good ol' DOS games!
