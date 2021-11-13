@@ -61,8 +61,7 @@ RewriteRule ^ten-tiny-levels[/]*$ /ten-tiny-levels.php [L]
 RewriteRule ^korv[/]*$ /korv.php [L]
 
 
-
-AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css
+AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css text/javascript application/javascript application/x-javascript
 
 
 

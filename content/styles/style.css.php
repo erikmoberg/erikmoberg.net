@@ -10,5 +10,5 @@ header ($expire);
 
 readfile('style.css');
 //readfile('../../include/highslide/highslide.css');
-readfile('../../include/spectrum/spectrum.css');
+//readfile('../../include/spectrum/spectrum.css');
 ?>

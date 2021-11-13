@@ -15,7 +15,7 @@ if(isset($_GET['iconmaker'])) {
 
 if ($iconmaker) {
 	readfile('jscolor/jscolor.js');
-  readfile('raphael-icons.js');
+    readfile('raphael-icons.js');
 	readfile('iconmaker.js');
 	readfile('raphael-min.js');
 	echo ';';
