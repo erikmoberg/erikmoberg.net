@@ -6845,4 +6845,327 @@ Of course, adding more inline icons will make the page grow, but gzip helps a lo
       </image>
     </images>
   </entry>
+  <entry>
+    <guid>15d6f42b-b931-4b39-b3b1-cb1a47d8f3dd</guid>
+    <date>2021-10-02</date>
+    <shorturl>https://bit.ly/3FgmMfN</shorturl>
+    <header>Removing jQuery</header>
+    <readableid>removing-jquery</readableid>
+    <subheader>Because everyone likes vanilla</subheader>
+    <intro>[image remove-jquery] In 2006, jQuery was released. It was quite a game changer, providing a terse syntax that allowed for quick front-end development, resulting in scripts that behaved consistently across browsers - in a time when Internet Explorer 6 was still king.
+&lt;/p&gt;
+&lt;p&gt;Fast forward 15 years, and jQuery is used by millions of web sites - paradoxally, in a time when web developers since long have considered jQuery a legacy library of the past. The browsers have definitely come a long way since 2006, and many of the problems that jQuery set out to solve may not actually be problems anymore. Modern JavaScript natively provides much of the functionality jQuery offers, and IE6 and the likes are long gone. So as an exercise, why not try to replace jQuery with plain JavaScript (AKA Vanilla JS) and see if that promise has come true? I did so on this very website and had some interesting findings. Read on for more.</intro>
+    <content>&lt;p&gt;Hint: I will be referring to plain, native ES6 JavaScript as "Vanilla JS" below.&lt;/p&gt;
+
+&lt;h2&gt;Selecting HTML elements&lt;/h2&gt;
+&lt;p&gt;
+    Maybe the most used feature of jQuery: Selecting elements by ID, class name, tag name, and so on. Example:
+&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;// jQuery
+var myElements = $(".active");
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;
+    The code above would return all elements that have the CSS class &lt;c&gt;active&lt;/c&gt;. The dot (.) means we are selecting by class.
+&lt;/p&gt;
+&lt;p&gt;
+    The native drop-in replacement would be:
+&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;// Vanilla JS
+var myElements = document.querySelectorAll(".active");&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;
+    Or, if you only need to select a single element:
+&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;// Vanilla JS
+// Returns first match, or null if none was found
+var myElement = document.querySelector(".active");&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;
+    If we are selecting by class name, like above, we can also use (note that the dot is omitted):
+&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;// Vanilla JS
+document.getElementsByClassName('active')&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Selecting by ID is also just like jQuery, using the prefix "#":&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;// jQuery
+var myElement1 = $("#myElement");
+
+// Vanilla JS equivalent
+var myElement2 = document.querySelector("#myElement");
+
+// Also Vanilla JS equivalent
+var myElement3 = document.getElementById("myElement");&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;
+    A difference is that in jQuery, the returned elements will actually be jQuery objects, while the native
+    methods all return objects of type &lt;c&gt;HTMLElement&lt;/c&gt;. As long as we remove all jQuery code, this is
+    fine, but if we need to convert an HTML element to a jQuery element (I hope not!), we can do the good old &lt;c&gt;$(element)&lt;/c&gt;.
+&lt;/p&gt;
+
+&lt;h2&gt;Adding event handlers&lt;/h2&gt;
+
+&lt;p&gt;
+    Typically, we use &lt;c&gt;jQuery.on()&lt;/c&gt; to attach event handlers. So if we want to add a handler that runs
+    when a button with ID "myButton" was clicked, we can do this with jQuery:
+&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;// jQuery
+$("#myButton").on("click", function() {
+  console.log("Button was clicked");
+}&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;
+    Without jQuery, the equivalent code is:
+&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;// Vanilla JS
+document.querySelector("#myButton").addEventListener("click", function() {
+  console.log("Button was clicked");
+}&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;
+    It's more verbose, but does about the same thing. Not quite the same thing however, which brings us to delegated event handlers.
+&lt;/p&gt;
+
+&lt;h2&gt;Event handlers with event delegation&lt;/h2&gt;
+
+&lt;p&gt;
+    If the element that we want to attach the event handler to does not exist yet, we can still attach
+    handlers to it using this technique in jQuery:
+&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;// jQuery 
+$("#dataTable tbody").on("click", "tr", function() {
+  console.log("Row was clicked");
+});&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;This requires the data table body to exist, but not any rows. When the table is clicked, jQuery checks if the&lt;c&gt;tr&lt;/c&gt; (table row) element was involved and if yes, runs the handler. This means we can start with an empty table, fill with rows, and all event handlers will work as expected. We could also attach the event to the document body if even the table does not exist when the event handlers are attached.&lt;/p&gt;
+
+&lt;p&gt;
+    We cannot do this natively, but a rather simple utility function does the trick (&lt;a target="_blank"
+        href="https://carlanderson.xyz/adding-event-listeners-to-dynamic-content-with-event-delegation/"&gt;original source&lt;/a&gt;):
+&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;// Vanilla JS utility function for event delegation
+function createDelegatedEventListener(selector, handler) {
+  return function (event) {
+    if (event.target.matches(selector) || event.target.closest(selector)) {
+      handler(event);
+    }
+  }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;
+    We can then use the function like this:
+&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;// Vanilla JS
+document.querySelector("#dataTable tbody").addEventListener("click", createDelegatedEventListener("tr", function() {
+  console.log("Row was clicked");
+});
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;
+    So it works just fine - but I will admit, jQuery handles this really well and the native solution seems
+    a bit clunky in comparison.
+&lt;/p&gt;
+
+&lt;h2&gt;Adding the same event handler for multiple events&lt;/h2&gt;
+
+&lt;p&gt;
+    Sometimes we want to add the same event handler for when different events happen. For example, the code
+    below adds an event handler that runs both when the user presses down the mouse button (typicall desktop
+    computer), as well as when the user starts a touch (typically mobile device):
+&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;// jQuery
+$("#myButton").on("touchstart mousedown", function(e) {
+  console.log("Mouse button pressed or touch started");
+});&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;
+    While not as convenient, we can do this natively by a simple loop:
+&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;// Vanilla JS
+for (const eventName of ["touchstart", "mousedown"]) {
+  document.querySelector("#myButton").addEventListener(eventName, function(e) {
+    console.log("Mouse button pressed or touch started");
+  });
+}&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2&gt;Adding and removing CSS classes&lt;/h2&gt;
+&lt;p&gt;
+    Adding and removing CSS classes in jQuery is easy. And doing it natively is just about as easy! Here we add, remove and toggle the class &lt;c&gt;active&lt;/c&gt; on the element with ID "myButton":
+&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;// jQuery
+$("#myButton").addClass("active");
+$("#myButton").removeClass("active");
+$("#myButton").toggleClass("active");
+
+// Vanilla JS
+document.querySelector("#myButton").classList.add("active");
+document.querySelector("#myButton").classList.remove("active");
+document.querySelector("#myButton").classList.toggle("active");&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Hint: Both toggle methods accept an additional boolean parameter that adds the class if &lt;c&gt;true&lt;/c&gt;, and
+    removes the class if &lt;c&gt;false&lt;/c&gt;.&lt;/p&gt;
+
+&lt;p&gt;
+    Also, to check if an element has a certain CSS class, we can do this:
+&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;// jQuery
+$("#myButton").hasClass("active")
+
+// Vanilla JS
+document.querySelector("#myButton").classList.contains("active")&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2&gt;Getting the size of the window&lt;/h2&gt;
+
+&lt;p&gt;
+    With jQuery, the (unit less) width and height of the current window can be retrieved by:
+&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;// jQuery
+var width = $(window).width();
+var height = $(window).height();
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;
+    Getting these values natively is as easy and:
+&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;// Vanilla JS
+var width = window.innerWidth;
+var height = window.innerHeight;&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;
+    Similarly, setting the width of an element with jQuery can be done like this:
+&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;// jQuery
+$("#myElement").width("100px");&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;
+    This can be replaced by:
+&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;// Vanilla JS
+document.querySelector("#myElement").style.width = "100px";
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2&gt;AJAX/XHR requests&lt;/h2&gt;
+&lt;p&gt;
+    I have seen projects where jQuery is used for handling network requests and then not much else. In such cases, it might be attractive to look at the Vanilla JS alternative &lt;c&gt;fetch&lt;/c&gt;, that can replace jQuery methods such as &lt;c&gt;$.get&lt;/c&gt;, &lt;c&gt;$.post&lt;/c&gt;, and &lt;c&gt;$.ajax&lt;/c&gt;.
+&lt;/p&gt;
+&lt;p&gt;
+    Here is a very simple &lt;c&gt;GET&lt;/c&gt; request with no error handling:
+&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;// jQuery
+$.get("/api/comments/1", function(data) { 
+  console.log("Data retrieved from server.");
+});&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;And the equivalent in Vanilla JS:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;// Vanilla JS
+fetch("/api/comments/1")
+.then(function(response) { return response.json(); })
+.then(function(data) {
+  console.log("Data retrieved from server.");
+});&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Note that after we get the response, the body needs to be read with &lt;c&gt;json()&lt;/c&gt; (assuming the response is JSON).&lt;/p&gt;
+
+&lt;p&gt;Sending a &lt;c&gt;POST&lt;/c&gt; request to the server, with error callback:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;// jQuery
+$.post('/api/comments', data, function(result) {
+  console.log("Data sent to server.");
+}, 'json')
+.fail(function(xhr) {
+  console.log("Error sending data.");
+});&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;In Vanilla JS, the code is a bit more involved. We both need a &lt;c&gt;catch&lt;/c&gt; for handling network errors
+    (such as timeouts) and check &lt;c&gt;response.ok&lt;/c&gt; to make sure the return code is acceptable (we don't
+    want server error codes such as 503!).&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;// Vanilla JS
+fetch('/api/comments', 
+{
+  method: 'POST',
+  body: JSON.stringify(data)
+}).then(function (response) {
+  if (!response.ok) {
+    console.log("Did not get OK code from server.");
+  } else {
+    response.json().then(function(result) {
+      console.log("Data sent to server.");
+    });
+  }
+}).catch((error) =&gt; {
+  console.log("Network error sending request.")
+});&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2&gt;Fading&lt;/h2&gt;
+
+&lt;p&gt;Fading out an element in jQuery is super easy:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;// jQuery
+$("#myElement").fadeOut(200, function() {
+  console.log("Fade out complete.");
+});
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Without jQuery, we have a few different options. You might create a CSS class that animates the element and then remove it. We can also create a utility function that animates and then hides the element:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;// Vanilla JS: Utility function that basically does what jQuery.fadeOut does.
+fadeOut = function(element, duration, callback) {
+  element.animate({
+    opacity: 0
+  }, {
+    duration: duration,
+    easing: "linear",
+    iterations: 1,
+    fill: "both"
+  })
+  .onfinish = function() {
+    element.style.display = "none";
+    if (callback) {
+      callback();
+    }
+  }
+}
+
+// This is how we call the utility function.
+fadeOut(document.querySelector('#myElement'), 200, function() {
+  console.log("Fade out complete.");
+});&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2&gt;Conclusion&lt;/h2&gt;
+&lt;p&gt;I was pleasantly surprised to find that I could indeed remove jQuery without all too much hassle. Much of the functionality of jQuery has simple replacements (such as &lt;c&gt;document.querySelectorAll&lt;/c&gt;), while other things should work with a minimal utility library (such as event delegation). Of course, the list above does not cover everything that jQuery offers and how to replace it, but in my case, this was all the information I needed to know.&lt;/p&gt;
+&lt;p&gt;
+    Would I recommend removing jQuery just because it's possible? That depends. The minified version of jQuery is around 30kB at the moment and is unlikely to make much of a difference to load times on most sites. However, it could be a good idea to stop developing anything new with jQuery and look at other options first. For simpler systems, Vanilla JS might just be the right tool for the job.
+&lt;/p&gt;
+&lt;p&gt;Still, I kept jQuery as well as jQuery UI on the old Icon Maker page. While it matters little in my case, it still demonstrates maybe the biggest hurdle: If you have built a rather involved app using jQuery, and especially jQuery UI, migrating away from that may realistically mean that you need a rewrite. As always, your mileage may vary.&lt;/p&gt;
+&lt;p&gt;
+Hint: When switching from jQuery to Vanilla JS, first check &lt;a href="https://caniuse.com/"&gt;Can I use...&lt;/a&gt; to make sure that the browsers that you are targeting support the functionality natively.
+&lt;/p&gt;
+
+[image remove-jquery]</content>
+    <images>
+      <image>
+        <description>We can remove jQuery, just not with this call.</description>
+        <name>remove-jquery</name>
+        <extension>.png</extension>
+      </image>
+    </images>
+  </entry>
 </entries>

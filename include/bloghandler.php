@@ -352,6 +352,26 @@ function PrintCompleteEntry($readableid, $datetime, $header, $subheader, $intro,
 	echo '</div>';
 	echo $content . "\n";
 	echo '</div>';
+
+    if (strrpos($content,'<code>') !== false) {
+        AddHighlightScript();
+    }
+}
+
+function AddHighlightScript() {
+    ?>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.2.0/highlight.min.js" defer></script>
+    <script>
+    var styleSheetToAdd = document.body.classList.contains("dark-theme") ? "atom-one-dark" : "atom-one-light";
+    document.querySelector("head").innerHTML += '<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.2.0/styles/' + styleSheetToAdd + '.min.css">';
+    var myInterval = setInterval(() => {
+        if(typeof hljs !== "undefined") {
+            clearInterval(myInterval);
+            hljs.highlightAll();
+        }           
+    }, 100);
+    </script>
+    <?php
 }
 
 function AddSpecialTags($text, $readableid, $images, $clearImage, $includeImageDescription, $introno, $addImagesLast, $removeImages, $printTeasers)
