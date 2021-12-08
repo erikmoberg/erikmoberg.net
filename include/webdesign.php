@@ -5,7 +5,7 @@ require_once("bloghandler.php");
 require_once("commenthandler.php");
 
 function PrintScriptVersion() {
-    echo '1';
+    echo '2';
 }
 
 function GetIconMarkup($name) {
@@ -35,9 +35,6 @@ function PrintStartHtml($pageTitle, $highlightitem, $metadescription)
 <head>
 	<title><?php echo $pageTitle; ?> - Erik Moberg's personal homepage - photography, gadgets, DIY, and more</title>
 	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400&family=Roboto+Condensed:wght@400;700&family=Roboto+Mono" rel="stylesheet" type='text/css'>
 	<link rel="stylesheet" type="text/css" href="/content/styles/style.css?<?php PrintScriptVersion() ?>" />
 	<link rel="shortcut icon" href="/favicon.ico" type="image/vnd.microsoft.icon" />
     <link rel="icon" type="image/png" href="/content/favicon/favicon-red-192.png" sizes="192x192">
@@ -52,21 +49,13 @@ function PrintStartHtml($pageTitle, $highlightitem, $metadescription)
 	<meta name="keywords" content="Erik Moberg, photography, cameras, travel, web design, web development, programming, personal blog, php, css" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
-<?php
-if($isFrontPage) {
-	echo '<body class="frontpage">';
-} else {
-	echo '<body>';
-}
-?>
+<body class="dark-theme">
   <script>
 		var pageTheme = sessionStorage.getItem('theme');
 		if (pageTheme) {
-			if (pageTheme === 'dark') {
-                document.body.classList.add("dark-theme");
+			if (pageTheme === 'light') {
+                document.body.classList.remove("dark-theme");
 			}
-		} else {
-            document.body.classList.add("dark-theme");
 		}
   </script>
 	<div id="headerContainer">
@@ -76,20 +65,13 @@ if($isFrontPage) {
 			<span class="btn close-search-results">Close search results</span>
 		</div>
 		<div id="header">
-
-<?php
-if(true || $isFrontPage) {
-?>
-		<div class="header-image">
-			<div id="header-text-container">
-				<div id="header-back"></div>
-				<h1>Hi! I'm Erik.</h1>
-				<h2>I blog mostly about photography, technology and related topics: DIY, techniques, and product reviews.</h2>
-			</div>
-		</div>
-<?php
-}
-?>
+            <div class="header-image">
+                <div id="header-text-container">
+                    <div id="header-back"></div>
+                    <h1>Hi! I'm Erik.</h1>
+                    <h2>I blog mostly about photography, technology and related topics: DIY, techniques, and product reviews.</h2>
+                </div>
+            </div>
 		</div>
 	</div>
 	<div id="menucontainer">

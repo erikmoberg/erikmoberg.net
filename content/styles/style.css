@@ -4,15 +4,10 @@
 }
 
 body {
-	font-family: 'Lato', Segoe UI, Helvetica, Arial, sans-serif;
+	font-family: sans-serif;
 	color: #555;
 	background-color: #ccc;
-	font-size: 18px;
-}
-
-h1, h2, h3, h4 {
-	font-family: 'Roboto Condensed', Segoe UI, Helvetica, Arial, sans-serif;
-	text-transform: uppercase;
+	font-size: 16px;
 }
 
 img {
@@ -45,9 +40,8 @@ p {
 code, c {
     font-size: 0.9rem;
 	background-color: #eee;
-    font-family: 'Roboto Mono', "Courier New",Monospace;
+    font-family: monospace;
     padding: 0 3px;
-    text-transform: none;
 }
 
 code {
@@ -89,7 +83,6 @@ blockquote {
 
 #header h1{
 	position: relative;
-	  text-transform: none;
 }
 
 #header h2{
@@ -100,7 +93,6 @@ blockquote {
 	font-weight: normal;
 	margin-top: 15px;
 	position: relative;
-	text-transform: none;
 	color: #333;
 }
 
@@ -253,7 +245,6 @@ blockquote {
 #horizontal{
 	list-style: none;
 	font-size: 25px;
-	font-family: 'Roboto Condensed', Verdana, Sans-Serif;
 	display: inline-block;
 	padding-left: 0;
 }
@@ -274,7 +265,8 @@ blockquote {
 	line-height: 62px;
 	text-decoration: none;
 	background: none;
-	text-transform: uppercase;
+	text-transform: lowercase;
+    font-family: monospace;
 	color: #333;
 }
 
@@ -326,11 +318,6 @@ blockquote {
 	font-size: 20px;
 	margin-bottom: 5px;
 	font-weight: normal;
-	text-transform: none;
-}
-
-#content h4 {
-	text-transform: none;
 }
 
 article, .full-article, .article-navigation, .social-links, #frmComments, .page-section {
@@ -405,18 +392,11 @@ article, .full-article, .article-navigation, .social-links, #frmComments, .page-
 	margin-top:0;
 	color: #a6a6a6;
 	margin-bottom: 25px;
-	text-transform: none;
-}
-
-.articleintro p, .full-article p {
-	text-align: justify;
 }
 
 .fullarticlelink, .articlecommentlink  {
 	text-align: right;
 	float: right;
-	text-transform: uppercase;
-	font-family: 'Roboto Condensed';
 }
 
 .previousArticle, .nextArticle {
@@ -439,7 +419,7 @@ article, .full-article, .article-navigation, .social-links, #frmComments, .page-
 }
 
 .textinput {
-	font-family: 'Roboto', Segoe UI, sans-serif;
+	font-family: sans-serif;
 	font-size: 16px;
 	border: 1px solid #ccc;
 	padding: 4px;
@@ -535,7 +515,6 @@ article, .full-article, .article-navigation, .social-links, #frmComments, .page-
 	padding: 10px;
 	margin-top: 5px;
 	background-color: #da4526;
-	font-family: 'Roboto', Segoe UI, Helvetica, Arial, sans-serif;
 	font-size: 16px;
 	cursor: pointer;
 	color: #fff !important;
@@ -596,7 +575,6 @@ article, .full-article, .article-navigation, .social-links, #frmComments, .page-
 #content h3.maingalleryitemname
 {
     margin: 10px 0;
-    text-transform: uppercase;
 }
 
 .singlegalleryitem a
@@ -681,10 +659,6 @@ img.about-image {
 {
 	padding: 20px 0;
     width: 100%;
-}
-
-#content .hires_image h3 {
-    text-transform: uppercase;
 }
 
 .hires_image a
