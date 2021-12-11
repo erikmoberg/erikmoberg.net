@@ -117,8 +117,12 @@ blockquote {
 	max-width: 90%;
 	margin: 0 auto;
 	padding: 25px 0;
-	top: 70px;
+	top: 55px;
 	position: relative;
+}
+
+#header-text-container h2 {
+    padding: 0;
 }
 
 #header-back {
@@ -302,15 +306,13 @@ blockquote {
 	float: left;
 }
 
-#content h2{
+h2 {
 	font-size: 24px;
-	color: #4c4c4c;
-	clear: left;
 	padding-bottom: 25px;
     padding-top: 20px;
 }
 
-#content h2:first-child{
+h2:first-child{
     padding-top: 0;
 }
 
@@ -494,6 +496,7 @@ article, .full-article, .article-navigation, .social-links, #frmComments, .page-
 .imagedescription
 {
 	font-style: italic;
+    margin-top: 10px;
 }
 
 .blogpagelist
@@ -654,14 +657,6 @@ aside {
 	width: auto;
 	float: none;
 	margin-right: 0;
-}
-
-#sideInfo h2{
-	margin-bottom: 20px;
-}
-
-#sideInfo h2.firstHeader{
-	margin-top: 0px
 }
 
 #sideInfo p {
@@ -1799,7 +1794,6 @@ body.dark-theme #header h2,
 body.dark-theme #header .header-image,
 body.dark-theme #open-search a,
 body.dark-theme #menu-toggle,
-body.dark-theme #content h2,
 body.dark-theme .textinput,
 body.dark-theme .guestbookheader,
 body.dark-theme .commentheader,

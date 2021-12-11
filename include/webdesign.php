@@ -5,7 +5,7 @@ require_once("bloghandler.php");
 require_once("commenthandler.php");
 
 function PrintScriptVersion() {
-    echo '4';
+    echo '6';
 }
 
 function GetIconMarkup($name) {
