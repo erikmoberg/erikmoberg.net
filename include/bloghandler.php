@@ -310,7 +310,7 @@ function PrintIntroEntry($readableid, $datetime, $header, $subheader, $intro, $i
 	$noOfComments = GetNoOfCommentsForArticle($readableid);
 	$commentstring = '';
 	if($noOfComments == 0)
-		$commentstring = 'Comment/Share';
+		$commentstring = 'Write a comment';
 	else if($noOfComments == 1)
 		$commentstring = $noOfComments . ' comment';
 	else
@@ -324,7 +324,7 @@ function PrintIntroEntry($readableid, $datetime, $header, $subheader, $intro, $i
 
 	if($isLongArticle) {
 		echo '<div class="fullarticlelink">';
-		echo '<a href="/article/' . $readableid . '">' . GetIconMarkup('arrow-right-circle') . ' Read the full article</a>' . "\n";
+		echo '<a href="/article/' . $readableid . '">Continue reading ' . GetIconMarkup('arrow-right-circle') . '</a>' . "\n";
 		echo '</div>';
 	}
 

@@ -29,10 +29,11 @@ PrintNextAndPreviousArticleLinks($readableid, false);
 
 PrintArticle($readableid);
 
-?>
+/*
 <div class="social-container page-section">
 <?php
 PrintSocialNetworkingLinks(GetArticleSubHeader($readableid) . ': ' . $header);
+*/
 ?>
 </div>
 <div class="comments">

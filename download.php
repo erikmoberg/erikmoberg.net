@@ -10,6 +10,10 @@ PrintStartHtml('Download',2,'Fix image orientation with the JPEG Rotator! Downlo
 
 <h2>Downloads</h2>
 
+<p>
+Check out my games or download a wallpaper.
+</p>
+
 <!--
 <p>
 Fix image orientation with the <a href="#jpegrotator">JPEG Rotator</a>! Download <a href="#hires">high resolution images</a> for printing! Play <a href="#projectc">Project Cataclysm</a> for some good old shoot em up action!
@@ -109,8 +113,6 @@ A game I developed in back in 2002, called "Project Cataclysm". You can think of
 ?>
 </div>
 
-<div class="somemargin"></div>
-
 <h2>Play the game in the browser</h2>
   <p>
     Thanks to the wonders of <a href="https://www.dosbox.com/">DOSBox</a> and <a href="https://js-dos.com/">js-dos</a>, 
@@ -166,7 +168,7 @@ The game is a bit old by now and won't run under modern versions of Windows with
 Download and play for free. A must if you like good ol' DOS games!
 </p>
 <p>
-<b><a href="/downloads/project_c.zip">Get it now! (450KB)</a></b>
+<a href="/downloads/project_c.zip"><?php echo GetIconMarkup('download') ?> Download Project Cataclysm for DOS (450KB)</a>
 </p>
 
 </div>

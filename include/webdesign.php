@@ -5,7 +5,7 @@ require_once("bloghandler.php");
 require_once("commenthandler.php");
 
 function PrintScriptVersion() {
-    echo '2';
+    echo '3';
 }
 
 function GetIconMarkup($name) {
@@ -131,6 +131,8 @@ if(!$isFrontPage) {
 					<p>As a programmer with just enough time on my hands, I occasionally blog about my hobbies - mostly photography and various gadgets.</p>
 				</div>
 
+                <?php
+                /*
 				<div class="social-container page-section">
 					<h2>Share</h2>
 					<?php
@@ -140,9 +142,8 @@ if(!$isFrontPage) {
 						}
 
 						PrintSocialNetworkingLinks($shareTitle, $myShareUrl);
-					?>
-
-				</div>
+				</div>*/
+                ?>
 
 				<div class="page-section follow-icons">
 					<h2>Follow</h2>
