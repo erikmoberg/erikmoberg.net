@@ -337,12 +337,12 @@ article, .full-article, .article-navigation, .social-links, #frmComments, .page-
 .articleintro h3 {
 	margin: 0;
 }
-.articleintro h4 {
-	font-size: 16px;
+.articleintro time {
 	font-weight: normal;
 	margin-top:0;
 	color: #a6a6a6;
 	margin-bottom: 25px;
+    display: block;
 }
 
 .fullarticlelink, .articlecommentlink  {
@@ -1690,10 +1690,6 @@ svg.feather {
     #menucontainer.scrolled {
 		top: -55px;
 	}
-
-    .follow-icons svg {
-      margin-top: 4px;
-    }
 
     .responsive-grid-2-columns {
         grid-template-columns: 1fr;

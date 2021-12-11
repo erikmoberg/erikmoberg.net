@@ -304,7 +304,7 @@ function PrintIntroEntry($readableid, $datetime, $header, $subheader, $intro, $i
 	echo '<h2><a href="/article/' . $readableid . '">' . $header . "</a></h2>\n";
 	echo '<h3>' . $subheader . "</h3>\n";
 	$time = strtotime($datetime);
-	echo "<h4>" . date('F dS, Y', $time) . "</h4>\n";
+	echo '<time datetime="' . date('Y-m-d', $time) . '">' . date('F jS, Y', $time) . "</time>\n";
 	echo $intro . "\n";
 
 	$noOfComments = GetNoOfCommentsForArticle($readableid);
@@ -347,7 +347,7 @@ function PrintCompleteEntry($readableid, $datetime, $header, $subheader, $intro,
 	echo '<h2>' . $header . "</h2>\n";
 	echo '<h3>' . $subheader . "</h3>\n";
 	$time = strtotime($datetime);
-	echo '<h4>' . date('F jS, Y', $time) . "</h4>\n";
+	echo '<time datetime="' . date('Y-m-d', $time) . '">' . date('F jS, Y', $time) . "</time>\n";
 	echo $intro . "\n";
 	echo '</div>';
 	echo $content . "\n";
