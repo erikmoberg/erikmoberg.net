@@ -38,7 +38,7 @@
         if ($website != null && $website != '') {
             $website = CreateValidUrl($website);
         }
-        $datetime = date('F dS, Y H:m');
+        $datetime = time();
         
         $message = AddLinksToMessage($message);
         $markup = GetSingleCommentMarkup($name, $datetime, $website, $message, $commentId);

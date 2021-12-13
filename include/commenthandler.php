@@ -46,7 +46,7 @@ function PrintComments($articlename)
 		$datetime = $comment->datetime;
 		$datetime = strtotime($datetime);
 		//$datetime = date('F jS, Y H:i', $datetime);
-		$datetime = date('F jS, Y', $datetime);
+		//$datetime = date('F jS, Y', $datetime);
 		$website = htmlspecialchars($comment->website);
 		$message = htmlspecialchars($comment->message);
 		$message = AddLinksToMessage($message);
@@ -93,7 +93,8 @@ function PrintRecentComments($count)
 		$name = htmlspecialchars($comment->name);
 		$datetime = $comment->datetime;
 		$datetime = strtotime($datetime);
-		$datetime = date('M dS, Y', $datetime);
+		//$datetime = date('M dS, Y', $datetime);
+        $datetime = '<time datetime="' . date('Y-m-d', $datetime) . '">' . date('M jS, Y', $datetime) . "</time>\n";
 		$message = $comment->message;
 		$maxlength = 70;
 		$message = $comment->message;
@@ -124,7 +125,7 @@ function GetSingleCommentMarkup($name, $datetime, $website, $message, $number)
 	$markup .= $name;
 	$markup .= '</div>';
 	$markup .= '<div class="commenttime">';
-	$markup .= $datetime;
+    $markup .= '<time datetime="' . date('Y-m-d', $datetime) . '">' . date('F jS, Y', $datetime) . "</time>\n";
 	$markup .= '</div>';
 	$markup .= '</div>';
 	$markup .= '<div class="commentmessage">';
