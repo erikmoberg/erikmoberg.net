@@ -3,6 +3,9 @@ include_once('include/webdesign.php');
 
 $commentXml = null;
 
+// not really a key ;)
+$approvalkey = '104B000000101EB5';
+
 function LoadCommentXml()
 {
 	global $commentXml;
@@ -30,6 +33,11 @@ function GetNoOfCommentsForArticle($articlename)
 	$comments = $xml->xpath("/articlecomments/comments[@articlename='$articlename']/comment");
 	for($i=0; !empty($comments) && $i < count($comments);$i++)
 	{
+        $comment = $comments[$i];
+        if (!CommentIsApproved($comment)) {
+            continue;
+        }
+
 		$noOfComments++;
 	}
 	return $noOfComments;
@@ -39,9 +47,14 @@ function PrintComments($articlename)
 {
 	$xml = LoadCommentXml();
 	$comments = $xml->xpath("/articlecomments/comments[@articlename='$articlename']/comment");
+    $index = 0;
 	for($i=0;!empty($comments) && $i < count($comments);$i++)
 	{
 		$comment = $comments[$i];
+        if (!CommentIsApproved($comment)) {
+            continue;
+        }
+
 		$name = htmlspecialchars($comment->name);
 		$datetime = $comment->datetime;
 		$datetime = strtotime($datetime);
@@ -50,8 +63,9 @@ function PrintComments($articlename)
 		$website = htmlspecialchars($comment->website);
 		$message = htmlspecialchars($comment->message);
 		$message = AddLinksToMessage($message);
-		$markup = GetSingleCommentMarkup($name, $datetime, $website, $message, $i);
-		echo $markup;
+		$markup = GetSingleCommentMarkup($name, $datetime, $website, $message, $index);
+        echo $markup;
+        $index++;
 	}
 }
 
@@ -69,6 +83,10 @@ function PrintRecentComments($count)
 		for($i=0;!empty($comments) && $i < count($comments);$i++)
 		{
 			$comment = $comments[$i];
+            if (!CommentIsApproved($comment)) {
+                continue;
+            }
+
 			$datetime = strtotime($comment->datetime);
 			$myObject = array(
 				'comment' => $comment,
@@ -139,6 +157,8 @@ function GetSingleCommentMarkup($name, $datetime, $website, $message, $number)
 
 function AddComment($articlename, $name, $website, $message)
 {
+    global $approvalkey;
+
 	if($articlename != null && $articlename != "" && $name != null && $name != "" && $message != null  && $message != "")
 	{
 		$commentId = GetNoOfCommentsForArticle($articlename);
@@ -177,6 +197,9 @@ function AddComment($articlename, $name, $website, $message)
 		$comment->addChild('website', $website);
 		$comment->addChild('message', $message);
 
+        // set to approved by default
+        $comment->addChild('approvalstatus', 'approved');
+
 		$doc = new domDocument('1.0');
 		$someXml = $xml->asXML();
 		$doc->formatOutput = true;
@@ -192,7 +215,10 @@ function AddComment($articlename, $name, $website, $message)
 
 		$to = "erik@erikmoberg.net";
 		$subject = "erikmoberg.net comment - $articlename - $name";
-		$message = "$message";
+        $baseApprovalUrl = "https://www.erikmoberg.net/commentapproval.php?articlename=$articlename&commentdatetime=" . urlencode($datetime) . "&key=$approvalkey";
+        $approvallink = "$baseApprovalUrl&newstatus=approved";
+        $rejectlink = "$baseApprovalUrl&newstatus=rejected";
+		$message = "$message\r\n\r\nApprove: $approvallink\r\n\r\nReject: $rejectlink";
 		$header = "From: erik@erikmoberg.net";
 
 		$header_ = 'MIME-Version: 1.0' . "\r\n" . 'Content-type: text/plain; charset=UTF-8' . "\r\n";
@@ -272,6 +298,46 @@ function GetCommentsAsRss($article, $readableid)
 	$content .= "\n </channel>\n";
 	$content .= "</rss>\n";
 	return $content;
+}
+
+function SetApprovalStatus($articlename, $commentdatetime, $newstatus, $key)
+{
+    global $approvalkey;
+
+    if ($approvalkey != $key) {
+        return 'Invalid key.';
+    }
+
+    $xml = LoadCommentXml();
+	$comments = $xml->xpath("/articlecomments/comments[@articlename='$articlename']/comment");
+    for($i=0;!empty($comments) && $i < count($comments);$i++) 
+    {
+		$comment = $comments[$i];
+        $datetime = $comment->datetime;
+        if ($commentdatetime == $datetime)
+        {
+            $comment->approvalstatus = $newstatus;
+
+            $doc = new domDocument('1.0');
+            $someXml = $xml->asXML();
+            $doc->formatOutput = true;
+            $doc->preserveWhiteSpace = false;
+            $doc->loadXML($someXml);
+
+            //////////!!!!!!!!!!!
+
+            $doc->save('xml/comments.xml');
+            return null;
+
+            //////////!!!!!!!!!!!
+        }
+    }
+
+    return 'No matching entry found.';
+}
+
+function CommentIsApproved($comment) {
+    return $comment->approvalstatus == '' || $comment->approvalstatus == 'approved';
 }
 
 ?>
