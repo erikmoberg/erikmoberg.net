@@ -207,7 +207,7 @@ ${this.styles}
 
         this.shadowRoot.getElementById("symbol-set-items").addEventListener("click", this.createDelegatedEventListener("input", (ev) => {
             this.state.iconSet = ev.target.closest("input").value;
-            this.iconPreview.render(this.state);
+            this.filterIcons();
         }));
 
         this.shadowRoot.getElementById("enable-gradient").addEventListener("click", (ev) => {
@@ -243,9 +243,9 @@ ${this.styles}
         for (let i = 0; i < this.icons.length; i++) {
             if ((!text || this.icons[i].title.indexOf(text) >= 0) && (!iconSet || this.icons[i].set === iconSet)) {
                 svgs[i].classList.remove("hidden");
+                hasHits = true;
             } else {
                 svgs[i].classList.add("hidden");
-                hasHits = true;
             }
         }
 
