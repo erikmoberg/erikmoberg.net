@@ -36,6 +36,8 @@ RewriteRule ^iconmaker[/]*$ /iconmaker.php [L,NC]
 
 RewriteRule ^shiny-iconmaker[/]*$ /shiny-iconmaker.php [L,NC]
 
+RewriteRule ^react-iconmaker[/]*$ /react-iconmaker.php [L,NC]
+
 RewriteRule ^about[/]*$ /about.php [L,NC]
 
 RewriteRule ^index[/]*$ /index.php [L,NC]

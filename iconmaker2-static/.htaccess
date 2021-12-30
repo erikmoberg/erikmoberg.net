@@ -1,0 +1,9 @@
+# Compression
+
+AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css text/javascript application/javascript application/x-javascript
+
+# Caching
+
+FileETag MTime Size
+
+Header set Cache-Control "max-age=0, must-revalidate"
