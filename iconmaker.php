@@ -11,9 +11,6 @@ PrintStartHtml('Flat Icon Maker',3,'The Flat Icon Maker is a simple tool to crea
     Use the Flat Icon Maker to create your own simple icons for your applications or websites - using any modern browser except Internet Explorer!
     Feel free to <a href="contact">contact me</a> if you have any questions or feedback.
   </p>
-  <p>
-    Hint: The old versions of the Icon Maker are available <a href="react-iconmaker">here</a> (reactjs-based) and <a href="shiny-iconmaker">here</a> (knockoutjs-based).
-  </p>
 </div>
 
 <div class="page-section">
@@ -30,7 +27,20 @@ PrintStartHtml('Flat Icon Maker',3,'The Flat Icon Maker is a simple tool to crea
         <li><a target="_blank" rel="noopener noreferrer" href="https://icomoon.io/#icons-icomoon">IcoMoon - Free</a> - <a target="_blank" rel="noopener noreferrer" href="http://www.gnu.org/licenses/gpl.html">GPL</a> or <a target="_blank" rel="noopener noreferrer" href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0 License</a></li>
         <li><a target="_blank" rel="noopener noreferrer" href="https://simpleicons.org/">Simple Icons</a> - <a target="_blank" rel="noopener noreferrer" href="https://github.com/simple-icons/simple-icons/blob/develop/LICENSE.md">CC0 1.0 Universal License</a></li>
     </ul>
-    </div>
+</div>
+
+<div class="page-section">
+  <h2>About the Icon Maker</h2>
+  <p>
+      Back in 2011, web front end development with JavaScript had really taken off. So when a friend asked me to make him a logo, I jokingly set up a tool for creating a simple logo instead. While it may not have not been any good for actual logos, it did the job fine for icons that could be used on a web page. I used popular technologies at the time: jQuery, jQuery UI, and Knockout JS. That version is available <a href="shiny-iconmaker">here</a>.
+  </p>
+  <p>
+      In 2018, jQuery and Knockout JS were considered legacy libraries and I rewrote the Icon Maker using React JS, the hottest as well as coolest thing at the time. Starting a React JS project was easy using <c>create-react-app</c> and I was happy with the result - a component-oriented, well-factored project that was easy to work with and to deploy. That version is available <a href="react-iconmaker">here</a>.
+  </p>
+  <p>
+      The last rewrite was made in early 2022 and is using web components. While React JS was easy to work with, the project uses more than 1000 NPM packages and I kept getting warnings about vulnerabilities in those dependencies. The motivation for the switch to web components was to reduce the tools and libraries involved and leverage native web standards instead. By collapsing the stack I hope that the icon maker will "just work" for years to come, and I don't have to worry about updating dependencies or the version of React JS I'm using becoming obsolete.
+  </p>
+</div>
 
 <?php
 echo '</div>';

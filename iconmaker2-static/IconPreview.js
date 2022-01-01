@@ -3,10 +3,14 @@ export class IconPreview extends HTMLElement {
     minPngSize = 1;
     maxPngSize = 1920;
     selectedIcon = null;
+    downloadIcon = '<svg viewBox="0 0 32 32" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" stroke="none" d="M28 18.667c-0.8 0-1.333 0.533-1.333 1.333v5.333c0 0.8-0.533 1.333-1.333 1.333h-18.667c-0.8 0-1.333-0.533-1.333-1.333v-5.333c0-0.8-0.533-1.333-1.333-1.333s-1.333 0.533-1.333 1.333v5.333c0 2.267 1.733 4 4 4h18.667c2.267 0 4-1.733 4-4v-5.333c0-0.8-0.533-1.333-1.333-1.333z M15.067 20.933c0.133 0.133 0.267 0.267 0.4 0.267 0.133 0.133 0.4 0.133 0.533 0.133s0.4 0 0.533-0.133c0.133-0.133 0.267-0.133 0.4-0.267l6.667-6.667c0.533-0.533 0.533-1.333 0-1.867s-1.333-0.533-1.867 0l-4.4 4.4v-12.8c0-0.8-0.533-1.333-1.333-1.333s-1.333 0.533-1.333 1.333v12.8l-4.4-4.4c-0.533-0.533-1.333-0.533-1.867 0s-0.533 1.333 0 1.867l6.667 6.667z"></path></svg>';
 
     styles = `
 :host {
+    display: flex;
     text-align: center;
+    flex-direction: column;
+    width: 164px;
 }
 :host h3 {
     margin: 0 0 10px;
@@ -28,9 +32,7 @@ input[type=number] {
     border: 1px solid #ccc;
     padding: 4px;
     background-color: #eee;
-}
-#png-size {
-    max-width: 50px;
+    width: 70px;
 }
 .spacer {
     margin-bottom: 15px;
@@ -64,30 +66,40 @@ input[type=number] {
 ${this.styles}
 </style>
 <h3>Preview</h3>
-<svg data-index="47" viewBox="0 0 32 32" height="${this.previewSize}" width="${this.previewSize}" xmlns="http://www.w3.org/2000/svg">
-    ${backgroundMarkup}
-    <path fill="url('#myGradient')" stroke="none" d="${state.selectedIcon.path}"
-        transform="scale(${scale})" transform-origin="center" style="transform-origin: center center;"></path>
-    <defs>
-        <linearGradient id="myBackgroundGradient" x1="0" x2="0" y1="0" y2="1">
-            <stop offset="0%" stop-color="${state.fromBackgroundColor}"></stop>
-            <stop offset="100%" stop-color="${state.enableBackgroundGradient ? state.toBackgroundColor : state.fromBackgroundColor}"></stop>
-        </linearGradient>
-        <linearGradient id="myGradient" x1="0" x2="0" y1="0" y2="1">
-            <stop offset="0%" stop-color="${state.fromColor}"></stop>
-            <stop offset="100%" stop-color="${state.enableGradient ? state.toColor : state.fromColor}"></stop>
-        </linearGradient>
-    </defs>
-</svg>
+<div>
+    <svg viewBox="0 0 32 32" height="${this.previewSize}" width="${this.previewSize}" xmlns="http://www.w3.org/2000/svg">
+        ${backgroundMarkup}
+        <path fill="url('#myGradient')" stroke="none" d="${state.selectedIcon.path}"
+            transform="scale(${scale})" transform-origin="center" style="transform-origin: center center;"></path>
+        <defs>
+            <linearGradient id="myBackgroundGradient" x1="0" x2="0" y1="0" y2="1">
+                <stop offset="0%" stop-color="${state.fromBackgroundColor}"></stop>
+                <stop offset="100%" stop-color="${state.enableBackgroundGradient ? state.toBackgroundColor : state.fromBackgroundColor}"></stop>
+            </linearGradient>
+            <linearGradient id="myGradient" x1="0" x2="0" y1="0" y2="1">
+                <stop offset="0%" stop-color="${state.fromColor}"></stop>
+                <stop offset="100%" stop-color="${state.enableGradient ? state.toColor : state.fromColor}"></stop>
+            </linearGradient>
+        </defs>
+    </svg>
+<div>
 <div class="spacer"></div>
 <div><i>${state.selectedIcon.title}<br />by ${state.selectedIcon.set}</i></div>
 <div class="spacer"></div>
-<button id="download-svg">Download SVG</button>
-<br />
-<button id="download-png">Download PNG</button>
+
+<h3>Download</h3>
+<div>
+  <button id="download-svg">${this.downloadIcon} SVG</button>
+  <button id="download-png">${this.downloadIcon} PNG</button>
+</div>
+
 <div class="spacer"></div>
-<label for="png-size">PNG size</label>
-<input type="number" min="${this.minPngSize}" max="${this.maxPngSize}" value="128" id="png-size" />
+
+<div>
+  <label for="png-size">PNG size</label>
+  <input type="number" min="${this.minPngSize}" max="${this.maxPngSize}" value="128" id="png-size" />
+</div>
+
 <canvas id="canvas" height="${this.previewSize}" width="${this.previewSize}" style="display: none;"></canvas>
 `;
 

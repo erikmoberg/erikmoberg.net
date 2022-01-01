@@ -39,9 +39,15 @@ class IconMaker extends HTMLElement {
     flex-wrap: nowrap;
 }
 #bottom-controls {
-    display: grid;
-    height: min-content;
-    gap: 25px 10px;
+    display: flex;
+    flex-direction: column;
+}
+#bottom-controls h3 {
+    font-weight: normal;
+    margin: 25px 0 10px;
+}
+#bottom-controls h3:first-child {
+    margin-top: 0;
 }
 input[type=text] {
     font-size: inherit;
@@ -68,6 +74,14 @@ svg.selected {
 }
 svg.selected path {
     fill: black;
+}
+.spacer {
+    margin-bottom: 15px;
+}
+#reset-zoom {
+    color: #da4526;
+    border: 0;
+    background-color: transparent;
 }
 `;
 
@@ -113,45 +127,53 @@ ${this.styles}
 
 <div id="bottom-area">
   <div id="bottom-controls">
-    <label for="from-color"style="grid-column: 1;">Color</label>
-    <input type="color" id="from-color" value="${this.state.fromColor}" style="grid-column: 2;" />
-    
-    <div style="grid-column: 1 / span 2;">
+
+    <h3>Color</h3>
+    <input type="color" id="from-color" value="${this.state.fromColor}" />
+  
+    <div class="spacer"></div>
+
+    <div>
       <input type="checkbox" id="enable-gradient" />
       <label for="enable-gradient">Enable Gradient</label>
     </div>
-    
-    <label class="gradient-controls ${this.state.enableGradient ? "" : "hidden"}" for="to-color" style="grid-column: 1;">Color 2</label>
-    <div class="gradient-controls ${this.state.enableGradient ? "" : "hidden"}" style="grid-column: 2;">
+
+    <h3 class="gradient-controls ${this.state.enableGradient ? "" : "hidden"}">Color 2</h3>
+    <div class="gradient-controls ${this.state.enableGradient ? "" : "hidden"}">
       <input type="color" id="to-color" value="${this.state.toColor}" />
     </div>
     
-    <label style="grid-column: 1;">Background Shape</label>
-    <ul style="grid-column: 2;" id="background-items">
+    <h3>Background Shape</h3>
+    <ul id="background-items">
       <li><input name="backgrounds" type="radio" id="no-background" checked><label for="no-background">None</label></li>
       <li><input name="backgrounds" type="radio" id="rounded-square-background"><label for="rounded-square-background">Rounded Square</label></li>
       <li><input name="backgrounds" type="radio" id="circle-background"><label for="circle-background">Circle</label></li>
       <li><input name="backgrounds" type="radio" id="square-background"><label for="square-background">Square</label></li>
     </ul>
 
-    <label class="background-color-control hidden" for="from-background-color"style="grid-column: 1;">Background Color</label>
+    <h3 class="background-color-control hidden">Background Color</h3>
     <input class="background-color-control hidden" type="color" id="from-background-color" value="${this.state.fromBackgroundColor}" style="grid-column: 2;" />
 
-    <div style="grid-column: 1 / span 2;" class="background-color-control hidden">
+    <div class="background-color-control hidden">
+      <div class="spacer"></div>
       <input type="checkbox" id="enable-background-gradient" />
       <label for="enable-background-gradient">Enable Gradient</label>
     </div>
 
-    <label class="background-color-control background-gradient-controls ${this.state.enableBackgroundGradient ? "" : "hidden"}" for="to-background-color" style="grid-column: 1;">Background Color 2</label>
-    <div style="grid-column: 2;" class="background-color-control background-gradient-controls ${this.state.enableBackgroundGradient ? "" : "hidden"}">
+    <h3 class="background-color-control background-gradient-controls ${this.state.enableBackgroundGradient ? "" : "hidden"}">Background Color 2</h3>
+    <div class="background-color-control background-gradient-controls ${this.state.enableBackgroundGradient ? "" : "hidden"}">
       <input type="color" id="to-background-color" value="${this.state.toBackgroundColor}" />
     </div>
 
-    <label for="zoom" style="grid-column: 1;">Zoom</label>
-    <div style="grid-column: 2;">
+    <h3 for="zoom">Zoom</h3>
+    <div>
       <input type="range" id="zoom" min="10" max="200" value="${this.state.zoom}" />
+      <button id="reset-zoom"><svg viewBox="0 0 32 32" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg" class="selected"><path fill="currentColor" stroke="none" d="M16 2c-4.418 0-8.418 1.791-11.313 4.687l-4.686-4.687v12h12l-4.485-4.485c2.172-2.172 5.172-3.515 8.485-3.515 6.627 0 12 5.373 12 12 0 3.584-1.572 6.801-4.063 9l2.646 3c3.322-2.932 5.417-7.221 5.417-12 0-8.837-7.163-16-16-16z"></path></svg></button>
+    </div>
+    <div>
       <label id="zoom-label">${this.state.zoom}%</label>
     </div>
+      
   </div>
   <div id="svg-preview-container">
   </div>
@@ -219,6 +241,13 @@ ${this.styles}
         this.shadowRoot.getElementById("enable-background-gradient").addEventListener("click", (ev) => {
             this.state.enableBackgroundGradient = ev.target.checked;
             this.updateBackgroundColorControls();
+            this.iconPreview.render(this.state);
+        });
+
+        this.shadowRoot.getElementById("reset-zoom").addEventListener("click", (ev) => {
+            this.state.zoom = 100;
+            this.shadowRoot.getElementById("zoom").value = this.state.zoom;
+            this.shadowRoot.getElementById("zoom-label").innerHTML = `${this.state.zoom}%`;
             this.iconPreview.render(this.state);
         });
 
