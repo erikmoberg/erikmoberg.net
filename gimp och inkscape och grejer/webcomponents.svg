@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   viewBox="0 0 32 32"
+   height="128"
+   width="128"
+   version="1.1"
+   id="svg16"
+   sodipodi:docname="webcomponents.svg"
+   inkscape:version="1.1.1 (3bf5ae0d25, 2021-09-20)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview18"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     showgrid="false"
+     inkscape:zoom="0.203125"
+     inkscape:cx="878.76923"
+     inkscape:cy="1233.2308"
+     inkscape:window-width="1920"
+     inkscape:window-height="1057"
+     inkscape:window-x="1912"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg16" />
+  <rect
+     style="fill:#252526;fill-opacity:1;stroke-width:2.92742"
+     id="rect2974"
+     width="750"
+     height="500"
+     x="-126.66592"
+     y="116.03277"
+     inkscape:export-filename="D:\Backup\Projekt\Github\erikmoberg.net\gimp och inkscape och grejer\webcomponents.png"
+     inkscape:export-xdpi="96"
+     inkscape:export-ydpi="96" />
+  <path
+     fill="url('#myGradient')"
+     stroke="none"
+     d="M 727.29714,294.78112 H 895.70758 V 463.19156 H 727.29714 Z m 154.61657,128.24454 c -1.22624,-7.68373 -6.23118,-14.1412 -21.07235,-20.16188 -5.16284,-2.4209 -10.90458,-4.10501 -12.60974,-7.99951 -0.6368,-2.31563 -0.73678,-3.5787 -0.32103,-4.94703 1.05257,-4.53131 6.42065,-5.89438 10.63091,-4.63131 2.73667,0.84206 5.26283,2.94719 6.84694,6.3154 7.25743,-4.7418 7.25743,-4.7418 12.31501,-7.89424 -1.89462,-2.94718 -2.83666,-4.21551 -4.11026,-5.47334 -4.42078,-4.94706 -10.30988,-7.47321 -19.88823,-7.25743 l -4.94705,0.62628 c -4.74181,1.15781 -9.26258,3.68397 -11.99925,7.05218 -7.99949,9.05732 -5.68912,24.84579 3.99449,31.3717 9.57834,7.15745 23.58272,8.73103 25.37207,15.47272 1.68412,8.21001 -6.10486,10.84141 -13.79385,9.89411 -5.68912,-1.26308 -8.84155,-4.11028 -12.31502,-9.37309 l -12.84129,7.37322 c 1.47358,3.3682 3.15769,4.83653 5.68385,7.78372 12.20976,12.32028 42.73415,11.68873 48.21275,-7.04693 0.20525,-0.63154 1.6841,-4.94706 0.52102,-11.57821 l 0.32103,0.46839 z m -63.03813,-50.8389 h -15.77269 c 0,13.59916 -0.0631,27.11409 -0.0631,40.73428 0,8.64682 0.44208,16.58316 -0.96835,19.02512 -2.31565,4.83654 -8.27843,4.21552 -10.98879,3.3682 -2.77877,-1.37359 -4.18921,-3.2682 -5.82595,-5.99961 -0.44207,-0.7368 -0.77364,-1.3736 -0.88942,-1.3736 l -12.80445,7.89423 c 2.14197,4.42078 5.26283,8.22581 9.28888,10.64671 5.99963,3.57872 14.06228,4.73654 22.50385,2.84193 5.4944,-1.58413 10.23093,-4.84707 12.70973,-9.89939 3.57872,-6.5259 2.82087,-14.52539 2.78403,-23.47746 0.0842,-14.41489 0,-28.83502 0,-43.36043 l 0.0263,-0.39472 z"
+     transform-origin="center"
+     style="fill:#da4526;fill-opacity:1;stroke-width:5.26283"
+     id="path2" />
+  <defs
+     id="defs14">
+    <rect
+       x="974.7195"
+       y="1246.2485"
+       width="1507.3341"
+       height="584.8317"
+       id="rect19004" />
+    <rect
+       x="950.35151"
+       y="1486.4472"
+       width="276.28709"
+       height="333.84817"
+       id="rect12726" />
+    <linearGradient
+       id="myBackgroundGradient"
+       x1="0"
+       x2="0"
+       y1="0"
+       y2="1">
+      <stop
+         offset="0%"
+         stop-color="#333333"
+         id="stop4" />
+      <stop
+         offset="100%"
+         stop-color="#333333"
+         id="stop6" />
+    </linearGradient>
+    <linearGradient
+       id="myGradient"
+       x1="0"
+       x2="0"
+       y1="0"
+       y2="32"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(8.269231,0,0,8.269231,420.92308,200.61538)">
+      <stop
+         offset="0%"
+         stop-color="#da4526"
+         id="stop9" />
+      <stop
+         offset="100%"
+         stop-color="#da4526"
+         id="stop11" />
+    </linearGradient>
+  </defs>
+  <g
+     id="g23513"
+     transform="translate(114.00737,-35.681694)"
+     inkscape:export-filename="D:\Backup\Projekt\Github\erikmoberg.net\gimp och inkscape och grejer\webcomponents.png"
+     inkscape:export-xdpi="96"
+     inkscape:export-ydpi="96">
+    <path
+       sodipodi:type="star"
+       style="fill:#da4526;fill-opacity:1;stroke-width:0.755906"
+       id="path3078"
+       inkscape:flatsided="true"
+       sodipodi:sides="6"
+       sodipodi:cx="187.07692"
+       sodipodi:cy="-580.9231"
+       sodipodi:r1="535.68866"
+       sodipodi:r2="463.92001"
+       sodipodi:arg1="1.0471976"
+       sodipodi:arg2="1.5707963"
+       inkscape:rounded="0"
+       inkscape:randomized="0"
+       transform="matrix(0.17650302,0,0,0.17650302,88.221134,475.72525)"
+       d="m 454.92123,-117.00309 -535.688663,-3e-5 -267.844307,-463.92 267.844352,-463.91998 535.688658,0 267.84431,463.92003 z" />
+    <path
+       sodipodi:type="star"
+       style="fill:#252526;fill-opacity:1;stroke-width:0.755906"
+       id="path3078-6"
+       inkscape:flatsided="true"
+       sodipodi:sides="6"
+       sodipodi:cx="187.07692"
+       sodipodi:cy="-580.9231"
+       sodipodi:r1="535.68866"
+       sodipodi:r2="463.92001"
+       sodipodi:arg1="1.0471976"
+       sodipodi:arg2="1.5707963"
+       inkscape:rounded="0"
+       inkscape:randomized="0"
+       transform="matrix(0.10114899,0,0,0.10114899,102.31813,431.95035)"
+       d="m 454.92123,-117.00309 -535.688663,-3e-5 -267.844307,-463.92 267.844352,-463.91998 535.688658,0 267.84431,463.92003 z" />
+    <path
+       id="path3078-4-7"
+       style="fill:#252526;fill-opacity:1;stroke-width:0.133419"
+       d="M 122.36894,455.07385 81.731572,455.07384 34.45624,373.19056 81.731579,291.30729 H 122.38852 L 74.822535,373.19056 Z"
+       sodipodi:nodetypes="ccccccc" />
+    <path
+       id="path3078-4"
+       style="fill:#a6a6a6;fill-opacity:1;stroke-width:0.133419"
+       d="m 114.60281,455.07385 -40.637368,-10e-6 -47.275332,-81.88328 47.27534,-81.88327 h 40.65694 l -47.565984,81.88327 z"
+       sodipodi:nodetypes="ccccccc" />
+    <rect
+       style="fill:#252526;fill-opacity:1;stroke-width:0.133419"
+       id="rect4341"
+       width="48.722649"
+       height="6.7366614"
+       x="148.33296"
+       y="326.26553" />
+    <rect
+       style="fill:#252526;fill-opacity:1;stroke-width:0.133419"
+       id="rect4341-6"
+       width="48.722649"
+       height="6.7366614"
+       x="148.33296"
+       y="413.37894" />
+    <rect
+       style="fill:#252526;fill-opacity:1;stroke-width:0.133419"
+       id="rect4341-67"
+       width="48.722649"
+       height="6.7366614"
+       x="170.08748"
+       y="370.03949" />
+  </g>
+  <text
+     xml:space="preserve"
+     transform="scale(0.25)"
+     id="text12724"
+     style="fill:black;fill-opacity:1;stroke:none;font-family:Consolas;font-style:normal;font-weight:normal;font-size:40px;line-height:25px;letter-spacing:0px;word-spacing:0px;-inkscape-font-specification:Consolas;font-stretch:normal;font-variant:normal;white-space:pre;shape-inside:url(#rect12726)" />
+  <text
+     xml:space="preserve"
+     transform="matrix(0.85854399,0,0,0.85854399,-747.9573,-615.25444)"
+     id="text19002"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:40px;line-height:25px;font-family:Consolas;-inkscape-font-specification:Consolas;letter-spacing:0px;word-spacing:0px;white-space:pre;shape-inside:url(#rect19004);fill:#a6a6a6;fill-opacity:1;stroke:none"
+     inkscape:export-filename="D:\Backup\Projekt\Github\erikmoberg.net\gimp och inkscape och grejer\webcomponents.png"
+     inkscape:export-xdpi="96"
+     inkscape:export-ydpi="96"><tspan
+       x="974.71875"
+       y="1270.2127"
+       id="tspan23600"><tspan
+         style="font-family:'Franklin Gothic Heavy';-inkscape-font-specification:'Franklin Gothic Heavy, '"
+         id="tspan23598">WEB COMPONENTS</tspan></tspan></text>
+</svg>

@@ -5,7 +5,7 @@ require_once("bloghandler.php");
 require_once("commenthandler.php");
 
 function PrintScriptVersion() {
-    echo '6';
+    echo '8';
 }
 
 function GetIconMarkup($name) {
@@ -131,26 +131,17 @@ if(!$isFrontPage) {
 					<p>As a programmer with just enough time on my hands, I occasionally blog about my hobbies - mostly photography and various gadgets.</p>
 				</div>
 
-                <?php
-                /*
-				<div class="social-container page-section">
-					<h2>Share</h2>
-					<?php
-						$shareTitle = "erikmoberg.net";
-						if($myShareTitle != null) {
-							$shareTitle = $myShareTitle;
-						}
-
-						PrintSocialNetworkingLinks($shareTitle, $myShareUrl);
-				</div>*/
-                ?>
-
 				<div class="page-section follow-icons">
 					<h2>Follow</h2>
 					<a target="_blank" class="rss-link" href="/rss.xml" title="Subscribe by RSS"><?php echo GetIconMarkup('rss') ?> RSS</a>
 					<a target="_blank" rel="noreferrer" class="rss-link" href="https://twitter.com/erikmoberg_swe" title="Follow me on Twitter"><?php echo GetIconMarkup('twitter') ?> Twitter</a>
                     <a target="_blank" rel="noreferrer" class="rss-link" href="https://github.com/erikmoberg" title="My GitHub repos"><?php echo GetIconMarkup('github') ?> GitHub</a>
                     <a target="_blank" rel="noreferrer" class="rss-link" href="https://www.linkedin.com/in/erik-moberg-6a228357" title="Me on LinkedIn"><?php echo GetIconMarkup('linkedin') ?> LinkedIn</a>
+				</div>
+
+                <div class="page-section">
+					<h2>Links</h2>
+					<a target="_blank" href="https://bostongurka.asuscomm.com" title="My other blog">My other blog (in Swedish)</a>
 				</div>
 
                 <div class="page-section">

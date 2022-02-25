@@ -261,7 +261,7 @@ ${this.styles}
         const enableBackgroundGradient = this.state.enableBackgroundGradient;
 
         this.shadowRoot.querySelectorAll(".background-color-control").forEach(c => c.classList.toggle("hidden", !enableBackgroundColor));
-        this.shadowRoot.querySelectorAll(".background-gradient-controls").forEach(c => c.classList.toggle("hidden", !enableBackgroundGradient));
+        this.shadowRoot.querySelectorAll(".background-gradient-controls").forEach(c => c.classList.toggle("hidden", !enableBackgroundGradient || !enableBackgroundColor));
     }
 
     filterIcons() {

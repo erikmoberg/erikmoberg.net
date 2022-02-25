@@ -75,23 +75,31 @@ if($displayform)
 <noscript><h3>JavaScript has to be turned ON. You have JavaScript currently turned off; you will not be able to post a message.</h3></noscript>
 <form id="frmContact" method="post" action="contact">
 <p>
-<label for="txtName">Name</label><br />
+<label for="txtName">Name</label>
+<label id="txtNameError" class="form-error"></label>
+<br />
 <input class="textinput" type="text" name="txtName" id="txtName" />
 </p>
 <p>
-<label for="txtEmail">Email</label><br />
+<label for="txtEmail">Email</label>
+<label id="txtEmailError" class="form-error"></label>
+<br />
 <input class="textinput" type="text" name="txtEmail" id="txtEmail" />
 <input type="hidden" name="txtTesttext" id="txtTesttext" value="none" />
 </p>
 <p>
-<label for="txtMessage">Message</label><br />
+<label for="txtMessage">Message</label>
+<label id="txtMessageError" class="form-error"></label>
+<br />
 <textarea class="textinput" name="txtMessage" id="txtMessage" onkeydown="checkMaxLength(this,1000)" onkeyup="checkMaxLength(this,1000)" onfocus="checkMaxLength(this,1000)" onblur="checkMaxLength(this,1000)"></textarea>
 <textarea name="someTxt" id="someTxt"></textarea>
 <br />
 <br />
 <input type="submit" id="btnSend" name="btnSend" class="btn" onclick="javascript:document.getElementById('txtTesttext').value = 'emalj';return postContact('txtName', 'txtEmail', 'txtTesttext', 'txtMessage');" value="Send message" />
+<label id="btnSendError" class="form-error"></label>
 </p>
 </form>
+<div id="contact-shroud" class="shroud"></div>
 <?php
 }
 echo '</div>';

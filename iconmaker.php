@@ -8,7 +8,7 @@ PrintStartHtml('Flat Icon Maker',3,'The Flat Icon Maker is a simple tool to crea
 <div class="page-section">
   <h2>Flat Icon Maker</h2>
   <p>
-    Use the Flat Icon Maker to create your own simple icons for your applications or websites - using any modern browser except Internet Explorer!
+    Use the Flat Icon Maker to create your own simple icons for your applications or websites - using any modern browser!
     Feel free to <a href="contact">contact me</a> if you have any questions or feedback.
   </p>
 </div>

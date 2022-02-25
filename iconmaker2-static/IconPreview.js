@@ -1,7 +1,8 @@
 export class IconPreview extends HTMLElement {
     previewSize = 128;
     minPngSize = 1;
-    maxPngSize = 1920;
+    maxPngSize = 2000;
+    pngSize = 128;
     selectedIcon = null;
     downloadIcon = '<svg viewBox="0 0 32 32" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" stroke="none" d="M28 18.667c-0.8 0-1.333 0.533-1.333 1.333v5.333c0 0.8-0.533 1.333-1.333 1.333h-18.667c-0.8 0-1.333-0.533-1.333-1.333v-5.333c0-0.8-0.533-1.333-1.333-1.333s-1.333 0.533-1.333 1.333v5.333c0 2.267 1.733 4 4 4h18.667c2.267 0 4-1.733 4-4v-5.333c0-0.8-0.533-1.333-1.333-1.333z M15.067 20.933c0.133 0.133 0.267 0.267 0.4 0.267 0.133 0.133 0.4 0.133 0.533 0.133s0.4 0 0.533-0.133c0.133-0.133 0.267-0.133 0.4-0.267l6.667-6.667c0.533-0.533 0.533-1.333 0-1.867s-1.333-0.533-1.867 0l-4.4 4.4v-12.8c0-0.8-0.533-1.333-1.333-1.333s-1.333 0.533-1.333 1.333v12.8l-4.4-4.4c-0.533-0.533-1.333-0.533-1.867 0s-0.533 1.333 0 1.867l6.667 6.667z"></path></svg>';
 
@@ -23,6 +24,7 @@ button {
     font-size: inherit;
     cursor: pointer;
     color: #fff;
+    border-radius: var(--border-radius);
 }
 button:hover {
     background-color: #9e321c;
@@ -33,9 +35,14 @@ input[type=number] {
     padding: 4px;
     background-color: #eee;
     width: 70px;
+    border-radius: var(--border-radius);
 }
 .spacer {
     margin-bottom: 15px;
+}
+.preview-container>svg {
+    width: ${this.previewSize}px;
+    height: ${this.previewSize}px;
 }
 `;
 
@@ -66,8 +73,8 @@ input[type=number] {
 ${this.styles}
 </style>
 <h3>Preview</h3>
-<div>
-    <svg viewBox="0 0 32 32" height="${this.previewSize}" width="${this.previewSize}" xmlns="http://www.w3.org/2000/svg">
+<div class="preview-container">
+    <svg viewBox="0 0 32 32" width="32" height="32" xmlns="http://www.w3.org/2000/svg">
         ${backgroundMarkup}
         <path fill="url('#myGradient')" stroke="none" d="${state.selectedIcon.path}"
             transform="scale(${scale})" transform-origin="center" style="transform-origin: center center;"></path>
@@ -97,7 +104,7 @@ ${this.styles}
 
 <div>
   <label for="png-size">PNG size</label>
-  <input type="number" min="${this.minPngSize}" max="${this.maxPngSize}" value="128" id="png-size" />
+  <input type="number" min="${this.minPngSize}" max="${this.maxPngSize}" value="${this.pngSize}" id="png-size" />
 </div>
 
 <canvas id="canvas" height="${this.previewSize}" width="${this.previewSize}" style="display: none;"></canvas>
@@ -111,6 +118,17 @@ ${this.styles}
 
         this.shadowRoot.getElementById("download-png").addEventListener("click", (ev) => {
             this.downloadPng();
+        });
+
+        this.shadowRoot.getElementById("png-size").addEventListener("input", (ev) => {
+            let val = ev.target.value;
+            val = Math.min(val, this.maxPngSize);
+            val = Math.max(val, this.minPngSize);
+            if (val !== ev.target.value) {
+                this.shadowRoot.getElementById("png-size").value = val;
+            }
+
+            this.pngSize = val;
         });
     }
 

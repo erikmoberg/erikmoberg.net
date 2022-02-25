@@ -156,23 +156,53 @@ function showPic(imagefile, thumbimagefile, description) {
 }
 
 function postContact(txtName, txtEmail, txtTesttext, txtMessage) {
+    for (const errorLabel of document.querySelectorAll('.form-error')) {
+        errorLabel.innerHTML = '';
+        errorLabel.classList.remove('form-error-visible');
+    }
+
     var name = document.getElementById(txtName).value;
     var email = document.getElementById(txtEmail).value;
     var message = document.getElementById(txtMessage).value;
     var testtext = document.getElementById(txtTesttext).value;
 
-    if (name == '' || testtext != 'emalj' || message == '' || email == '') {
-        //Show error message
-        alert('Please enter name, email and a message.')
-        return false;
+    var errors = [];
+
+    if (!name) {
+        errors.push({ field: 'txtName', message: 'Please enter a name.' });
     }
-    else {
-        if (!isEmailValid(email)) {
-            alert('Enter a valid email address.');
-            return false;
+
+    if (!email) {
+        errors.push({ field: 'txtEmail', message: 'Please enter an email address.' });
+    }
+
+    if (email && !isEmailValid(email)) {
+        errors.push({ field: 'txtEmail', message: 'Enter a valid email address.' });
+    }
+
+    if (!message) {
+        errors.push({ field: 'txtMessage', message: 'Please enter a message.' });
+    }
+
+    if (testtext != 'emalj') {
+        errors.push({ field: 'txtEmail', message: 'Please enter an email address.' });
+    }
+
+    if (errors.length) {
+        errors.push({ field: 'btnSend', message: 'The form contains errors; see above.' });
+    }
+
+    if (errors.length > 0) {
+        for (const formError of errors) {
+            const errorLabel = document.querySelector('#' + formError.field + 'Error');
+            errorLabel.innerHTML = formError.message;
+            errorLabel.classList.add('form-error-visible');
         }
-        return true;
+    } else {
+        document.querySelector('#contact-shroud').style.display = 'block';
     }
+
+    return errors.length === 0;
 }
 
 function validateCommentForm(formData) {

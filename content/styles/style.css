@@ -1,3 +1,7 @@
+:root {
+    --border-radius: 5px;
+}
+
 * {
 	margin: 0;
 	padding: 0;
@@ -12,6 +16,10 @@ body {
 
 img {
 	border: none;
+}
+
+.page-section, article, img, .btn, .full-article, input[type=text], textarea, button, input[type=submit] {
+    border-radius: var(--border-radius);
 }
 
 ol, ul
@@ -133,6 +141,7 @@ blockquote {
 	top: 0;
 	left: 0;
 	position: absolute;
+    border-radius: 5px;
 
     animation-fill-mode: backwards;
     animation-delay: 0.1s;
@@ -386,6 +395,7 @@ article, .full-article, .article-navigation, .social-links, #frmComments, .page-
 #txtName, #txtMessage, #txtEmail {
 	max-width: calc(100% - 10px);
 	width: 550px;
+    margin-top: 5px;
 }
 
 .textinput:hover, .textinput:focus {
@@ -484,7 +494,7 @@ article, .full-article, .article-navigation, .social-links, #frmComments, .page-
     transition: all 0.2s ease-out;
 }
 
-.form-error .form-error-visible {
+.form-error.form-error-visible {
     opacity: 1;
 }
 
@@ -1705,7 +1715,7 @@ svg.feather {
 	}
 
 	#header-text-container {
-	  top: 12px;
+	  top: 4px;
 	}
 
 	#cse-search-form.display-search {
