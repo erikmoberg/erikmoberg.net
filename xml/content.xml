@@ -6938,7 +6938,7 @@ document.querySelector("#myButton").addEventListener("click", function() {
 &lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;// jQuery 
-$("#dataTable tbody").on("click", "tr", function() {
+$("#dataTable tbody").on("click", "tr", () =&gt; {
   console.log("Row was clicked");
 });&lt;/code&gt;&lt;/pre&gt;
 
@@ -6964,9 +6964,12 @@ function createDelegatedEventListener(selector, handler) {
 &lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;// Vanilla JS
-document.querySelector("#dataTable tbody").addEventListener("click", createDelegatedEventListener("tr", function() {
+document.querySelector("#dataTable tbody").addEventListener("click", createDelegatedEventListener("tr", (e) =&gt; {
   console.log("Row was clicked");
-});
+
+  // To get the clicked element:
+  const selectedRow = ev.target.closest("tr");
+}));
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;
@@ -6978,7 +6981,7 @@ document.querySelector("#dataTable tbody").addEventListener("click", createDeleg
 
 &lt;p&gt;
     Sometimes we want to add the same event handler for when different events happen. For example, the code
-    below adds an event handler that runs both when the user presses down the mouse button (typicall desktop
+    below adds an event handler that runs both when the user presses down the mouse button (typically desktop
     computer), as well as when the user starts a touch (typically mobile device):
 &lt;/p&gt;
 
@@ -6993,7 +6996,7 @@ $("#myButton").on("touchstart mousedown", function(e) {
 
 &lt;pre&gt;&lt;code&gt;// Vanilla JS
 for (const eventName of ["touchstart", "mousedown"]) {
-  document.querySelector("#myButton").addEventListener(eventName, function(e) {
+  document.querySelector("#myButton").addEventListener(eventName, (e) =&gt; {
     console.log("Mouse button pressed or touch started");
   });
 }&lt;/code&gt;&lt;/pre&gt;
@@ -7145,7 +7148,7 @@ fadeOut = function(element, duration, callback) {
 }
 
 // This is how we call the utility function.
-fadeOut(document.querySelector('#myElement'), 200, function() {
+fadeOut(document.querySelector('#myElement'), 200, () =&gt; {
   console.log("Fade out complete.");
 });&lt;/code&gt;&lt;/pre&gt;
 
@@ -7164,6 +7167,202 @@ Hint: When switching from jQuery to Vanilla JS, first check &lt;a href="https://
       <image>
         <description>We can remove jQuery, just not with this call.</description>
         <name>remove-jquery</name>
+        <extension>.png</extension>
+      </image>
+    </images>
+  </entry>
+  <entry>
+    <guid>dae25450-1f0c-4d5e-aff6-6522855587f0</guid>
+    <date>2022-01-03</date>
+    <shorturl>
+    </shorturl>
+    <header>Icon Maker Rewrite... again</header>
+    <readableid>icon-maker-rewrite...-again</readableid>
+    <subheader>Third time's a charm</subheader>
+    <intro>[image webcomponents] Web front-end technologies have been moving fast the last few years and trying to keep up has been exhausting. As an alternative to libraries and frameworks such as React and Angular, I recently started looking into web components. While the developer experience of modern tools can be great, they also bring in things you may not want. A React app may have thousands of dependencies, and any problems with those dependencies may break the app - or at least give you annoying deprecation warnings. Web components along with ES6 modules can provide a nice alternative as they are based on web standards and as such, should not break easily. Also: No dependencies, and no build! I find them a bit cumbersome to work with compared to React and friends, but I hope they will make up for it over time. So I re-implemented the icon maker using web components, &lt;a href="/iconmaker"&gt;go check it out!&lt;/a&gt;</intro>
+    <content>
+    </content>
+    <images>
+      <image>
+        <description>
+        </description>
+        <name>webcomponents</name>
+        <extension>.png</extension>
+      </image>
+    </images>
+  </entry>
+  <entry>
+    <guid>0690791f-8b8b-46f3-adce-349fe02ecb18</guid>
+    <date>2022-06-20</date>
+    <shorturl>
+    </shorturl>
+    <header>Self-hosting your website on a Raspberry Pi Zero</header>
+    <readableid>self-hosting-your-website-on-a-raspberry-pi-zero</readableid>
+    <subheader>Because you can</subheader>
+    <intro>[image raspberrypi] If you pay a visit now and then to &lt;a href="https://news.ycombinator.com/news"&gt;Hacker News&lt;/a&gt;, you might have noticed that two topics that keep coming up are the old web, and self hosting. The old web, because the web used to be better than today, and self hosting, because individuals have too little control, and the big corporations to much, and we can change that balance by hosting our content ourselves. Whether true or not, self hosting your own old fashioned style blog is usually pretty easy can be a fun exercise to setup and run. Let's dive in.</intro>
+    <content>&lt;p&gt;In this guide, we will use a Raspberry Pi Zero W as our web server. Now, you could use practically any Raspberry Pi, or other computer for that matter, as long as it runs Linux. Since we assume the Pi Zero W though, we will install the OS without a graphical user interface (since it's too slow for that in my opinion) and we will also be using WiFi to connect to the network as it's WiFi capable, and has no Ethernet port.&lt;/p&gt;
+
+&lt;p&gt;The flavor of Linux we will be using is Raspberry Pi OS (which is based on Debian).&lt;/p&gt;
+
+&lt;h2&gt;1. Install Raspberry Pi OS&lt;/h2&gt;
+&lt;p&gt;Before we start, we need to prepare an SD card with the operating system. If you already own a Raspberry Pi, you probably have performed this step already. If not, the easiest way is to download Raspberry Pi Imager from &lt;a href="https://www.raspberrypi.com/software/"&gt;here&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Simply download and follow the on-screen instructions. For our purposes, we only need the headless version (or lite version, i.e. the OS without a graphical user interface).&lt;/p&gt;
+&lt;p&gt;After the SD has been prepared, insert the card into the Raspberry Pi and connect it to a power source and it should boot up.&lt;/p&gt;
+
+&lt;h2&gt;2. Initial setup&lt;/h2&gt;
+&lt;p&gt;When performing initial setup, I recommend connecting a monitor and keyboard. While we could setup SSH and access the Raspberry Pi using a terminal right away, using a monitor and keyboard saves us from some potential frustration since we need to make sure the Raspberry Pi can connect to the network, and that it can be accessed using SSH. Once initial setup is complete, we can disconnect the peripherals, tuck the Raspberry Pi away somewhere, and access it from another computer instead.&lt;/p&gt;
+&lt;p&gt;Once the OS has booted, you will be asked to pick a keyboard layout, a username, and a password. Make sure to pick a strong password because this box will be exposed on the web.&lt;/p&gt;
+&lt;p&gt;Once the OS has booted, type this command to enter setup:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;sudo raspi-config&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;We want to do a few things here: Connect to the network, enable SSH, and set the host name.&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;b&gt;Connect to the network:&lt;/b&gt; Go to System settings =&gt; Wireless LAN&lt;/li&gt;
+  &lt;li&gt;&lt;b&gt;Enable SSH:&lt;/b&gt; Go to Interface options =&gt; SSH =&gt; Confirm with "Yes"&lt;/li&gt;
+  &lt;li&gt;&lt;b&gt;Set network host name:&lt;/b&gt; Go to System options =&gt; Hostname =&gt; Enter a name. I used the host name "blueberrypie", which I will be referring to later.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Finish and reboot.&lt;/p&gt;
+&lt;p&gt;To see if the internet connection works, you can run this command:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;ping -c 3 google.com&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;This will send a ping request to google.com and stop after 3 times. If you get some text output including "3 packets transmitted, 3 received", then all is fine. In my case, this did not work at first, turned out I used the wrong WiFi settings. Oops.&lt;/p&gt;
+&lt;p&gt;Congratulations! The Pi is now available on the network and can access the internet.&lt;/p&gt;
+
+&lt;h2&gt;3. Keeping the system up to date&lt;/h2&gt;
+&lt;p&gt;This is not strictly necessary to get the web server working, but it might be the step that you skip and then regret later!&lt;/p&gt;
+&lt;p&gt;Making sure the OS has all the latest security updates can be quite important, especially since it will be exposed on the internet. To make sure to keep the OS up to date, we can enable unattended upgrades with this command:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;sudo apt install unattended-upgrades&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;The default configuration should be fine most of the time, looking for updates daily. Note, however, that automatic updates may potentially cause problems if a new version of a package you depend on has breaking changes. Still, I think this risk is worth taking, since you make sure security updates are automatically installed without any effort on your side.&lt;/p&gt;
+&lt;p&gt;Otherwise, you can also update the packages manually in the system by using:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;sudo apt update
+sudo apt upgrade
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Sooner or later, you might want to move to a newer version of the OS itself, typically when it is approaching end of life. You cna find information on the &lt;a href="https://www.debian.org/releases/"&gt;Debian Releases page&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;In order to update to a new major version of the OS, follow these steps:&lt;/p&gt;
+&lt;p&gt;First, we update the system:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;sudo apt update
+sudo apt dist-upgrade
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Then we specify the release to use by editing sources.list:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;sudo nano /etc/apt/sources.list&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Find this line and change "bullseye" to the name of the latest release (refer to link above, or the &lt;a href="https://www.raspberrypi.com/software/operating-systems/"&gt;Raspberry Pi OS page&lt;/a&gt;):&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;deb http://raspbian.raspberrypi.org/raspbian/ bullseye main contrib non-free rpi&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Then we run a series of commands to perform the upgrade and reboot:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;sudo apt update
+sudo apt dist-upgrade
+sudo apt autoclean
+sudo reboot
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2&gt;4. Access the Pi from another computer&lt;/h2&gt;
+&lt;p&gt;Since this will not be a computer we will typically keep a keyboard and monitor connected to, we will instead manage it using SSH, which you can think of as a command line that can be run from another computer on the network.&lt;/p&gt;
+&lt;p&gt;Since we enabled SSH previously, it should just work at this stage. So assuming your "other computer on the network" is running Windows, you can get the well-known SSH client PuTTY &lt;a href="https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html"&gt;here&lt;/a&gt;. Simply download, install and run. When run, select SSH, port 22, enter the hostname that we defined above, and hit "Open". Then enter the username and the password that we set during initial setup.&lt;/p&gt;
+
+[image putty-login]
+
+&lt;p&gt;You can now run commands (such as &lt;c&gt;ls&lt;/c&gt;) as you would directly on the Raspberry Pi so feel free to disconnect keyboard and monitor and manage the device like this instead.&lt;/p&gt;
+
+[image putty]
+
+&lt;h2&gt;5. Install Apache&lt;/h2&gt;
+&lt;p&gt;There are obviously other web servers, nginx being a very popular option, but in this guide we will stick to the good ol' Apache.&lt;/p&gt;
+&lt;p&gt;In order to install Apache, run these commands:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;sudo apt-get update
+sudo apt-get upgrade
+sudo apt install apache2
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;To test the installation, open a web browser on a PC on the same network and enter the hostname of the Raspberry Pi we entered previously, followed by ".local", so in my case: "http://blueberrypie.local". We are greeted by the default Apache web page:&lt;/p&gt;
+
+[image apache]
+
+&lt;h2&gt;6. Prepare upload via SFTP&lt;/h2&gt;
+&lt;p&gt;Typically, we want to develop the website on another computer, and then upload to the web server. In order to do that, we need to enable writing to the folder &lt;c&gt;/var/www/html&lt;/c&gt; where Apache stores its content by default. We also need to install an SFTP client so that we can access the directory.&lt;/p&gt;
+&lt;p&gt;To be able to make changes to the files within the directory we will set up some permissions. We set the current user as the owner of the folder with the &lt;c&gt;chown&lt;/c&gt; ("change owner") command:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;sudo chown &lt;i&gt;yourusername&lt;/i&gt; /var/www/html&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Make sure to replace "yourusername" with your actual username.&lt;/p&gt;
+&lt;p&gt;Now, on the computer that will be uploading the files, install an SFTP client. We will be using &lt;a href="https://filezilla-project.org/"&gt;FileZilla&lt;/a&gt;. Download, install and run, and then enter the host name and the user name. Also make sure "SFTP - SSH File Transfer Protocol" is selected.&lt;/p&gt;
+
+[image filezilla]
+
+&lt;p&gt;After connecting, navigate to &lt;c&gt;/var/www/html&lt;/c&gt;, this is where you will be putting your files.&lt;/p&gt;
+
+&lt;h2&gt;7. Set up a static HTML page&lt;/h2&gt;
+&lt;p&gt;You can now write some content before we start making the page available to the world. If you don't have any content at the moment, feel free to use &lt;a href="https://bostongurka.asuscomm.com/savetheweb"&gt;this (satire?) page&lt;/a&gt; which promotes the idea of self-hosting and that should fit right in among other self-hosting (or "take back control") blog posts regularly posted on Hacker News.&lt;/p&gt;
+&lt;p&gt;When it comes to the actual technology driving the page, you have several options, that I will not elaborate further here:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;A single static hand-crafted HTML page&lt;/li&gt;
+  &lt;li&gt;A collection of HTML pages generated with a static site generator&lt;/li&gt;
+  &lt;li&gt;A collection of sort-of static HTML pages using server side includes (SSI)&lt;/li&gt;
+  &lt;li&gt;"Proper" server side handling using PHP (although heavy PHP processing is a bit slow on the Raspberry Pi Zero)&lt;/li&gt;
+  &lt;li&gt;A single page application using a framework such as react (if you like NPM packages and security warnings)&lt;/li&gt;
+  &lt;li&gt;A single page application using only vanilla JavaScript&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;All of these are possible, but some, such as enabling PHP, require installing additional modules and configuring Apache.&lt;/p&gt;
+
+&lt;h2&gt;8. Port forward&lt;/h2&gt;
+&lt;p&gt;In order for the web server to be accessible from outside the network, we need to forward the ports from the router to the Raspberry Pi. The required ports are 80 (HTTP) and 443 (HTTPS). How to set this up varies on your router, but typically you would log on to the router, open WAN settings (or similar), and then look for port forwarding. You will need to forward port 80 and 443 to the Pi. You might be able to use the name of the Pi (in my case, "blueberrypie"), but if you need to enter the IP, you can find it by using this terminal command: &lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;hostname -I&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2&gt;9. Setup Dynamic DNS (DDNS)&lt;/h2&gt;
+&lt;p&gt;Since we are setting this up on a home network without a fixed IP, we need to setup dynamic DNS (DDNS) to make sure the page is accessible if our external IP changes. Using DDNS is often an option in the router. For example, this can be enabled on an Asus router by logging on to the router and navigating to WAN =&gt; DDNS. The URL can be setup so it can be reached from [yourname].asuscomm.com&lt;/p&gt;
+&lt;p&gt;Once you have completed this step, you will be able to open a web browser and enter the URL you provided above, and the page should open. It should also work from any device, even from outside the network (try using your phone after switching off WiFi on it). But since we use HTTP, we get a warning indicating that the connection is not secure. We will take care of that in the last step.&lt;/p&gt;
+
+&lt;h2&gt;10. Install TLS&lt;/h2&gt;
+&lt;p&gt;TLS (AKA SSL, or secure connection) is not strictly necessary, but using it had become a de-facto standard. Plus, it's free and easy! With let's Encrypt, we can get at free certificate and setup automatical renewal to save us from the headaches of expiring certificates.&lt;/p&gt;
+&lt;p&gt;We simply run two commands to get it working. The first one will be installing Certbot, which will basically do all the work for us. The second command will tell Certbot to get a certificate and install it on Apache.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;sudo apt-get install python3-certbot-apache
+sudo certbot --apache
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;It will ask for an email address (used for urgent renewal and security notices) and the URL that we set up in the previous step.&lt;/p&gt;
+
+&lt;h2&gt;But why?&lt;/h2&gt;
+&lt;p&gt;Why go through all the trouble of self-hosting? There are, after all, several other options, usually less complicated, and sometimes even free. I guess  we could list som pros and cons of self-hosting.&lt;/p&gt;
+&lt;p&gt;Pros&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;It's a fun exercise and you might learn something&lt;/li&gt;
+  &lt;li&gt;If you happen to have an old Raspberry Pi kicking around, it's basically free&lt;/li&gt;
+  &lt;li&gt;It's completely yours and you are free to do what you want with it&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Cons&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;It's a bit complicated to get it running&lt;/li&gt;
+  &lt;li&gt;It's even more complicated to keep it running. The page could go down for a number of reasons: Your internet connection goes down, you restart your router, you reboot the Pi, etc.&lt;/li&gt;
+  &lt;li&gt;You are making the server, and in extension, other devices, open for hacker attacks&lt;/li&gt;
+  &lt;li&gt;The server is using power - granted, not much if it's a Raspberry Pi Zero&lt;/li&gt;
+  &lt;li&gt;The server is rather slow and may not be able to handle too much traffic - granted, you could use something faster than a Raspberry Pi Zero, but then you will be using more power&lt;/li&gt;
+  &lt;li&gt;You will have another device to manage and keep up to date with security updates and whatnot.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;All in all, it's not something I would recommend in a professional capacity, but definitely something I would recommend as a fun side project.&lt;/p&gt;
+
+[image raspberrypi]</content>
+    <images>
+      <image>
+        <description>The Raspberry Pi Zero W.</description>
+        <name>raspberrypi</name>
+        <extension>.jpg</extension>
+      </image>
+      <image>
+        <description>The Apache default page.</description>
+        <name>apache</name>
+        <extension>.png</extension>
+      </image>
+      <image>
+        <description>Connecting using SFTP with FileZilla. Make sure to enter your username and password.</description>
+        <name>filezilla</name>
+        <extension>.png</extension>
+      </image>
+      <image>
+        <description>The Raspberry Pi Imager. We will go with the Lite version.</description>
+        <name>select-os</name>
+        <extension>.png</extension>
+      </image>
+      <image>
+        <description>Succesfully logged in with PuTTY.</description>
+        <name>putty</name>
+        <extension>.png</extension>
+      </image>
+      <image>
+        <description>The PuTTY configuration dialog.</description>
+        <name>putty-login</name>
         <extension>.png</extension>
       </image>
     </images>

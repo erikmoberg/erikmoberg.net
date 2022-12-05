@@ -104,7 +104,7 @@ function PrintRecentComments($count)
 	}
 
 	usort($entries, 'cmp1');
-
+    
 	for($i = count($entries)-1; $i >= 0 && $i >= count($entries)-$count;$i--)
 	{
 		$comment = $entries[$i]['comment'];
@@ -115,10 +115,10 @@ function PrintRecentComments($count)
         $datetime = '<time datetime="' . date('Y-m-d', $datetime) . '">' . date('M jS, Y', $datetime) . "</time>\n";
 		$message = $comment->message;
 		$maxlength = 70;
-		$message = $comment->message;
-		$message = strlen($message) > $maxlength ? substr($message, 0, $maxlength) . '...' : $message;
+		$message = mb_strlen($message) > $maxlength ? mb_strcut($message, 0, $maxlength) . '...' : $message;
 		$message = htmlspecialchars($message);
-		$readableid = $entries[$i]['readableid'];
+		
+        $readableid = $entries[$i]['readableid'];
 		$number = $entries[$i]['number'];
 		echo '<p><a href="/article/' . $readableid . '#comment-' . $number . '" style="font-size: 11px;color: #888;">' . $name . ', ' . $datetime . '</a><br /><a href="/article/' . $readableid . '#comment-' . $number . '">' . $message . "</a></p>\n";
 	}
