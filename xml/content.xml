@@ -7199,75 +7199,76 @@ Hint: When switching from jQuery to Vanilla JS, first check &lt;a href="https://
     <header>Self-hosting your website on a Raspberry Pi Zero</header>
     <readableid>self-hosting-your-website-on-a-raspberry-pi-zero</readableid>
     <subheader>Because you can</subheader>
-    <intro>[image raspberrypi] If you pay a visit now and then to &lt;a href="https://news.ycombinator.com/news"&gt;Hacker News&lt;/a&gt;, you might have noticed that two topics that keep coming up are the old web, and self hosting. The old web, because the web used to be better than today, and self hosting, because individuals have too little control, and the big corporations to much, and we can change that balance by hosting our content ourselves. Whether true or not, self hosting your own old fashioned style blog is usually pretty easy can be a fun exercise to setup and run. Let's dive in.</intro>
-    <content>&lt;p&gt;In this guide, we will use a Raspberry Pi Zero W as our web server. Now, you could use practically any Raspberry Pi, or other computer for that matter, as long as it runs Linux. Since we assume the Pi Zero W though, we will install the OS without a graphical user interface (since it's too slow for that in my opinion) and we will also be using WiFi to connect to the network as it's WiFi capable, and has no Ethernet port.&lt;/p&gt;
+    <intro>[image raspberrypi] If you pay a visit now and then to &lt;a href="https://news.ycombinator.com/news"&gt;Hacker News&lt;/a&gt;, you might have noticed that two topics that keep coming up are &lt;a href="https://news.ycombinator.com/item?id=23326329"&gt;the old web&lt;/a&gt;, and &lt;a href="https://news.ycombinator.com/item?id=30781536"&gt;self hosting&lt;/a&gt;. The old web, because the web used to be better than today, and self hosting, because individuals have too little control, and the big corporations too much, and we can change that balance by hosting our content ourselves. Whether true or not, self hosting your own website is usually pretty easy can be a fun exercise to setup and run. Let's dive in.</intro>
+    <content>&lt;p&gt;In this guide, we will use a Raspberry Pi Zero W as our web server. Now, you could follow this guide and use practically any Raspberry Pi, or other computer for that matter, as long as it runs Linux. Since we assume the Pi Zero W though, we will install the operating system without a graphical user interface (since it's too slow for that in my opinion) and we will also be using WiFi to connect to the network as it's WiFi capable, and has no Ethernet port.&lt;/p&gt;
 
-&lt;p&gt;The flavor of Linux we will be using is Raspberry Pi OS (which is based on Debian).&lt;/p&gt;
+&lt;p&gt;The flavor of Linux we will be using is Raspberry Pi OS, formerly known as Raspbian, which is based on Debian.&lt;/p&gt;
 
 &lt;h2&gt;1. Install Raspberry Pi OS&lt;/h2&gt;
 &lt;p&gt;Before we start, we need to prepare an SD card with the operating system. If you already own a Raspberry Pi, you probably have performed this step already. If not, the easiest way is to download Raspberry Pi Imager from &lt;a href="https://www.raspberrypi.com/software/"&gt;here&lt;/a&gt;.&lt;/p&gt;
 
-&lt;p&gt;Simply download and follow the on-screen instructions. For our purposes, we only need the headless version (or lite version, i.e. the OS without a graphical user interface).&lt;/p&gt;
+&lt;p&gt;Simply download and follow the on-screen instructions. For our purposes, we only need the headless version (AKA lite version, i.e. the OS without a graphical user interface).&lt;/p&gt;
 &lt;p&gt;After the SD has been prepared, insert the card into the Raspberry Pi and connect it to a power source and it should boot up.&lt;/p&gt;
 
 &lt;h2&gt;2. Initial setup&lt;/h2&gt;
-&lt;p&gt;When performing initial setup, I recommend connecting a monitor and keyboard. While we could setup SSH and access the Raspberry Pi using a terminal right away, using a monitor and keyboard saves us from some potential frustration since we need to make sure the Raspberry Pi can connect to the network, and that it can be accessed using SSH. Once initial setup is complete, we can disconnect the peripherals, tuck the Raspberry Pi away somewhere, and access it from another computer instead.&lt;/p&gt;
+[note]During initial setup, I recommend having a monitor and a keyboard connected. While we could setup WiFi and SSH manually in configuration files before boot, and then access the Raspberry Pi remotely using a terminal, having monitor and keyboard connected makes it easier to see what's going on and saves us from some potential frustration if, for example, it cannot connect to the WiFi. Once initial setup is complete, we can disconnect the peripherals, tuck the Raspberry Pi away somewhere, and access it from another computer instead.[/note]
 &lt;p&gt;Once the OS has booted, you will be asked to pick a keyboard layout, a username, and a password. Make sure to pick a strong password because this box will be exposed on the web.&lt;/p&gt;
-&lt;p&gt;Once the OS has booted, type this command to enter setup:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;sudo raspi-config&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Then, type this command to enter setup:&lt;/p&gt;
+&lt;code&gt;sudo raspi-config&lt;/code&gt;
+
+[image setup]
+
 &lt;p&gt;We want to do a few things here: Connect to the network, enable SSH, and set the host name.&lt;/p&gt;
 &lt;ul&gt;
   &lt;li&gt;&lt;b&gt;Connect to the network:&lt;/b&gt; Go to System settings =&gt; Wireless LAN&lt;/li&gt;
   &lt;li&gt;&lt;b&gt;Enable SSH:&lt;/b&gt; Go to Interface options =&gt; SSH =&gt; Confirm with "Yes"&lt;/li&gt;
-  &lt;li&gt;&lt;b&gt;Set network host name:&lt;/b&gt; Go to System options =&gt; Hostname =&gt; Enter a name. I used the host name "blueberrypie", which I will be referring to later.&lt;/li&gt;
+  &lt;li&gt;&lt;b&gt;Set network host name:&lt;/b&gt; Go to System options =&gt; Hostname =&gt; Enter a name. I used the host name &lt;b&gt;"blueberrypie"&lt;/b&gt;, which I will be referring to later.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;Finish and reboot.&lt;/p&gt;
-&lt;p&gt;To see if the internet connection works, you can run this command:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;ping -c 3 google.com&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;This will send a ping request to google.com and stop after 3 times. If you get some text output including "3 packets transmitted, 3 received", then all is fine. In my case, this did not work at first, turned out I used the wrong WiFi settings. Oops.&lt;/p&gt;
-&lt;p&gt;Congratulations! The Pi is now available on the network and can access the internet.&lt;/p&gt;
+&lt;p&gt;To test if the internet connection works, you can run this command:&lt;/p&gt;
+&lt;code&gt;ping -c 3 google.com&lt;/code&gt;
+&lt;p&gt;This will send ping requests to google.com and stop after 3 times. If you get some text output including "3 packets transmitted, 3 received", then all is fine. In my case, this did not work at first, turned out I used the wrong WiFi settings. Oops.&lt;/p&gt;
+&lt;p&gt;If it works - congratulations! The Pi is now available on the network and can access the internet.&lt;/p&gt;
 
 &lt;h2&gt;3. Keeping the system up to date&lt;/h2&gt;
 &lt;p&gt;This is not strictly necessary to get the web server working, but it might be the step that you skip and then regret later!&lt;/p&gt;
 &lt;p&gt;Making sure the OS has all the latest security updates can be quite important, especially since it will be exposed on the internet. To make sure to keep the OS up to date, we can enable unattended upgrades with this command:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;sudo apt install unattended-upgrades&lt;/code&gt;&lt;/pre&gt;
+&lt;code&gt;sudo apt install unattended-upgrades&lt;/code&gt;
 &lt;p&gt;The default configuration should be fine most of the time, looking for updates daily. Note, however, that automatic updates may potentially cause problems if a new version of a package you depend on has breaking changes. Still, I think this risk is worth taking, since you make sure security updates are automatically installed without any effort on your side.&lt;/p&gt;
 &lt;p&gt;Otherwise, you can also update the packages manually in the system by using:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;sudo apt update
+&lt;code&gt;sudo apt update&lt;br /&gt;
 sudo apt upgrade
-&lt;/code&gt;&lt;/pre&gt;
+&lt;/code&gt;
 &lt;p&gt;Sooner or later, you might want to move to a newer version of the OS itself, typically when it is approaching end of life. You cna find information on the &lt;a href="https://www.debian.org/releases/"&gt;Debian Releases page&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;In order to update to a new major version of the OS, follow these steps:&lt;/p&gt;
 &lt;p&gt;First, we update the system:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;sudo apt update
-sudo apt dist-upgrade
-&lt;/code&gt;&lt;/pre&gt;
+&lt;code&gt;sudo apt update&lt;br /&gt;
+sudo apt dist-upgrade&lt;br /&gt;
+&lt;/code&gt;
 &lt;p&gt;Then we specify the release to use by editing sources.list:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;sudo nano /etc/apt/sources.list&lt;/code&gt;&lt;/pre&gt;
+&lt;code&gt;sudo nano /etc/apt/sources.list&lt;/code&gt;
 &lt;p&gt;Find this line and change "bullseye" to the name of the latest release (refer to link above, or the &lt;a href="https://www.raspberrypi.com/software/operating-systems/"&gt;Raspberry Pi OS page&lt;/a&gt;):&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;deb http://raspbian.raspberrypi.org/raspbian/ bullseye main contrib non-free rpi&lt;/code&gt;&lt;/pre&gt;
+&lt;code&gt;deb http://raspbian.raspberrypi.org/raspbian/ bullseye main contrib non-free rpi&lt;/code&gt;
 &lt;p&gt;Then we run a series of commands to perform the upgrade and reboot:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;sudo apt update
-sudo apt dist-upgrade
-sudo apt autoclean
+&lt;code&gt;sudo apt update&lt;br /&gt;
+sudo apt dist-upgrade&lt;br /&gt;
+sudo apt autoclean&lt;br /&gt;
 sudo reboot
-&lt;/code&gt;&lt;/pre&gt;
+&lt;/code&gt;
 
 &lt;h2&gt;4. Access the Pi from another computer&lt;/h2&gt;
 &lt;p&gt;Since this will not be a computer we will typically keep a keyboard and monitor connected to, we will instead manage it using SSH, which you can think of as a command line that can be run from another computer on the network.&lt;/p&gt;
-&lt;p&gt;Since we enabled SSH previously, it should just work at this stage. So assuming your "other computer on the network" is running Windows, you can get the well-known SSH client PuTTY &lt;a href="https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html"&gt;here&lt;/a&gt;. Simply download, install and run. When run, select SSH, port 22, enter the hostname that we defined above, and hit "Open". Then enter the username and the password that we set during initial setup.&lt;/p&gt;
+&lt;p&gt;Since we enabled SSH previously, it should just work at this stage. So assuming your "other computer on the network" is running Windows, you can access it either using the well-known SSH client &lt;a href="https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html"&gt;PuTTY&lt;/a&gt;, or you can use the &lt;c&gt;ssh&lt;/c&gt; command that exists since Windows 10. If using the &lt;c&gt;ssh&lt;/c&gt; command, open a terminal window on the Windows machine and type:&lt;/p&gt;
 
-[image putty-login]
+&lt;code&gt;ssh yourusername@hostname&lt;/code&gt;
 
-&lt;p&gt;You can now run commands (such as &lt;c&gt;ls&lt;/c&gt;) as you would directly on the Raspberry Pi so feel free to disconnect keyboard and monitor and manage the device like this instead.&lt;/p&gt;
-
-[image putty]
+&lt;p&gt;Where "yourusername" and "hostname" are the values you entered during during initial setup. You will be asked to accept the fingerprint of the server, and then asked for the password of the user you entered. After entering the password, you can run commands (such as &lt;c&gt;ls&lt;/c&gt;) as you would directly on the Raspberry Pi so feel free to disconnect keyboard and monitor and manage the device like this instead.&lt;/p&gt;
 
 &lt;h2&gt;5. Install Apache&lt;/h2&gt;
 &lt;p&gt;There are obviously other web servers, nginx being a very popular option, but in this guide we will stick to the good ol' Apache.&lt;/p&gt;
 &lt;p&gt;In order to install Apache, run these commands:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;sudo apt-get update
-sudo apt-get upgrade
+&lt;code&gt;sudo apt-get update&lt;br /&gt;
+sudo apt-get upgrade&lt;br /&gt;
 sudo apt install apache2
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;To test the installation, open a web browser on a PC on the same network and enter the hostname of the Raspberry Pi we entered previously, followed by ".local", so in my case: "http://blueberrypie.local". We are greeted by the default Apache web page:&lt;/p&gt;
@@ -7277,7 +7278,7 @@ sudo apt install apache2
 &lt;h2&gt;6. Prepare upload via SFTP&lt;/h2&gt;
 &lt;p&gt;Typically, we want to develop the website on another computer, and then upload to the web server. In order to do that, we need to enable writing to the folder &lt;c&gt;/var/www/html&lt;/c&gt; where Apache stores its content by default. We also need to install an SFTP client so that we can access the directory.&lt;/p&gt;
 &lt;p&gt;To be able to make changes to the files within the directory we will set up some permissions. We set the current user as the owner of the folder with the &lt;c&gt;chown&lt;/c&gt; ("change owner") command:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;sudo chown &lt;i&gt;yourusername&lt;/i&gt; /var/www/html&lt;/code&gt;&lt;/pre&gt;
+&lt;code&gt;sudo chown &lt;i&gt;yourusername&lt;/i&gt; /var/www/html&lt;/code&gt;
 &lt;p&gt;Make sure to replace "yourusername" with your actual username.&lt;/p&gt;
 &lt;p&gt;Now, on the computer that will be uploading the files, install an SFTP client. We will be using &lt;a href="https://filezilla-project.org/"&gt;FileZilla&lt;/a&gt;. Download, install and run, and then enter the host name and the user name. Also make sure "SFTP - SSH File Transfer Protocol" is selected.&lt;/p&gt;
 
@@ -7287,10 +7288,10 @@ sudo apt install apache2
 
 &lt;h2&gt;7. Set up a static HTML page&lt;/h2&gt;
 &lt;p&gt;You can now write some content before we start making the page available to the world. If you don't have any content at the moment, feel free to use &lt;a href="https://bostongurka.asuscomm.com/savetheweb"&gt;this (satire?) page&lt;/a&gt; which promotes the idea of self-hosting and that should fit right in among other self-hosting (or "take back control") blog posts regularly posted on Hacker News.&lt;/p&gt;
-&lt;p&gt;When it comes to the actual technology driving the page, you have several options, that I will not elaborate further here:&lt;/p&gt;
+&lt;p&gt;When it comes to the technology of the website itself, you have many options. I will not elaborate on these further here, but here are a few suggestions:&lt;/p&gt;
 &lt;ul&gt;
   &lt;li&gt;A single static hand-crafted HTML page&lt;/li&gt;
-  &lt;li&gt;A collection of HTML pages generated with a static site generator&lt;/li&gt;
+  &lt;li&gt;A collection of HTML pages generated by a static site generator&lt;/li&gt;
   &lt;li&gt;A collection of sort-of static HTML pages using server side includes (SSI)&lt;/li&gt;
   &lt;li&gt;"Proper" server side handling using PHP (although heavy PHP processing is a bit slow on the Raspberry Pi Zero)&lt;/li&gt;
   &lt;li&gt;A single page application using a framework such as react (if you like NPM packages and security warnings)&lt;/li&gt;
@@ -7298,40 +7299,44 @@ sudo apt install apache2
 &lt;/ul&gt;
 &lt;p&gt;All of these are possible, but some, such as enabling PHP, require installing additional modules and configuring Apache.&lt;/p&gt;
 
-&lt;h2&gt;8. Port forward&lt;/h2&gt;
-&lt;p&gt;In order for the web server to be accessible from outside the network, we need to forward the ports from the router to the Raspberry Pi. The required ports are 80 (HTTP) and 443 (HTTPS). How to set this up varies on your router, but typically you would log on to the router, open WAN settings (or similar), and then look for port forwarding. You will need to forward port 80 and 443 to the Pi. You might be able to use the name of the Pi (in my case, "blueberrypie"), but if you need to enter the IP, you can find it by using this terminal command: &lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;hostname -I&lt;/code&gt;&lt;/pre&gt;
+&lt;h2&gt;8. Port forwarding&lt;/h2&gt;
+&lt;p&gt;In order for the web server to be accessible from outside the network, we need to forward some ports from the router to the Raspberry Pi. The required ports are 80 (HTTP) and 443 (HTTPS). How to set this up varies on your router, but typically you would log on to the router, open WAN settings (or similar), and then look for port forwarding. You will need to forward port 80 and 443 to the Pi. You might be able to use the name of the Pi (in my case, "blueberrypie"), but if you need to enter the IP, you can find it by using this terminal command:&lt;/p&gt;
+&lt;code&gt;hostname -I&lt;/code&gt;
+[note]You could actually do port forwarding for SSH as well, enabling remote access from outside of your home network. Sounds useful, but only do this if you know what you are doing since anyone can access the server from anywhere, and if the server is hacked (e.g. because of a weak password), you will be having a bad day.[/note]
 
 &lt;h2&gt;9. Setup Dynamic DNS (DDNS)&lt;/h2&gt;
-&lt;p&gt;Since we are setting this up on a home network without a fixed IP, we need to setup dynamic DNS (DDNS) to make sure the page is accessible if our external IP changes. Using DDNS is often an option in the router. For example, this can be enabled on an Asus router by logging on to the router and navigating to WAN =&gt; DDNS. The URL can be setup so it can be reached from [yourname].asuscomm.com&lt;/p&gt;
+&lt;p&gt;Since we are setting this up on a home network without a fixed IP, we need to setup dynamic DNS (DDNS) to make sure the page is accessible if our external IP changes. Using DDNS is often an option in the router. For example, this can be enabled on an Asus router by logging on to the router and navigating to WAN =&gt; DDNS. The URL can be setup so it can be reached from (yourname).asuscomm.com&lt;/p&gt;
 &lt;p&gt;Once you have completed this step, you will be able to open a web browser and enter the URL you provided above, and the page should open. It should also work from any device, even from outside the network (try using your phone after switching off WiFi on it). But since we use HTTP, we get a warning indicating that the connection is not secure. We will take care of that in the last step.&lt;/p&gt;
 
 &lt;h2&gt;10. Install TLS&lt;/h2&gt;
-&lt;p&gt;TLS (AKA SSL, or secure connection) is not strictly necessary, but using it had become a de-facto standard. Plus, it's free and easy! With let's Encrypt, we can get at free certificate and setup automatical renewal to save us from the headaches of expiring certificates.&lt;/p&gt;
+&lt;p&gt;TLS (AKA SSL, or secure connection) is not strictly necessary, but using it had become a de-facto standard. Plus, it's free and easy! With Let's Encrypt, we can get at free certificate and setup automatical renewal to save us from the headaches of expiring certificates.&lt;/p&gt;
 &lt;p&gt;We simply run two commands to get it working. The first one will be installing Certbot, which will basically do all the work for us. The second command will tell Certbot to get a certificate and install it on Apache.&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;sudo apt-get install python3-certbot-apache
+&lt;code&gt;sudo apt-get install python3-certbot-apache&lt;br /&gt;
 sudo certbot --apache
-&lt;/code&gt;&lt;/pre&gt;
+&lt;/code&gt;
 &lt;p&gt;It will ask for an email address (used for urgent renewal and security notices) and the URL that we set up in the previous step.&lt;/p&gt;
+&lt;p&gt;Once finished, open the URL in the browser again. It should now automatically redirect to HTTPS and display that the connection is secure.&lt;/p&gt;
 
 &lt;h2&gt;But why?&lt;/h2&gt;
-&lt;p&gt;Why go through all the trouble of self-hosting? There are, after all, several other options, usually less complicated, and sometimes even free. I guess  we could list som pros and cons of self-hosting.&lt;/p&gt;
+&lt;p&gt;Why go through all the trouble of self-hosting? There are, after all, several other options, usually less complicated, and sometimes even free. I guess we could list some pros and cons of self-hosting.&lt;/p&gt;
 &lt;p&gt;Pros&lt;/p&gt;
 &lt;ul&gt;
   &lt;li&gt;It's a fun exercise and you might learn something&lt;/li&gt;
   &lt;li&gt;If you happen to have an old Raspberry Pi kicking around, it's basically free&lt;/li&gt;
-  &lt;li&gt;It's completely yours and you are free to do what you want with it&lt;/li&gt;
+  &lt;li&gt;It's completely yours and you are free to do whatever you want with it&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;Cons&lt;/p&gt;
 &lt;ul&gt;
   &lt;li&gt;It's a bit complicated to get it running&lt;/li&gt;
   &lt;li&gt;It's even more complicated to keep it running. The page could go down for a number of reasons: Your internet connection goes down, you restart your router, you reboot the Pi, etc.&lt;/li&gt;
-  &lt;li&gt;You are making the server, and in extension, other devices, open for hacker attacks&lt;/li&gt;
+  &lt;li&gt;You are making the server, and in extension, other devices on the network, open for hacker attacks&lt;/li&gt;
   &lt;li&gt;The server is using power - granted, not much if it's a Raspberry Pi Zero&lt;/li&gt;
   &lt;li&gt;The server is rather slow and may not be able to handle too much traffic - granted, you could use something faster than a Raspberry Pi Zero, but then you will be using more power&lt;/li&gt;
-  &lt;li&gt;You will have another device to manage and keep up to date with security updates and whatnot.&lt;/li&gt;
+  &lt;li&gt;You will have another device to manage and keep up to date with security updates and whatnot&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;All in all, it's not something I would recommend in a professional capacity, but definitely something I would recommend as a fun side project.&lt;/p&gt;
+
+&lt;p&gt;Update: I found that sometimes after a reboot, the Apache web server would fail to start. While investigating the issue, I accidentally broke off the mini HDMI connector from the Raspberry Pi Zero - oops! I set up a Raspberry Pi 3B instead by using my own instructions above and it went smoothly - also the Apache web server problem is gone and performance is generally better. Not what I had in mind but if it works, it works.&lt;/p&gt;
 
 [image raspberrypi]</content>
     <images>
@@ -7346,7 +7351,7 @@ sudo certbot --apache
         <extension>.png</extension>
       </image>
       <image>
-        <description>Connecting using SFTP with FileZilla. Make sure to enter your username and password.</description>
+        <description>Connecting using SFTP with FileZilla.</description>
         <name>filezilla</name>
         <extension>.png</extension>
       </image>
@@ -7356,13 +7361,459 @@ sudo certbot --apache
         <extension>.png</extension>
       </image>
       <image>
-        <description>Succesfully logged in with PuTTY.</description>
-        <name>putty</name>
+        <description>The configuration tool.</description>
+        <name>setup</name>
+        <extension>.jpg</extension>
+      </image>
+    </images>
+  </entry>
+  <entry>
+    <guid>58d1cb8b-3f5f-4a4a-85fc-666b1b400fc4</guid>
+    <date>2022-11-19</date>
+    <shorturl>
+    </shorturl>
+    <header>Rolling Your Own Frontend JS Framework</header>
+    <readableid>rolling-your-own-frontend-js-framework</readableid>
+    <subheader>For fun and (no) profit</subheader>
+    <intro>[image knockoffjs]  (TL;DR I built a framework just for fun, please do not use, &lt;a href="https://www.erikmoberg.net/knockoffjs/"&gt;check it out here!&lt;/a&gt;) There is no shortage of frontend JS frameworks, and they seemlingly never keep coming. Trying to keep up with every new framework on the block for the last decade or so has proven to be an exercise in futility, resulting in what can be best described as framework fatigue. But instead of trying to fight about which of the frameworks released this week is the best (and why everyone should make the switch), it could be a fun experience to approach the subject from a different angle by building your own framework. Let's dive in.</intro>
+    <content>&lt;h2&gt;Why?&lt;/h2&gt;
+
+&lt;p&gt;I found building a simple JS framework is good for several reasons:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;You will learn how a framework actually works (because magic is not real)&lt;/li&gt;
+  &lt;li&gt;You will understand some of the tradeoffs that frameworks have, why they exist, and how to deal with them&lt;/li&gt;
+  &lt;li&gt;You will learn that building a simple framework might actually be easier than you think!&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;After you built your own thing, you should have a good understanding of how a framework gets the job done, and what design decisions need to be made when building one - and this should also answer the question older than time itself: Why are there so many frameworks, and why are they all sort of the same but all a little different??&lt;/p&gt;
+
+&lt;p&gt;So a framework has several building blocks and concepts. But what we generally need is:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Templating - so that there will be HTML to show on the page.&lt;/li&gt;
+  &lt;li&gt;Reactivity/data binding - so that when we interact with the page, the framework picks up what we do and can update itself accordingly.&lt;/li&gt;
+  &lt;li&gt;Some general rules/guidelines around structure - Such as: What is a component, how do components interact, how is CSS handled, etc.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2&gt;The ideal framework&lt;/h2&gt;
+
+&lt;p&gt;Different frameworks take different approaches to all this. For example, Angular has templates in separate files and offers two-way binding. React on the other hand, has the component and the template in the same file, and uses one-way binding. Also, Angular uses HTML with some special "template language" syntax thrown in (such as &lt;c&gt;[(size)]="fontSizePx"&lt;/c&gt; AKA "Banana in a box") while React sticks to JSX.&lt;/p&gt;
+
+&lt;p&gt;So how would we like the ideal framework to behave? And this is where you mileage may vary! But in my case, I think it would be great if we could have:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Native technologies as far as possible, but flexibility when required: Plain HTML, plain JS, plain CSS should all work. Generally, if you know the web, you're good to go.&lt;/li&gt;
+  &lt;li&gt;Minimal tooling. Webpack and time consuming builds should not be needed.&lt;/li&gt;
+  &lt;li&gt;Ease of use. No weird JS trickeries, no new template syntax to learn. Especially, updates to the state should "just work" and not require the developer to understand new concepts (yes, I'm looking at you React, with your &lt;c&gt;useEffect&lt;/c&gt; and other hooks)&lt;/li&gt;
+  &lt;li&gt;Good performance.&lt;/li&gt;
+  &lt;li&gt;Lightweight and small.&lt;/li&gt;
+&lt;/ul&gt; 
+
+&lt;p&gt;So that would be ideal in my world.&lt;/p&gt;
+
+&lt;h2&gt;How it turned out&lt;/h2&gt;
+
+&lt;p&gt;As I pretty much expected, I immediately ran into problems when I tried the above.&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;With just plain Javascript, I kept running into runtime errors because there is no compiler that tells you that you are making simple errors (using wrong variable names, types, etc.). Also, concepts such as abstract classes or generics don't exist in Javascript (yet). We can solve these problems by switching to TypeScript, ensuring a better developer experience - but it also requires at least building using the TypeScript compiler. So, not really plain JS, and some tooling, but a reasonable price to pay in my opinion.&lt;/li&gt;
+  &lt;li&gt;Avoiding special templating syntax turned out to be tricky. We could just render the HTML per component as a plain string, and on each change, replace the HTML. I found that this would lead to problems such as child components being re-rendered and inputs loosing focus in re-render. By using a basic template syntax, we can make sure to re-render only what is needed.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;So I ended up with this:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;TypeScript instead of plain Javascript.&lt;/li&gt;
+  &lt;li&gt;A component is simply a web component - the "native" idea of a component that both a browser, as well as a developer, can understand.&lt;/li&gt;
+  &lt;li&gt;Each components extends an abstract base class and needs to define a state model, that can be accessed using &lt;c&gt;this.state&lt;/c&gt;.&lt;/li&gt;
+  &lt;li&gt;A simple templating syntax that is inspired by KnockoutJS. The basic idea is that we simply use the attribute &lt;c&gt;data-bind&lt;/c&gt; on any element, and then set the property, just like you would in the DOM. For example, if your state model contains a property called &lt;c&gt;name&lt;/c&gt;, then you display it in a &lt;c&gt;span&lt;/c&gt; by: &lt;c&gt;&amp;amp;lt;span data-bind="innerText: name"&amp;amp;gt;&amp;amp;lt;/span&amp;amp;gt;&lt;/c&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Using the framework, I then set up a page that explains how the framework works, and also contains a few demos: &lt;a href="https://www.erikmoberg.net/knockoffjs/"&gt;KnockoffJS&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;If this sounds a bit like &lt;a href="https://lit.dev/"&gt;Lit&lt;/a&gt;, then - yes, there are certainly similarities!&lt;/p&gt;
+
+&lt;p&gt;When it comes to reacting to changes, I opted for using &lt;c&gt;Proxy&lt;/c&gt; (&lt;a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Proxy"&gt;MDN documentation&lt;/a&gt;). Using &lt;c&gt;Proxy&lt;/c&gt; allows us to detect when we are setting or getting a value from a "proxied" object. So after setting the state model, the object is wrapped in a &lt;c&gt;Proxy&lt;/c&gt; so that assigning a new value to anything in the state can be detected and trigger a re-render.&lt;/p&gt;
+
+&lt;p&gt;For good measure, I added a simple service locator, a registry that can be used to share styles, and a (very) simple router. This all weighs in at less than 5kb (gzipped, non-minimized).&lt;/p&gt;
+
+&lt;h2&gt;Can I use it?&lt;/h2&gt;
+
+&lt;p&gt;I want to point out once more that this was not much more than an exercise, and while the framework could be used for building something, I would not recommend it. It has several obvious flaws that I don't plan to address at the moment. Here are some examples:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Every time something in the state is updated, any child components rendered in for-loops are destroyed and re-rendered, which might be slow and also the state of each child might get lost.&lt;/li&gt;
+  &lt;li&gt;Updates are not batched, so changing the state several times e.g. in a loop will re-render on each change.&lt;/li&gt;
+  &lt;li&gt;Basic functionality is missing, such as some sort of &lt;c&gt;if&lt;/c&gt; construct in the template syntax. Instead, elements must be shown/hidden by CSS.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2&gt;Conclusion&lt;/h2&gt;
+
+&lt;p&gt;Now, this is hardly a framework I would recommend for use in production. But as a learning experience, I found it quite inspiring. And if you try something similar, maybe you have other priorities than I did? Maybe you would rather use React-style hooks, such as &lt;c&gt;useState&lt;/c&gt;, for state handling? Or separate JS and HTML? Or a virtual DOM with diffing? The sky is really the limit here, and once you start thinking about these things, it will soon be obvious why there are so many frameworks and why they all have different solutions to what seems to be the same problem.&lt;/p&gt;
+
+&lt;p&gt;Happy coding!&lt;/p&gt;</content>
+    <images>
+      <image>
+        <description>KnockoffJS - Because the world needs another JS framework</description>
+        <name>knockoffjs</name>
+        <extension>.png</extension>
+      </image>
+    </images>
+  </entry>
+  <entry>
+    <guid>d425766e-df30-454c-90c3-77b53fcc580e</guid>
+    <date>2023-01-08</date>
+    <shorturl>
+    </shorturl>
+    <header>Mounting Old Cooler Master Hyper 212 Evo on AM4 CPU the DIY Way</header>
+    <readableid>mounting-old-cooler-master-hyper-212-evo-on-am4-cpu-the-diy-way</readableid>
+    <subheader>Full jank</subheader>
+    <intro>[image cover] I recently upgraded from an Intel CPU to an AMD Ryzen and while it came with a cooler, I wanted to stick with the Cooler Master Hyper 212 Evo that I was already using. However, I had an older revision and the mounting bracket did not fit the AM4 motherboard. But since the solution to the problem was basically just a matter of fitting a round peg into a square hole, I figured it could be a fun challenge.</intro>
+    <content>&lt;p&gt;To mount the cooler, the idea is to place the heatsink on the CPU, then place the crossbar on the base of the heatsink to hold the cooler down, and attach the four screws in the crossbar to the supplied standoff screws that in turn are attached to a supplied backplate. This worked fine with the Intel LGA1155 socket I used, but the holes around the AMD AM4 socket are spaced out differently and the supplied backplate doesn't fit. Turns out this model works for the AM3 socket, but not AM4.&lt;/p&gt;
+
+[image backplate-2]
+
+&lt;p&gt;AM4 motherboards typically come with their own backplate however, so if we can figure out a way to fit the crossbar into that, it should work just as well.&lt;/p&gt;
+
+[image socket]
+
+&lt;p&gt;Luckily, the crossbar is designed to be quite flexible about where the screws exactly sit. The problem is just that the screws of the crossbar don't fit the AM4 backplate - they are too small, and the standoff screws don't fit a standard AM4 backplate.&lt;/p&gt;
+
+[image crossbar]
+
+&lt;p&gt;Cooler Master actually sells an AM4 upgrade kit (model name RR-AM4B-H212-S1) that includes AM4 compatible crossbar and standoffs, so if you prefer to go the official route, then you might be able to order it from them. However, it doesn't seem to be in stock anywhere and they also charge a ridiculous price for shipping (at least to where I live) so the total amount would almost buy me a new cooler. I guess whether you choose to support such business practices, or rather risk frying your mainboard and CPU with a janky DIY fix is up to you. You have been warned, but I hope you will continue reading!&lt;/p&gt;
+
+&lt;p&gt;The AM4 backplate uses &lt;a href="https://en.wikipedia.org/wiki/Computer_case_screws##6-32_UNC_screw"&gt;standard 6-32 UNC threads&lt;/a&gt;. After eyeballing the distance, I decided on a pack of 6-32 UNC screws with a length of 30mm to replace the crossbar screws. The screws I got were actually specifically for an EKWB radiator (&lt;a href="https://www.inet.se/produkt/5320394/ekwb-skruvkit-unc-6-32-30mm-20pcs" target="_blank"&gt;link&lt;/a&gt;), but you could basically find such screws in any hardware store (which might be super easy or super difficult depending on where you live - turns out living in a country with the metric system is a disadvantage here!).&lt;/p&gt;
+
+[image screws]
+
+&lt;p&gt;So we need to replace the screws in the crossbar, and in order to do that, the lock washer at the bottom need to be removed. You can do that by prying it off with a screwdriver or similar. Of course, you could also simply by cut them since we don't need them anymore (however, it might still be nice to be able to revert the mod in the future).&lt;/p&gt;
+
+[image screw-removed]
+
+[image all-removed]
+
+[image springs]
+
+&lt;p&gt;The cooler can now be mounted the standard way, just except with the new screws. Make sure to carefully fasten the screws crosswise and tighten them just enough, too loose and the cooler won't make good contact, too tight and the CPU or motherboard might get damaged. I highly recommend you remove the motherboard from the case to make sure you get a good view of what's going on, especially since the screws could protrude too far out the back of the backplate and cause damage.&lt;/p&gt;
+
+[image mounted]
+
+&lt;p&gt;After starting the PC, head straight to the BIOS to check the CPU temp. As long as it's fairly low and stable, you should be good. In any other case, switch of the PC immediately and ensure the cooler makes good contact with the CPU.&lt;/p&gt;
+
+&lt;p&gt;And that's it! I have seen other similar solutions, some using only two screws, and some with the cooler rotated 90 degrees pointing up, but none of that is necessary here. I have been using the PC like this for over a week now and compared to the stock cooler, temps are better and noise is lower. And all it cost was a pack of screws.&lt;/p&gt;
+
+[image ok]</content>
+    <images>
+      <image>
+        <description>
+        </description>
+        <name>cover</name>
+        <extension>.jpg</extension>
+      </image>
+      <image>
+        <description>The four holes of the standard AM4 backplate visible around the CPU socket, which we will use to attach the crossbar. (And please ignore the mixture of thermal gunk, trust me that it was later removed and the CPU is now happy.)</description>
+        <name>socket</name>
+        <extension>.jpg</extension>
+      </image>
+      <image>
+        <description>The screws we will be using, standard 6-32 UNC with a length of 30mm.</description>
+        <name>screws</name>
+        <extension>.jpg</extension>
+      </image>
+      <image>
+        <description>The crossbar that holds the cooler in place and should be attached to the backplate.</description>
+        <name>crossbar</name>
+        <extension>.jpg</extension>
+      </image>
+      <image>
+        <description>With the washers removed, the screws and springs should come right off. </description>
+        <name>screw-removed</name>
+        <extension>.jpg</extension>
+      </image>
+      <image>
+        <description>All removed!</description>
+        <name>all-removed</name>
+        <extension>.jpg</extension>
+      </image>
+      <image>
+        <description>We now simply reuse the springs on the new screws. I found that the stiffer springs worked well on the screws mounted on the bottom bar of the crossbar due to the shorter distance to the backplate, while the smaller springs fit better for the other two. Otherwise, the screws would either not quite reach the backplate, or protrude through the back of the backplate.&lt;/</description>
+        <name>springs</name>
+        <extension>.jpg</extension>
+      </image>
+      <image>
+        <description>View of one of the screws going through the crossbar and into the AM4 backplate.</description>
+        <name>mounted</name>
+        <extension>.jpg</extension>
+      </image>
+      <image>
+        <description>Success!</description>
+        <name>ok</name>
+        <extension>.jpg</extension>
+      </image>
+      <image>
+        <description>The Cooler Master backplate to the left and the AM4 backplate to the right. The Cooler Master backplate is the older type which does not have holes that line up with an AM4 socket.</description>
+        <name>backplate-2</name>
+        <extension>.jpg</extension>
+      </image>
+    </images>
+  </entry>
+  <entry>
+    <guid>252b5746-3120-414b-a0a0-db47c470dd7f</guid>
+    <date>2023-03-01</date>
+    <shorturl>
+    </shorturl>
+    <header>Retro PC Emulation with 86Box</header>
+    <readableid>retro-pc-emulation-with-86box</readableid>
+    <subheader>Your Voodoo card is now ready for download</subheader>
+    <intro>[image 3dfx-logo] When was the golden age of PC gaming? Some might say it's now, some that it hasn't happened yet, but I know what I think - it started in around 1997 and it's still going strong. In 1997, the 3Dfx Voodoo graphics accelerator had gained widespread adoption, bringing fast 3D graphics to the masses, we had CPUs such as the Pentium MMX with 233 MHz, and some really good games were released. While we may not be able to relive our childhood, we can at least relive the games. Older games may not run on a modern operating system, however, but with an emulator such as 86Box, we can not only get old games to work, we can get pretty much the whole experience. Read on for how - and why! - you can set up your very own retro gaming machine.</intro>
+    <content>[image 3dfx-logo] 
+
+&lt;p&gt;
+First off, when I reading about 86Box, I really did not understand what it actually did. A PC emulator? Emulators that I have used in the past mostly were meant to just play games on some old console, such as Nestopia to emulate a Nintendo entertainment system. In that case, all you did was really to start the emulator and load a game. The fact that an actual machine was emulated in software was not really visible; all you would really see was the games. DosBox is another example; it can run a DOS environment, providing a DOS prompt from where DOS applications can be run - but the machine behind is pretty much invisible.
+&lt;/p&gt;
+
+&lt;p&gt;
+86Box works in a similar fashion, but it's also very different. The simple reason is that a PC is very different - for example, you can't just load a game on a PC, you need to install the operating system first. Actually - you might even start by building the actual PC first. And it's this experience that 86Box offers: Build a machine to emulate, start it up, install the operating system, then install apps and games. In other words, there are no game ROMs to install here, it's just not how a PC works. We do however need to load some ROMs, and these represent actual hardware. Need a Pentium 200 MMX on an Asus Socket 7 motherboard? Download the ROM!
+&lt;/p&gt;
+&lt;p&gt;
+So let's set it up! Below, we will be setting up a Windows 98 machine running on Windows 11.
+&lt;/p&gt;
+
+&lt;h2&gt;Step 1: Download 86Box&lt;/h2&gt;
+&lt;p&gt;
+First, we obviously have to download 86Box itself. Find the latest release on the &lt;a target="_blank" href="https://86box.net/"&gt;website&lt;/a&gt;.
+Extract to a folder of your choice, but don't start it yet - proceed to the next step first.
+&lt;/p&gt;
+
+[note]
+It might be appropriate to point out that 86Box is actually based on PCem, so we largely have it's creator to thank for enabling this experience. At the moment however, development has slowed down quite a bit for PCem so recommending 86Box makes sense in my opinion. That may change though!
+[/note]
+
+&lt;h2&gt;Step 2: Download the ROMs&lt;/h2&gt;
+&lt;p&gt;
+In this context, a ROM refers to a file that represents a piece of hardware, such as a graphics card. You can find a complete set of ROMs &lt;a target="_blank" href="https://github.com/86Box/roms/releases"&gt;in this official non-official GitHub repo&lt;/a&gt;.
+In the folder you created in the previous step (where the 86Box executable file sits), create a subfolder called "roms", then download the whole ROM set and extract all the files (keeping directory structure) to the roms folder. Congratulations, you just downloaded a graphics card (and then some).
+&lt;/p&gt;
+
+&lt;h2&gt;Step 3: Build your machine&lt;/h2&gt;
+&lt;p&gt;
+Start 86Box. You will be greeted by this screen:
+&lt;/p&gt;
+
+[image 86box-start]
+
+&lt;p&gt;
+Open Tools, then Settings. Here you will find all the hardware to choose from and you are free to set up the machine as you like. I would recommend you step through the list on the left and set up motherboard, CPU, storage etc. Make sure to set up at least one CD/DVD drive since we will be using it to load media (local folders/CDs/ISOs) later. A floppy drive is also recommended.
+&lt;/p&gt;
+
+[image settings]
+
+&lt;p&gt;
+My specs ended up as following:
+&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Machine type: Socket 7&lt;/li&gt;
+&lt;li&gt;Machine: ASUS TX97 (i430TX)&lt;/li&gt;
+&lt;li&gt;CPU: Intel Pentium 200 MMX&lt;/li&gt;
+&lt;li&gt;RAM: 32MB&lt;/li&gt;
+&lt;li&gt;Graphics card: S3 ViRGE/DX&lt;/li&gt;
+&lt;li&gt;Graphics accelerator: 3Dfx Voodoo 2&lt;/li&gt;
+&lt;li&gt;Input device: Standard PS/2 mouse&lt;/li&gt;
+&lt;li&gt;Sound card: Sound Blaster 32 PnP&lt;/li&gt;
+&lt;li&gt;Hard disk: 1GB IDE&lt;/li&gt;
+&lt;li&gt;Floppy: 3.5" 1.44MB + 5.25" 360k&lt;/li&gt;
+&lt;li&gt;CD-ROM drives: Two ATAPI 72x&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2&gt;Step 4: Install an operating system&lt;/h2&gt;
+&lt;p&gt;
+This is the fun part and what really reminds me of what it was like building a PC in the late 90s. (Although it's not very different from how things are today!). Back then, installing Windows 98 was something I did pretty much on a monthly basis.&lt;/p&gt;
+
+&lt;p&gt;
+I will be using an ISO of an original windows 98 SE CD. Since we set up the machine to have an optical drive, we can load that ISO in the emulator and it's just like inserting a CD into a real machine. For me it seemed that booting from the CD did not work (may depend on the CD) so I loaded a Windows 98 boot disk image (yes, 3.5" floppy!) and started the installation from there.
+&lt;/p&gt;
+
+&lt;p&gt;
+Since it's an actual machine, we can (and should!) enter the BIOS setup, both because messing around there is fun, and also because we need to make sure we have the correct boot sequence. Typically A, then C, to boot from floppy and then attempt to boot from the hard drive.
+&lt;/p&gt;
+
+[image bios]
+
+[image load-media]
+
+[image booting]
+
+[image windows-install1]
+
+[image windows-98-sit-back]
+
+&lt;p&gt;
+The installation works pretty much exactly as you would expect, and once finished, we are greeted with what was the bleeding edge of usability in the late 90s: a grey start menu.
+&lt;/p&gt;
+
+[image desktop]
+
+&lt;h2&gt;Step 5: Knock yourself out!&lt;/h2&gt;
+
+&lt;p&gt;
+From here we can just go ahead and load ISOs (or local folders) to our heart's desire. Which of course are Need for speed II SE and FIFA: Road to World Cup 98, in that order.
+&lt;/p&gt;
+
+[image nfs2-menu]
+
+[image nfs2]
+
+[image fifa98-loading]
+
+[image fifa98]
+
+[image ignition]
+
+&lt;p&gt;
+I was pleased to see that not only did the spinning 3Dfx logo show up when I started a game with Glide support, but performance was surprisingly smooth. Your mileage may vary, of course - emulating a Pentium 200 MMX with a Voodoo 2 worked great on an AMD Ryzen 5 5600, but the experience was rather choppy on an old Intel Core i7 3770.
+&lt;/p&gt;
+
+&lt;h2&gt;Final words&lt;/h2&gt;
+&lt;p&gt;
+Why emulate a whole PC when there are other, easier options? Well - first, I think having several options is generally a good thing. You might be into DOS games, and in that case, maybe DosBox will get the job done just fine. Or maybe virtualization is a good option. Or, your game favorite retro game is available in a store (&lt;a target="_blank" href="https://store.steampowered.com/app/577990/Ignition/"&gt;here is Ignition on Steam!&lt;/a&gt;). Either way, what struck me is that with "proper" emulation, you really do get the full package - from the PC speaker beeping during POST, to messing around with boot disks, to going through Windows screensavers just for kicks. If that's not your idea of a good time, I definitely understand! But I certainly do find the slight awkwardness of the old PC very entertaining.
+&lt;/p&gt;
+
+[image windows-98-loading]</content>
+    <images>
+      <image>
+        <description>The default machine is an old IBM PC sporting an Intel 8088 at 4.77MHz.</description>
+        <name>86box-start</name>
         <extension>.png</extension>
       </image>
       <image>
-        <description>The PuTTY configuration dialog.</description>
-        <name>putty-login</name>
+        <description>
+        </description>
+        <name>3dfx-logo</name>
+        <extension>.png</extension>
+      </image>
+      <image>
+        <description>The BIOS setup. Can be used for setting up the boot sequence. And for general silliness that prevents the PC from working if you're not careful.</description>
+        <name>bios</name>
+        <extension>.png</extension>
+      </image>
+      <image>
+        <description>Here is where we set up the machine. </description>
+        <name>settings</name>
+        <extension>.png</extension>
+      </image>
+      <image>
+        <description>Loading Windows 98.</description>
+        <name>windows-98-loading</name>
+        <extension>.png</extension>
+      </image>
+      <image>
+        <description>The Windows 98 SE desktop in all its glory.</description>
+        <name>desktop</name>
+        <extension>.png</extension>
+      </image>
+      <image>
+        <description>NFS II showing off its great 3D graphics, and unrealistic physics.</description>
+        <name>nfs2</name>
+        <extension>.png</extension>
+      </image>
+      <image>
+        <description>Need for Speed II Special Edition. Just the menu was spectacular back in the days.</description>
+        <name>nfs2-menu</name>
+        <extension>.png</extension>
+      </image>
+      <image>
+        <description>This brings back memories!</description>
+        <name>fifa98-loading</name>
+        <extension>.png</extension>
+      </image>
+      <image>
+        <description>For a game this old, it fascinates me how it manages to look this fresh. And it plays pretty well too!</description>
+        <name>fifa98</name>
+        <extension>.png</extension>
+      </image>
+      <image>
+        <description>We are booting from the Windows 98 floppy disk and can opt to load the CD-ROM driver and install from CD.</description>
+        <name>booting</name>
+        <extension>.png</extension>
+      </image>
+      <image>
+        <description>Windows 98 installation starts.</description>
+        <name>windows-install1</name>
+        <extension>.png</extension>
+      </image>
+      <image>
+        <description>Please sit back and relax while Windows 98 installs on your computer. Don't mind if I do!</description>
+        <name>windows-98-sit-back</name>
+        <extension>.png</extension>
+      </image>
+      <image>
+        <description>Ignition, a very underrated game by Swedish game studio UDS.</description>
+        <name>ignition</name>
+        <extension>.png</extension>
+      </image>
+      <image>
+        <description>When starting the PC, it asks for a boot disk. We have to make sure we have loaded a bootable image and set up the boot sequence properly, then press enter to boot.</description>
+        <name>load-media</name>
+        <extension>.png</extension>
+      </image>
+    </images>
+  </entry>
+  <entry>
+    <guid>e1559299-5044-40ee-88d6-13d0ea9d8951</guid>
+    <date>2023-05-03</date>
+    <shorturl>
+    </shorturl>
+    <header>Windows Remote Desktop: Use Subset of Monitors</header>
+    <readableid>windows-remote-desktop-use-subset-of-monitors</readableid>
+    <subheader>The missing checkbox</subheader>
+    <intro>[image remote-desktop] If you use Remote Desktop (RDP) in Windows and have three or more monitors, you probably have noticed that there is no option to select only some of the monitors. So if you have three monitors and only want to use two of them, you are out of luck - the application only seems to support either exactly one monitor, or all three. But fear not - there is a hidden option for using a subset of monitors. And as an added bonus: I wrote a little PowerShell script to automate setting it up. Read on for more.</intro>
+    <content>&lt;h2&gt;What is remote desktop?&lt;/h2&gt;
+&lt;p&gt;I will assume that if you ended up here, you already know what remote desktop is, so let's just skip this part!&lt;/p&gt;
+
+&lt;h2&gt;The problem&lt;/h2&gt;
+&lt;p&gt;Having multiple monitors is great for productivity, and when using remote desktop, we might want to use, say, two of them for the remote session, and one for the local computer. If we open remote desktop, we can configure it to use multiple monitors, but there's no apparent option to select 2 out of 3 monitors. But the option exists, it's just hidden.&lt;/p&gt;
+
+[image use-all-monitors]
+
+&lt;h2&gt;The solution&lt;/h2&gt;
+&lt;p&gt;The key here is to save the connection as an RDP file and edit it in a text editor. At the end of the file, we will add &lt;c&gt;selectedmonitors&lt;/c&gt; with the indices of the monitors to use.&lt;/p&gt;
+
+&lt;p&gt;To get the indices, start remote desktop with the &lt;c&gt;/l&lt;/c&gt; parameter by opening a terminal (or pressing Windows key + R) and entering &lt;c&gt;mstsc.exe /l&lt;/c&gt;. This will list the monitors and may look like the following:&lt;/p&gt;
+
+[image monitor-list]
+
+&lt;p&gt;It might be tricky to decipher the information above, but it tells us what position of the screen each monitor has.&lt;/p&gt;
+
+&lt;p&gt;If we assume a setup where all monitors are on the same level - and not on top of each other - I find it helpful to just look at the first X coordinate and go from lowest to highest and note each index. The index is the first digit on each line, and the X coordinate is the first number inside the parentheses, so from the numbers above, the X coordinates are 0 (index 0), -1920 (index 1), and -3840 (index 2). Sorting from smallest to largest X coordinate gives us -3840 (index 2), -1920 (index 1), and 0 (index 0). The corresponding indices are then 2,1,0. We will use this information when editing the the RDP file.&lt;/p&gt;
+
+[note]You might be thinking at this point that, why bother with this, the monitors are already set up in the Windows display settings, each with an index. But: Remote Desktop has a different order - very confusing! To make matters worse, this order may be different from time to time - it often changes after a reboot or after the PC comes back after sleep.[/note]
+
+&lt;p&gt;Also, note that Remote Desktop requires us to use monitors that are next to each other (we cannot use one to the left, one to the right, and skip the one in the middle).&lt;/p&gt;
+
+&lt;p&gt;Now that we have the indices in the correct order, we first open "regular" remote desktop and save the current settings as an RDP file (you can find the option by clicking on "Show options", it's on the General tab in the Connection settings section).&lt;/p&gt;
+
+[image remote-desktop]
+
+
+&lt;p&gt;Then open the file with a text editor, and at the end, add a new line with the setting. In this case, the order is 2,1,0 and since we want the two leftmost monitors, we pick the number from the left: 2,1. We then add a new line with this content:&lt;/p&gt;
+
+&lt;code&gt;&lt;pre&gt;selectedmonitors:s:2,1&lt;/pre&gt;&lt;/code&gt;
+
+&lt;p&gt;Now save the file and doble-click it to open the session with your selected subset of monitors!&lt;/p&gt;
+
+&lt;h2&gt;Bonus: Automate with PowerShell&lt;/h2&gt;
+
+&lt;p&gt;I often create different connections which results in a different rdp file each time. Since I cannot be bothered to edit them by hand every time, I set up a small PowerShell script to find the latest rdp file in the user's download folder, edit it to use 2 out of 3 monitors, and open the file. So instead of having to download the file, use &lt;c&gt;mstsc.exe /l&lt;/c&gt; to get the indices (because it keeps changing!), and then edit the file manually, I just run the script. If you are having a similar problem you can try the script (&lt;a href="https://github.com/erikmoberg/rdp/blob/main/rdp-multimon.ps1"&gt;which you can find here on GitHub&lt;/a&gt;), just download and tailor to your needs.&lt;/p&gt;</content>
+    <images>
+      <image>
+        <description>The list of monitors. The order might seem random, in this case the leftmost monitor is listed last since it has the "largest negative" X coordinate (-3840).</description>
+        <name>monitor-list</name>
+        <extension>.png</extension>
+      </image>
+      <image>
+        <description>You can either use one monitor, or check the box to use all available monitors, but strangely there is no  option for using only some of the monitors.</description>
+        <name>use-all-monitors</name>
+        <extension>.png</extension>
+      </image>
+      <image>
+        <description>Click "Show options" to see more settings and be able to save them as an RDP file.</description>
+        <name>remote-desktop</name>
         <extension>.png</extension>
       </image>
     </images>

@@ -12,12 +12,12 @@ body {
 	color: #333;
 	background-color: #eee;
 	font-size: 16px;
-    line-height: 1.3rem;
+    line-height: 1.5rem;
 }
 
 img {
 	border: none;
-    border-radius: 10px;
+    border-radius: var(--border-radius);
 }
 
 .page-section, article, .btn, .full-article, input[type=text], textarea, button, input[type=submit], .article-navigation, #frmComments {
@@ -362,7 +362,7 @@ article, .full-article, .article-navigation, .social-links, #frmComments, .page-
 	font-weight: normal;
 	margin-top:0;
 	color: #a6a6a6;
-	margin-bottom: 25px;
+	margin-bottom: 15px;
     display: block;
 }
 
@@ -513,10 +513,10 @@ article, .full-article, .article-navigation, .social-links, #frmComments, .page-
 	margin-bottom: 25px;
 }
 
-.imagedescription
-{
+.imagedescription {
 	font-style: italic;
-    margin-top: 10px;
+    max-width: 600px;
+	margin: 10px auto;
 }
 
 .blogpagelist
@@ -695,10 +695,6 @@ aside {
 
 #self-image {
 	max-width: 100%;
-}
-
-.teaser {
-	margin-bottom: 25px;
 }
 
 .teaser a {

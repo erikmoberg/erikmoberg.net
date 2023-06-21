@@ -296,16 +296,15 @@ return;
 function PrintIntroEntry($readableid, $datetime, $header, $subheader, $intro, $images, $content, $introno, $isListview)
 {
 	$isLongArticle = trim($content) != '';
-
-	$intro = '<p>' . $intro . '</p>';
-
-	$intro = AddSpecialTags($intro, $readableid, $images, false, false, $introno, false, false, true);
-	echo '<article><div class="articleintro">';
-	echo '<h2><a href="/article/' . $readableid . '">' . $header . "</a></h2>\n";
-	echo '<h3>' . $subheader . "</h3>\n";
 	$time = strtotime($datetime);
-	echo '<time datetime="' . date('Y-m-d', $time) . '">' . date('F jS, Y', $time) . "</time>\n";
-	echo $intro . "\n";
+
+	echo '<article><div class="articleintro"><div class="teaser"><a href="/article/' . $readableid . '">'
+	. AddSpecialTags($intro, $readableid, $images, false, false, $introno, false, false, true) . 
+	'</a></div>
+	<h2><a href="/article/' . $readableid . '">' . $header . '</a></h2>
+	<h3>' . $subheader . '</h3>
+	<time datetime="' . date('Y-m-d', $time) . '">' . date('F jS, Y', $time) . '</time>
+	<p>' . AddSpecialTags($intro, $readableid, $images, false, false, $introno, false, true, false) . '</p>';
 
 	$noOfComments = GetNoOfCommentsForArticle($readableid);
 	$commentstring = '';
@@ -337,13 +336,16 @@ function PrintIntroEntry($readableid, $datetime, $header, $subheader, $intro, $i
 function PrintCompleteEntry($readableid, $datetime, $header, $subheader, $intro, $content, $images)
 {
 	$isLongArticle = trim($content) != '';
+	$teaser = AddSpecialTags($intro, $readableid, $images, false, false, 1, false, false, true);
 	$intro = '<p>' . $intro . '</p>';
-	$intro = AddSpecialTags($intro, $readableid, $images, false, false, 0, !$isLongArticle, $isLongArticle, false);
+	$intro = AddSpecialTags($intro, $readableid, $images, false, false, 0, false, true, false);
 	if($isLongArticle) {
 		$content = AddSpecialTags($content, $readableid, $images, true, true, 1, false, false, false);
 	}
+	
 	echo '<div class="full-article">';
 	echo '<div class="articleintro full">';
+	echo $teaser;
 	echo '<h2>' . $header . "</h2>\n";
 	echo '<h3>' . $subheader . "</h3>\n";
 	$time = strtotime($datetime);
@@ -374,7 +376,7 @@ function AddHighlightScript() {
     <?php
 }
 
-function AddSpecialTags($text, $readableid, $images, $clearImage, $includeImageDescription, $introno, $addImagesLast, $removeImages, $printTeasers)
+function AddSpecialTags($text, $readableid, $images, $clearImage, $includeImageDescription, $introno, $addImagesLast, $removeImages, $printTeaserImagesOnly)
 {
 	$thumbNo = 0;
 
@@ -418,10 +420,13 @@ function AddSpecialTags($text, $readableid, $images, $clearImage, $includeImageD
 		else if($removeImages) {
 			$text = str_replace($pseudotag,'',$text);
 		}
-		else if($printTeasers) {
+		else if($printTeaserImagesOnly) {
 			// printTeasers: post is a part of the listing on the first page.
-			$htmltag = "<div class=\"teaser\"><a href=\"/article/$readableid\"><img src=\"$completesmallimagename\" alt=\"$imagedescription\" /></a></div>";
-			$text = $htmltag . str_replace($pseudotag,'',$text);
+			if($thumbNo == 0) {
+				return ''; // No teaser image present
+			}
+
+			return "<img src=\"$completesmallimagename\" alt=\"$imagedescription\" />";
 		}
 		else {
 			$htmltag = GetSingleImageMarkup($imagedescription, $completebigimagename, $completesmallimagename, $clearImage, $includeImageDescription, $thumbNo, $introno);
