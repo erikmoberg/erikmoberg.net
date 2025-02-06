@@ -1438,6 +1438,118 @@ svg.feather {
     text-shadow: 0 0 5px black;
 }
 
+/* AI chat related */
+
+.chat-container {
+	width: 100%;
+	margin: 20px 0;
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+  }
+
+  .chat-container>section {
+	display: flex;
+	align-items: flex-start;
+	padding: 10px;
+	border-radius: var(--border-radius);
+	overflow: scroll;
+  }
+
+  .chat-container>section.user {
+	max-width: 80%;
+	align-self: flex-end;
+	background-color: #ccc;
+  }
+
+  body.dark-theme .chat-container>section.user {
+	background-color: #333;
+  }
+
+  .chat-container>section.bot {
+	max-width: 95%;
+	align-self: flex-start;
+	background-color: #ccc;
+  }
+
+  body.dark-theme .chat-container>section.bot {
+	align-self: flex-start;
+	background-color: #333;
+  }
+
+  .chat-container>section>article>header {
+	display: flex;
+	margin-top: 8px;
+  }
+
+  .chat-container>section>article>header::before {
+	content: '';
+	width: 40px;
+	height: 40px;
+	border-radius: 50%;
+	background-size: contain;
+	background-position: center;
+	background-repeat: no-repeat;
+	margin-right: 10px;
+	margin-top: -8px;
+	flex-shrink: 0;
+  }
+
+  .chat-container>section.user>article>header::before {
+	background-image: url("data:image/svg+xml,%3Csvg viewBox='-4 -4 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M21.333 18.667h-10.667c-3.733 0-6.667 2.933-6.667 6.667v2.667c0 0.8 0.533 1.333 1.333 1.333s1.333-0.533 1.333-1.333v-2.667c0-2.267 1.733-4 4-4h10.667c2.267 0 4 1.733 4 4v2.667c0 0.8 0.533 1.333 1.333 1.333s1.333-0.533 1.333-1.333v-2.667c0-3.733-2.933-6.667-6.667-6.667z M16 16c3.733 0 6.667-2.933 6.667-6.667s-2.933-6.667-6.667-6.667-6.667 2.933-6.667 6.667 2.933 6.667 6.667 6.667zM16 5.333c2.267 0 4 1.733 4 4s-1.733 4-4 4-4-1.733-4-4 1.733-4 4-4z' transform='scale(1)' transform-origin='center' style='transform-origin: center center;'%3E%3C/path%3E%3C/svg%3E");
+	background-color: #da4526;
+  }
+
+  .chat-container>section.bot>article>header::before {
+	background-image: url("data:image/svg+xml,%3Csvg viewBox='-4 -4 40 40' width='32' height='32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='none' d='M20 10.667h-8c-0.8 0-1.333 0.533-1.333 1.333v8c0 0.8 0.533 1.333 1.333 1.333h8c0.8 0 1.333-0.533 1.333-1.333v-8c0-0.8-0.533-1.333-1.333-1.333zM18.667 18.667h-5.333v-5.333h5.333v5.333z M30.667 17.333h-2.667v-4h2.667c0.8 0 1.333-0.533 1.333-1.333s-0.533-1.333-1.333-1.333h-2.667v-2.667c0-2.267-1.733-4-4-4h-2.667v-2.667c0-0.8-0.533-1.333-1.333-1.333s-1.333 0.533-1.333 1.333v2.667h-5.333v-2.667c0-0.8-0.533-1.333-1.333-1.333s-1.333 0.533-1.333 1.333v2.667h-2.667c-2.267 0-4 1.733-4 4v2.667h-2.667c-0.8 0-1.333 0.533-1.333 1.333s0.533 1.333 1.333 1.333h2.667v4h-2.667c-0.8 0-1.333 0.533-1.333 1.333s0.533 1.333 1.333 1.333h2.667v4c0 2.267 1.733 4 4 4h2.667v2.667c0 0.8 0.533 1.333 1.333 1.333s1.333-0.533 1.333-1.333v-2.667h5.333v2.667c0 0.8 0.533 1.333 1.333 1.333s1.333-0.533 1.333-1.333v-2.667h2.667c2.267 0 4-1.733 4-4v-4h2.667c0.8 0 1.333-0.533 1.333-1.333s-0.533-1.333-1.333-1.333zM25.333 24c0 0.8-0.533 1.333-1.333 1.333h-16c-0.8 0-1.333-0.533-1.333-1.333v-16c0-0.8 0.533-1.333 1.333-1.333h16c0.8 0 1.333 0.533 1.333 1.333v16z' transform='scale(1)' transform-origin='center' style='transform-origin: center center;'%3E%3C/path%3E%3C/svg%3E");
+	background-color: #da4526;
+  }
+
+  .chat-container>section article {
+	display: flex;
+	flex-direction: column;
+	padding: 0;
+	background: transparent !important;
+	margin: 0;
+	max-width: 100%;
+  }
+
+  .chat-container>section article header {
+	font-size: 14px;
+	font-weight: bold;
+	margin-bottom: 10px;
+  }
+
+  .chat-container>section article p {
+	font-size: 16px;
+	margin: 0 0 5px;
+	line-height: 1.5;
+  }
+
+  .chat-container>section article ul, 
+  .chat-container>section article ol {
+	margin: 0 0 5px;
+  }
+
+  .chat-container>section article pre {
+	max-width: 100%;
+  }
+
+  .chat-container>section article code {
+	margin: 0 0 5px;
+  }
+
+  .chat-container summary {
+	cursor: pointer;
+	font-style: italic;
+	padding-top: 10px;
+  }
+
+  .chat-container details[open] summary {
+	padding-bottom: 10px;
+  }
+
+
 body.dark-theme,
 body.dark-theme #horizontal a,
 body.dark-theme #containercontainer,

@@ -389,7 +389,7 @@ function AddSpecialTags($text, $readableid, $images, $clearImage, $includeImageD
 
 		// Get complete pseudo tag
 		$startOfTagIndex = strrpos($text,'[image');
-		$endOfTagIndex = strrpos($text,']');
+		$endOfTagIndex = strpos($text,']',$startOfTagIndex);
 		$pseudotag = substr($text,$startOfTagIndex,$endOfTagIndex-$startOfTagIndex+1);
 
 		// Get name of image
