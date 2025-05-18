@@ -65,6 +65,7 @@ input[type=number] {
 
         this.selectedIcon = state.selectedIcon;
         const scale = state.zoom / 100;
+        const rotation = state.rotationAngle || 0; // Get the rotation angle from state
         // Note Firefox fix: path.style.transformOrigin = "center";
 
         const backgroundMarkup = this.getBackgroundMarkup(state.backgroundShape);
@@ -77,7 +78,7 @@ ${this.styles}
     <svg viewBox="0 0 32 32" width="32" height="32" xmlns="http://www.w3.org/2000/svg">
         ${backgroundMarkup}
         <path fill="url('#myGradient')" stroke="none" d="${state.selectedIcon.path}"
-            transform="scale(${scale})" transform-origin="center" style="transform-origin: center center;"></path>
+            transform="scale(${scale}) rotate(${rotation})" transform-origin="center" style="transform-origin: center center;"></path>
         <defs>
             <linearGradient id="myBackgroundGradient" x1="0" x2="0" y1="0" y2="1">
                 <stop offset="0%" stop-color="${state.fromBackgroundColor}"></stop>

@@ -2,23 +2,39 @@ import { Icons } from './Icons.js';
 import { IconPreview } from './IconPreview.js';
 
 class IconMaker extends HTMLElement {
+    // state = {
+    //     filterText: null,
+    //     iconSet: null,
+    //     selectedIcon: null,
+    //     backgroundShape: null,
+    //     fromColor: "#da4526",
+    //     toColor: "#da4526",
+    //     fromBackgroundColor: "#333333",
+    //     toBackgroundColor: "#333333",
+    //     zoom: 100,
+    //     enableGradient: false,
+    //     enableBackgroundGradient: false,
+    //     rotationAngle: 0, // New property for rotation angle
+    // };
+
     state = {
         filterText: null,
         iconSet: null,
         selectedIcon: null,
-        backgroundShape: null,
-        fromColor: "#da4526",
-        toColor: "#da4526",
-        fromBackgroundColor: "#333333",
-        toBackgroundColor: "#333333",
-        zoom: 100,
-        enableGradient: false,
-        enableBackgroundGradient: false
+        backgroundShape: "rounded-square-background",
+        fromColor: "#00e6ff",
+        toColor: "#ec00ff",
+        fromBackgroundColor: "#000000",
+        toBackgroundColor: "#002b5e",
+        zoom: 80,
+        enableGradient: true,
+        enableBackgroundGradient: true,
+        rotationAngle: 0, 
     };
 
     defaultColor = "#da4526";
     selectedColor = "orange";
-    defaultIconTitle = "tree";
+    defaultIconTitle = "triangle";
     selectedSvg = null;
     iconPreview = null;
 
@@ -79,6 +95,11 @@ svg.selected path {
     margin-bottom: 15px;
 }
 #reset-zoom {
+    color: #da4526;
+    border: 0;
+    background-color: transparent;
+}
+#reset-rotation-angle {
     color: #da4526;
     border: 0;
     background-color: transparent;
@@ -168,10 +189,19 @@ ${this.styles}
     <h3 for="zoom">Zoom</h3>
     <div>
       <input type="range" id="zoom" min="10" max="200" value="${this.state.zoom}" />
-      <button id="reset-zoom"><svg viewBox="0 0 32 32" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg" class="selected"><path fill="currentColor" stroke="none" d="M16 2c-4.418 0-8.418 1.791-11.313 4.687l-4.686-4.687v12h12l-4.485-4.485c2.172-2.172 5.172-3.515 8.485-3.515 6.627 0 12 5.373 12 12 0 3.584-1.572 6.801-4.063 9l2.646 3c3.322-2.932 5.417-7.221 5.417-12 0-8.837-7.163-16-16-16z"></path></svg></button>
+      <button id="reset-zoom"><svg viewBox="0 0 32 32" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" stroke="none" d="M16 2c-4.418 0-8.418 1.791-11.313 4.687l-4.686-4.687v12h12l-4.485-4.485c2.172-2.172 5.172-3.515 8.485-3.515 6.627 0 12 5.373 12 12 0 3.584-1.572 6.801-4.063 9l2.646 3c3.322-2.932 5.417-7.221 5.417-12 0-8.837-7.163-16-16-16z"></path></svg></button>
     </div>
     <div>
       <label id="zoom-label">${this.state.zoom}%</label>
+    </div>
+
+    <h3>Rotation Angle</h3>
+    <div>
+      <input type="range" id="rotation-angle" min="-180" max="180" value="${this.state.rotationAngle}" />
+      <button id="reset-rotation-angle"><svg viewBox="0 0 32 32" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" stroke="none" d="M16 2c-4.418 0-8.418 1.791-11.313 4.687l-4.686-4.687v12h12l-4.485-4.485c2.172-2.172 5.172-3.515 8.485-3.515 6.627 0 12 5.373 12 12 0 3.584-1.572 6.801-4.063 9l2.646 3c3.322-2.932 5.417-7.221 5.417-12 0-8.837-7.163-16-16-16z"></path></svg></button>
+    </div>
+    <div>
+      <label id="rotation-angle-label">${this.state.rotationAngle}°</label>
     </div>
       
   </div>
@@ -248,6 +278,19 @@ ${this.styles}
             this.state.zoom = 100;
             this.shadowRoot.getElementById("zoom").value = this.state.zoom;
             this.shadowRoot.getElementById("zoom-label").innerHTML = `${this.state.zoom}%`;
+            this.iconPreview.render(this.state);
+        });
+
+        this.shadowRoot.getElementById("rotation-angle").addEventListener("input", (ev) => {
+            this.state.rotationAngle = parseInt(ev.target.value);
+            this.shadowRoot.getElementById("rotation-angle-label").innerHTML = `${this.state.rotationAngle}°`;
+            this.iconPreview.render(this.state);
+        });
+
+        this.shadowRoot.getElementById("reset-rotation-angle").addEventListener("click", (ev) => {
+            this.state.rotationAngle = 0;
+            this.shadowRoot.getElementById("rotation-angle").value = this.state.rotationAngle;
+            this.shadowRoot.getElementById("rotation-angle-label").innerHTML = `${this.state.rotationAngle}°`;
             this.iconPreview.render(this.state);
         });
 
