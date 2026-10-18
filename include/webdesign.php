@@ -164,17 +164,6 @@ if(!$isFrontPage) {
                     <?php PrintMostCommentedArticlesList(); ?>
                 </div>
 
-                <div class="page-section">
-                    <h2>Ten Tiny Levels</h2>
-                    <p>
-                        My 100% free game for Android - fast-paced platform arcade action for one or two players! Check out the <a href="/ten-tiny-levels">microsite</a> or download using the badge below.
-                    </p>
-                    <div style="text-align: center; margin-top: -5px;">
-                        <a href="https://play.google.com/store/apps/details?id=com.regalraccoongames.tentinylevels">
-                            <img class="google-play-badge" src="/ttl-assets/google-play-badge.png" alt="Download Ten Tiny Levels from the Google Play" style="width: 200px; max-width: 100%;" />
-                        </a>
-                    </div>
-				</div>
             </div>
 		<div class="clearfix"></div>
 	</aside>

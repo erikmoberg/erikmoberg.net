@@ -22,45 +22,6 @@ Fix image orientation with the <a href="#jpegrotator">JPEG Rotator</a>! Download
 
 </div>
 
-<div class="page-section">
-  <h2 id="tentinylevels">Ten Tiny Levels for Android</h2>
-
-  <p>
-    Fast-paced platform arcade action for one or two players! Check out the <a href="/ten-tiny-levels">microsite</a> or download using the badge below.
-  </p>
-
-  <div class="responsive-grid-2-columns">
-  <?php
-  $images = [
-    0 => 'screenshot-01.png',
-    1 => 'screenshot-02.png'
-  ];
-
-  $descriptions = [
-    0 => 'The game has both single and local multiplayer modes.',
-    1 => "Eliminate all enemies and don't let the timer run out!"
-  ];
-
-  foreach ($images as $i => $image) {
-      ?>
-        <div class="thumb_small" style="float: none; text-align: center;">
-          <a href="/ttl-assets/<?php echo $image ?>" class="gallery-thumbnail">
-          <img style="max-height: 280px; width: auto;" src="/ttl-assets/<?php echo $image ?>" alt="<?php echo $descriptions[$i] ?>" title="<?php echo $descriptions[$i] ?>" />
-        </a>
-        <div class="imagedescription"><?php echo $descriptions[$i] ?></div>
-        </div>
-      <?php
-  }
-  ?>
-  </div>
-
-  <div style="text-align: center; margin-top: -5px;">
-    <a href="https://play.google.com/store/apps/details?id=com.regalraccoongames.tentinylevels">
-      <img class="google-play-badge" style="max-width: 250px" src="/ttl-assets/google-play-badge.png">
-    </a>
-  </div>
-</div>
-
 <!--
 <div class="page-section">
 
@@ -86,7 +47,7 @@ When shooting vertically, some cameras rotate images using EXIF metadata, but th
 <h2 id="projectc">Project Cataclysm</h2>
 
 <p>
-A game I developed in back in 2002, called "Project Cataclysm". You can think of it like Bubble Bobble, except with machineguns (shotguns and grenades are also available). It can be played in single player mode, or in multiplayer with two players on the same computer, in deathmatch or cooperative mode. A precursor to Ten Tiny Levels if you will.
+A game I developed in back in 2002, called "Project Cataclysm". You can think of it like Bubble Bobble, except with machineguns (shotguns and grenades are also available). It can be played in single player mode, or in multiplayer with two players on the same computer, in deathmatch or cooperative mode.
 </p>
 
 <div class="responsive-grid-2-columns">
