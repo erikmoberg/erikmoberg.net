@@ -1,6 +1,6 @@
 <?php
 include_once("include/webdesign.php");
-PrintStartHtml('Flat Icon Maker',3,'The Flat Icon Maker is a simple tool to create your own free custom icons for your applications or websites predefined icons and colors of your choice.');
+PrintStartHtml('Flat Icon Maker',3,'Create custom icons and text-based designs for your applications or websites with the Flat Icon Maker.');
 ?>
 
 <script src="iconmaker2-static/IconMaker.js" type="module"></script>
@@ -8,7 +8,7 @@ PrintStartHtml('Flat Icon Maker',3,'The Flat Icon Maker is a simple tool to crea
 <div class="page-section">
   <h2>Flat Icon Maker</h2>
   <p>
-    Use the Flat Icon Maker to create your own simple icons for your applications or websites - using any modern browser!
+    Use the Flat Icon Maker to create your own icons with optional text for your applications or websites - using any modern browser!
     Feel free to <a href="contact">contact me</a> if you have any questions or feedback.
   </p>
 </div>

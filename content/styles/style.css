@@ -1059,6 +1059,8 @@ aside {
 /* Google Custom search start */
 
 #open-search {
+	/* Temporarily hidden while Google Custom Search access is unavailable. */
+	display: none;
 	position: absolute;
 	right: 20px;
 	top: 15px;
@@ -1327,6 +1329,7 @@ body.gallery {
   top:0;
   width:80%;
   height:100%;
+  touch-action: pinch-zoom;
 }
 
 #image-caption {

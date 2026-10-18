@@ -5,6 +5,8 @@ function RespGallery(options) {
 	self.orgX;
 	self.currX;
 	self.isMoving = false;
+	self.isMultiTouch = false;
+	self.lastTouchTime = 0;
 	self.imageIndex = 0;
 	self.isWaitingForAnimationFrame = false;
 	self.maxIndex = 0;
@@ -48,7 +50,24 @@ function RespGallery(options) {
 		
         for (let eventName of ['touchstart', 'mousedown']) {
 		    document.querySelector('#' + self.touchId).addEventListener(eventName, function(e) {
+                if (e.type === 'touchstart') {
+                    self.lastTouchTime = Date.now();
+                    if (e.touches.length > 1) {
+                        self.isMultiTouch = true;
+                        self.isMoving = false;
+                        self.orgX = null;
+                        self.currX = null;
+                        return;
+                    }
+                    if (self.isMultiTouch) {
+                        return;
+                    }
+                } else if (Date.now() - self.lastTouchTime < 700) {
+                    return;
+                }
 			    self.isMoving = true;
+                self.orgX = null;
+                self.currX = null;
 		    });
         }
 
@@ -70,7 +89,13 @@ function RespGallery(options) {
 		
         for (let eventName of ['touchend', 'mouseup', 'touchcancel']) {
 		    document.querySelector('#' + self.touchId).addEventListener(eventName, function(e) {
-			    self.handleTouchEnd();
+                if (e.type === 'touchend' || e.type === 'touchcancel') {
+                    self.lastTouchTime = Date.now();
+                }
+                if (e.type === 'mouseup' && Date.now() - self.lastTouchTime < 700) {
+                    return;
+                }
+			    self.handleTouchEnd(e);
 		    });
         }
 
@@ -80,11 +105,11 @@ function RespGallery(options) {
             });
         }
 
-        for (let eventName of ['touchmove', 'touchstart', 'touchend']) {
-            document.querySelector('#' + self.touchId).addEventListener(eventName, function(e) {
-                e.preventDefault()
-            });
-        }
+        document.querySelector('#' + self.touchId).addEventListener('touchmove', function(e) {
+            if (e.touches.length < 2) {
+                e.preventDefault();
+            }
+        });
 		
         let imageIndex = 0;
 		for (let element of document.querySelectorAll('.' + self.galleryThumbnailClass)) {
@@ -216,6 +241,18 @@ function RespGallery(options) {
 
 	self.handleTouchMove = function (e) {
 	
+		if (e.touches && e.touches.length > 1) {
+			self.isMultiTouch = true;
+			self.isMoving = false;
+			self.orgX = null;
+			self.currX = null;
+			return;
+		}
+
+		if (self.isMultiTouch) {
+			return;
+		}
+
 		if (self.isWaitingForAnimationFrame) {
 			return;
 		}
@@ -249,7 +286,17 @@ function RespGallery(options) {
 		});
 	};
 	
-	self.handleTouchEnd = function() {
+	self.handleTouchEnd = function(e) {
+		if (self.isMultiTouch) {
+			if (!e.touches || e.touches.length === 0) {
+				self.isMultiTouch = false;
+				self.isMoving = false;
+				self.orgX = null;
+				self.currX = null;
+			}
+			return;
+		}
+
 		self.isMoving = false;
 		var diff = self.orgX - self.currX;
 		if (Math.abs(diff) < 20) {
